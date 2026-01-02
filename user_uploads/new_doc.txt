@@ -1,0 +1,156 @@
+WEBPAGE: https://www.cs.purdue.edu/academic-programs/courses/2025_fall_courses.html
+
+_________________________
+
+### Undergraduate West Lafayette — Introductory & Core CS Courses
+CS 10100 — Digital Literacy — Fabrizio Cicala  
+CS 15900 — C Programming — John Robinson, Ning Zhou, Eman Samy Diyab, William N. Crum  
+CS 17600 — Data Engineering in Python — Xiaojin Liu  
+CS 17700 — Programming With Multimedia Objects — Jessica Mackey Conner-Strunk, Marta A. Crowe  
+CS 18000 — Problem Solving and Object-Oriented Programming — Tony Bergstrom, Jeffrey A. Turkstra  
+CS 18200 — Foundations of Computer Science — Anuran Makur  
+CS 19000-SC1 — Intro to Professional Practice — Jermaine Williams, Jr  
+CS 19300 — Tools — Paula C. Ramos Perez, Ryan H. Sierra, Pranavi Chaganti, Hanako S. Keney, Jagannath Prabhakaran  
+
+_________________________
+
+### Undergraduate West Lafayette — Systems, Algorithms, and DS/AI Foundations
+CS 21100 — Competitive Programming I — Ethan Dickey  
+CS 24000 — Programming In C — Christopher K. May  
+CS 24200 — Introduction To Data Science — Tony Bergstrom, Caitlin Whitter  
+CS 24300 — Artificial Intelligence Basics — Yexiang Xue  
+CS 25000 — Computer Architecture — George B. Adams III  
+CS 25100 — Data Structures And Algorithms — Jeremiah M. Blocki, Michael H. Borkowski  
+CS 25200 — Systems Programming — Christopher K. May, Gustavo A. J. Rodriguez-Rivera  
+CS 25300 — Data Structures And Algorithms For DS/AI — Konstantinos Ameranis  
+CS 29100-LE1 — Soph Developmt Seminar — John R. Langenkamp  
+
+_________________________
+
+### Undergraduate West Lafayette — Upper-Level CS Electives
+CS 30700 — Software Engineering I — Jeffrey A. Turkstra  
+CS 31100 — Competitive Programming II — Arvind Ramaswami  
+CS 31400 — Numerical Methods — Alex Pothen  
+CS 33400 — Fundamentals Of Computer Graphics — Voicu S. Popescu  
+CS 34800 — Information Systems — Hisham R. Benotman  
+CS 35200 — Compilers: Principles And Practice — Changhee Jung  
+CS 35400 — Operating Systems — Douglas E. Comer  
+CS 35500 — Introduction To Cryptography — Hemanta K. Maji  
+CS 36100 — Great Issues In Computer Science — Gustavo A. J. Rodriguez-Rivera  
+
+_________________________
+
+### Undergraduate West Lafayette — AI, ML, Data, Security, Robotics, HCI, Theory, Capstone
+CS 37300 — Data Mining And Machine Learning — Dan Goldwasser, Bruno Ribeiro  
+CS 38003 — Python Programming — Sai Lakshminarayanan Balakrishnan  
+CS 38100 — Introduction To The Analysis Of Algorithms — Alexandros Psomas, Tamal Krishna Dey  
+CS 39000-AF1 — AI Forge I — Tania Chakraborty, Tunazzina Islam, Jincheng Zhou  
+CS 39000-AF2 — AI Forge II — Tania Chakraborty, Tunazzina Islam, Jincheng Zhou  
+CS 39000-AF3 — AI Forge III — Tania Chakraborty, Tunazzina Islam, Jincheng Zhou  
+CS 39000-WAP — Web Application Development — Tanay H. Gondil  
+CS 39700 — Honors Seminar — Christina Garman  
+CS 40700 — Software Engineering Senior Project — H. E. Dunsmore  
+CS 40800 — Software Testing — Pedro Fonseca  
+CS 42200 — Computer Networks — Chunyi Peng  
+CS 42600 — Computer Security — Mohammadkazem Taram  
+CS 43900 — Introduction To Data Visualization — Xavier Tricoche  
+CS 44000 — Large Scale Data Analytics — Jianguo Wang  
+CS 44100 — Data Science Capstone — Zachary Kingston  
+CS 44800 — Introduction To Relational Database Systems — Elisa Bertino  
+CS 45600 — Programming Languages — Suresh Jagannathan  
+CS 45800 — Introduction To Robotics — Ahmed Qureshi  
+CS 47100 — Introduction To Artificial Intelligence — Ming Yin  
+CS 47300 — Web Information Search And Management — Hisham R. Benotman  
+CS 47500 — Human-Computer Interaction — Tianyi Zhang  
+CS 47800 — Introduction To Bioinformatics — Michael Gribskov  
+CS 48300 — Introduction To The Theory Of Computation — Paul Valiant  
+CS 48900 — Embedded Systems — Douglas E. Comer  
+CS 49000-001 — Computational Genomics — Majid Kazemian, Yuxin Zhuang  
+CS 49700 — Honors Research Project — Pedro Fonseca  
+
+_________________________
+
+### Undergraduate Indianapolis — CS Courses
+CS 15900 — C Programming — Carrie Melinda Rector  
+CS 17600 — Data Engineering In Python — Andres Bejarano  
+CS 18000 — Problem Solving And Object-Oriented Programming — Abdullah Imran  
+CS 18200 — Foundations Of Computer Science — Mary Anne Smart  
+CS 19300 — Tools — Thirukumaran Veleyudham, David Wang  
+CS 24000 — Programming In C — Federico O. Cifuentes-Urtubey  
+CS 24200 — Introduction To Data Science — Tony Bergstrom  
+CS 24300 — Artificial Intelligence Basics — Mary Anne Smart  
+CS 25000 — Computer Architecture — George B. Adams III  
+CS 25100 — Data Structures And Algorithms — Andres Bejarano, Federico O. Cifuentes-Urtubey  
+CS 38003 — Python Programming — Sai Lakshminarayanan Balakrishnan  
+
+_________________________
+
+### CSCI Indianapolis — Applied Computing and CS Courses
+CSCI 31100 — Advanced Database Programming, Oracle — Lucas A. Moser  
+CSCI 34000 — Discrete Computational Structures — Andrew P. Hoblitzell  
+CSCI 36100 — Fundamentals Of Software Project Management — Lucas A. Moser  
+CSCI 36200 — Data Structures — Gavriil Tsechpenakis  
+CSCI 40200 — Architecture Of Computers — Sabrina Tarin Chowdhury  
+CSCI 40300 — Introduction To Operating Systems — Mihran Tuceryan  
+CSCI 43500 — Multimedia Information Systems — Jiang Yu Zheng  
+CSCI 43600 — Principles Of Computer Networking — Dongsoo S. Kim  
+CSCI 45000 — Principles Of Software Engineering — Stephen P. France  
+CSCI 48400 — Theory Of Computation — Snehasis Mukhopadhyay  
+CSCI 48700 — Artificial Intelligence — Snehasis Mukhopadhyay  
+CSCI 49000-AIT — AI for Internet of Things — Sayeed Shafayet Chowdhury  
+CSCI 49000-DPL — Deep Learning — Sabrina Tarin Chowdhury, Aaditya Kharel  
+CSCI 49500 — Explorations In Applied Computing — Aaditya Kharel  
+
+_________________________
+
+### Graduate West Lafayette — MS/PhD CS Courses
+CS 50100 — Computing For Science And Engineering — Vernon J. Rego  
+CS 50200 — Compiling And Programming Systems — Tiark Rompf  
+CS 50500 — Distributed Systems — Yongle Zhang  
+CS 51000 — Software Engineering — Xiangyu Zhang  
+CS 51400 — Numerical Analysis — Suchuan Dong  
+CS 51500 — Numerical Linear Algebra — David Gleich  
+CS 52600 — Information Security — Christina Garman  
+CS 52900 — Security Analytics — Z. Berkay Celik  
+CS 53400 — Motion Planning — Aniket Bera  
+CS 53600 — Data Communication And Computer Networks — Kihong Park  
+CS 54100 — Database Systems — Walid G. Aref  
+CS 55500 — Cryptography — Hanshen Xiao  
+CS 56000 — Reasoning About Programs — Benjamin J. Delaware  
+CS 57100 — Artificial Intelligence — Brian Bullins  
+CS 57300 — Data Mining — Rajiv Khanna, Syed Hasan Amin Mahmood  
+CS 57700 — Natural Language Processing — Abulhair Saparov  
+CS 57800 — Statistical Machine Learning — Ruqi Zhang  
+CS 58000 — Algorithm Design, Analysis, And Implementation — Mikhail Atallah  
+CS 58800 — Randomized Algorithms — Kent Quanrud  
+CS 59100-RS1 — Research Seminar First Year Grad Students — Hemanta K. Maji  
+CS 59100-SEC — CERIAS Security Seminar — Aniket Kate  
+CS 59200-AIN — AI/DC Networking — Vamsi Addanki  
+CS 59200-CII — Computational Imaging — Sotirios Nousias  
+CS 59200-DMA — Data Management For AI — Chunwei Liu  
+CS 59200-HWS — Hardware Security — Dave (Jing) Tian  
+CS 59200-ILR — Imitation Learning / Robotics — Rohan R. Paleja  
+CS 59200-MLS — Machine Learning Systems — Xupeng Miao  
+CS 59200-PRS — Pseudorandomness — Wei Zhan  
+CS 59300-001 — Algorithms For Data Science — Ruizhe Zhang  
+CS 59300-CVD — Comp Vision With Deep Learning — Raymond A. Yeh  
+CS 59300-HCI — Human-Computer Interaction — Sooyeon Jeong  
+CS 59300-IQC — Intro To Quantum Computing — Yuxiang Peng, Eric Samperton  
+CS 59300-MLT — Machine Learning Theory — Steve Hanneke  
+CS 59300-RL1 — Reinforcement Learning — Joseph Campbell  
+CS 62600 — Advanced Information Assurance — Eugene H. Spafford  
+
+_________________________
+
+### Purdue Website Footer and Department Info
+Purdue University Department of Computer Science  
+305 N. University Street, West Lafayette, IN 47907  
+Phone: (765) 494-6010  
+Fax: (765) 496-1690  
+
+Campus resources listed include BoilerConnect, Brightspace, myPurdue, Outlook, Reserve a LWSN Room, Overrides, Computer Systems Status, Lawson Building Hours, Fix It, and others.  
+Social media links include Facebook, Instagram, Twitter, LinkedIn, YouTube.  
+Institutional statements include Accessibility, EA/EO, Integrity Statement, Free Expression, Privacy Policy.
+
+_________________________
+

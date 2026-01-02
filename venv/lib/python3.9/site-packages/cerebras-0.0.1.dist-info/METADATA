@@ -1,0 +1,29 @@
+Metadata-Version: 2.4
+Name: cerebras
+Version: 0.0.1
+Summary: Meta-package that depends on 'cerebras-cloud-sdk'.
+Author-email: Cerebras Systems <support@cerebras.ai>
+License: Apache-2.0
+Project-URL: Homepage, https://github.com/Cerebras/cerebras-cloud-sdk-python
+Project-URL: Source, https://github.com/Cerebras/cerebras-cloud-sdk-python
+Keywords: cerebras,alias
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: cerebras-cloud-sdk>=0
+Dynamic: license-file
+
+# `cerebras` (alias / meta-package)
+
+This package is a **protective alias** and does not provide any code itself.
+
+The canonical SDK package is: **`cerebras-cloud-sdk`**.
+
+## What happens if I install this?
+
+Running:
+```bash
+pip install cerebras
+```
+Will automatically install cerebras-cloud-sdk.
+No Python modules are shipped under the cerebras name to avoid interfering with other namespace packages

@@ -1,0 +1,31 @@
+# ===============================
+# Large generated data (GraphRAG)
+# ===============================
+
+# FAISS indexes
+faiss.index
+*.faiss
+*.index
+
+# Vector stores / graphs
+vector_store.json
+knowledge_graph.json
+
+# Large JSON / binary artifacts
+*.bin
+*.pkl
+*.pt
+*.onnx
+*.engine
+
+# Cache / generated folders
+vector_store/
+graph_store/
+cache/
+data_cache/
+
+# OS / editor junk
+.DS_Store
+*.log
+*.tmp
+
