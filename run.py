@@ -37,19 +37,19 @@ COOKIE_SIGNER = Signer("SUPER_SECRET_KEY_CHANGE_ME")
 # =================================================================
 
 print("Loading GraphRAG…")
-graph_rag = GraphRAG()
-graph_rag.load_from_disk(
-    vector_store_path="vector_store.json",
-    graph_path="knowledge_graph.json"
-)
+# graph_rag = GraphRAG()
+# graph_rag.load_from_disk(
+#     vector_store_path="vector_store.json",
+#     graph_path="knowledge_graph.json"
+# )
 
 # Load new nodes (unchanged)
-# graph_rag2 = GraphRAG(initialize_empty=False)
+graph_rag2 = GraphRAG(initialize_empty=False)
 uploads = os.listdir("./user_uploads")
 for upload in uploads:
     if upload.endswith(".txt"):
-        # add_document_to_graphrag(graph_rag2, os.path.join("./user_uploads", upload))
-        add_document_to_graphrag(graph_rag, os.path.join("./user_uploads", upload))
+        add_document_to_graphrag(graph_rag2, os.path.join("./user_uploads", upload))
+        # add_document_to_graphrag(graph_rag, os.path.join("./user_uploads", upload))
 
 print("✓ GraphRAG Loaded.")
 
@@ -625,8 +625,8 @@ async def prompt(
 
 
     try:
-        # answer = graph_rag2.query(current_question)  # Use current_question instead
-        answer = graph_rag.query(current_question)
+        answer = graph_rag2.query(current_question)  # Use current_question instead
+        # answer = graph_rag.query(current_question)
         if target_lang == "none":
             append_conversation(username, current_question + "\n\nmodel: " + answer)
             return answer
@@ -744,7 +744,7 @@ async def upload_file(
         with open(out_path, "w", encoding="utf-8") as f:
             chunk = transform_raw_text(chunk)
             f.write(chunk)
-        add_document_to_graphrag(graph_rag, out_path)
+        add_document_to_graphrag(graph_rag2, out_path)
 
         saved_files.append(out_name)
 

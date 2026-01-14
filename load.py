@@ -860,6 +860,7 @@ def rewrite_query_for_rag(
     - Output ONE single rewritten query as a search and not a question with no explanation.
     - If the user's question is too vague to rewrite, ask for clarification instead. Specifically, respond with: "Please provide more details."
     - Never answer the question itself.
+   
     
     Some advice:
     - Imagine you are doing a google search. What you search will be differant from the question you have.
@@ -867,10 +868,15 @@ def rewrite_query_for_rag(
     - Consider lower casing more often (cs 182 gets more results than CS182). 
     - Actually use more words if the question itself is short. This will help the RAG. 
     - For questions asking about classes, include the year or semester if you think it will help. If the current year is 2025 do not put 2024, 2026, unless the question specifically implies that.
-
+    - Consider tagging exact words (like keeping acronyms) like some google searches do to enhance the search. The expanded word can be very differant vector wise.
+    
     Examples:
         User: When is the next registration for CS182
         Model: CS182 Fall Registration, Course Catalogue 
+
+        User: [mentions a key word in the search]
+        Model: [Keywords] [Rest of query]
+
 
     {metadata_block}
 
@@ -1371,7 +1377,7 @@ class QueryEngine:
                 continue
             expanded_context += ("\n" + ctx + f"\n================WEBPAGE: {len(ctx.strip())}=================\n") if expanded_context else ctx
 
-        print("final expanded context:", expanded_context + "\n")
+        # print("final expanded context:", expanded_context + "\n")
 
         if (len(expanded_context) == 0 and final == False):
             return expanded_context, traversal_path, filtered_content, ""
@@ -1396,8 +1402,11 @@ class QueryEngine:
         print("\nRetrieving relevant documents...")
 
         before = time.time()
-        docs = self.vector_store.similarity_search(query, k=100)
-       
+        docs = self.vector_store.similarity_search(query, k=30)
+
+        # for doc in docs:
+        #     with open("debug.txt", "a") as f:
+        #         f.write(doc.page_content[:100] + "\n")
         # docs = compress_docs(orig_query, docs)  # custom compression
        
         print(f"time for retriever: {time.time() - before}")
@@ -1631,6 +1640,7 @@ class GraphRAG:
 
         else: # GRAPH_RAG
             query = rewrite_query_for_rag(query, llm_client=client)
+            query += (" + " + orig_query)
             if not query or query.lower() == "please provide more details.":
                 return "The query is too vague. Please provide more details."
             print(f"\nRewritten query for RAG: {query}")

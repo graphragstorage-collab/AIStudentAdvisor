@@ -92,34 +92,34 @@ def create_snippet(query: str, text: str, llm_client=llm_client,
     --- DOCUMENT ---
     {text}
     """
-    global openai_client
-    completion = openai_client.responses.create(
-        model=model,
-        input=prompt,
-        max_output_tokens=max_tokens
-    )
+    # global openai_client
+    # completion = openai_client.responses.create(
+    #     model=model,
+    #     input=prompt,
+    #     max_output_tokens=max_tokens
+    # )
     
-    # passing = False
-    # while not passing:
-    #     try:
-    #         completion = llm_client.chat.completions.create(
-    #             messages=[{"role": "user", "content": prompt}],
-    #             model="llama-3.3-70b",
-    #             max_completion_tokens=max_tokens,
-    #             temperature=0.3,   # Deterministic routing
-    #             top_p=1,
-    #             stream=False   
-    #         )
-    #         passing = True
-    #     except Exception as e: 
-    #         print(e)
+    passing = False
+    while not passing:
+        try:
+            completion = llm_client.chat.completions.create(
+                messages=[{"role": "user", "content": prompt}],
+                model="llama-3.3-70b",
+                max_completion_tokens=max_tokens,
+                temperature=0.3,   # Deterministic routing
+                top_p=1,
+                stream=False   
+            )
+            passing = True
+        except Exception as e: 
+            print(e)
 
 
 
     
 
-    answer = completion.output_text.strip()
-    # answer = completion.choices[0].message.content.strip()
+    # answer = completion.output_text.strip()
+    answer = completion.choices[0].message.content.strip()
  
     return answer
 
