@@ -12,6 +12,7 @@ You are transforming raw website text (copied directly via browser “Select All
 
 Follow these rules:
 
+0. IF CONTENT IN THE DOCUMENTC IS NOT APPROPRIETE JUST SAY THE WORD "Inappropriete for [reason]" and do no more.
 1. Extract ALL meaningful information.
 2. Clean up formatting issues caused by scraping (broken lines, duplicate headers, menus, footers unless useful).
 3. Organize the content into clear sections with descriptive titles.
@@ -22,7 +23,7 @@ Follow these rules:
 8. Summaries are ONLY for sections where summarization improves clarity without losing context.
 9. Separate each section/chunk with the literal string:
 ###
-10. DO NOT OMIT INFOMRATION. If there is a lot of content, keep it all, just organize it well.
+10. DO NOT OMIT INFOMRATION. Preserve information given by the structure of the document (like if it is a table) if you NEED to change the format. If there is a lot of content, keep it all, just organize it well.
 11. Output ONLY the document. No explanations. No meta text. No commentary.
 
 Here is an example:
@@ -58,7 +59,7 @@ Here is an example:
 Begin processing the input text now.
 """
 
-def transform_raw_text(raw_text: str, llm_client=openai_client, model="gpt-4o-mini", max_tokens=2000) -> str:
+def transform_raw_text(raw_text: str, llm_client=openai_client, model="gpt-4o-mini", max_tokens=6000) -> str:
     """
     Transforms raw scraped text into a clean, structured document suitable for RAG.
     """

@@ -1,0 +1,443 @@
+### Computer Science Courses: Spring 2026
+
+#### Undergraduate West Lafayette Catalog
+- **CS 10100 Digital Literacy**  
+  Instructor: Fabrizio Cicala  
+  Time: [Time Not Captured]
+
+- **CS 15900 C Programming**  
+  Instructors: Ning Zhou, William N. Crum, Xiaojin Liu, Eman Samy Diyab, John Robinson  
+  Time: [Time Not Captured]
+
+- **CS 17600 Data Engineering In Python**  
+  Instructor: Vernon J. Rego  
+  Time: [Time Not Captured]
+
+- **CS 17700 Programming With Multimedia Objects**  
+  Instructors: Marta A. Crowe, Jessica Mackey Conner-Strunk  
+  Time: [Time Not Captured]
+
+- **CS 18000 Problem Solving And Object-Oriented Programming**  
+  Instructors: Tony Bergstrom, Konstantinos Ameranis, H. E. Dunsmore  
+  Time: [Time Not Captured]
+
+- **CS 18200 Foundations Of Computer Science**  
+  Instructors: Sarah H. Sellke, Wojciech Szpankowski  
+  Time: [Time Not Captured]
+
+- **CS 19300 Tools**  
+  Instructors: Pranavi Chaganti, Hanako S. Keney, Ryan H. Sierra  
+  Time: [Time Not Captured]
+
+- **CS 19700 Freshman Honors Seminar**  
+  Instructor: Z. Berkay Celik  
+  Time: [Time Not Captured]
+
+- **CS 21100 Competitive Programming I**  
+  Instructor: Ethan Dickey  
+  Time: [Time Not Captured]
+
+- **CS 24000 Programming In C**  
+  Instructor: Jeffrey A. Turkstra  
+  Time: [Time Not Captured]
+
+- **CS 24200 Introduction To Data Science**  
+  Instructors: Vinayak A. P. Rao, Ernest F. Aboagye  
+  Time: [Time Not Captured]
+
+- **CS 24300 Artificial Intelligence Basics**  
+  Instructor: Joseph Campbell  
+  Time: [Time Not Captured]
+
+- **CS 25000 Computer Architecture**  
+  Instructor: Zhiyuan Li  
+  Time: [Time Not Captured]
+
+- **CS 25100 Data Structures And Algorithms**  
+  Instructor: Andres Bejarano  
+  Time: [Time Not Captured]
+
+- **CS 25200 Systems Programming**  
+  Instructors: Gustavo Adolfo Junipero Rodriguez-Rivera, Dave (Jing) Tian  
+  Time: [Time Not Captured]
+
+- **CS 25300 Data Structures And Algorithms For DS/AI**  
+  Instructor: Andres Bejarano  
+  Time: [Time Not Captured]
+
+- **CS 30700 Software Engineering I**  
+  Instructor: Xiangyu Zhang  
+  Time: [Time Not Captured]
+
+- **CS 31100 Competitive Programming II**  
+  Instructor: Ninghui Li  
+  Time: [Time Not Captured]
+
+- **CS 33400 Fundamentals Of Computer Graphics**  
+  Instructor: Aniket Bera  
+  Time: [Time Not Captured]
+
+- **CS 34800 Information Systems**  
+  Instructor: Hisham R. Benotman  
+  Time: [Time Not Captured]
+
+- **CS 35100 Cloud Computing**  
+  Instructor: George B. Adams, III  
+  Time: [Time Not Captured]
+
+- **CS 35200 Compilers: Principles And Practice**  
+  Instructor: Tiark Rompf  
+  Time: [Time Not Captured]
+
+- **CS 35400 Operating Systems**  
+  Instructor: Yongle Zhang  
+  Time: [Time Not Captured]
+
+- **CS 35500 Introduction To Cryptography**  
+  Instructor: Hemanta K. Maji  
+  Time: [Time Not Captured]
+
+- **CS 36100 Great Issues In Computer Science**  
+  Instructor: Z. Berkay Celik  
+  Time: [Time Not Captured]
+
+- **CS 37300 Data Mining And Machine Learning**  
+  Instructors: Mary Anne Smart, Ruqi Zhang, Rajiv Khanna  
+  Time: [Time Not Captured]
+
+- **CS 38003 Python Programming**  
+  Instructor: Sai Lakshminarayanan Balakrishnan  
+  Time: [Time Not Captured]
+
+- **CS 38100 Introduction To The Analysis Of Algorithms**  
+  Instructors: Kent Quanrud, Mikhail Atallah  
+  Time: [Time Not Captured]
+
+- **CS 39000-AIF AI Forge**  
+  Instructor: Tunazzina Islam  
+  Time: [Time Not Captured]
+
+- **CS 40700 Software Engineering Senior Project**  
+  Instructor: H. E. Dunsmore  
+  Time: [Time Not Captured]
+
+- **CS 40800 Software Testing**  
+  Instructor: Benjamin J. Delaware  
+  Time: [Time Not Captured]
+
+- **CS 41100 Competitive Programming III**  
+  Instructor: Arvind Ramaswami  
+  Time: [Time Not Captured]
+
+- **CS 42200 Computer Networks**  
+  Instructor: Kihong Park  
+  Time: [Time Not Captured]
+
+- **CS 42600 Computer Security**  
+  Instructor: Christina Garman  
+  Time: [Time Not Captured]
+
+- **CS 44000 Large Scale Data Analytics**  
+  Instructor: Jianguo Wang  
+  Time: [Time Not Captured]
+
+- **CS 44100 Data Science Capstone**  
+  Instructor: Mary Anne Smart  
+  Time: [Time Not Captured]
+
+- **CS 44800 Introduction To Relational Database Systems**  
+  Instructor: Walid G. Aref  
+  Time: [Time Not Captured]
+
+- **CS 45800 Introduction To Robotics**  
+  Instructor: Rohan Paleja  
+  Time: [Time Not Captured]
+
+- **CS 47100 Introduction To Artificial Intelligence**  
+  Instructors: Raymond A. Yeh, Brian Bullins  
+  Time: [Time Not Captured]
+
+- **CS 47500 Human-Computer Interaction**  
+  Instructor: Sooyeon Jeong  
+  Time: [Time Not Captured]
+
+- **CS 48900 Embedded Systems**  
+  Instructor: Douglas E. Comer  
+  Time: [Time Not Captured]
+
+- **CS 49000-IOS iOS Development In Swift**  
+  Instructor: Mihika Sharma  
+  Time: [Time Not Captured]
+
+- **CS 49000-NLP Natural Language Processing**  
+  Instructors: Dan Goldwasser, Abulhair Saparov  
+  Time: [Time Not Captured]
+
+- **CS 49000-NSQ NoSQL And Cloud Databases**  
+  Instructor: Hisham R. Benotman  
+  Time: [Time Not Captured]
+
+- **CS 49700 Honors Research Project**  
+  Instructor: Pedro Fonseca  
+  Time: [Time Not Captured]
+
+###
+#### Undergraduate Indianapolis Catalog
+- **CS 15900 C Programming**  
+  Instructor: Carrie Melinda Rector  
+  Time: [Time Not Captured]
+
+- **CS 18000 Problem Solving And Object-Oriented Programming**  
+  Instructor: Michael H. Borkowski  
+  Time: [Time Not Captured]
+
+- **CS 18200 Foundations Of Computer Science**  
+  Instructor: Abdullah Imran  
+  Time: [Time Not Captured]
+
+- **CS 21100 Competitive Programming I**  
+  Instructor: Deming Chu  
+  Time: [Time Not Captured]
+
+- **CS 24000 Programming In C**  
+  Instructor: Federico Cifuentes-Urtubey  
+  Time: [Time Not Captured]
+
+- **CS 25000 Computer Architecture**  
+  Instructor: Zhiyuan Li  
+  Time: [Time Not Captured]
+
+- **CS 25100 Data Structures And Algorithms**  
+  Instructor: Michael H. Borkowski  
+  Time: [Time Not Captured]
+
+- **CS 25200 Systems Programming**  
+  Instructor: Christopher K. May  
+  Time: [Time Not Captured]
+
+- **CS 25300 Data Structures And Algorithms For DS/AI**  
+  Instructor: Federico Cifuentes-Urtubey  
+  Time: [Time Not Captured]
+
+- **CS 30700 Software Engineering I**  
+  Instructor: Jeffrey A. Turkstra  
+  Time: [Time Not Captured]
+
+- **CS 34800 Information Systems**  
+  Instructor: Hisham R. Benotman  
+  Time: [Time Not Captured]
+
+- **CS 36100 Great Issues In Computer Science**  
+  Instructor: Christopher K. May  
+  Time: [Time Not Captured]
+
+- **CS 38003 Python Programming**  
+  Instructor: Sai Lakshminarayanan Balakrishnan  
+  Time: [Time Not Captured]
+
+###
+#### CSCI Indianapolis Catalog
+- **CSCI 31700 Computation For Scientific Applications**  
+  Instructor: Aaditya Kharel  
+  Time: [Time Not Captured]
+
+- **CSCI 36300 Principles Of Software Design**  
+  Instructor: Lucas A. Moser  
+  Time: [Time Not Captured]
+
+- **CSCI 40300 Introduction To Operating Systems**  
+  Instructor: Mihran Tuceryan  
+  Time: [Time Not Captured]
+
+- **CSCI 41400 Numerical Methods**  
+  Instructor: Aaditya Kharel  
+  Time: [Time Not Captured]
+
+- **CSCI 43200 Security In Computing**  
+  Instructor: Abdullah Imran  
+  Time: [Time Not Captured]
+
+- **CSCI 44300 Database Systems**  
+  Instructor: Lucas A. Moser  
+  Time: [Time Not Captured]
+
+- **CSCI 44800 Biometric Computing**  
+  Instructor: Gavriil Tsechpenakis  
+  Time: [Time Not Captured]
+
+- **CSCI 48100 Data Mining**  
+  Instructor: Sayeed Shafayet Chowdhury  
+  Time: [Time Not Captured]
+
+- **CSCI 48400 Theory Of Computation**  
+  Instructor: Snehasis Mukhopadhyay  
+  Time: [Time Not Captured]
+
+- **CSCI 48900 Data Science**  
+  Instructor: Snehasis Mukhopadhyay  
+  Time: [Time Not Captured]
+
+- **CSCI 49000-NLP Natural Language Processing**  
+  Instructor: Andrew P. Hoblitzell  
+  Time: [Time Not Captured]
+
+- **CSCI 49500 Explorations In Applied Computing**  
+  Instructor: Jiang Yu Zheng  
+  Time: [Time Not Captured]
+
+###
+#### Graduate West Lafayette Catalog
+- **CS 50023 Data Engineering I**  
+  Instructor: Philip A. Sands  
+  Time: [Time Not Captured]
+
+- **CS 50024 Data Engineering II**  
+  Instructor: Philip A. Sands  
+  Time: [Time Not Captured]
+
+- **CS 50025 Foundations Of Decision Making**  
+  Instructor: Philip A. Sands  
+  Time: [Time Not Captured]
+
+- **CS 50200 Compiling And Programming Systems**  
+  Instructor: Changhee Jung  
+  Time: [Time Not Captured]
+
+- **CS 50300 Operating Systems**  
+  Instructor: Pedro Fonseca  
+  Time: [Time Not Captured]
+
+- **CS 51400 Numerical Analysis**  
+  Instructor: Alex Pothen  
+  Time: [Time Not Captured]
+
+- **CS 52000 Computational Methods In Optimization**  
+  Instructor: David Gleich  
+  Time: [Time Not Captured]
+
+- **CS 52300 Social, Economic, And Legal Aspects Of Security**  
+  Instructor: Eugene H. Spafford  
+  Time: [Time Not Captured]
+
+- **CS 52500 Parallel Computing**  
+  Instructor: Ananth Grama  
+  Time: [Time Not Captured]
+
+- **CS 52700 Software Security**  
+  Instructor: Antonio Bianchi  
+  Time: [Time Not Captured]
+
+- **CS 52800 Network Security**  
+  Instructor: Aniket Kate  
+  Time: [Time Not Captured]
+
+- **CS 53000 Introduction To Scientific Visualization**  
+  Instructor: Xavier Tricoche  
+  Time: [Time Not Captured]
+
+- **CS 53500 Interactive Computer Graphics**  
+  Instructor: Daniel G. Aliaga  
+  Time: [Time Not Captured]
+
+- **CS 53600 Data Communication And Computer Networks**  
+  Instructor: Vamsi Addanki  
+  Time: [Time Not Captured]
+
+- **CS 54100 Database Systems**  
+  Instructor: Chunwei Liu  
+  Time: [Time Not Captured]
+
+- **CS 55100 Cloud Computing Fundamentals**  
+  Instructor: Douglas E. Comer  
+  Time: [Time Not Captured]
+
+- **CS 55800 Introduction To Robot Learning**  
+  Instructor: Ahmed Qureshi  
+  Time: [Time Not Captured]
+
+- **CS 56500 Programming Languages**  
+  Instructor: Suresh Jagannathan  
+  Time: [Time Not Captured]
+
+- **CS 57800 Statistical Machine Learning**  
+  Instructor: Anuran Makur  
+  Time: [Time Not Captured]
+
+- **CS 58000 Algorithm Design, Analysis, And Implementation**  
+  Instructor: Tamal Krishna Dey  
+  Time: [Time Not Captured]
+
+- **CS 58400 Theory Of Computation And Computational Complexity**  
+  Instructor: Wei Zhan  
+  Time: [Time Not Captured]
+
+- **CS 58500 Theoretical Computer Science Toolkit**  
+  Instructor: Ruizhe Zhang  
+  Time: [Time Not Captured]
+
+- **CS 58700 Foundations Of Deep Learning**  
+  Instructor: Bruno Ribeiro  
+  Time: [Time Not Captured]
+
+- **CS 59100-SEC CERIAS Security Seminar**  
+  Instructor: Hanshen Xiao  
+  Time: [Time Not Captured]
+
+- **CS 59200-AAS AI Agentic Security**  
+  Instructor: Elisa Bertino  
+  Time: [Time Not Captured]
+
+- **CS 59200-CI1 Computational Interaction**  
+  Instructor: Jason Wu  
+  Time: [Time Not Captured]
+
+- **CS 59200-DRN Autonomous Drones For Your Use**  
+  Instructor: Chunyi Peng  
+  Time: [Time Not Captured]
+
+- **CS 59200-EAI Appls Of ML And Explainable Al**  
+  Instructor: Bharat Bhargava  
+  Time: [Time Not Captured]
+
+- **CS 59200-MLI Auto Reasoning/ML Integration**  
+  Instructor: Yexiang Xue  
+  Time: [Time Not Captured]
+
+- **CS 59200-MUC Mobile & Ubiquitous Computing**  
+  Instructor: Qiuyue Xue  
+  Time: [Time Not Captured]
+
+- **CS 59200-QCS Quant Computer Software Stacks**  
+  Instructor: Yuxiang Peng  
+  Time: [Time Not Captured]
+
+- **CS 59200-VBD Vector Databases**  
+  Instructor: Jianguo Wang  
+  Time: [Time Not Captured]
+
+- **CS 59300-CVD Comp Vision With Deep Learning**  
+  Instructor: Sotirios Nousias  
+  Time: [Time Not Captured]
+
+- **CS 59300-PCA Principles Comp Architecture**  
+  Instructor: Mohammadkazem Taram  
+  Time: [Time Not Captured]
+
+- **CS 59300-SER Software Engineering /Robotics**  
+  Instructor: Zachary Kingston  
+  Time: [Time Not Captured]
+
+- **CS 59300-TML Trustworthy Machine Learning**  
+  Instructor: Hanshen Xiao  
+  Time: [Time Not Captured]
+
+- **CS 61500 Numerical Methods For Partial Differential Equations I**  
+  Instructor: Di Qi  
+  Time: [Time Not Captured]
+
+- **CS 66200 Pattern Recognition And Decision-Making Processes**  
+  Instructor: Qiang Qiu  
+  Time: [Time Not Captured]
+
+### Last Updated
+August 11, 2025, 9:11 AM

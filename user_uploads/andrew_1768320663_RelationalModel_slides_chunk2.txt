@@ -1,0 +1,92 @@
+RELATION_MODEL CS34800 Lecture 1
+
+
+### Learning Objectives
+
+After this lecture, you should be able to:
+- Define a data model
+- Distinguish among different data models
+- Define the relational data model
+- Articulate the basic terminologies of the relational data model (from a practical perspective)
+- Define Primary and Foreign keys for a relational table
+- Distinguish between Schema and Instance
+
+### Database Overview
+
+**Foreign Keys in Check Table**  
+The `Check.AcctNo` serves as a foreign key that references `Account.Number`. Yes, there are foreign keys in the Check table.
+
+### Account Information
+
+**Account Table**  
+| Number | Owner      | Balance  | Type     |
+|--------|------------|----------|----------|
+| 101    | J. Smith   | 1000.00  | checking  |
+| 102    | W. Wei     | 2000.00  | checking  |
+| 103    | J. Smith   | 5000.00  | savings   |
+| 104    | M. Jones   | 1000.00  | checking  |
+| 105    | H. Martin  | 10,000.00| checking  |
+
+- Note: `Check.AcctNo` is part of the key for the Check table.
+  
+### Transaction Records
+
+**Transaction Table**  
+| AcctNo | Transaction-id | Date      | Amount   |
+|--------|----------------|-----------|----------|
+| 102    | 1              | 10/22/00  | 500.00   |
+| 102    | 2              | 10/29/00  | 200.00   |
+| 104    | 3              | 10/29/00  | 1000.00  |
+| 105    | 4              | 11/02/00  | 10,000.00|
+
+### Deposit Records
+
+**Deposit Table**  
+| AcctNo | Check-number | Date      | Amount   |
+|--------|--------------|-----------|----------|
+| 101    | 924          | 10/23/00  | 125.00   |
+| 101    | 925          | 10/24/00  | 23.98    |
+
+- Note: `Deposit.AcctNo` is not part of the key for the Deposit table.
+
+### Keys and Foreign Keys
+
+- Foreign keys might or might not be part of the key for the referring table. In this case, `Check.AcctNo` is part of the key for the Check table.
+  
+### Schema Specifications
+
+**Database Domains for Columns**  
+Each column of every table has specified allowable values according to the schema:
+
+- `Number`: Must be a 3-digit number
+- `Owner`: Must be a 30-character string
+- `Type`: Must be “checking” or “savings”
+
+The set of allowable values for a column is referred to as the domain of the column.
+
+### Data Model Definition
+
+**What is a Data Model?**  
+A data model is a notation for describing data or information. The description typically consists of three parts:
+1. **Structure of the data**
+2. **Operations on the data**: Limited set of queries (operations that retrieve information) and modifications (operations that change the database).
+3. **Constraints on the data**: Ways to outline limitations on what the data can be, often stemming from real-world application requirements.
+
+### Relational Data Model Popularity
+
+The relational data model is the most widely used in database systems, including:
+- Oracle
+- MySQL
+- MS SQL Server
+- PostgreSQL
+- IBM DB2
+- SQLite
+- Microsoft Access
+
+For additional details, you can check: [DB-Engines Ranking](https://db-engines.com/en/ranking)
+
+### Summary
+
+- A data model is an abstract framework that categorizes elements of data and standardizes their relationships to properties of real-world entities.
+- Several types of data models exist including Relational and Graph models.
+- Our focus is primarily on the relational model, which structures data as relations (tables) and defines a limited set of operations (query and modification) for data interaction.

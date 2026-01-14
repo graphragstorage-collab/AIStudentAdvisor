@@ -132,55 +132,55 @@ def add_document_to_graphrag(graph_rag, file_path: str):
     # -------------------------------------------------------------
     # 3. Add node to the graph
     # -------------------------------------------------------------
-    G = graph_rag.knowledge_graph.graph
-    G.add_node(new_index, content=new_doc.page_content)
+    # G = graph_rag.knowledge_graph.graph
+    # G.add_node(new_index, content=new_doc.page_content)
 
-    # -------------------------------------------------------------
-    # 4. Extract concepts for this document
-    # -------------------------------------------------------------
-    kg = graph_rag.knowledge_graph
-    concepts = kg._extract_concepts_and_entities(new_doc.page_content, graph_rag.llm)
-    G.nodes[new_index]["concepts"] = concepts
+    # # -------------------------------------------------------------
+    # # 4. Extract concepts for this document
+    # # -------------------------------------------------------------
+    # kg = graph_rag.knowledge_graph
+    # concepts = kg._extract_concepts_and_entities(new_doc.page_content, graph_rag.llm)
+    # G.nodes[new_index]["concepts"] = concepts
 
-    # -------------------------------------------------------------
-    # 5. Compute edges from new node to all older nodes
-    # -------------------------------------------------------------
-    # Embed query against existing store to get similarities
-    # Retrieve all node embeddings from FAISS
-    all_embeds = []
+    # # -------------------------------------------------------------
+    # # 5. Compute edges from new node to all older nodes
+    # # -------------------------------------------------------------
+    # # Embed query against existing store to get similarities
+    # # Retrieve all node embeddings from FAISS
+    # all_embeds = []
 
-    # FAISS stores embeddings in order of add, so safe to extract
-    xb = vs.index.reconstruct_n(0, vs.index.ntotal)
-    all_embeds = xb
+    # # FAISS stores embeddings in order of add, so safe to extract
+    # xb = vs.index.reconstruct_n(0, vs.index.ntotal)
+    # all_embeds = xb
 
-    # Cosine similarity matrix for last vector vs all others
-    new_vec = all_embeds[new_index]
-    sims = all_embeds @ new_vec  # inner product = cosine (normalized)
+    # # Cosine similarity matrix for last vector vs all others
+    # new_vec = all_embeds[new_index]
+    # sims = all_embeds @ new_vec  # inner product = cosine (normalized)
 
-    # Add edges for nodes above threshold
-    for other in range(new_index):
-        similarity_score = float(sims[other])
-        if similarity_score > kg.edges_threshold:
-            shared_concepts = set(G.nodes[new_index].get("concepts", [])) & \
-                              set(G.nodes[other].get("concepts", []))
+    # # Add edges for nodes above threshold
+    # for other in range(new_index):
+    #     similarity_score = float(sims[other])
+    #     if similarity_score > kg.edges_threshold:
+    #         shared_concepts = set(G.nodes[new_index].get("concepts", [])) & \
+    #                           set(G.nodes[other].get("concepts", []))
 
-            edge_weight = kg._calculate_edge_weight(
-                new_index, other,
-                similarity_score,
-                shared_concepts
-            )
+    #         edge_weight = kg._calculate_edge_weight(
+    #             new_index, other,
+    #             similarity_score,
+    #             shared_concepts
+    #         )
 
-            G.add_edge(
-                new_index, other,
-                weight=edge_weight,
-                similarity=similarity_score,
-                shared_concepts=list(shared_concepts)
-            )
+    #         G.add_edge(
+    #             new_index, other,
+    #             weight=edge_weight,
+    #             similarity=similarity_score,
+    #             shared_concepts=list(shared_concepts)
+    #         )
 
-    print(f"\n✓ Successfully added document '{file_path}'")
-    print(f"  → New node index: {new_index}")
-    print(f"  → Concepts extracted: {concepts}")
-    print(f"  → Edges created: {len(list(G.neighbors(new_index)))}")
+    # print(f"\n✓ Successfully added document '{file_path}'")
+    # print(f"  → New node index: {new_index}")
+    # print(f"  → Concepts extracted: {concepts}")
+    # print(f"  → Edges created: {len(list(G.neighbors(new_index)))}")
 
     return new_index
 
@@ -217,8 +217,8 @@ class OpenAIEmbeddingModel:
             return np.zeros((0, 0), dtype="float32")
 
         # print("WEBPAGE: " + texts[:100] + "\n__________________________\n")
-        for text in texts:
-            print("WEBPAGE: " + text[:100] + "\n__________________________\n")
+        # for text in texts:
+        #     print("WEBPAGE: " + text[:100] + "\n__________________________\n")
 
         response = self.client.embeddings.create(
             model=self.model,
@@ -792,6 +792,8 @@ def router(
 def rewrite_query_for_rag(
     question: str,
     llm_client=client,
+    rewrite=None,
+    old_answer=None,
     model: str = "llama-3.3-70b",
     max_tokens: int = 3000,
     timezone: str = "America/Chicago"
@@ -875,6 +877,29 @@ def rewrite_query_for_rag(
     --- QUESTION ---
     {question}
     """)
+
+    if rewrite is not None:
+        print(f"Rewriting: {rewrite}")
+        prompt = textwrap.dedent(f"""
+
+            You are an expert RAG pre-processing assistant.
+
+            TASK:
+            Rewrite the user's QUESTION (using the history section if it exists as context) into a clearer version that is easier for a
+            Retrieval-Augmented Generation (RAG) pipeline to answer. YOUR LAST ATTEMPT AT REWRITING HAS FAILED. CAREFULY CREATE A NEW SEARCH THAT WILL YIELD BETTER RESULTS.
+            
+            RULES:
+            1. Do not say things like "Let me try to rephrase the question again to yield better results." just give the final corrected query. 
+            2. Everything you say will be used as the next query. 
+            3. If the last ANSWER shown below is sufficient for the QUESTION below, then simply return "SUFFICIENT". No more, no less.
+            
+            Last rewrite: {rewrite}
+
+            Last question: {old_answer}
+
+            --- QUESTION ---
+            {question}
+            """)
 
     # ====== CALL LLM ======
     completion = llm_client.chat.completions.create(
@@ -1246,7 +1271,7 @@ class QueryEngine:
 
         return response.output_text
 
-    def _expand_context(self, query: str, relevant_docs: List[Document]) -> Tuple[str, List[int], Dict[int, str], str]:
+    def _expand_context(self, query: str, relevant_docs: List[Document], final=False) -> Tuple[str, List[int], Dict[int, str], str]:
         expanded_context = ""
         traversal_path: List[int] = []
         visited_concepts = set()
@@ -1262,29 +1287,29 @@ class QueryEngine:
         # Initialize priority queue with relevant docs
         for doc in relevant_docs:
             
-           
-            closest_nodes = self.vector_store.similarity_search_with_score(doc.page_content, k=1)
+            expanded_contexts.append(doc.page_content)
+            # closest_nodes = self.vector_store.similarity_search_with_score(doc.page_content, k=1)
           
-            if not closest_nodes:
-                continue
-            closest_node_doc, similarity = closest_nodes[0]
+            # if not closest_nodes:
+            #     continue
+            # closest_node_doc, similarity = closest_nodes[0]
 
-            # Find the node whose content matches closest_node_doc.page_content
-            closest_node = next(
-                n for n in self.knowledge_graph.graph.nodes
-                if self.knowledge_graph.graph.nodes[n]['content'] == closest_node_doc.page_content
-            )
-            # Similarity is inner product on normalized embeddings → in [0,1]
-            # We invert it to use as a distance-like priority (smaller is better)
-            similarity = max(similarity, 1e-6)
-            priority = 1.0 / similarity
-            heapq.heappush(priority_queue, (priority, closest_node))
-            distances[closest_node] = priority
+            # # Find the node whose content matches closest_node_doc.page_content
+            # closest_node = next(
+            #     n for n in self.knowledge_graph.graph.nodes
+            #     if self.knowledge_graph.graph.nodes[n]['content'] == closest_node_doc.page_content
+            # )
+            # # Similarity is inner product on normalized embeddings → in [0,1]
+            # # We invert it to use as a distance-like priority (smaller is better)
+            # similarity = max(similarity, 1e-6)
+            # priority = 1.0 / similarity
+            # heapq.heappush(priority_queue, (priority, closest_node))
+            # distances[closest_node] = priority
 
         step = 0
      
         while priority_queue:
-            if step > 100:
+            if step > 0:
                 break
 
             # answer = self._generate_final_answer(query, expanded_context)
@@ -1333,6 +1358,7 @@ class QueryEngine:
                             distances[neighbor] = new_dist
                             heapq.heappush(priority_queue, (new_dist, neighbor))
 
+        print("CLEANING SOURCES")
         snippets = generate_snippets_threaded(
             query=query,
             expanded_contexts=expanded_contexts,
@@ -1347,29 +1373,30 @@ class QueryEngine:
 
         print("final expanded context:", expanded_context + "\n")
 
-        
+        if (len(expanded_context) == 0 and final == False):
+            return expanded_context, traversal_path, filtered_content, ""
         final_answer = self._generate_final_answer(query, expanded_context)
        
         return expanded_context, traversal_path, filtered_content, final_answer
 
-    def query(self, query: str, orig_query: str) -> Tuple[str, List[int], Dict[int, str]]:
+    def query(self, query: str, orig_query: str, final=False) -> Tuple[str, List[int], Dict[int, str]]:
         print(f"\nProcessing query: {query}")
         relevant_docs = self._retrieve_relevant_documents(query, orig_query)
         
         expanded_context, traversal_path, filtered_content, final_answer = \
-            self._expand_context(orig_query, relevant_docs)
+            self._expand_context(orig_query, relevant_docs, final=final)
 
         print("\nFinal Answer:")
         wrapped = textwrap.fill(final_answer, width=100)
         print(wrapped)
 
-        return final_answer, traversal_path, filtered_content
+        return final_answer, traversal_path, filtered_content, expanded_context
 
     def _retrieve_relevant_documents(self, query: str, orig_query: str) -> List[Document]:
         print("\nRetrieving relevant documents...")
 
         before = time.time()
-        docs = self.vector_store.similarity_search(query, k=40)
+        docs = self.vector_store.similarity_search(query, k=30)
        
         # docs = compress_docs(orig_query, docs)  # custom compression
        
@@ -1507,12 +1534,15 @@ class Visualizer:
 # GraphRAG Wrapper
 # -----------------------------------------------------
 class GraphRAG:
-    def __init__(self):
+    def __init__(self, initialize_empty: bool = True):
         """
         Initializes the GraphRAG system with components for document processing,
         knowledge graph construction, querying, and visualization.
         """
         # OpenAI client for embeddings + concept extraction + final answering
+        if not initialize_empty:
+            self.shell()
+            return
         self.llm = OpenAI()
         self.embedding_model = OpenAIEmbeddingModel(self.llm)
 
@@ -1520,6 +1550,36 @@ class GraphRAG:
         self.knowledge_graph = KnowledgeGraph()
         self.query_engine: QueryEngine = None
         self.visualizer = Visualizer()
+    
+    def shell(self):
+        """
+        Initializes GraphRAG in an EMPTY but READY state.
+        No documents, no embeddings, no graph nodes.
+        """
+
+        # OpenAI client (used later)
+        self.llm = OpenAI()
+
+        # Embedding model (no calls yet)
+        self.embedding_model = OpenAIEmbeddingModel(self.llm)
+
+        # Empty vector store
+        self.vector_store = SimpleFAISSVectorStore(self.embedding_model)
+
+        # Empty knowledge graph
+        self.knowledge_graph = KnowledgeGraph()
+
+        # Query engine wired to empty stores
+        self.query_engine = QueryEngine(
+            self.vector_store,
+            self.knowledge_graph,
+            self.llm
+        )
+
+        # Visualizer
+        self.visualizer = Visualizer()
+
+        print("✓ GraphRAG initialized (empty state)")
 
     def load_from_disk(self, vector_store_path="vector_store.json",
                        graph_path="knowledge_graph.json"):
@@ -1574,7 +1634,16 @@ class GraphRAG:
             if not query or query.lower() == "please provide more details.":
                 return "The query is too vague. Please provide more details."
             print(f"\nRewritten query for RAG: {query}")
-            response, traversal_path, filtered_content = self.query_engine.query(query, orig_query)
+            response, traversal_path, filtered_content, expanded_context = self.query_engine.query(query, orig_query)
+            fails = 0
+            old_query = ""
+            while len(expanded_context) == 0 and fails < 5:
+                old_query = old_query + f"Attempt {fails + 1}: " + query + "\n"
+                query = rewrite_query_for_rag(orig_query, llm_client=client, rewrite=old_query, old_answer=response)
+                response, traversal_path, filtered_content, expanded_context = self.query_engine.query(query, orig_query, final=(fails == 4))
+                if response.strip().lower() == "sufficient":
+                    break
+                fails += 1
 
         if traversal_path:
             # self.visualizer.visualize_traversal(self.knowledge_graph.graph, traversal_path)

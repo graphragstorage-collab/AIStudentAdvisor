@@ -44,9 +44,11 @@ graph_rag.load_from_disk(
 )
 
 # Load new nodes (unchanged)
+# graph_rag2 = GraphRAG(initialize_empty=False)
 uploads = os.listdir("./user_uploads")
 for upload in uploads:
     if upload.endswith(".txt"):
+        # add_document_to_graphrag(graph_rag2, os.path.join("./user_uploads", upload))
         add_document_to_graphrag(graph_rag, os.path.join("./user_uploads", upload))
 
 print("✓ GraphRAG Loaded.")
@@ -464,7 +466,7 @@ async def chat_page(session: Optional[str] = Cookie(default=None)):   # <<< FIXE
 <div id="topbar">
     <a href="/logout" id="logout-btn">Logout</a>
     <button id="upload-btn">Upload File</button>
-    <input type="file" id="file-input" accept=".txt" hidden />
+    <input type="file" id="file-input" accept=".txt, .pdf" hidden />
 </div>
 
 <div id="chatbox">
@@ -612,14 +614,19 @@ async def prompt(
     print("================================\n")
 
     # Extract just the current question (remove history and separator)
-    if "\n\n==============================\ncurrent question: " in decoded_query:
-        current_question = "user: " + decoded_query.split("\n\n==============================\ncurrent question: ")[-1]
-    else:
-        current_question = decoded_query  # Fallback if format doesn't match
+    # if "\n\n==============================\ncurrent question: " in decoded_query:
+    #     current_question = "user: " + decoded_query.split("\n\n==============================\ncurrent question: ")[-1]
+    # else:
+    #     current_question = decoded_query  # Fallback if format doesn't match
+
+   
+     
+    current_question = decoded_query  # Fallback if format doesn't match
+
 
     try:
-        answer = graph_rag.query(current_question)  # Use current_question instead
-
+        # answer = graph_rag2.query(current_question)  # Use current_question instead
+        answer = graph_rag.query(current_question)
         if target_lang == "none":
             append_conversation(username, current_question + "\n\nmodel: " + answer)
             return answer
@@ -737,6 +744,7 @@ async def upload_file(
         with open(out_path, "w", encoding="utf-8") as f:
             chunk = transform_raw_text(chunk)
             f.write(chunk)
+        add_document_to_graphrag(graph_rag, out_path)
 
         saved_files.append(out_name)
 
@@ -744,7 +752,7 @@ async def upload_file(
     # Response
     # -----------------------------
     return {
-        "File uploaded successfully."
+        "File uploaded successfully. Thank you for your contribution!"
     }
 
 # =================================================================
