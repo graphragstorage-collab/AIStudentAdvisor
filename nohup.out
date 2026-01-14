@@ -29156,3 +29156,576 @@ INFO:     185.247.137.146:0 - "GET / HTTP/1.1" 307 Temporary Redirect
 INFO:     185.247.137.146:0 - "GET /login HTTP/1.1" 200 OK
 INFO:     43.153.102.138:0 - "GET / HTTP/1.1" 307 Temporary Redirect
 INFO:     43.153.102.138:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     64.62.156.222:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     64.62.156.222:0 - "GET /webui/ HTTP/1.1" 404 Not Found
+INFO:     64.62.156.229:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     195.252.220.62:0 - "GET /chat HTTP/1.1" 200 OK
+INFO:     195.252.220.62:0 - "GET /logout HTTP/1.1" 302 Found
+INFO:     195.252.220.62:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     64.62.156.231:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     64.62.156.230:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     64.62.156.230:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     195.252.220.21:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     195.252.220.21:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     195.252.220.21:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     195.252.220.21:0 - "GET /signup HTTP/1.1" 200 OK
+INFO:     195.252.220.21:0 - "POST /signup HTTP/1.1" 302 Found
+INFO:     195.252.220.21:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     195.252.220.21:0 - "POST /login HTTP/1.1" 302 Found
+INFO:     195.252.220.21:0 - "GET /chat HTTP/1.1" 200 OK
+INFO:     195.252.220.21:0 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     185.242.226.87:57578 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     185.242.226.87:57578 - "GET /login HTTP/1.1" 200 OK
+INFO:     64.62.156.222:0 - "GET /geoserver/web/ HTTP/1.1" 404 Not Found
+INFO:     195.252.220.21:0 - "POST /upload HTTP/1.1" 200 OK
+
+======== RECEIVED QUERY ========
+user: How do I access Purdue's HPC resources?
+
+==============================
+current question: How do I access Purdue's HPC resources? ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: GRAPH_RAG
+
+Rewritten query for RAG: purdue university high performance computing resources access guide
+
+Processing query: purdue university high performance computing resources access guide
+
+Retrieving relevant documents...
+time for retriever: 2.164357900619507
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+DONE 15
+DONE 16
+DONE 17
+DONE 18
+DONE 19
+DONE 20
+DONE 21
+DONE 22
+DONE 23
+DONE 24
+DONE 25
+DONE 26
+DONE 27
+DONE 28
+DONE 29
+final expanded context: WEBPAGE: service.purdue.edu_TDClient_32_Purdue_Requests_ServiceDet_ID_54
+
+ High-Performance Computing Overview
+High-Performance Computing (HPC) at Purdue University involves the design, management, and support of advanced computing resources. It is essential for researchers and academics who require significant computational power for their projects.
+
+
+__________________________________________________
+ How to Request High-Performance Computing Services
+To request services related to High-Performance Computing, users should submit their requests through the "Purdue IT Request" button available on the portal. This process allows for the efficient handling of inquiries and service requests.
+
+
+__________________________________________________
+ Reporting Issues
+If users encounter problems with any HPC tools or processes, they can report these issues to notify the support staff. This ensures that any disruptions in service are addressed promptly.
+
+
+__________________________________________________
+ Related Articles
+One related article addresses common login issues with Scholar RStudio and JupyterHub, providing guidance for users who may experience difficulties accessing these platforms.
+
+
+__________________________________________________
+ Service Offerings
+1. **RCAC Service Request**: This form is specifically for submitting service requests and questions directly to the RCAC (Research Computing and Analytics Center) support team.
+2. **High-Performance Computing Request**: A dedicated request form for HPC-related inquiries.
+
+
+__________________________________________________
+
+__________________________________________________
+ Context
+This chunk serves as a comprehensive guide to the High-Performance Computing services at Purdue, outlining the necessary steps for users to engage with the resources and support available. It is crucial for those involved in research that requires high computational capabilities.
+__________________________________________________
+
+WEBPAGE: www.math.purdue.edu_resources_computing_index.html
+
+ Mathematics Computing Overview
+The Department of Mathematics at Purdue University promotes the use of computers for various purposes including research, teaching, outreach, and administration. This section outlines the computing resources available to faculty and graduate students, emphasizing the importance of computer literacy, particularly with Linux systems and computer clusters.
+
+
+__________________________________________________
+ Accessing Resources
+**Office Computers:** Faculty can request either Windows or Linux machines for their offices. If the desired operating system is unavailable, requests can be sent to sciencehelp@purdue.edu. Student offices are equipped with Linux machines. Office computers are suitable for email, mathematical text processing (TeX, LaTeX), symbolic computation (Maple, Matlab, etc.), and other computational tasks.
+
+**Departmental Computers:** The computers named banach and hardy provide access to more powerful computational servers. Users can log in via Remote Desktop Access or through SSH commands. Off-campus access requires a VPN connection. Note that password-only logins are disabled on these machines; Duo Mobile or SSH key pairs are required for authentication.
+
+
+__________________________________________________
+ Computational Resources
+For small computational jobs, users can utilize applications like Maple, Macaulay2, R, SageMath, and Mathematica on banach or hardy. For larger jobs, users can connect to the departmental computer maclaurin. For even greater computational needs, access to departmental CPU and GPU servers is available.
+
+
+__________________________________________________
+ RCAC Nodes Access
+Starting Spring 2024, the department has access to Purdue’s GPU cluster (gilbreth) and CPU cluster (negishi) at the Rosen Center for Advanced Computing (RCAC). New users must request an account specifying “Mathematics Department” as their research group. After approval, users can access these clusters through designated URLs and utilize interactive applications like MATLAB and Jupyter Notebook.
+
+
+__________________________________________________
+ GoRemote/Citrix Applications
+Purdue IT offers access to various applications campus-wide through GoRemote/Citrix, including Git, Maple, Matlab, and RStudio. Users can log in with their Purdue Career username and password, with an option for a "Light version" that does not require Citrix installation.
+
+
+__________________________________________________
+ Additional Hardware and Support
+The Mathematics department maintains computer labs (MATH 635 and MATH 737) with public printers and desktop computers. Laptops and projectors are available for checkout through the main office. Purdue IT provides broader computing services, including instructional and research support, and can be contacted for assistance.
+
+
+__________________________________________________
+Important Resources
+- Eduroam service
+- Helpdesk Request Form
+- Remote access to department services
+- Personal web page setup for faculty and graduate students
+__________________________________________________
+
+================WEBPAGE: 3161=================
+
+WEBPAGE: www.cs.purdue.edu_resources_undergrad-accounts.html
+
+ Department of Computer Science Overview
+The Department of Computer Science at Purdue University provides a range of resources and facilities for undergraduate students. This includes access to instructional labs, remote access to UNIX/Linux workstations, and various computing resources. The department emphasizes responsible use of these facilities and has established policies to guide students in their usage.
+
+
+__________________________________________________
+Lab Access and Disk Space Policy
+- **Lab Access**: CS instructional labs are available during open hours. Remote access to UNIX/Linux workstations via SSH is permitted at all times.
+- **Disk Space**: As of Fall 2012, undergraduate accounts have a quota of 1GB for career and instructional accounts.
+__________________________________________________
+Usage Policies for Computing Facilities
+- **Games and Non-Academic Use**: Students are encouraged to use resources reasonably. If gaming or non-academic activities disrupt others, action will be taken, including account suspension.
+- **Food and Drink**: Consumption of food and drinks in labs is discouraged to prevent spills and maintain cleanliness.
+- **Account Use**: Sharing accounts is strictly prohibited. Violations can lead to account suspension.
+__________________________________________________
+Printing and Backup Policies
+- **Printing**: Students are urged to minimize printing to reduce costs and environmental impact. They should utilize online previewers and print documents duplexed and "two up" when possible.
+- **Backups and Restores**: User files are backed up regularly. If files are deleted, students can request restoration through the trouble web form or by contacting IT staff.
+__________________________________________________
+Reporting Problems and Violations
+- **Reporting Issues**: Students should report problems using the trouble web form available on the Help page.
+- **Policy Violations**: Violations of the policies may result in account freezing for a specified duration.
+__________________________________________________
+Contact Information
+- **IT Staff Contact**: For assistance, students can reach out to the IT staff.
+- **Department Location**: Department of Computer Science, 305 N. University Street, West Lafayette, IN 47907.
+- **Phone**: 765-494-6010.
+__________________________________________________
+ Context
+This document serves as a comprehensive guide to the resources, policies, and procedures within the Department of Computer Science at Purdue University. It is designed to help undergraduate students navigate the computing facilities, understand their responsibilities, and utilize the available support effectively. Each section is tailored to address specific aspects of student life within the department, ensuring a well-rounded understanding of the environment they are part of.
+__________________________________________________
+
+================WEBPAGE: 2969=================
+
+WEBPAGE: www.cs.purdue.edu_resources_facilities_index.html
+
+Department of Computer Science Overview
+The Department of Computer Science at Purdue University provides a comprehensive overview of its resources and facilities. It includes information about the various computing facilities available to members of the department, including access to UNIX machines and email servers for authorized individuals from remote locations. The department supports nine undergraduate computing labs, while Purdue Information Technology (Purdue IT) maintains a range of research and instructional laboratories available to CS members.
+__________________________________________________
+Purdue IT Facilities
+Purdue Information Technology operates the Rosen Center for Academic Computing (RCAC), now known as Research Computing. This center features several large clusters of computers, including the Bell Cluster, Gilbreth GPU Cluster, Halstead Cluster, and Scholar Instructional Cluster, which are utilized by research faculty across campus. Additionally, RCAC manages extensive storage and archival systems, including the Data Depot and Fortress Archive.
+__________________________________________________
+Purdue Libraries and Research Repository
+Purdue Libraries maintains the Purdue University Research Repository, an online collaborative workspace and data-sharing platform designed to support the data management needs of Purdue researchers and their collaborators. This repository facilitates the organization and sharing of research data, enhancing collaboration and accessibility.
+__________________________________________________
+Emergency Support and Plans
+The document mentions emergency support and plans related to the Department of Computer Science facilities, including the DSAI Emergency Plan and LWSN Emergency Plan. These plans are designed to ensure the safety and security of individuals using the facilities and outline procedures to follow in case of emergencies.
+__________________________________________________
+Additional Resources and Links
+The document provides links to various campus resources, including:
+- Campus Map
+- FTP Server
+- Libraries
+- Help Pages
+- Policies
+- Student Computer Requirements
+- My.cs portal
+- Reserve a LWSN Room
+- Overrides for CS Courses
+- Computer Systems Status
+__________________________________________________
+
+================WEBPAGE: 2357=================
+
+WEBPAGE: www.stat.purdue.edu_resources_facilities.htm
+
+Computing Facilities Overview
+The Department of Statistics at Purdue University collaborates with the College of Science (Science IT) and the central university computing group (Purdue IT) to provide comprehensive computing facilities and support. These resources include instructional labs, classroom technologies, core network infrastructure, and research computing, ensuring a robust environment for world-class instruction and research.
+__________________________________________________
+IT Staff and Departmental Facilities
+The Department of Statistics is supported by a centralized IT organization within the College of Science. It maintains a variety of Linux servers and workstations, both physical and virtual, for research and administrative tasks. The servers operate on the Ubuntu operating system and vary in power, featuring configurations with 8 to 28 CPU cores. Notably, the department has servers with up to 1TB of RAM and various storage capacities, including a maximum of 168TB on the largest server.
+__________________________________________________
+University Computing Resources
+Purdue IT offers extensive computing resources, including supercomputers with 1-3PB of dedicated scratch storage, over 15 petabytes of automated tape storage, and a 3 petabyte on-demand storage facility. The campus is equipped with high-speed connectivity, featuring at least 20 Gbps links between buildings and a 200 Gbps connection to the national research network. The university regularly updates its supercomputers, which often rank among the fastest globally.
+__________________________________________________
+Rosen Center for Advanced Computing (RCAC)
+The Rosen Center for Advanced Computing (RCAC) provides various research computing solutions, including the Community Cluster Program, which pools resources from grants and faculty to fund supercomputers. RCAC manages these systems, allowing researchers to focus on their work without the burden of system management.
+__________________________________________________
+Additional Resources and Support
+The Department of Statistics offers various resources, including a tutor list, emergency plans, help room hours, and internal communication tools. These resources are designed to support students and faculty in their academic and administrative needs.
+__________________________________________________
+Contact Information
+Purdue Department of Statistics  
+150 N. University St, West Lafayette, IN 47907  
+Phone: (765) 494-6030  
+Fax: (765) 494-0558
+__________________________________________________
+ Context
+The chunks collectively provide a comprehensive overview of the computing facilities and resources available within the Department of Statistics at Purdue University, as well as the broader university IT infrastructure. This information is crucial for students, faculty, and researchers seeking to understand the technological support available for their academic and research endeavors.
+__________________________________________________
+
+================WEBPAGE: 3067=================
+
+WEBPAGE: www.rcac.purdue.edu_knowledge_gilbreth
+
+Data Depot V3 Storage Migration Announcement
+Purdue University is conducting a Data Depot V3 Storage Migration from October 29, 2025, at 11:00 AM to December 31, 2025, at 12:00 AM EST. This migration is part of the university's ongoing efforts to enhance data storage solutions for its users.
+__________________________________________________
+Purdue Virtual Assistant Overview
+The Purdue Virtual Assistant is designed to assist users with inquiries related to IT Services at Purdue University. It serves as a resource for answering questions and providing guidance on various IT-related topics.
+__________________________________________________
+Storage Solutions Overview
+Purdue University offers various storage solutions, including:
+- Data Depot
+- Fortress
+- Scratch Storage
+- Home Directories
+- Box Research Lab Folder
+- REED Folder
+
+These solutions cater to different needs, from research data storage to collaborative workspaces.
+__________________________________________________
+High-Performance Computing Services
+Purdue University provides high-performance computing services through various community clusters, including:
+- Gilbreth: Optimized for GPU-intensive applications like machine learning.
+- Anvil, Hammer, and others: Each cluster has unique features tailored to specific research needs.
+
+These services support a wide range of computational tasks, enhancing research capabilities.
+__________________________________________________
+User Guides for Computing Resources
+Purdue University offers user guides for various computing resources, including:
+- Gilbreth User Guide
+- Bell User Guide
+- Anvil User Guide
+- Hammer User Guide
+- Data Depot User Guide
+
+These guides provide essential information on account setup, file storage, software usage, and job running procedures.
+__________________________________________________
+Research Data Management Services
+Purdue University provides research data management services, including:
+- Data Management Plans
+- Controlled Unclassified Information handling
+- Partnering on proposals
+
+These services are designed to assist researchers in managing their data responsibly and effectively.
+__________________________________________________
+
+================WEBPAGE: 2251=================
+
+WEBPAGE: rcac.purdue.edu_index.php_compute_hammer
+
+Data Depot V3 Storage Migration Announcement
+Purdue University is conducting a migration of the Data Depot V3 storage system, which will take place from October 29, 2025, at 11:00 AM to December 31, 2025, at 12:00 AM EST. This migration is part of ongoing efforts to enhance data storage capabilities for users.
+__________________________________________________
+Overview of Hammer
+Hammer is a high-throughput computing resource optimized for Purdue's communities, particularly those utilizing loosely-coupled computing. Initially built in partnership with HP and Intel in April 2015, Hammer has undergone expansions, with annual updates planned to keep nodes in production for five years from their initial purchase. Users interested in accessing Hammer can purchase access via the Cluster Access Purchase page and are encouraged to subscribe to the Community Cluster Program Mailing List for updates.
+__________________________________________________
+Hammer Specifications
+The Hammer computing resource consists of multiple nodes with identical hardware configurations. Each node features varying numbers of processor cores and Ethernet interconnects. The specifications include:
+- **Front-Ends**: 2 nodes with Two Haswell CPUs @ 2.60GHz, 20 cores, 64 GB memory, retiring in 2020.
+- **Sub-Clusters**: 
+  - A: 198 nodes, Two Haswell CPUs @ 2.60GHz, 20 cores, 64 GB memory, retiring in 2020.
+  - B: 40 nodes, Two Haswell CPUs @ 2.60GHz, 40 logical cores, 128 GB memory, retiring in 2021.
+  - C: 27 nodes, Two Sky Lake CPUs @ 2.60GHz, 48 logical cores, 192 GB memory, retiring in 2022.
+  - D: 18 nodes, Two Sky Lake CPUs @ 2.60GHz, 48 logical cores, 192 GB memory, retiring in 2023.
+  - E: 15 nodes, Two Intel Xeon Gold CPUs @ 2.60GHz, 48 logical cores, 96 GB memory, retiring in 2024.
+All nodes run Rocky 8 and utilize Slurm for job management.
+__________________________________________________
+Hammer Usage and Management
+Hammer nodes allow for unlimited stack usage and core dump size, although disk space and server quotas may still apply. Users can load the recommended compiler and libraries by executing `$ module load rcac` and verify loaded modules with `$ module list`. The system is maintained with security patches as needed.
+__________________________________________________
+Purdue University Contact Information
+Purdue University is located at 610 Purdue Mall, West Lafayette, IN 47906. For inquiries, users can contact the university at 765-494-4600.
+__________________________________________________
+
+================WEBPAGE: 2569=================
+
+WEBPAGE: www.rcac.purdue.edu_policies_faculty
+
+Data Depot V3 Storage Migration Announcement
+Purdue University is conducting a migration of the Data Depot V3 storage system, which will take place from October 29, 2025, at 11:00 AM until December 31, 2025, at 12:00 AM EST. This migration is part of the ongoing efforts to enhance data storage solutions for users.
+__________________________________________________
+Scholar Cluster Overview
+The Scholar cluster offers various resources for students, including:
+- A Research Home directory with a quota of 25 GB per student.
+- A Scratch directory for transient work.
+- The ability to submit batch jobs to a resource scheduler.
+- Access to standalone Jupyter notebook and R Studio servers.
+- Linux command line access via SSH or Thinlinc.
+- A limited Hadoop environment.
+
+Scholar is distinct from standard classroom resources and does not connect directly to students' Purdue IT home directories or Teaching Laboratory software.
+__________________________________________________
+Requesting Access to Scholar for Classes
+RCAC requests that classroom faculty assist in the following when requesting Scholar for their classes:
+- Submit requests well in advance.
+- Provide an estimate of expected student numbers.
+- Communicate specific software or storage needs early.
+- Identify instructors and TAs, including non-registered students needing access.
+
+Scholar is a shared resource, and the job scheduler allocates resources fairly among all users.
+__________________________________________________
+Purdue University Contact Information
+Purdue University is located at:
+610 Purdue Mall,
+West Lafayette, IN 47906
+Phone: 765-494-4600
+__________________________________________________
+Purdue University Social Media and Resources
+Purdue University maintains a presence on various social media platforms, including:
+- Facebook
+- Twitter
+- LinkedIn
+- Instagram
+- YouTube
+- Pinterest
+- Snapchat
+
+Additionally, the university offers numerous resources such as:
+- BoilerConnect
+- Brightspace
+- Human Resources
+- myPurdue
+- Office 365
+- OneCampus Portal
+- Outlook
+__________________________________________________
+
+================WEBPAGE: 2150=================
+
+WEBPAGE: service.purdue.edu_TDClient_32_Purdue_Requests_ServiceOfferingDet_ID_17
+
+ Purdue Virtual Assistant Overview
+The Purdue Virtual Assistant is designed to assist users with inquiries related to IT Services at Purdue University. It serves as a resource for students, faculty, and staff to find information and support regarding technology-related services.
+
+
+__________________________________________________
+ IT Services Navigation
+Users can filter their search by category, with the current category set to "All." The main sections available include:
+- Home
+- Projects
+- Services
+- Knowledge Base
+
+
+__________________________________________________
+ Service Catalog
+The Service Catalog provides a comprehensive list of IT services offered by Purdue University. Users can explore various services categorized under different headings to find specific support or resources.
+
+
+__________________________________________________
+ High-Performance Computing
+This section focuses on high-performance computing resources available at Purdue. It includes information on how to access and utilize these computing services for research and academic purposes.
+
+
+__________________________________________________
+ RCAC Service Request
+The RCAC (Research Computing and Analytics Center) Service Request form allows users to submit service requests and questions directly to the RCAC support team. This is a crucial resource for researchers needing assistance with computing resources.
+
+- **Link to RCAC support request**: [RCAC Service Request Form](#)
+
+
+__________________________________________________
+ Accessibility and Policies
+The website includes links to important policies and statements, ensuring that users are aware of the university's commitment to accessibility, equal opportunity, integrity, and privacy.
+
+
+__________________________________________________
+
+__________________________________________________
+ Context
+This chunk serves as an introduction to the Purdue Virtual Assistant and its offerings, providing essential information for users looking to navigate IT Services effectively. It outlines the structure and resources available, making it easier for users to find the support they need.
+__________________________________________________
+
+================WEBPAGE: 2266=================
+
+WEBPAGE: itap.purdue.edu_newsroom_2018_181106_PurdueSC18.php
+
+Purdue IT Services Overview
+Purdue IT Services provides a range of resources and support for students, faculty, and staff at Purdue University. The services include IT support, research computing, and various tools for academic and administrative purposes. The IT Services section of the website is designed to assist users in navigating the technology resources available at Purdue.
+__________________________________________________
+Purdue IT Newsroom
+The Purdue IT Newsroom features updates on recent developments within the IT department, including cybersecurity alerts, updates on software policies, and new IT resources. Key news items include:
+- Stay vigilant against cyber threats (Sep 09, 2025)
+- New Windows update process for Purdue IT-managed laptops (Sep 02, 2025)
+- New policy to shorten Microsoft Teams chat message retention period to 400 days (Aug 28, 2025)
+- Guide to IT resources for fall 2025 (Aug 26, 2025)
+- New secure storage solution for sensitive and restricted data storage (Aug 01, 2025)
+__________________________________________________
+SC18 Supercomputing Conference Highlights
+At the SC18 supercomputing conference in Dallas, Texas, Purdue showcased its research computing capabilities, aligning with the university's 150th anniversary theme, "Giant Leaps." Highlights include:
+- Mark Daniel Ward discussing data science education at Purdue.
+- A panel on future research in health, aerospace, AI, and climate change.
+- Presentations by ITaP Research Computing staff on various topics, including diversity in high-performance computing (HPC) and research sustainability.
+- Purdue's all-female team, Ada Six, competing in the Student Cluster Competition.
+__________________________________________________
+Purdue ITaP Research Computing Presentations
+ITaP Research Computing staff participated in various sessions at the SC18 conference, including:
+- Alex Younts and Stephen Lien Harrell leading workshops on HPC systems and reproducible workflows.
+- Preston Smith discussing Purdue's community cluster program and research data storage options.
+__________________________________________________
+Purdue Faculty and Staff Contributions to SC18
+Several Purdue faculty and staff played significant roles in the SC18 Planning Committee, contributing to various committees focused on algorithms, scientific visualization, and inclusivity. Notable members include:
+- Ananth Grama and Vetria Byrd serving on specialized committees.
+- Harrell chairing the Exhibitor Forum.
+__________________________________________________
+Contact Information for Purdue IT
+For more information or assistance, users can contact Purdue IT at:
+- Phone: (765) 494-4600
+- Email: mill2027@purdue.edu (Adrienne Miller, science and technology writer)
+__________________________________________________
+Context
+__________________________________________________
+
+================WEBPAGE: 2921=================
+
+WEBPAGE: www.it.purdue.edu_facilities_software_goremote.php
+
+ Information Technology Services Overview
+Purdue University offers a range of IT services to support students, faculty, and staff. Key areas include learning spaces, software access, and remote instructions for software usage. The services are primarily designed for instructional purposes and are restricted to West Lafayette campus students.
+
+
+__________________________________________________
+ Software Remote Instructions
+To access software remotely, users must connect through the Purdue VPN if not on the PAL 3.0 Wi-Fi. The steps to connect are as follows:
+1. Open the Citrix Workspace application (available for download if not pre-installed).
+2. Enter the Store URL: goremote.itap.purdue.edu.
+3. Log in using your career account credentials (no Duo authentication required).
+4. Select the desired software from the Apps menu once the application loads.
+
+If issues arise, users are advised to try the web-based light version of the software. The home directory for Purdue Career Accounts will be accessible as drive W: on the Software Remote server.
+
+
+__________________________________________________
+ Troubleshooting for Software Remote
+For any difficulties encountered while using the Software Remote system, users are encouraged to submit a request via the Purdue IT Service Portal for assistance.
+
+
+__________________________________________________
+ Resources and Links
+- **Campus Map**
+- **Careers**
+- **Center for Healthy Living**
+- **Colleges and Schools**
+- **Directory**
+- **Entrepreneurship and Commercialization**
+- **Human Resources**
+- **Libraries**
+- **BoilerConnect**
+- **Brightspace**
+- **Current Students**
+- **Faculty and Staff**
+- **myPurdue**
+- **Office 365**
+- **OneCampus Portal**
+- **Outlook**
+
+
+__________________________________________________
+ Emergency Information
+Purdue University provides resources for emergency situations, including contact information for the Purdue Hotline and access to timely warnings.
+
+
+__________________________________________________
+ Contact Information
+Purdue University, 610 Purdue Mall, West Lafayette, IN 47907, (765) 494-4600
+
+
+__________________________________________________
+
+__________________________________________________
+
+================WEBPAGE: 2267=================
+
+
+
+Generating final answer with LLM...
+
+Final answer generated.
+
+Final Answer:
+To access Purdue University's High-Performance Computing (HPC) resources, follow these steps:  1.
+**Submit a Request**: You must submit a service request through the "Purdue IT Request" button
+available on the HPC portal. This is the primary method for accessing HPC services and getting your
+inquiries addressed.  2. **RCAC Service Request**: For specific service requests, use the RCAC
+(Research Computing and Analytics Center) Service Request form, which allows you to direct questions
+and requests to the support team.  3. **Account Setup**: If you are new to using HPC resources, you
+will need to request an account. When doing so, be sure to specify your research group, such as the
+"Mathematics Department" if applicable.  4. **Accessing Clusters**: For larger computational tasks,
+depending on your needs, you can connect to various clusters such as Gilbreth (for GPU-intensive
+applications) or Hammer (optimized for high-throughput computing).  5. **User Guides**: Familiarize
+yourself with user guides available for different HPC resources to understand account setup, file
+storage, software usage, and job running procedures.  If you encounter any issues, you can report
+them to the support staff to ensure help is provided promptly.  ### Important Note: This information
+is based on the gathered context, and sourcing additional details directly from Purdue's official
+resources could be beneficial to confirm any updates or specific procedural changes.
+No traversal path to visualize.
+INFO:     195.252.220.21:0 - "POST /prompt HTTP/1.1" 200 OK
+INFO:     173.252.70.7:0 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     64.62.156.222:0 - "GET /.git/config HTTP/1.1" 404 Not Found
+INFO:     205.210.31.44:60804 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     195.252.220.21:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     195.252.220.21:0 - "GET /login HTTP/1.1" 307 Temporary Redirect
+INFO:     195.252.220.21:0 - "GET /chat HTTP/1.1" 200 OK
+INFO:     181.41.206.209:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     181.41.206.209:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     66.132.153.140:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     66.132.153.140:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     66.132.153.140:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     66.132.153.140:0 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     195.184.76.85:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     71.6.199.65:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     195.184.76.145:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     195.184.76.151:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     80.82.77.202:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     80.82.77.202:0 - "GET /aaa9 HTTP/1.1" 404 Not Found
+INFO:     80.82.77.202:0 - "GET /aab9 HTTP/1.1" 404 Not Found
+INFO:     80.82.77.202:0 - "GET /aaa9 HTTP/1.1" 404 Not Found
+INFO:     80.82.77.202:0 - "GET /aab9 HTTP/1.1" 404 Not Found
+INFO:     167.94.138.203:61036 - "GET / HTTP/1.1" 307 Temporary Redirect
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.138.203:21220 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     167.94.138.203:21224 - "PRI %2A HTTP/2.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.138.203:21232 - "GET /login HTTP/1.1" 200 OK
+INFO:     167.94.138.203:21246 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.138.203:24372 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     34.76.210.200:0 - "GET / HTTP/1.1" 307 Temporary Redirect

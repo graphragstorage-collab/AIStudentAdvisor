@@ -1,0 +1,216 @@
+HPC Workshop
+
+This document serves as a repository to learn about Purdue's High-Performance Computing (HPC) resources.
+
+###
+
+Overarching Objective
+
+SLURM is a cluster management utility used to submit jobs to the server. These jobs include specifications for:
+
+1. The actual code to run.
+2. Constraints for:
+   - Walltime: the maximum runtime of the job
+   - Resources: specify GPU (generally any accelerator) count/type
+   - Account: the queue under which the job should run
+   - Node Type: the node on which the job should run
+   - Plus various other specifications; refer to the manual for full details.
+
+You can use SLURM features to list out the node list, CPUs, Memory, available features (resource type), as well as n-GPUs you can request at a time. After meeting the above specifications, jobs are added to a queue and run in weighted priority order, calculated based on past usage, resources, and walltime. The goal of this workshop is to understand and utilize HPC via SLURM.
+
+###
+
+Logging into Clusters
+
+To begin, log in to the cluster using the following command:
+```
+<username>@gilbreth.rcac.purdue.edu
+``` 
+You can log in with your career account password and Duo's 2FA. Once logged in, you will have access to a shell to run commands within the Linux system.
+
+**Protips:**
+1. Append `ServerAliveInterval 60` to `~/.ssh/config` to prevent frozen sessions after long idle periods.
+2. Run `curl https://raw.githubusercontent.com/dylanaraps/neofetch/master/neofetch | bash` to execute neofetch.
+
+###
+
+Configuration 
+
+#### Adding your SSH Key
+
+Using 2FA every time can be cumbersome, especially for frequent logins. Instead, create an SSH Key for secure authentication across various clusters. After creating a key pair, append the public key to `~/.ssh/authorized_keys`. 
+
+If you add your SSH keys to GitHub, you can run the following command in the cluster:
+```
+curl https://github.com/<username>.keys >> ~/.ssh/authorized_keys
+```
+From your local session, you can also run:
+```
+ssh-copy-id <username>@<cluster-address>
+```
+This command should automatically update `~/.ssh/authorized_keys`.
+
+#### Redirecting Cache
+
+The home directory for your gilbreth account is limited to 25GB. Items such as cache, datasets, and large models can quickly use up this storage. Scratch space is available at `/scratch/gilbreth/<username>`, which has a larger storage limit but may be deleted at any time.
+
+We recommend the following storage split:
+1. Code: `$HOME/path/to/repo/`
+2. Data, Model, Cache: `/scratch/gilbreth/username/`
+
+To implement this, update `$XDG_CACHE_HOME` by adding the following line to your `~/.bashrc`:
+```
+export XDG_CACHE_HOME=/scratch/gilbreth/<username>/
+```
+Replace `<username>` with your alias. Run `source ~/.bashrc` to apply the changes. You can then move your cache using:
+```
+mv ~/.cache/* /scratch/gilbreth/<username>
+```
+or remove it with:
+```
+rm -rf ~/.cache
+```
+Use `ncdu` to check storage quota usage.
+
+###
+
+IPython Override
+
+If the incorrect instance of IPython runs, which does not utilize the active environment, override this by creating a wrapper in `~/.local/bin/` as follows:
+```bash
+#!/usr/bin/bash
+python -m IPython
+```
+Name this file `ipython`, make it executable with:
+```
+chmod +x ipython
+```
+Ensure that `~/.local/bin` is included in your `$PATH` by adding:
+```
+export PATH=~/.local/bin:$PATH
+```
+to your `~/.bashrc`.
+
+###
+
+Interactive Jobs
+
+To configure an interactive job and explore the runtime environment before running non-interactively, use:
+```
+sinteractive -A <account> -N <number of nodes> -n <number of tasks> -c <cpus/task> -G <number of GPUs> -t <job walltime>
+```
+Run `nvidia-smi` to check out your new A100! 
+
+###
+
+Creating a Runtime Environment
+
+#### Loading Data
+
+For your specific task, data can be loaded in two ways:
+1. If you are on an RCAC cluster, run `scripts/prepare.sh` to link the directory from the MLP data depot directly.
+2. Otherwise, use `scripts/download.sh` to pull the dataset from the remote repository, noting this may take longer and will count against your quota.
+
+#### Loading Modules
+
+With compute resources allocated, the next step is to set up runtime dependencies. Check if Python is available with:
+```
+python --version
+```
+If not found, load dependencies using:
+```
+module load cuda anaconda
+```
+You can manage modules with these commands:
+1. List loaded modules: `module list`
+2. Reset modules: `module purge`
+3. List all available modules: `module av`
+4. Obtain extended descriptions: `module spider <name/version>`
+
+#### Setting up Python Dependencies
+
+Install an updated instance of Python using conda:
+```
+conda create -n <name> python=<version>
+conda activate <name>
+```
+Optionally, install `uv` to speed up package installation times. Clone the repository and install package dependencies:
+If you've installed `uv`:
+```
+uv pip install -r requirements.txt
+```
+If you haven't:
+```
+pip install -r requirements.txt
+```
+You are now ready to begin the training run!
+
+###
+
+Preparing the Run
+
+Create a bash script that:
+1. Lists SLURM constraints with: `#SBATCH --<constraint>=<value>`
+2. Loads required modules and dependencies.
+3. Executes the training run.
+
+Find examples in `scripts/train/` that cover popular server choices. Submit this script using:
+```
+sbatch path/to/script.sh
+```
+Note: you may need to update the `cd` path to the relevant project root.
+
+###
+
+Monitoring the Job
+
+Check the job status using:
+```
+squeue -u <username>
+```
+This will display a summary of the jobs, including their status.
+
+To check available resources per account on Gilbreth, execute:
+```
+qlist
+```
+Log into currently running jobs with:
+```
+srun --jobid=<jobid> --pty /usr/bin/bash -i
+```
+Cancel a queued or running job using:
+```
+scancel <jobid>
+```
+
+###
+
+Multi-GPU Runs
+
+Utilizing multiple GPUs can significantly accelerate training. Example code in `src/model/train.py` illustrates the setup process for Distributed Data Parallel (DDP), including logging and syncing metrics across devices.
+
+#### Checkpointing
+
+To ensure that training runs that are terminated early don’t result in wasted effort, checkpointing is essential. SLURM typically prevents resource conflicts that could lead to crashes, but it remains important to incorporate checkpointing in your code.
+
+#### Timed / Keyboard Interrupted Early Stopping
+
+SLURM jobs are timed, so it’s crucial to ensure they end within the allotted time. A timed shutdown of training can prevent overruns, complemented by Keyboard Interrupts for manual exits.
+
+###
+
+Some MLOps Details
+
+This setup is non-interactive, meaning you can update constants and rerun training setups without needing your local machine on during these runs. Port forwarding Jupyter Notebooks for training is not recommended due to reproducibility concerns.
+
+Recommended practices include:
+1. Cookiecutter Data Science for a package-based structure for machine learning code.
+2. MLFlow / WandB for experiment tracking.
+
+###
+
+Fantastic Resources
+
+1. [RCAC SLURM Guide](#)
+2. [Cheatsheet](#)
+3. [SLURM Documentation](#)

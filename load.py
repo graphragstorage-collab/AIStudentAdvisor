@@ -1396,7 +1396,7 @@ class QueryEngine:
         print("\nRetrieving relevant documents...")
 
         before = time.time()
-        docs = self.vector_store.similarity_search(query, k=30)
+        docs = self.vector_store.similarity_search(query, k=100)
        
         # docs = compress_docs(orig_query, docs)  # custom compression
        
