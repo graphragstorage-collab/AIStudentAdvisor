@@ -1,5 +1,5 @@
 1. Set up sql database:
-	1. All documents in user_uploads should be tracked by their time of upload, filename, the user who uploaded the infromation, number of succesful RAG queries (thumbs up) and unsuccessful. (This allows us to prune out database at a later time).
+	a. All documents in user_uploads should be tracked by their time of upload, filename, the user who uploaded the infromation, number of succesful RAG queries (thumbs up) and unsuccessful. (This allows us to prune out database at a later time).
 
 2. Add a student chat room. Students can ask questions and get their questions answered. These questions and their answers will be stored in a database as well, sorted by class. The chat room will be divided by class and topics, and students can choose where to post their information. The database will use one of its columns to track this. If a student has a similar question to the user, there can be an option to subsitute that question for the current student's question. A question can also reference documents if it has a successful answer (user liked the question). 													
 3. train local LLM model
@@ -7,3 +7,9 @@
 4. Organize the graph tool 
 
 5. Organize website
+
+6. Crawl course catalogue for all engineering and CS and DS courses. Ideally also crawl all prereq sheets for each class in all three majors.
+
+7. Get a TON more emails to use on API keys.
+
+8. Finish cleaner.py module 

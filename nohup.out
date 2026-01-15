@@ -29729,3 +29729,4398 @@ INFO:     167.94.138.203:21246 - "GET /favicon.ico HTTP/1.1" 404 Not Found
 WARNING:  Invalid HTTP request received.
 INFO:     167.94.138.203:24372 - "GET /robots.txt HTTP/1.1" 404 Not Found
 INFO:     34.76.210.200:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+/root/GraphPackage/venv/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+INFO:     Started server process [938750]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+HERE
+HERE2
+Loading GraphRAG…
+✓ GraphRAG initialized (empty state)
+✓ GraphRAG Loaded.
+🚀 Starting GraphRAG Chat Server at http://localhost:8000/
+INFO:     92.63.197.50:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     92.63.197.50:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     195.252.220.62:0 - "GET /chat HTTP/1.1" 200 OK
+
+======== RECEIVED QUERY ========
+user: hi
+
+==============================
+current question: hi ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: INAPPLICABLE
+INFO:     195.252.220.62:0 - "POST /prompt HTTP/1.1" 200 OK
+
+======== RECEIVED QUERY ========
+user: hi
+
+model: I can only assist with academic advising questions.
+
+user: Tell me about CS182
+
+==============================
+current question: Tell me about CS182 ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: ADVISOR
+
+Rewritten query for RAG: cs182 course information spring 2026 + user: hi
+
+model: I can only assist with academic advising questions.
+
+user: Tell me about CS182
+
+==============================
+current question: Tell me about CS182
+
+Processing query: cs182 course information spring 2026 + user: hi
+
+model: I can only assist with academic advising questions.
+
+user: Tell me about CS182
+
+==============================
+current question: Tell me about CS182
+
+Retrieving relevant documents...
+time for retriever: 0.2544991970062256
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Generating final answer with LLM...
+
+Final answer generated.
+
+Final Answer:
+**CS 18200 - Foundations Of Computer Science** is a core course in the computer science curriculum,
+focusing on the fundamental principles and concepts that form the basis of computer science.   ###
+Course Topics May Include: - Basic programming concepts - Introduction to algorithms and data
+structures - Problem-solving techniques - Understanding key computer science concepts that will be
+applicable in advanced courses  ### Instructors: - Sarah H. Sellke - Wojciech Szpankowski  ###
+Additional Information: - The specific time for classes has not been captured in the current
+context.  If you have more specific questions or need details about prerequisites and grading, feel
+free to ask!
+No traversal path to visualize.
+INFO:     195.252.220.62:0 - "POST /prompt HTTP/1.1" 200 OK
+
+======== RECEIVED QUERY ========
+user: hi
+
+model: I can only assist with academic advising questions.
+
+user: Tell me about CS182
+
+model: **CS 18200 - Foundations Of Computer Science** is a core course in the computer science curriculum, focusing on the fundamental principles and concepts that form the basis of computer science. 
+
+### Course Topics May Include:
+- Basic programming concepts
+- Introduction to algorithms and data structures
+- Problem-solving techniques
+- Understanding key computer science concepts that will be appl ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: ADVISOR
+
+Rewritten query for RAG: cs 240 course information spring 2026 + user: hi
+
+model: I can only assist with academic advising questions.
+
+user: Tell me about CS182
+
+model: **CS 18200 - Foundations Of Computer Science** is a core course in the computer science curriculum, focusing on the fundamental principles and concepts that form the basis of computer science. 
+
+### Course Topics May Include:
+- Basic programming concepts
+- Introduction to algorithms and data structures
+- Problem-solving techniques
+- Understanding key computer science concepts that will be applicable in advanced courses
+
+### Instructors:
+- Sarah H. Sellke
+- Wojciech Szpankowski
+
+### Additional Information:
+- The specific time for classes has not been captured in the current context.
+
+If you have more specific questions or need details about prerequisites and grading, feel free to ask!
+
+user: Tell me about CS240
+
+==============================
+current question: Tell me about CS240
+
+Processing query: cs 240 course information spring 2026 + user: hi
+
+model: I can only assist with academic advising questions.
+
+user: Tell me about CS182
+
+model: **CS 18200 - Foundations Of Computer Science** is a core course in the computer science curriculum, focusing on the fundamental principles and concepts that form the basis of computer science. 
+
+### Course Topics May Include:
+- Basic programming concepts
+- Introduction to algorithms and data structures
+- Problem-solving techniques
+- Understanding key computer science concepts that will be applicable in advanced courses
+
+### Instructors:
+- Sarah H. Sellke
+- Wojciech Szpankowski
+
+### Additional Information:
+- The specific time for classes has not been captured in the current context.
+
+If you have more specific questions or need details about prerequisites and grading, feel free to ask!
+
+user: Tell me about CS240
+
+==============================
+current question: Tell me about CS240
+
+Retrieving relevant documents...
+time for retriever: 0.33998918533325195
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Generating final answer with LLM...
+
+Final answer generated.
+
+Final Answer:
+### CS 24000 - Programming In C  **Instructor:** Christopher K. May  **Course Description:** CS
+24000 focuses on the C programming language, emphasizing programming techniques, software
+development, and problem-solving strategies. The course is designed to help students become
+proficient in writing and debugging C programs.  ### Key Topics May Include: - Basics of C
+programming - Control structures (if statements, loops) - Functions and modular programming - Arrays
+and strings - Pointers and dynamic memory management - Structures and file operations  ###
+Additional Information: - The specific time for classes has not been captured in the current
+context.  If you have more specific questions or need details about prerequisites, assignments, or
+grading, feel free to ask!
+No traversal path to visualize.
+INFO:     195.252.220.62:0 - "POST /prompt HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+
+======== RECEIVED QUERY ========
+user: hi
+
+model: I can only assist with academic advising questions.
+
+user: Tell me about CS182
+
+model: **CS 18200 - Foundations Of Computer Science** is a core course in the computer science curriculum, focusing on the fundamental principles and concepts that form the basis of computer science. 
+
+### Course Topics May Include:
+- Basic programming concepts
+- Introduction to algorithms and data structures
+- Problem-solving techniques
+- Understanding key computer science concepts that will be appl ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: GRAPH_RAG
+
+Rewritten query for RAG: CS182 and CS240 course information spring 2026 + user: hi
+
+model: I can only assist with academic advising questions.
+
+user: Tell me about CS182
+
+model: **CS 18200 - Foundations Of Computer Science** is a core course in the computer science curriculum, focusing on the fundamental principles and concepts that form the basis of computer science. 
+
+### Course Topics May Include:
+- Basic programming concepts
+- Introduction to algorithms and data structures
+- Problem-solving techniques
+- Understanding key computer science concepts that will be applicable in advanced courses
+
+### Instructors:
+- Sarah H. Sellke
+- Wojciech Szpankowski
+
+### Additional Information:
+- The specific time for classes has not been captured in the current context.
+
+If you have more specific questions or need details about prerequisites and grading, feel free to ask!
+
+user: Tell me about CS240
+
+model: ### CS 24000 - Programming In C
+
+**Instructor:** Christopher K. May
+
+**Course Description:**
+CS 24000 focuses on the C programming language, emphasizing programming techniques, software development, and problem-solving strategies. The course is designed to help students become proficient in writing and debugging C programs.
+
+### Key Topics May Include:
+- Basics of C programming
+- Control structures (if statements, loops)
+- Functions and modular programming
+- Arrays and strings
+- Pointers and dynamic memory management
+- Structures and file operations
+
+### Additional Information:
+- The specific time for classes has not been captured in the current context.
+
+If you have more specific questions or need details about prerequisites, assignments, or grading, feel free to ask!
+
+user: for 2026
+
+==============================
+current question: for 2026
+
+Processing query: CS182 and CS240 course information spring 2026 + user: hi
+
+model: I can only assist with academic advising questions.
+
+user: Tell me about CS182
+
+model: **CS 18200 - Foundations Of Computer Science** is a core course in the computer science curriculum, focusing on the fundamental principles and concepts that form the basis of computer science. 
+
+### Course Topics May Include:
+- Basic programming concepts
+- Introduction to algorithms and data structures
+- Problem-solving techniques
+- Understanding key computer science concepts that will be applicable in advanced courses
+
+### Instructors:
+- Sarah H. Sellke
+- Wojciech Szpankowski
+
+### Additional Information:
+- The specific time for classes has not been captured in the current context.
+
+If you have more specific questions or need details about prerequisites and grading, feel free to ask!
+
+user: Tell me about CS240
+
+model: ### CS 24000 - Programming In C
+
+**Instructor:** Christopher K. May
+
+**Course Description:**
+CS 24000 focuses on the C programming language, emphasizing programming techniques, software development, and problem-solving strategies. The course is designed to help students become proficient in writing and debugging C programs.
+
+### Key Topics May Include:
+- Basics of C programming
+- Control structures (if statements, loops)
+- Functions and modular programming
+- Arrays and strings
+- Pointers and dynamic memory management
+- Structures and file operations
+
+### Additional Information:
+- The specific time for classes has not been captured in the current context.
+
+If you have more specific questions or need details about prerequisites, assignments, or grading, feel free to ask!
+
+user: for 2026
+
+==============================
+current question: for 2026
+
+Retrieving relevant documents...
+time for retriever: 0.3758506774902344
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Generating final answer with LLM...
+
+Final answer generated.
+
+Final Answer:
+### CS 24000 - Programming In C (Spring 2026)  - **Instructor:** Christopher K. May   - **Course
+Description:**   CS 24000 focuses on the C programming language, emphasizing programming techniques,
+software development, and problem-solving strategies. The course is designed to help students become
+proficient in writing and debugging C programs.  ### Key Topics May Include: - Basics of C
+programming - Control structures (if statements, loops) - Functions and modular programming - Arrays
+and strings - Pointers and dynamic memory management - Structures and file operations  ###
+Additional Information: - The specific class time has not been captured in the provided context.  If
+you have more specific questions regarding prerequisites, assignments, or grading details, feel free
+to ask!
+No traversal path to visualize.
+INFO:     195.252.220.62:0 - "POST /prompt HTTP/1.1" 200 OK
+INFO:     216.180.246.120:31840 - "GET / HTTP/1.1" 307 Temporary Redirect
+
+======== RECEIVED QUERY ========
+user: hi
+
+model: I can only assist with academic advising questions.
+
+user: Tell me about CS182
+
+model: **CS 18200 - Foundations Of Computer Science** is a core course in the computer science curriculum, focusing on the fundamental principles and concepts that form the basis of computer science. 
+
+### Course Topics May Include:
+- Basic programming concepts
+- Introduction to algorithms and data structures
+- Problem-solving techniques
+- Understanding key computer science concepts that will be appl ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: ADVISOR
+
+Rewritten query for RAG: CS 24000 Programming In C Spring 2026 course information + user: hi
+
+model: I can only assist with academic advising questions.
+
+user: Tell me about CS182
+
+model: **CS 18200 - Foundations Of Computer Science** is a core course in the computer science curriculum, focusing on the fundamental principles and concepts that form the basis of computer science. 
+
+### Course Topics May Include:
+- Basic programming concepts
+- Introduction to algorithms and data structures
+- Problem-solving techniques
+- Understanding key computer science concepts that will be applicable in advanced courses
+
+### Instructors:
+- Sarah H. Sellke
+- Wojciech Szpankowski
+
+### Additional Information:
+- The specific time for classes has not been captured in the current context.
+
+If you have more specific questions or need details about prerequisites and grading, feel free to ask!
+
+user: Tell me about CS240
+
+model: ### CS 24000 - Programming In C
+
+**Instructor:** Christopher K. May
+
+**Course Description:**
+CS 24000 focuses on the C programming language, emphasizing programming techniques, software development, and problem-solving strategies. The course is designed to help students become proficient in writing and debugging C programs.
+
+### Key Topics May Include:
+- Basics of C programming
+- Control structures (if statements, loops)
+- Functions and modular programming
+- Arrays and strings
+- Pointers and dynamic memory management
+- Structures and file operations
+
+### Additional Information:
+- The specific time for classes has not been captured in the current context.
+
+If you have more specific questions or need details about prerequisites, assignments, or grading, feel free to ask!
+
+user: for 2026
+
+model: ### CS 24000 - Programming In C (Spring 2026)
+
+- **Instructor:** Christopher K. May  
+- **Course Description:**  
+CS 24000 focuses on the C programming language, emphasizing programming techniques, software development, and problem-solving strategies. The course is designed to help students become proficient in writing and debugging C programs.
+
+### Key Topics May Include:
+- Basics of C programming
+- Control structures (if statements, loops)
+- Functions and modular programming
+- Arrays and strings
+- Pointers and dynamic memory management
+- Structures and file operations
+
+### Additional Information:
+- The specific class time has not been captured in the provided context.
+
+If you have more specific questions regarding prerequisites, assignments, or grading details, feel free to ask!
+
+user: for spring 2026
+
+==============================
+current question: for spring 2026
+
+Processing query: CS 24000 Programming In C Spring 2026 course information + user: hi
+
+model: I can only assist with academic advising questions.
+
+user: Tell me about CS182
+
+model: **CS 18200 - Foundations Of Computer Science** is a core course in the computer science curriculum, focusing on the fundamental principles and concepts that form the basis of computer science. 
+
+### Course Topics May Include:
+- Basic programming concepts
+- Introduction to algorithms and data structures
+- Problem-solving techniques
+- Understanding key computer science concepts that will be applicable in advanced courses
+
+### Instructors:
+- Sarah H. Sellke
+- Wojciech Szpankowski
+
+### Additional Information:
+- The specific time for classes has not been captured in the current context.
+
+If you have more specific questions or need details about prerequisites and grading, feel free to ask!
+
+user: Tell me about CS240
+
+model: ### CS 24000 - Programming In C
+
+**Instructor:** Christopher K. May
+
+**Course Description:**
+CS 24000 focuses on the C programming language, emphasizing programming techniques, software development, and problem-solving strategies. The course is designed to help students become proficient in writing and debugging C programs.
+
+### Key Topics May Include:
+- Basics of C programming
+- Control structures (if statements, loops)
+- Functions and modular programming
+- Arrays and strings
+- Pointers and dynamic memory management
+- Structures and file operations
+
+### Additional Information:
+- The specific time for classes has not been captured in the current context.
+
+If you have more specific questions or need details about prerequisites, assignments, or grading, feel free to ask!
+
+user: for 2026
+
+model: ### CS 24000 - Programming In C (Spring 2026)
+
+- **Instructor:** Christopher K. May  
+- **Course Description:**  
+CS 24000 focuses on the C programming language, emphasizing programming techniques, software development, and problem-solving strategies. The course is designed to help students become proficient in writing and debugging C programs.
+
+### Key Topics May Include:
+- Basics of C programming
+- Control structures (if statements, loops)
+- Functions and modular programming
+- Arrays and strings
+- Pointers and dynamic memory management
+- Structures and file operations
+
+### Additional Information:
+- The specific class time has not been captured in the provided context.
+
+If you have more specific questions regarding prerequisites, assignments, or grading details, feel free to ask!
+
+user: for spring 2026
+
+==============================
+current question: for spring 2026
+
+Retrieving relevant documents...
+time for retriever: 0.402280330657959
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Generating final answer with LLM...
+
+Final answer generated.
+
+Final Answer:
+### CS 24000 - Programming In C (Spring 2026)  - **Instructor:** Christopher K. May   - **Course
+Description:**   CS 24000 focuses on the C programming language, emphasizing programming techniques,
+software development, and problem-solving strategies. The course is designed to help students become
+proficient in writing and debugging C programs.  ### Key Topics May Include: - Basics of C
+programming - Control structures (if statements, loops) - Functions and modular programming - Arrays
+and strings - Pointers and dynamic memory management - Structures and file operations  ###
+Additional Information: - The specific class time has not been captured in the provided context.  If
+you need more specific information regarding prerequisites, assignments, or grading details, feel
+free to ask!
+No traversal path to visualize.
+INFO:     195.252.220.62:0 - "POST /prompt HTTP/1.1" 200 OK
+INFO:     195.252.220.62:0 - "GET /chat HTTP/1.1" 200 OK
+
+======== RECEIVED QUERY ========
+user: for cs240 who is the instructor for spring 2026?
+
+==============================
+current question: for cs240 who is the instructor for spring 2026? ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: GRAPH_RAG
+
+Rewritten query for RAG: cs240 spring 2026 instructor name + user: for cs240 who is the instructor for spring 2026?
+
+==============================
+current question: for cs240 who is the instructor for spring 2026?
+
+Processing query: cs240 spring 2026 instructor name + user: for cs240 who is the instructor for spring 2026?
+
+==============================
+current question: for cs240 who is the instructor for spring 2026?
+
+Retrieving relevant documents...
+time for retriever: 0.36005258560180664
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Generating final answer with LLM...
+
+Final answer generated.
+
+Final Answer:
+The instructor for **CS 24000 Programming In C** in Spring 2026 is **Jeffrey A. Turkstra**.
+No traversal path to visualize.
+INFO:     195.252.220.62:0 - "POST /prompt HTTP/1.1" 200 OK
+
+======== RECEIVED QUERY ========
+user: for cs240 who is the instructor for spring 2026?
+
+model: The instructor for **CS 24000 Programming In C** in Spring 2026 is **Jeffrey A. Turkstra**.
+
+user: who is the instructor for CS252?
+
+==============================
+current question: who is the instructor for CS252? ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: GRAPH_RAG
+
+Rewritten query for RAG: cs252 spring 2026 instructor information + user: for cs240 who is the instructor for spring 2026?
+
+model: The instructor for **CS 24000 Programming In C** in Spring 2026 is **Jeffrey A. Turkstra**.
+
+user: who is the instructor for CS252?
+
+==============================
+current question: who is the instructor for CS252?
+
+Processing query: cs252 spring 2026 instructor information + user: for cs240 who is the instructor for spring 2026?
+
+model: The instructor for **CS 24000 Programming In C** in Spring 2026 is **Jeffrey A. Turkstra**.
+
+user: who is the instructor for CS252?
+
+==============================
+current question: who is the instructor for CS252?
+
+Retrieving relevant documents...
+time for retriever: 0.32052063941955566
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Generating final answer with LLM...
+
+Final answer generated.
+
+Final Answer:
+The instructor for **CS 25200 Systems Programming** in Spring 2026 is **Gustavo Adolfo Junipero
+Rodriguez-Rivera** and **Dave (Jing) Tian**.
+No traversal path to visualize.
+INFO:     195.252.220.62:0 - "POST /prompt HTTP/1.1" 200 OK
+
+======== RECEIVED QUERY ========
+user: for cs240 who is the instructor for spring 2026?
+
+model: The instructor for **CS 24000 Programming In C** in Spring 2026 is **Jeffrey A. Turkstra**.
+
+user: who is the instructor for CS252?
+
+model: The instructor for **CS 25200 Systems Programming** in Spring 2026 is **Gustavo Adolfo Junipero Rodriguez-Rivera** and **Dave (Jing) Tian**.
+
+user: who are some Tasty for cs348 I can contact?
+
+==============================
+current question: who are some Tasty for cs348 I can contact? ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: GRAPH_RAG
+
+Rewritten query for RAG: cs348 teaching assistants spring 2026 contact information + user: for cs240 who is the instructor for spring 2026?
+
+model: The instructor for **CS 24000 Programming In C** in Spring 2026 is **Jeffrey A. Turkstra**.
+
+user: who is the instructor for CS252?
+
+model: The instructor for **CS 25200 Systems Programming** in Spring 2026 is **Gustavo Adolfo Junipero Rodriguez-Rivera** and **Dave (Jing) Tian**.
+
+user: who are some Tasty for cs348 I can contact?
+
+==============================
+current question: who are some Tasty for cs348 I can contact?
+
+Processing query: cs348 teaching assistants spring 2026 contact information + user: for cs240 who is the instructor for spring 2026?
+
+model: The instructor for **CS 24000 Programming In C** in Spring 2026 is **Jeffrey A. Turkstra**.
+
+user: who is the instructor for CS252?
+
+model: The instructor for **CS 25200 Systems Programming** in Spring 2026 is **Gustavo Adolfo Junipero Rodriguez-Rivera** and **Dave (Jing) Tian**.
+
+user: who are some Tasty for cs348 I can contact?
+
+==============================
+current question: who are some Tasty for cs348 I can contact?
+
+Retrieving relevant documents...
+time for retriever: 0.19901084899902344
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Generating final answer with LLM...
+
+Final answer generated.
+
+Final Answer:
+For CS 34800, you can contact the following Teaching Assistants (TAs):  - **Xi Pang** (Head TA) -
+[pang65@purdue.edu](mailto:pang65@purdue.edu) - **Yinqi Sun** (HW1 Lead TA) -
+[sun1226@purdue.edu](mailto:sun1226@purdue.edu) - **Yeasir Rayhan** (HW6 Lead TA) -
+[yrayhan@purdue.edu](mailto:yrayhan@purdue.edu) - **Chenzhe Jin** (HW3 Lead TA) -
+[jin467@purdue.edu](mailto:jin467@purdue.edu) - **Xiao Hu** -
+[hu953@purdue.edu](mailto:hu953@purdue.edu) - **Yunxin Sun** (HW2 Lead TA) -
+[sun1114@purdue.edu](mailto:sun1114@purdue.edu) - **Yibo Wang** (HW5 Lead TA) -
+[wang7342@purdue.edu](mailto:wang7342@purdue.edu) - **Xinzhi Wang** (HW4 Lead TA) -
+[wang6171@purdue.edu](mailto:wang6171@purdue.edu) - **Jerry B. Liu** -
+[jbliu@purdue.edu](mailto:jbliu@purdue.edu)  Feel free to reach out to them for assistance with your
+coursework.
+No traversal path to visualize.
+INFO:     195.252.220.62:0 - "POST /prompt HTTP/1.1" 200 OK
+INFO:     216.180.246.120:28408 - "GET /manage/account/login HTTP/1.1" 404 Not Found
+INFO:     195.252.220.62:0 - "GET /chat HTTP/1.1" 200 OK
+INFO:     216.180.246.120:51352 - "GET /admin/index.html HTTP/1.1" 404 Not Found
+
+======== RECEIVED QUERY ========
+user: How do you contact the cs348 instructor?
+
+==============================
+current question: How do you contact the cs348 instructor? ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: GRAPH_RAG
+
+Rewritten query for RAG: cs348 instructor contact information spring 2026 + user: How do you contact the cs348 instructor?
+
+==============================
+current question: How do you contact the cs348 instructor?
+
+Processing query: cs348 instructor contact information spring 2026 + user: How do you contact the cs348 instructor?
+
+==============================
+current question: How do you contact the cs348 instructor?
+
+Retrieving relevant documents...
+time for retriever: 0.2646934986114502
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Generating final answer with LLM...
+
+Final answer generated.
+
+Final Answer:
+To contact the CS 34800 instructor, Hisham Benotman, you can email him at
+[hbenotma@purdue.edu](mailto:hbenotma@purdue.edu). Additionally, he is available for office hours by
+appointment via email and is also available after class for urgent questions.
+No traversal path to visualize.
+INFO:     195.252.220.62:0 - "POST /prompt HTTP/1.1" 200 OK
+
+======== RECEIVED QUERY ========
+user: How do you contact the cs348 instructor?
+
+model: To contact the CS 34800 instructor, Hisham Benotman, you can email him at [hbenotma@purdue.edu](mailto:hbenotma@purdue.edu). Additionally, he is available for office hours by appointment via email and is also available after class for urgent questions.
+
+user: What is the link/url for the cs348 schedule?
+
+==============================
+current question: What is the link/url for the cs348 schedule? ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: GRAPH_RAG
+
+Rewritten query for RAG: cs348 spring 2026 course schedule url + user: How do you contact the cs348 instructor?
+
+model: To contact the CS 34800 instructor, Hisham Benotman, you can email him at [hbenotma@purdue.edu](mailto:hbenotma@purdue.edu). Additionally, he is available for office hours by appointment via email and is also available after class for urgent questions.
+
+user: What is the link/url for the cs348 schedule?
+
+==============================
+current question: What is the link/url for the cs348 schedule?
+
+Processing query: cs348 spring 2026 course schedule url + user: How do you contact the cs348 instructor?
+
+model: To contact the CS 34800 instructor, Hisham Benotman, you can email him at [hbenotma@purdue.edu](mailto:hbenotma@purdue.edu). Additionally, he is available for office hours by appointment via email and is also available after class for urgent questions.
+
+user: What is the link/url for the cs348 schedule?
+
+==============================
+current question: What is the link/url for the cs348 schedule?
+
+Retrieving relevant documents...
+time for retriever: 0.2547643184661865
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Generating final answer with LLM...
+
+Final answer generated.
+
+Final Answer:
+The link for the CS 34800 course schedule is [Course Schedule](https://docs.google.com/spreadsheets/
+d/1mov5_UbuG9F6wt_QZWm8yGn4kfpkYqokqkzzgk0kwOU/edit?usp=sharing).
+No traversal path to visualize.
+INFO:     195.252.220.62:0 - "POST /prompt HTTP/1.1" 200 OK
+INFO:     216.180.246.120:12958 - "GET /index.html HTTP/1.1" 404 Not Found
+
+======== RECEIVED QUERY ========
+user: How do you contact the cs348 instructor?
+
+model: To contact the CS 34800 instructor, Hisham Benotman, you can email him at [hbenotma@purdue.edu](mailto:hbenotma@purdue.edu). Additionally, he is available for office hours by appointment via email and is also available after class for urgent questions.
+
+user: What is the link/url for the cs348 schedule?
+
+model: The link for the CS 34800 course schedule is [Course Schedule](https://docs.google.com/spreadsheets/d/1mov5_UbuG9F6wt_QZWm8yGn4kfpkY ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: INAPPLICABLE
+INFO:     195.252.220.62:0 - "POST /prompt HTTP/1.1" 200 OK
+
+======== RECEIVED QUERY ========
+user: How do you contact the cs348 instructor?
+
+model: To contact the CS 34800 instructor, Hisham Benotman, you can email him at [hbenotma@purdue.edu](mailto:hbenotma@purdue.edu). Additionally, he is available for office hours by appointment via email and is also available after class for urgent questions.
+
+user: What is the link/url for the cs348 schedule?
+
+model: The link for the CS 34800 course schedule is [Course Schedule](https://docs.google.com/spreadsheets/d/1mov5_UbuG9F6wt_QZWm8yGn4kfpkY ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: GRAPH_RAG
+
+Rewritten query for RAG: stochastic calculus explanation, mathematical concepts and applications in probability theory and finance + user: How do you contact the cs348 instructor?
+
+model: To contact the CS 34800 instructor, Hisham Benotman, you can email him at [hbenotma@purdue.edu](mailto:hbenotma@purdue.edu). Additionally, he is available for office hours by appointment via email and is also available after class for urgent questions.
+
+user: What is the link/url for the cs348 schedule?
+
+model: The link for the CS 34800 course schedule is [Course Schedule](https://docs.google.com/spreadsheets/d/1mov5_UbuG9F6wt_QZWm8yGn4kfpkYqokqkzzgk0kwOU/edit?usp=sharing).
+
+user: thanks
+
+model: I can only assist with academic advising questions.
+
+user: can you explain stochastic calculus to me?
+
+==============================
+current question: can you explain stochastic calculus to me?
+
+Processing query: stochastic calculus explanation, mathematical concepts and applications in probability theory and finance + user: How do you contact the cs348 instructor?
+
+model: To contact the CS 34800 instructor, Hisham Benotman, you can email him at [hbenotma@purdue.edu](mailto:hbenotma@purdue.edu). Additionally, he is available for office hours by appointment via email and is also available after class for urgent questions.
+
+user: What is the link/url for the cs348 schedule?
+
+model: The link for the CS 34800 course schedule is [Course Schedule](https://docs.google.com/spreadsheets/d/1mov5_UbuG9F6wt_QZWm8yGn4kfpkYqokqkzzgk0kwOU/edit?usp=sharing).
+
+user: thanks
+
+model: I can only assist with academic advising questions.
+
+user: can you explain stochastic calculus to me?
+
+==============================
+current question: can you explain stochastic calculus to me?
+
+Retrieving relevant documents...
+time for retriever: 0.13744497299194336
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Final Answer:
+
+Rewriting: Attempt 1: stochastic calculus explanation, mathematical concepts and applications in probability theory and finance + user: How do you contact the cs348 instructor?
+
+model: To contact the CS 34800 instructor, Hisham Benotman, you can email him at [hbenotma@purdue.edu](mailto:hbenotma@purdue.edu). Additionally, he is available for office hours by appointment via email and is also available after class for urgent questions.
+
+user: What is the link/url for the cs348 schedule?
+
+model: The link for the CS 34800 course schedule is [Course Schedule](https://docs.google.com/spreadsheets/d/1mov5_UbuG9F6wt_QZWm8yGn4kfpkYqokqkzzgk0kwOU/edit?usp=sharing).
+
+user: thanks
+
+model: I can only assist with academic advising questions.
+
+user: can you explain stochastic calculus to me?
+
+==============================
+current question: can you explain stochastic calculus to me?
+
+
+Processing query: What are the key concepts and applications of stochastic calculus in probability theory and finance?
+
+Retrieving relevant documents...
+time for retriever: 0.15030622482299805
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Final Answer:
+
+Rewriting: Attempt 1: stochastic calculus explanation, mathematical concepts and applications in probability theory and finance + user: How do you contact the cs348 instructor?
+
+model: To contact the CS 34800 instructor, Hisham Benotman, you can email him at [hbenotma@purdue.edu](mailto:hbenotma@purdue.edu). Additionally, he is available for office hours by appointment via email and is also available after class for urgent questions.
+
+user: What is the link/url for the cs348 schedule?
+
+model: The link for the CS 34800 course schedule is [Course Schedule](https://docs.google.com/spreadsheets/d/1mov5_UbuG9F6wt_QZWm8yGn4kfpkYqokqkzzgk0kwOU/edit?usp=sharing).
+
+user: thanks
+
+model: I can only assist with academic advising questions.
+
+user: can you explain stochastic calculus to me?
+
+==============================
+current question: can you explain stochastic calculus to me?
+Attempt 2: What are the key concepts and applications of stochastic calculus in probability theory and finance?
+
+
+Processing query: What are the fundamental principles, mathematical concepts, and real-world applications of stochastic calculus, including its role in probability theory and finance, such as option pricing and risk analysis?
+
+Retrieving relevant documents...
+time for retriever: 0.1702713966369629
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Final Answer:
+
+Rewriting: Attempt 1: stochastic calculus explanation, mathematical concepts and applications in probability theory and finance + user: How do you contact the cs348 instructor?
+
+model: To contact the CS 34800 instructor, Hisham Benotman, you can email him at [hbenotma@purdue.edu](mailto:hbenotma@purdue.edu). Additionally, he is available for office hours by appointment via email and is also available after class for urgent questions.
+
+user: What is the link/url for the cs348 schedule?
+
+model: The link for the CS 34800 course schedule is [Course Schedule](https://docs.google.com/spreadsheets/d/1mov5_UbuG9F6wt_QZWm8yGn4kfpkYqokqkzzgk0kwOU/edit?usp=sharing).
+
+user: thanks
+
+model: I can only assist with academic advising questions.
+
+user: can you explain stochastic calculus to me?
+
+==============================
+current question: can you explain stochastic calculus to me?
+Attempt 2: What are the key concepts and applications of stochastic calculus in probability theory and finance?
+Attempt 3: What are the fundamental principles, mathematical concepts, and real-world applications of stochastic calculus, including its role in probability theory and finance, such as option pricing and risk analysis?
+
+
+Processing query: What are the core mathematical concepts, key theorems, and practical applications of stochastic calculus, including its use in modeling random processes, option pricing, and risk management in finance, as well as its relationship to probability theory and other areas of mathematics?
+
+Retrieving relevant documents...
+time for retriever: 0.3237438201904297
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Final Answer:
+
+Rewriting: Attempt 1: stochastic calculus explanation, mathematical concepts and applications in probability theory and finance + user: How do you contact the cs348 instructor?
+
+model: To contact the CS 34800 instructor, Hisham Benotman, you can email him at [hbenotma@purdue.edu](mailto:hbenotma@purdue.edu). Additionally, he is available for office hours by appointment via email and is also available after class for urgent questions.
+
+user: What is the link/url for the cs348 schedule?
+
+model: The link for the CS 34800 course schedule is [Course Schedule](https://docs.google.com/spreadsheets/d/1mov5_UbuG9F6wt_QZWm8yGn4kfpkYqokqkzzgk0kwOU/edit?usp=sharing).
+
+user: thanks
+
+model: I can only assist with academic advising questions.
+
+user: can you explain stochastic calculus to me?
+
+==============================
+current question: can you explain stochastic calculus to me?
+Attempt 2: What are the key concepts and applications of stochastic calculus in probability theory and finance?
+Attempt 3: What are the fundamental principles, mathematical concepts, and real-world applications of stochastic calculus, including its role in probability theory and finance, such as option pricing and risk analysis?
+Attempt 4: What are the core mathematical concepts, key theorems, and practical applications of stochastic calculus, including its use in modeling random processes, option pricing, and risk management in finance, as well as its relationship to probability theory and other areas of mathematics?
+
+
+Processing query: What is a comprehensive overview of stochastic calculus, including its definition, key concepts, mathematical foundations, and applications in probability theory, finance, and other fields, such as Brownian motion, stochastic differential equations, and risk analysis?
+
+Retrieving relevant documents...
+time for retriever: 0.27765798568725586
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Final Answer:
+
+Rewriting: Attempt 1: stochastic calculus explanation, mathematical concepts and applications in probability theory and finance + user: How do you contact the cs348 instructor?
+
+model: To contact the CS 34800 instructor, Hisham Benotman, you can email him at [hbenotma@purdue.edu](mailto:hbenotma@purdue.edu). Additionally, he is available for office hours by appointment via email and is also available after class for urgent questions.
+
+user: What is the link/url for the cs348 schedule?
+
+model: The link for the CS 34800 course schedule is [Course Schedule](https://docs.google.com/spreadsheets/d/1mov5_UbuG9F6wt_QZWm8yGn4kfpkYqokqkzzgk0kwOU/edit?usp=sharing).
+
+user: thanks
+
+model: I can only assist with academic advising questions.
+
+user: can you explain stochastic calculus to me?
+
+==============================
+current question: can you explain stochastic calculus to me?
+Attempt 2: What are the key concepts and applications of stochastic calculus in probability theory and finance?
+Attempt 3: What are the fundamental principles, mathematical concepts, and real-world applications of stochastic calculus, including its role in probability theory and finance, such as option pricing and risk analysis?
+Attempt 4: What are the core mathematical concepts, key theorems, and practical applications of stochastic calculus, including its use in modeling random processes, option pricing, and risk management in finance, as well as its relationship to probability theory and other areas of mathematics?
+Attempt 5: What is a comprehensive overview of stochastic calculus, including its definition, key concepts, mathematical foundations, and applications in probability theory, finance, and other fields, such as Brownian motion, stochastic differential equations, and risk analysis?
+
+
+Processing query: What is a detailed explanation of stochastic calculus, including its mathematical framework, key concepts such as Brownian motion and stochastic differential equations, and its applications in finance, such as option pricing, risk management, and portfolio optimization?
+
+Retrieving relevant documents...
+time for retriever: 0.15392017364501953
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Generating final answer with LLM...
+
+Final answer generated.
+
+Final Answer:
+Stochastic calculus is a branch of mathematics that deals with processes involving random variables
+and is often used in fields such as finance, physics, and engineering.  At its core, stochastic
+calculus extends traditional calculus to include randomness, facilitating the analysis of systems
+that evolve over time with inherent uncertainty. One of the most important concepts is the Itô
+integral, which allows for integration with respect to stochastic processes like Brownian motion.
+Key components of stochastic calculus include:  1. **Stochastic Processes**: Functions that describe
+a system whose state changes probabilistically over time, such as stock prices.    2. **Itô's
+Lemma**: This is often considered the fundamental theorem of stochastic calculus. It provides a way
+to differentiate and integrate functions of stochastic processes.  3. **Brownian Motion**: A
+continuous-time stochastic process that models random motion, crucial in defining various stochastic
+calculus concepts.  4. **Applications**: Stochastic calculus is particularly important in financial
+mathematics, for pricing options and managing risks.  If you need further clarification or more
+specific details, feel free to ask!
+No traversal path to visualize.
+INFO:     195.252.220.62:0 - "POST /prompt HTTP/1.1" 200 OK
+INFO:     216.180.246.120:44900 - "GET /%2BCSCOE%2B/logon.html HTTP/1.1" 404 Not Found
+INFO:     216.180.246.120:13034 - "GET /cgi-bin/login.cgi HTTP/1.1" 404 Not Found
+INFO:     216.180.246.120:41478 - "GET /login.htm HTTP/1.1" 404 Not Found
+INFO:     216.180.246.120:42678 - "GET /login.html HTTP/1.1" 404 Not Found
+INFO:     216.180.246.120:64368 - "GET /login.jsp HTTP/1.1" 404 Not Found
+INFO:     216.180.246.120:38926 - "GET /login HTTP/1.1" 200 OK
+INFO:     193.142.147.209:0 - "POST / HTTP/1.1" 405 Method Not Allowed
+INFO:     195.252.220.62:0 - "GET /chat HTTP/1.1" 200 OK
+
+======== RECEIVED QUERY ========
+user: hi
+
+==============================
+current question: hi ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: INAPPLICABLE
+INFO:     195.252.220.62:0 - "POST /prompt HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     216.180.246.120:58984 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     64.112.126.83:0 - "GET /settings.py HTTP/1.1" 404 Not Found
+INFO:     194.187.179.187:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     194.187.179.187:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     194.187.179.129:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     193.142.147.209:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     193.142.147.209:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     3.130.96.91:36786 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     3.130.96.91:36786 - "GET /login HTTP/1.1" 200 OK
+INFO:     89.42.231.200:0 - "GET /SDK/webLanguage HTTP/1.1" 404 Not Found
+INFO:     3.130.96.91:58308 - "GET / HTTP/1.1" 307 Temporary Redirect
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     64.226.92.143:0 - "GET /cgi-bin/authLogin.cgi HTTP/1.1" 404 Not Found
+INFO:     165.22.78.221:0 - "GET /solr/admin/info/system HTTP/1.1" 404 Not Found
+INFO:     46.101.108.210:0 - "GET /v2/_catalog HTTP/1.1" 404 Not Found
+INFO:     64.226.92.143:0 - "GET /query?q=SHOW+DIAGNOSTICS HTTP/1.1" 404 Not Found
+INFO:     165.22.78.221:0 - "GET /solr/admin/cores?action=STATUS&wt=json HTTP/1.1" 404 Not Found
+INFO:     64.226.100.58:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     64.226.100.58:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     188.166.181.17:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     40.77.167.187:0 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     137.184.163.207:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     137.184.163.207:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     137.184.163.207:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     52.167.144.199:0 - "GET /atom.xml HTTP/1.1" 404 Not Found
+INFO:     64.226.100.58:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     64.226.100.58:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     77.83.39.162:0 - "GET /.git/index HTTP/1.1" 404 Not Found
+INFO:     149.56.30.69:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     149.56.30.69:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     40.77.167.44:0 - "GET /sitemap.xml HTTP/1.1" 404 Not Found
+INFO:     130.12.180.19:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     130.12.180.19:0 - "POST /cgi-bin/login HTTP/1.1" 404 Not Found
+INFO:     43.153.96.233:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     43.153.96.233:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     78.153.140.179:0 - "GET /.env HTTP/1.1" 404 Not Found
+INFO:     74.109.185.118:0 - "GET /locales/locale.json?locale=../../../pterodactyl&namespace=config/database HTTP/1.1" 404 Not Found
+INFO:     74.109.185.118:0 - "GET /locales/locale.json?locale=../../../pterodactyl&namespace=config/database HTTP/1.1" 404 Not Found
+INFO:     174.219.210.144:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     174.219.210.144:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     174.219.210.144:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     174.219.210.144:0 - "POST /login HTTP/1.1" 302 Found
+INFO:     174.219.210.144:0 - "GET /chat HTTP/1.1" 200 OK
+INFO:     174.219.210.144:0 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     43.130.111.40:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     43.130.111.40:0 - "GET /login HTTP/1.1" 200 OK
+
+======== RECEIVED QUERY ========
+user: Tell me all you know about cs34800
+
+==============================
+current question: Tell me all you know about cs34800 ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: ADVISOR
+
+Rewritten query for RAG: cs34800 course information spring 2026 + user: Tell me all you know about cs34800
+
+==============================
+current question: Tell me all you know about cs34800
+
+Processing query: cs34800 course information spring 2026 + user: Tell me all you know about cs34800
+
+==============================
+current question: Tell me all you know about cs34800
+
+Retrieving relevant documents...
+time for retriever: 1.1029455661773682
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Generating final answer with LLM...
+
+Final answer generated.
+
+Final Answer:
+### CS 34800: Information Systems - Spring 2026 Overview  #### Course Information - **Course
+Title:** CS 34800: Information Systems - **CRNs:** 13399 and 35118 - **Instructional Modality:**
+Face-to-Face - **Course Credit Hours:** 3 - **Prerequisites:** Data Structures, Discrete Structures,
+and programming experience.  #### Course Description This course introduces the fundamental concepts
+of database management, primarily through the relational model, covering topics such as: - Schema
+design and refinement - Query languages (SQL and NoSQL) - Database application development -
+Transactions and concurrency control - Overview of NoSQL databases and OLAP  #### Homework and Exam
+Policies - **General:**    - Six graded homework assignments.   - Use LaTeX, MS Word, or comparable
+editors for submissions, only in PDF format on Gradescope.   - Late homework accepted within 72
+hours of the due date with penalties.  - **Regrade Requests:**    - Submit within three days with a
+clear explanation.  - **Exams:**    - Two midterm exams, open-book and open-note, with no electronic
+devices allowed.    #### Quizzes - Weekly quizzes are auto-graded; the highest score of up to three
+attempts counts.  #### Participation and Attendance - Class attendance is not recorded, but in-class
+participation through IClicker contributes to the course grade.  #### Technical Issues - Report
+IClicker issues directly to the instructor via email with relevant details.  #### Course Schedule
+Highlights - **Week 1:**   - Jan 13 (West Lafayette), Jan 12 (Indianapolis) - Introduction to
+relational databases and SQL.    - **Midterms:**   - Midterm Exam 1: **March 10, 2026, at 8:00 PM**
+- Midterm Exam 2: **April 27, 2026, at 8:00 PM**  #### Final Assessments - No final exam; project
+stages due during the final week.  #### Instructor and TAs - **Instructor:** Hisham Benotman -
+**Lead TA:** Xi Pang    #### Communication - Preferred communication via Ed for questions and
+announcements.  #### Important Notes - Purdue University emphasizes academic integrity, and
+violations can lead to severe consequences. - AI and LLM tools are prohibited in assignments but
+allowed for the application project.  For more specifics, refer to the detailed syllabus and the
+course schedule link provided at the beginning of the semester.  ---  If you have specific queries
+regarding assignments, I recommend checking the syllabus or the Ed platform for the most up-to-date
+information.
+No traversal path to visualize.
+INFO:     174.219.210.144:0 - "POST /prompt HTTP/1.1" 200 OK
+
+======== RECEIVED QUERY ========
+user: Tell me all you know about cs34800
+
+model: ### CS 34800: Information Systems - Spring 2026 Overview
+
+#### Course Information
+- **Course Title:** CS 34800: Information Systems
+- **CRNs:** 13399 and 35118
+- **Instructional Modality:** Face-to-Face
+- **Course Credit Hours:** 3
+- **Prerequisites:** Data Structures, Discrete Structures, and programming experience.
+
+#### Course Description
+This course introduces the fundamental concepts of database management, primarily through the relational mo ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: GRAPH_RAG
+
+Rewritten query for RAG: CS 34800 Spring 2026 Instructor and Teaching Assistant Contact Information + user: Tell me all you know about cs34800
+
+model: ### CS 34800: Information Systems - Spring 2026 Overview
+
+#### Course Information
+- **Course Title:** CS 34800: Information Systems
+- **CRNs:** 13399 and 35118
+- **Instructional Modality:** Face-to-Face
+- **Course Credit Hours:** 3
+- **Prerequisites:** Data Structures, Discrete Structures, and programming experience.
+
+#### Course Description
+This course introduces the fundamental concepts of database management, primarily through the relational model, covering topics such as:
+- Schema design and refinement
+- Query languages (SQL and NoSQL)
+- Database application development
+- Transactions and concurrency control
+- Overview of NoSQL databases and OLAP
+
+#### Homework and Exam Policies
+- **General:** 
+  - Six graded homework assignments.
+  - Use LaTeX, MS Word, or comparable editors for submissions, only in PDF format on Gradescope.
+  - Late homework accepted within 72 hours of the due date with penalties.
+
+- **Regrade Requests:** 
+  - Submit within three days with a clear explanation.
+
+- **Exams:** 
+  - Two midterm exams, open-book and open-note, with no electronic devices allowed.
+  
+#### Quizzes
+- Weekly quizzes are auto-graded; the highest score of up to three attempts counts.
+
+#### Participation and Attendance
+- Class attendance is not recorded, but in-class participation through IClicker contributes to the course grade.
+
+#### Technical Issues
+- Report IClicker issues directly to the instructor via email with relevant details.
+
+#### Course Schedule Highlights
+- **Week 1:**
+  - Jan 13 (West Lafayette), Jan 12 (Indianapolis) - Introduction to relational databases and SQL.
+  
+- **Midterms:**
+  - Midterm Exam 1: **March 10, 2026, at 8:00 PM**
+  - Midterm Exam 2: **April 27, 2026, at 8:00 PM**
+
+#### Final Assessments
+- No final exam; project stages due during the final week.
+
+#### Instructor and TAs
+- **Instructor:** Hisham Benotman
+- **Lead TA:** Xi Pang
+  
+#### Communication
+- Preferred communication via Ed for questions and announcements.
+
+#### Important Notes
+- Purdue University emphasizes academic integrity, and violations can lead to severe consequences.
+- AI and LLM tools are prohibited in assignments but allowed for the application project.
+
+For more specifics, refer to the detailed syllabus and the course schedule link provided at the beginning of the semester.
+
+---
+
+If you have specific queries regarding assignments, I recommend checking the syllabus or the Ed platform for the most up-to-date information.
+
+user: Can I have contacts for the instructors and TAs?
+
+==============================
+current question: Can I have contacts for the instructors and TAs?
+
+Processing query: CS 34800 Spring 2026 Instructor and Teaching Assistant Contact Information + user: Tell me all you know about cs34800
+
+model: ### CS 34800: Information Systems - Spring 2026 Overview
+
+#### Course Information
+- **Course Title:** CS 34800: Information Systems
+- **CRNs:** 13399 and 35118
+- **Instructional Modality:** Face-to-Face
+- **Course Credit Hours:** 3
+- **Prerequisites:** Data Structures, Discrete Structures, and programming experience.
+
+#### Course Description
+This course introduces the fundamental concepts of database management, primarily through the relational model, covering topics such as:
+- Schema design and refinement
+- Query languages (SQL and NoSQL)
+- Database application development
+- Transactions and concurrency control
+- Overview of NoSQL databases and OLAP
+
+#### Homework and Exam Policies
+- **General:** 
+  - Six graded homework assignments.
+  - Use LaTeX, MS Word, or comparable editors for submissions, only in PDF format on Gradescope.
+  - Late homework accepted within 72 hours of the due date with penalties.
+
+- **Regrade Requests:** 
+  - Submit within three days with a clear explanation.
+
+- **Exams:** 
+  - Two midterm exams, open-book and open-note, with no electronic devices allowed.
+  
+#### Quizzes
+- Weekly quizzes are auto-graded; the highest score of up to three attempts counts.
+
+#### Participation and Attendance
+- Class attendance is not recorded, but in-class participation through IClicker contributes to the course grade.
+
+#### Technical Issues
+- Report IClicker issues directly to the instructor via email with relevant details.
+
+#### Course Schedule Highlights
+- **Week 1:**
+  - Jan 13 (West Lafayette), Jan 12 (Indianapolis) - Introduction to relational databases and SQL.
+  
+- **Midterms:**
+  - Midterm Exam 1: **March 10, 2026, at 8:00 PM**
+  - Midterm Exam 2: **April 27, 2026, at 8:00 PM**
+
+#### Final Assessments
+- No final exam; project stages due during the final week.
+
+#### Instructor and TAs
+- **Instructor:** Hisham Benotman
+- **Lead TA:** Xi Pang
+  
+#### Communication
+- Preferred communication via Ed for questions and announcements.
+
+#### Important Notes
+- Purdue University emphasizes academic integrity, and violations can lead to severe consequences.
+- AI and LLM tools are prohibited in assignments but allowed for the application project.
+
+For more specifics, refer to the detailed syllabus and the course schedule link provided at the beginning of the semester.
+
+---
+
+If you have specific queries regarding assignments, I recommend checking the syllabus or the Ed platform for the most up-to-date information.
+
+user: Can I have contacts for the instructors and TAs?
+
+==============================
+current question: Can I have contacts for the instructors and TAs?
+
+Retrieving relevant documents...
+time for retriever: 0.9253542423248291
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Generating final answer with LLM...
+
+Final answer generated.
+
+Final Answer:
+Certainly! Here are the contacts for the instructor and TAs for CS 34800:  ### Instructor -
+**Name:** Hisham Benotman - **Email:** [hbenotma@purdue.edu](mailto:hbenotma@purdue.edu) -
+**Office:** DSAI 1119G - **Office Hours:** By appointment via email, available after class for
+urgent questions.  ### Teaching Assistants - **Head TA:** Xi Pang    - **Email:**
+[pang65@purdue.edu](mailto:pang65@purdue.edu) - **Yinqi Sun (HW1 Lead TA)**    - **Email:**
+[sun1226@purdue.edu](mailto:sun1226@purdue.edu) - **Yeasir Rayhan (HW6 Lead TA)**    - **Email:**
+[yrayhan@purdue.edu](mailto:yrayhan@purdue.edu) - **Chenzhe Jin (HW3 Lead TA)**    - **Email:**
+[jin467@purdue.edu](mailto:jin467@purdue.edu) - **Xiao Hu**    - **Email:**
+[hu953@purdue.edu](mailto:hu953@purdue.edu) - **Yunxin Sun (HW2 Lead TA)**    - **Email:**
+[sun1114@purdue.edu](mailto:sun1114@purdue.edu) - **Yibo Wang (HW5 Lead TA)**    - **Email:**
+[wang7342@purdue.edu](mailto:wang7342@purdue.edu) - **Xinzhi Wang (HW4 Lead TA)**    - **Email:**
+[wang6171@purdue.edu](mailto:wang6171@purdue.edu) - **Jerry B. Liu**    - **Email:**
+[jbliu@purdue.edu](mailto:jbliu@purdue.edu)  If you need assistance, feel free to reach out to them
+via email!
+No traversal path to visualize.
+INFO:     174.219.210.144:0 - "POST /prompt HTTP/1.1" 200 OK
+INFO:     40.77.167.126:0 - "GET /sitemaps.xml HTTP/1.1" 404 Not Found
+INFO:     64.23.158.228:0 - "GET /%2BCSCOL%2B/Java.jar HTTP/1.1" 404 Not Found
+INFO:     64.23.158.228:0 - "GET /%2BCSCOE%2B/logon_forms.js HTTP/1.1" 404 Not Found
+INFO:     64.23.158.228:0 - "GET /%2BCSCOL%2B/a1.jar HTTP/1.1" 404 Not Found
+INFO:     64.23.158.228:0 - "GET /%2BCSCOE%2B/transfer.js HTTP/1.1" 404 Not Found
+INFO:     44.226.198.245:0 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     44.226.198.245:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     44.226.198.245:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     185.241.208.170:0 - "GET /.git/refs/ HTTP/1.1" 404 Not Found
+INFO:     43.140.247.223:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     193.142.147.209:0 - "POST / HTTP/1.1" 405 Method Not Allowed
+INFO:     223.123.22.48:0 - "POST /xmlrpc.php HTTP/1.1" 404 Not Found
+INFO:     204.76.203.18:38860 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     43.135.172.89:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     43.135.172.89:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     64.227.186.31:0 - "GET /ab2g HTTP/1.1" 404 Not Found
+INFO:     64.227.186.31:0 - "GET /ab2h HTTP/1.1" 404 Not Found
+INFO:     64.227.186.31:0 - "GET /alive.php HTTP/1.1" 404 Not Found
+INFO:     64.227.186.31:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     64.227.186.31:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     64.227.186.31:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     64.227.186.31:0 - "GET /teorema505?t=1 HTTP/1.1" 404 Not Found
+INFO:     204.76.203.18:37276 - "GET /bins/ HTTP/1.1" 404 Not Found
+INFO:     142.93.230.252:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     142.93.230.252:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     204.76.203.18:39000 - "GET /bin/ HTTP/1.1" 404 Not Found
+INFO:     204.76.203.18:35268 - "GET /backup/ HTTP/1.1" 404 Not Found
+INFO:     185.156.73.167:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     176.65.132.227:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     176.65.132.227:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     40.77.167.37:0 - "GET /sitemaps.xml HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "POST /hello.world?%ADd+allow_url_include%3d1+%ADd+auto_prepend_file%3dphp://input HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "POST /?%ADd+allow_url_include%3d1+%ADd+auto_prepend_file%3dphp://input HTTP/1.1" 405 Method Not Allowed
+INFO:     77.91.127.241:0 - "GET /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /vendor/phpunit/phpunit/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /vendor/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /vendor/phpunit/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /vendor/phpunit/phpunit/LICENSE/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /vendor/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /phpunit/phpunit/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /phpunit/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /lib/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /lib/phpunit/phpunit/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /lib/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /lib/phpunit/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /lib/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /laravel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /www/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /ws/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /yii/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /zend/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /ws/ec/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /V2/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /tests/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /test/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /testing/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /demo/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /cms/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /crm/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /admin/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /backup/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /blog/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /workspace/drupal/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /panel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /public/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /apps/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /app/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /index.php?s=/index/\think\app/invokefunction&function=call_user_func_array&vars[0]=md5&vars[1][]=Hello HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /public/index.php?s=/index/\think\app/invokefunction&function=call_user_func_array&vars[0]=md5&vars[1][]=Hello HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /index.php?lang=../../../../../../../../usr/local/lib/php/pearcmd&+config-create+/&/<?echo(md5("hi"));?>+/tmp/index1.php HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /index.php?lang=../../../../../../../../tmp/index1 HTTP/1.1" 404 Not Found
+INFO:     77.91.127.241:0 - "GET /containers/json HTTP/1.1" 404 Not Found
+INFO:     109.196.101.80:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     109.196.101.80:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     109.196.101.80:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     104.210.140.133:0 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     104.210.140.133:0 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     92.63.197.50:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     92.63.197.50:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     65.49.20.66:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     65.49.20.66:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     185.226.197.74:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     185.226.197.74:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     46.101.36.56:0 - "GET /.env HTTP/1.1" 404 Not Found
+INFO:     46.101.36.56:0 - "GET /.git/config HTTP/1.1" 404 Not Found
+INFO:     193.142.147.209:0 - "POST / HTTP/1.1" 405 Method Not Allowed
+INFO:     164.90.155.193:0 - "GET /js/index.js HTTP/1.1" 404 Not Found
+INFO:     91.232.238.112:0 - "GET /admin/config.php HTTP/1.1" 404 Not Found
+INFO:     193.142.147.209:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     193.142.147.209:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     40.77.167.61:0 - "GET /sitemap.xml.gz HTTP/1.1" 404 Not Found
+INFO:     205.210.31.88:57544 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     47.128.58.31:0 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     47.128.31.60:0 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     77.83.39.109:0 - "GET /.git/config HTTP/1.1" 404 Not Found
+INFO:     77.83.39.109:0 - "GET /.env HTTP/1.1" 404 Not Found
+INFO:     204.76.203.18:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     40.77.167.48:0 - "GET /sitemap_index.xml HTTP/1.1" 404 Not Found
+INFO:     77.83.39.162:0 - "GET /.git/HEAD HTTP/1.1" 404 Not Found
+INFO:     40.77.167.22:0 - "GET /sitemap.txt HTTP/1.1" 404 Not Found
+INFO:     109.196.101.80:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     109.196.101.80:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     109.196.101.80:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     91.224.92.14:0 - "GET /goform/formJsonAjaxReq HTTP/1.1" 404 Not Found
+INFO:     185.247.137.12:47207 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     185.247.137.12:47933 - "GET /login HTTP/1.1" 200 OK
+INFO:     149.56.30.69:0 - "GET /ads.txt HTTP/1.1" 404 Not Found
+INFO:     66.249.68.5:0 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     79.124.40.174:0 - "GET /?XDEBUG_SESSION_START=phpstorm HTTP/1.1" 307 Temporary Redirect
+INFO:     79.124.40.174:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     193.142.147.209:0 - "GET /cgi-bin/luci/%3Bstok%3D/locale HTTP/1.1" 404 Not Found
+INFO:     5.183.209.196:0 - "GET /SDK/webLanguage HTTP/1.1" 404 Not Found
+INFO:     59.27.0.185:39726 - "GET / HTTP/1.0" 307 Temporary Redirect
+INFO:     45.156.129.56:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     45.156.129.56:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     43.164.197.224:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     43.164.197.224:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     18.188.191.244:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     79.124.40.174:0 - "GET /actuator/gateway/routes HTTP/1.1" 404 Not Found
+INFO:     93.123.72.132:0 - "GET /SDK/webLanguage HTTP/1.1" 404 Not Found
+INFO:     46.161.50.108:0 - "GET /aaa9 HTTP/1.1" 404 Not Found
+INFO:     46.161.50.108:0 - "GET /aab9 HTTP/1.1" 404 Not Found
+INFO:     95.215.0.144:0 - "GET /aaa9 HTTP/1.1" 404 Not Found
+INFO:     95.215.0.144:0 - "GET /aab9 HTTP/1.1" 404 Not Found
+INFO:     3.90.108.111:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     54.227.119.80:0 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     98.81.182.10:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     95.214.55.246:49436 - "POST / HTTP/1.1" 405 Method Not Allowed
+INFO:     95.214.55.246:49440 - "POST /_next HTTP/1.1" 404 Not Found
+INFO:     95.214.55.246:49442 - "POST /api HTTP/1.1" 404 Not Found
+INFO:     95.214.55.246:49448 - "POST /_next/server HTTP/1.1" 404 Not Found
+INFO:     95.214.55.246:49464 - "POST /app HTTP/1.1" 404 Not Found
+INFO:     95.214.55.246:49478 - "POST /api/route HTTP/1.1" 404 Not Found
+INFO:     170.106.197.109:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     170.106.197.109:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     52.167.144.227:0 - "GET /sitemap_index.xml HTTP/1.1" 404 Not Found
+INFO:     52.167.144.227:0 - "GET /sitemap.txt HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     49.51.183.75:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     49.51.183.75:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     178.16.55.167:0 - "GET /login?redir=%2F HTTP/1.1" 200 OK
+INFO:     193.142.147.209:0 - "POST / HTTP/1.1" 405 Method Not Allowed
+INFO:     193.142.147.209:0 - "POST / HTTP/1.1" 405 Method Not Allowed
+INFO:     204.76.203.25:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     204.76.203.25:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     89.42.231.200:0 - "GET /SDK/webLanguage HTTP/1.1" 404 Not Found
+INFO:     193.142.147.209:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     193.142.147.209:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     5.181.86.69:0 - "GET /%2BCSCOE%2B/logon.html HTTP/1.1" 404 Not Found
+INFO:     185.100.87.136:0 - "POST /ajax HTTP/1.1" 404 Not Found
+INFO:     150.241.68.165:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     150.241.68.165:0 - "POST /login HTTP/1.1" 200 OK
+INFO:     150.241.68.165:0 - "POST /login HTTP/1.1" 200 OK
+INFO:     150.241.68.165:0 - "POST /login HTTP/1.1" 200 OK
+INFO:     150.241.68.165:0 - "POST /login HTTP/1.1" 200 OK
+INFO:     150.241.68.165:0 - "POST /login HTTP/1.1" 200 OK
+INFO:     150.241.68.165:0 - "POST /login HTTP/1.1" 200 OK
+INFO:     150.241.68.165:0 - "POST /login HTTP/1.1" 200 OK
+INFO:     150.241.68.165:0 - "POST /login HTTP/1.1" 200 OK
+INFO:     150.241.68.165:0 - "POST /login HTTP/1.1" 200 OK
+INFO:     150.241.68.165:0 - "POST /login HTTP/1.1" 200 OK
+INFO:     150.241.68.165:0 - "POST /login HTTP/1.1" 200 OK
+INFO:     150.241.68.165:0 - "POST /login HTTP/1.1" 200 OK
+INFO:     150.241.68.165:0 - "POST /login HTTP/1.1" 200 OK
+INFO:     150.241.68.165:0 - "POST /login HTTP/1.1" 200 OK
+INFO:     92.63.197.50:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     92.63.197.50:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     185.241.208.170:0 - "GET /.git/refs/heads/ HTTP/1.1" 404 Not Found
+INFO:     94.26.106.113:0 - "PROPFIND / HTTP/1.1" 405 Method Not Allowed
+INFO:     180.153.236.151:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     180.153.236.210:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     93.158.90.12:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     93.158.90.15:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     94.156.152.7:0 - "PROPFIND / HTTP/1.1" 405 Method Not Allowed
+INFO:     176.65.149.253:0 - "GET /config.json HTTP/1.1" 404 Not Found
+INFO:     45.119.212.42:0 - "GET /.env HTTP/1.1" 404 Not Found
+INFO:     45.119.212.42:0 - "GET /env HTTP/1.1" 404 Not Found
+INFO:     45.119.212.42:0 - "GET /public/.env HTTP/1.1" 404 Not Found
+INFO:     45.119.212.42:0 - "GET /public/env HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "POST /hello.world?%ADd+allow_url_include%3d1+%ADd+auto_prepend_file%3dphp://input HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "POST /?%ADd+allow_url_include%3d1+%ADd+auto_prepend_file%3dphp://input HTTP/1.1" 405 Method Not Allowed
+INFO:     138.249.7.228:0 - "GET /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /vendor/phpunit/phpunit/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /vendor/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /vendor/phpunit/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /vendor/phpunit/phpunit/LICENSE/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /vendor/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /phpunit/phpunit/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /phpunit/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /lib/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /lib/phpunit/phpunit/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /lib/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /lib/phpunit/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /lib/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /laravel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /www/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /ws/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /yii/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /zend/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /ws/ec/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /V2/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /tests/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /test/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /testing/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /demo/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /cms/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /crm/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /admin/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /backup/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /blog/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /workspace/drupal/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /panel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /public/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /apps/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /app/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /index.php?s=/index/\think\app/invokefunction&function=call_user_func_array&vars[0]=md5&vars[1][]=Hello HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /public/index.php?s=/index/\think\app/invokefunction&function=call_user_func_array&vars[0]=md5&vars[1][]=Hello HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /index.php?lang=../../../../../../../../usr/local/lib/php/pearcmd&+config-create+/&/<?echo(md5("hi"));?>+/tmp/index1.php HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /index.php?lang=../../../../../../../../tmp/index1 HTTP/1.1" 404 Not Found
+INFO:     138.249.7.228:0 - "GET /containers/json HTTP/1.1" 404 Not Found
+INFO:     102.22.20.125:0 - "GET /admin/config.php HTTP/1.1" 404 Not Found
+INFO:     149.56.30.69:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     149.56.30.69:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     128.210.106.78:0 - "GET /chat HTTP/1.1" 200 OK
+
+======== RECEIVED QUERY ========
+user: tell me about CS348 schedule
+
+==============================
+current question: tell me about CS348 schedule ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: GRAPH_RAG
+
+Rewritten query for RAG: cs348 spring 2026 course schedule + user: tell me about CS348 schedule
+
+==============================
+current question: tell me about CS348 schedule
+
+Processing query: cs348 spring 2026 course schedule + user: tell me about CS348 schedule
+
+==============================
+current question: tell me about CS348 schedule
+
+Retrieving relevant documents...
+time for retriever: 1.1775317192077637
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Generating final answer with LLM...
+
+Final answer generated.
+
+Final Answer:
+The schedule for CS34800: Information Systems in Spring 2026, outlines various topics and important
+dates throughout the semester. Here's a summary of the schedule:  ### Key Dates and Topics:  ####
+Week 1: - **West Lafayette**: Classes begin January 13, 2026. - **Indianapolis**: Classes begin
+January 12, 2026. - Topics: Introduction to relational databases and SQL.  #### Week 2: - No class
+on January 19, 2026 (MLK Day). - Topics include SQL fundamentals, joins, set operators, and
+subqueries.  #### Week 3: - Homework assignments related to advanced SQL.  #### Week 4: - Focus on
+relational algebra.  #### Week 5: - Discuss storage and indexing, with continued SQL education.
+#### Week 6: - Topics: Database design and use cases, with a project stage assigned.  #### Week 7: -
+Explore the ER model and normalization.  #### Week 8: - Contents include functional dependencies and
+storage.  #### Week 9: - **Midterm Exam 1 on March 10, 2026**, at 8:00 PM.  #### Week 10: - No
+classes for Spring Break (March 17 & 19, 2026).  #### Week 11: - Introduces NoSQL and database
+technologies.  #### Week 12: - Further discussions on NoSQL databases.  #### Week 13: - Topics on
+transactions and isolation.  #### Week 14: - Focus on analytical databases.  #### Week 15: - Discuss
+distributed databases.  #### Week 16: - **Midterm Exam 2 on April 27, 2026**, at 8:00 PM.  ###
+Important Notes: - No final exam is scheduled. - Homework assignments and project stages will have
+specific due dates highlighted in the course materials.  For complete weekly details, follow the
+detailed outlines available on the course schedule link provided in the syllabus. Always refer to
+the [Course Schedule](https://docs.google.com/spreadsheets/d/1mov5_UbuG9F6wt_QZWm8yGn4kfpkYqokqkzzgk
+0kwOU/edit?usp=sharing) for updates and specifics on readings and assignments.
+No traversal path to visualize.
+INFO:     128.210.106.78:0 - "POST /prompt HTTP/1.1" 200 OK
+INFO:     174.138.46.85:0 - "GET /%2BCSCOL%2B/Java.jar HTTP/1.1" 404 Not Found
+INFO:     174.138.46.85:0 - "GET /%2BCSCOE%2B/logon_forms.js HTTP/1.1" 404 Not Found
+INFO:     174.138.46.85:0 - "GET /%2BCSCOL%2B/a1.jar HTTP/1.1" 404 Not Found
+INFO:     174.138.46.85:0 - "GET /%2BCSCOE%2B/transfer.js HTTP/1.1" 404 Not Found
+INFO:     5.181.86.69:0 - "GET /%2BCSCOE%2B/logon.html HTTP/1.1" 404 Not Found
+INFO:     128.210.106.78:0 - "GET /chat HTTP/1.1" 200 OK
+INFO:     128.210.106.78:0 - "GET /chat HTTP/1.1" 200 OK
+INFO:     128.210.106.78:0 - "GET /chat HTTP/1.1" 200 OK
+INFO:     128.210.106.78:0 - "GET /chat HTTP/1.1" 200 OK
+/root/GraphPackage/venv/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+INFO:     Started server process [956918]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+HERE
+HERE2
+Loading GraphRAG…
+✓ GraphRAG initialized (empty state)
+✓ GraphRAG Loaded.
+🚀 Starting GraphRAG Chat Server at http://localhost:8000/
+INFO:     128.210.106.78:0 - "GET /chat HTTP/1.1" 200 OK
+/root/GraphPackage/venv/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+INFO:     Started server process [957144]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+HERE
+HERE2
+Loading GraphRAG…
+✓ GraphRAG initialized (empty state)
+✓ GraphRAG Loaded.
+🚀 Starting GraphRAG Chat Server at http://localhost:8000/
+INFO:     192.121.146.24:0 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     192.36.136.8:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     128.210.106.78:0 - "GET /chat HTTP/1.1" 200 OK
+
+======== RECEIVED QUERY ========
+user: tell me about CS348 schedule
+
+==============================
+current question: tell me about CS348 schedule ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: GRAPH_RAG
+
+Rewritten query for RAG: cs348 spring 2026 course schedule + user: tell me about CS348 schedule
+
+==============================
+current question: tell me about CS348 schedule
+
+Processing query: cs348 spring 2026 course schedule + user: tell me about CS348 schedule
+
+==============================
+current question: tell me about CS348 schedule
+
+Retrieving relevant documents...
+time for retriever: 1.1026570796966553
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Generating final answer with LLM...
+
+Final answer generated.
+
+Final Answer:
+The schedule for CS 34800: Information Systems in Spring 2026 is as follows:  ### Week 1 —
+Introduction to Relational Databases - **Indianapolis Classes**:    - January 12, 2026   - January
+14, 2026 - **West Lafayette Classes**:    - January 13, 2026   - January 15, 2026 - Topics: Course
+logistics, Relational data model, Introduction to SQL.  ### Week 2 — SQL Fundamentals -
+**Indianapolis**: January 19 & 21, 2026 (Note: No class on January 19, 2026 - MLK Day) - **West
+Lafayette**: January 20 & 22, 2026 - Topics: SQL joins, set operators, SQL subqueries.  ### Week 3 —
+Advanced SQL - **Indianapolis**: January 26 & 28, 2026 - **West Lafayette**: January 27 & 29, 2026 -
+Topics: SQL views, NULL values, updates, stored procedures.  ### Week 4 — Relational Algebra -
+**Indianapolis**: February 2 & 4, 2026 - **West Lafayette**: February 3 & 5, 2026  ### Week 5 —
+Cloud Databases and SQL Security - **Indianapolis**: February 9 & 11, 2026 - **West Lafayette**:
+February 10 & 12, 2026  ### Week 6 — Database Design - **Indianapolis**: February 16 & 18, 2026 -
+**West Lafayette**: February 17 & 19, 2026  ### Week 7 — ER Model, Functional Dependencies,
+Normalization - **Indianapolis**: February 23 & 25, 2026 - **West Lafayette**: February 24 & 26,
+2026  ### Week 8 — Storage and Indexing - **Indianapolis**: March 2 & 4, 2026 - **West Lafayette**:
+March 3 & 5, 2026  ### Week 9 — Midterm Examination - **Indianapolis**: March 9 & 11, 2026 - **West
+Lafayette**: March 10 & 12, 2026   - Midterm Exam 1: March 10, 2026, from 8:00 PM to 9:30 PM.  ###
+Week 10 — Spring Break - No classes: March 16-19, 2026.  ### Week 11 — Storage, Indexing, and NoSQL
+- **Indianapolis**: March 23 & 25, 2026 - **West Lafayette**: March 24 & 26, 2026  ### Week 12 —
+NoSQL Databases - **Indianapolis**: March 30 & April 1, 2026 - **West Lafayette**: March 31 & April
+2, 2026  ### Week 13 — Transactions and Isolation - **Indianapolis**: April 6 & 8, 2026 - **West
+Lafayette**: April 7 & 9, 2026  ### Week 14 — Analytical Databases - **Indianapolis**: April 13 &
+15, 2026 - **West Lafayette**: April 14 & 16, 2026  ### Week 15 — Distributed Databases -
+**Indianapolis**: April 20 & 22, 2026 - **West Lafayette**: April 21 & 23, 2026  ### Week 16 — Final
+Assessments - **Indianapolis**: April 27 & 29, 2026 - **West Lafayette**: April 28 & 30, 2026   -
+Midterm Exam 2: April 27, 2026, from 8:00 PM to 9:30 PM.  This schedule is tentative and subject to
+change. Please keep an eye on course announcements for any updates.
+No traversal path to visualize.
+INFO:     128.210.106.78:0 - "POST /prompt HTTP/1.1" 200 OK
+
+======== RECEIVED QUERY ========
+user: tell me about CS348 schedule
+
+model: The schedule for CS 34800: Information Systems in Spring 2026 is as follows:
+
+### Week 1 — Introduction to Relational Databases
+- **Indianapolis Classes**: 
+  - January 12, 2026
+  - January 14, 2026
+- **West Lafayette Classes**: 
+  - January 13, 2026
+  - January 15, 2026
+- Topics: Course logistics, Relational data model, Introduction to SQL.
+
+### Week 2 — SQL Fundamentals
+- **Indianapolis**: January 19 & 21, 2026 (Note: No class on January 19, 2026 - ML ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: GRAPH_RAG
+
+Rewritten query for RAG: CS348 project 1 deadline and stages spring 2026 + user: tell me about CS348 schedule
+
+model: The schedule for CS 34800: Information Systems in Spring 2026 is as follows:
+
+### Week 1 — Introduction to Relational Databases
+- **Indianapolis Classes**: 
+  - January 12, 2026
+  - January 14, 2026
+- **West Lafayette Classes**: 
+  - January 13, 2026
+  - January 15, 2026
+- Topics: Course logistics, Relational data model, Introduction to SQL.
+
+### Week 2 — SQL Fundamentals
+- **Indianapolis**: January 19 & 21, 2026 (Note: No class on January 19, 2026 - MLK Day)
+- **West Lafayette**: January 20 & 22, 2026
+- Topics: SQL joins, set operators, SQL subqueries.
+
+### Week 3 — Advanced SQL
+- **Indianapolis**: January 26 & 28, 2026
+- **West Lafayette**: January 27 & 29, 2026
+- Topics: SQL views, NULL values, updates, stored procedures.
+
+### Week 4 — Relational Algebra
+- **Indianapolis**: February 2 & 4, 2026
+- **West Lafayette**: February 3 & 5, 2026
+
+### Week 5 — Cloud Databases and SQL Security
+- **Indianapolis**: February 9 & 11, 2026
+- **West Lafayette**: February 10 & 12, 2026
+
+### Week 6 — Database Design
+- **Indianapolis**: February 16 & 18, 2026
+- **West Lafayette**: February 17 & 19, 2026
+
+### Week 7 — ER Model, Functional Dependencies, Normalization
+- **Indianapolis**: February 23 & 25, 2026
+- **West Lafayette**: February 24 & 26, 2026
+
+### Week 8 — Storage and Indexing
+- **Indianapolis**: March 2 & 4, 2026
+- **West Lafayette**: March 3 & 5, 2026
+
+### Week 9 — Midterm Examination
+- **Indianapolis**: March 9 & 11, 2026
+- **West Lafayette**: March 10 & 12, 2026
+  - Midterm Exam 1: March 10, 2026, from 8:00 PM to 9:30 PM.
+
+### Week 10 — Spring Break
+- No classes: March 16-19, 2026.
+
+### Week 11 — Storage, Indexing, and NoSQL
+- **Indianapolis**: March 23 & 25, 2026
+- **West Lafayette**: March 24 & 26, 2026
+
+### Week 12 — NoSQL Databases
+- **Indianapolis**: March 30 & April 1, 2026
+- **West Lafayette**: March 31 & April 2, 2026
+
+### Week 13 — Transactions and Isolation
+- **Indianapolis**: April 6 & 8, 2026
+- **West Lafayette**: April 7 & 9, 2026
+
+### Week 14 — Analytical Databases
+- **Indianapolis**: April 13 & 15, 2026
+- **West Lafayette**: April 14 & 16, 2026
+
+### Week 15 — Distributed Databases
+- **Indianapolis**: April 20 & 22, 2026
+- **West Lafayette**: April 21 & 23, 2026
+
+### Week 16 — Final Assessments
+- **Indianapolis**: April 27 & 29, 2026
+- **West Lafayette**: April 28 & 30, 2026
+  - Midterm Exam 2: April 27, 2026, from 8:00 PM to 9:30 PM.
+
+This schedule is tentative and subject to change. Please keep an eye on course announcements for any updates.
+
+user: When is project 1 and its various stages due?
+
+==============================
+current question: When is project 1 and its various stages due?
+
+Processing query: CS348 project 1 deadline and stages spring 2026 + user: tell me about CS348 schedule
+
+model: The schedule for CS 34800: Information Systems in Spring 2026 is as follows:
+
+### Week 1 — Introduction to Relational Databases
+- **Indianapolis Classes**: 
+  - January 12, 2026
+  - January 14, 2026
+- **West Lafayette Classes**: 
+  - January 13, 2026
+  - January 15, 2026
+- Topics: Course logistics, Relational data model, Introduction to SQL.
+
+### Week 2 — SQL Fundamentals
+- **Indianapolis**: January 19 & 21, 2026 (Note: No class on January 19, 2026 - MLK Day)
+- **West Lafayette**: January 20 & 22, 2026
+- Topics: SQL joins, set operators, SQL subqueries.
+
+### Week 3 — Advanced SQL
+- **Indianapolis**: January 26 & 28, 2026
+- **West Lafayette**: January 27 & 29, 2026
+- Topics: SQL views, NULL values, updates, stored procedures.
+
+### Week 4 — Relational Algebra
+- **Indianapolis**: February 2 & 4, 2026
+- **West Lafayette**: February 3 & 5, 2026
+
+### Week 5 — Cloud Databases and SQL Security
+- **Indianapolis**: February 9 & 11, 2026
+- **West Lafayette**: February 10 & 12, 2026
+
+### Week 6 — Database Design
+- **Indianapolis**: February 16 & 18, 2026
+- **West Lafayette**: February 17 & 19, 2026
+
+### Week 7 — ER Model, Functional Dependencies, Normalization
+- **Indianapolis**: February 23 & 25, 2026
+- **West Lafayette**: February 24 & 26, 2026
+
+### Week 8 — Storage and Indexing
+- **Indianapolis**: March 2 & 4, 2026
+- **West Lafayette**: March 3 & 5, 2026
+
+### Week 9 — Midterm Examination
+- **Indianapolis**: March 9 & 11, 2026
+- **West Lafayette**: March 10 & 12, 2026
+  - Midterm Exam 1: March 10, 2026, from 8:00 PM to 9:30 PM.
+
+### Week 10 — Spring Break
+- No classes: March 16-19, 2026.
+
+### Week 11 — Storage, Indexing, and NoSQL
+- **Indianapolis**: March 23 & 25, 2026
+- **West Lafayette**: March 24 & 26, 2026
+
+### Week 12 — NoSQL Databases
+- **Indianapolis**: March 30 & April 1, 2026
+- **West Lafayette**: March 31 & April 2, 2026
+
+### Week 13 — Transactions and Isolation
+- **Indianapolis**: April 6 & 8, 2026
+- **West Lafayette**: April 7 & 9, 2026
+
+### Week 14 — Analytical Databases
+- **Indianapolis**: April 13 & 15, 2026
+- **West Lafayette**: April 14 & 16, 2026
+
+### Week 15 — Distributed Databases
+- **Indianapolis**: April 20 & 22, 2026
+- **West Lafayette**: April 21 & 23, 2026
+
+### Week 16 — Final Assessments
+- **Indianapolis**: April 27 & 29, 2026
+- **West Lafayette**: April 28 & 30, 2026
+  - Midterm Exam 2: April 27, 2026, from 8:00 PM to 9:30 PM.
+
+This schedule is tentative and subject to change. Please keep an eye on course announcements for any updates.
+
+user: When is project 1 and its various stages due?
+
+==============================
+current question: When is project 1 and its various stages due?
+
+Retrieving relevant documents...
+time for retriever: 0.21944093704223633
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Generating final answer with LLM...
+
+Final answer generated.
+
+Final Answer:
+The due dates for Project Stage 1 and its subsequent stages are as follows:  - **Project Stage 1**:
+Assigned during Week 1 and due at the end of Week 2 (exact date not specified). - **Project Stage
+2**: Due on **March 28, 2026**. - **Project Stage 3**: Due on **May 1, 2026**.  Please note that
+these dates are part of a preliminary schedule and are subject to change.
+No traversal path to visualize.
+INFO:     128.210.106.78:0 - "POST /prompt HTTP/1.1" 200 OK
+
+======== RECEIVED QUERY ========
+user: tell me about CS348 schedule
+
+model: The schedule for CS 34800: Information Systems in Spring 2026 is as follows:
+
+### Week 1 — Introduction to Relational Databases
+- **Indianapolis Classes**: 
+  - January 12, 2026
+  - January 14, 2026
+- **West Lafayette Classes**: 
+  - January 13, 2026
+  - January 15, 2026
+- Topics: Course logistics, Relational data model, Introduction to SQL.
+
+### Week 2 — SQL Fundamentals
+- **Indianapolis**: January 19 & 21, 2026 (Note: No class on January 19, 2026 - ML ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: INAPPLICABLE
+INFO:     128.210.106.78:0 - "POST /prompt HTTP/1.1" 200 OK
+INFO:     128.210.106.78:0 - "GET /chat HTTP/1.1" 200 OK
+
+======== RECEIVED QUERY ========
+user: When is project 1 due for cs34800?
+
+==============================
+current question: When is project 1 due for cs34800? ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: GRAPH_RAG
+
+Rewritten query for RAG: cs34800 project 1 spring 2026 deadline + user: When is project 1 due for cs34800?
+
+==============================
+current question: When is project 1 due for cs34800?
+
+Processing query: cs34800 project 1 spring 2026 deadline + user: When is project 1 due for cs34800?
+
+==============================
+current question: When is project 1 due for cs34800?
+
+Retrieving relevant documents...
+time for retriever: 0.12899494171142578
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Generating final answer with LLM...
+
+Final answer generated.
+
+Final Answer:
+The due date for Project Stage 1 for CS34800 is **January 20, 2026** for West Lafayette and
+**January 19, 2026** for Indianapolis.
+No traversal path to visualize.
+INFO:     128.210.106.78:0 - "POST /prompt HTTP/1.1" 200 OK
+
+======== RECEIVED QUERY ========
+user: When is project 1 due for cs34800?
+
+model: The due date for Project Stage 1 for CS34800 is **January 20, 2026** for West Lafayette and **January 19, 2026** for Indianapolis.
+
+user: what about stage 2 and 3?
+
+==============================
+current question: what about stage 2 and 3? ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: GRAPH_RAG
+
+Rewritten query for RAG: cs34800 project stage 2 and stage 3 deadlines spring 2026 + user: When is project 1 due for cs34800?
+
+model: The due date for Project Stage 1 for CS34800 is **January 20, 2026** for West Lafayette and **January 19, 2026** for Indianapolis.
+
+user: what about stage 2 and 3?
+
+==============================
+current question: what about stage 2 and 3?
+
+Processing query: cs34800 project stage 2 and stage 3 deadlines spring 2026 + user: When is project 1 due for cs34800?
+
+model: The due date for Project Stage 1 for CS34800 is **January 20, 2026** for West Lafayette and **January 19, 2026** for Indianapolis.
+
+user: what about stage 2 and 3?
+
+==============================
+current question: what about stage 2 and 3?
+
+Retrieving relevant documents...
+time for retriever: 0.2438521385192871
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Generating final answer with LLM...
+
+Final answer generated.
+
+Final Answer:
+The due dates for Project Stage 2 and Project Stage 3 for CS34800 are as follows:  - **Project Stage
+2**: Due on **March 28, 2026**. - **Project Stage 3**: Due on **May 1, 2026**.   If you have any
+more questions, feel free to ask!
+No traversal path to visualize.
+INFO:     128.210.106.78:0 - "POST /prompt HTTP/1.1" 200 OK
+
+======== RECEIVED QUERY ========
+user: When is project 1 due for cs34800?
+
+model: The due date for Project Stage 1 for CS34800 is **January 20, 2026** for West Lafayette and **January 19, 2026** for Indianapolis.
+
+user: what about stage 2 and 3?
+
+model: The due dates for Project Stage 2 and Project Stage 3 for CS34800 are as follows:
+
+- **Project Stage 2**: Due on **March 28, 2026**.
+- **Project Stage 3**: Due on **May 1, 2026**. 
+
+If you have any more questions, feel free to ask!
+
+user: tell me about you
+
+===================== ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: GRAPH_RAG
+
+Rewritten query for RAG: cs34800 project stages 1 2 and 3 due dates spring 2026 + user: When is project 1 due for cs34800?
+
+model: The due date for Project Stage 1 for CS34800 is **January 20, 2026** for West Lafayette and **January 19, 2026** for Indianapolis.
+
+user: what about stage 2 and 3?
+
+model: The due dates for Project Stage 2 and Project Stage 3 for CS34800 are as follows:
+
+- **Project Stage 2**: Due on **March 28, 2026**.
+- **Project Stage 3**: Due on **May 1, 2026**. 
+
+If you have any more questions, feel free to ask!
+
+user: tell me about you
+
+==============================
+current question: tell me about you
+
+Processing query: cs34800 project stages 1 2 and 3 due dates spring 2026 + user: When is project 1 due for cs34800?
+
+model: The due date for Project Stage 1 for CS34800 is **January 20, 2026** for West Lafayette and **January 19, 2026** for Indianapolis.
+
+user: what about stage 2 and 3?
+
+model: The due dates for Project Stage 2 and Project Stage 3 for CS34800 are as follows:
+
+- **Project Stage 2**: Due on **March 28, 2026**.
+- **Project Stage 3**: Due on **May 1, 2026**. 
+
+If you have any more questions, feel free to ask!
+
+user: tell me about you
+
+==============================
+current question: tell me about you
+
+Retrieving relevant documents...
+time for retriever: 0.217329740524292
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Final Answer:
+
+Rewriting: Attempt 1: cs34800 project stages 1 2 and 3 due dates spring 2026 + user: When is project 1 due for cs34800?
+
+model: The due date for Project Stage 1 for CS34800 is **January 20, 2026** for West Lafayette and **January 19, 2026** for Indianapolis.
+
+user: what about stage 2 and 3?
+
+model: The due dates for Project Stage 2 and Project Stage 3 for CS34800 are as follows:
+
+- **Project Stage 2**: Due on **March 28, 2026**.
+- **Project Stage 3**: Due on **May 1, 2026**. 
+
+If you have any more questions, feel free to ask!
+
+user: tell me about you
+
+==============================
+current question: tell me about you
+
+
+Processing query: What are the capabilities and functions of the RAG pre-processing assistant model being used in this conversation?
+
+Retrieving relevant documents...
+time for retriever: 0.2112259864807129
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Final Answer:
+
+Rewriting: Attempt 1: cs34800 project stages 1 2 and 3 due dates spring 2026 + user: When is project 1 due for cs34800?
+
+model: The due date for Project Stage 1 for CS34800 is **January 20, 2026** for West Lafayette and **January 19, 2026** for Indianapolis.
+
+user: what about stage 2 and 3?
+
+model: The due dates for Project Stage 2 and Project Stage 3 for CS34800 are as follows:
+
+- **Project Stage 2**: Due on **March 28, 2026**.
+- **Project Stage 3**: Due on **May 1, 2026**. 
+
+If you have any more questions, feel free to ask!
+
+user: tell me about you
+
+==============================
+current question: tell me about you
+Attempt 2: What are the capabilities and functions of the RAG pre-processing assistant model being used in this conversation?
+
+
+Processing query: What are the capabilities, limitations, and primary functions of the AI model assisting in this conversation, specifically its role in rewriting user queries for a Retrieval-Augmented Generation pipeline?
+
+Retrieving relevant documents...
+time for retriever: 0.15284442901611328
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Final Answer:
+
+Rewriting: Attempt 1: cs34800 project stages 1 2 and 3 due dates spring 2026 + user: When is project 1 due for cs34800?
+
+model: The due date for Project Stage 1 for CS34800 is **January 20, 2026** for West Lafayette and **January 19, 2026** for Indianapolis.
+
+user: what about stage 2 and 3?
+
+model: The due dates for Project Stage 2 and Project Stage 3 for CS34800 are as follows:
+
+- **Project Stage 2**: Due on **March 28, 2026**.
+- **Project Stage 3**: Due on **May 1, 2026**. 
+
+If you have any more questions, feel free to ask!
+
+user: tell me about you
+
+==============================
+current question: tell me about you
+Attempt 2: What are the capabilities and functions of the RAG pre-processing assistant model being used in this conversation?
+Attempt 3: What are the capabilities, limitations, and primary functions of the AI model assisting in this conversation, specifically its role in rewriting user queries for a Retrieval-Augmented Generation pipeline?
+
+
+Processing query: What are the primary functions, capabilities, and limitations of the AI model used in this conversation, including its role in rewriting user queries and assisting with information retrieval for a Retrieval-Augmented Generation pipeline?
+
+Retrieving relevant documents...
+time for retriever: 0.2472238540649414
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Final Answer:
+
+Rewriting: Attempt 1: cs34800 project stages 1 2 and 3 due dates spring 2026 + user: When is project 1 due for cs34800?
+
+model: The due date for Project Stage 1 for CS34800 is **January 20, 2026** for West Lafayette and **January 19, 2026** for Indianapolis.
+
+user: what about stage 2 and 3?
+
+model: The due dates for Project Stage 2 and Project Stage 3 for CS34800 are as follows:
+
+- **Project Stage 2**: Due on **March 28, 2026**.
+- **Project Stage 3**: Due on **May 1, 2026**. 
+
+If you have any more questions, feel free to ask!
+
+user: tell me about you
+
+==============================
+current question: tell me about you
+Attempt 2: What are the capabilities and functions of the RAG pre-processing assistant model being used in this conversation?
+Attempt 3: What are the capabilities, limitations, and primary functions of the AI model assisting in this conversation, specifically its role in rewriting user queries for a Retrieval-Augmented Generation pipeline?
+Attempt 4: What are the primary functions, capabilities, and limitations of the AI model used in this conversation, including its role in rewriting user queries and assisting with information retrieval for a Retrieval-Augmented Generation pipeline?
+
+
+Processing query: What are the capabilities, limitations, and primary functions of the AI model used in this conversation, including its role in rewriting user queries, assisting with information retrieval, and interacting with users in the context of a Retrieval-Augmented Generation pipeline?
+
+Retrieving relevant documents...
+time for retriever: 0.24294018745422363
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Final Answer:
+
+Rewriting: Attempt 1: cs34800 project stages 1 2 and 3 due dates spring 2026 + user: When is project 1 due for cs34800?
+
+model: The due date for Project Stage 1 for CS34800 is **January 20, 2026** for West Lafayette and **January 19, 2026** for Indianapolis.
+
+user: what about stage 2 and 3?
+
+model: The due dates for Project Stage 2 and Project Stage 3 for CS34800 are as follows:
+
+- **Project Stage 2**: Due on **March 28, 2026**.
+- **Project Stage 3**: Due on **May 1, 2026**. 
+
+If you have any more questions, feel free to ask!
+
+user: tell me about you
+
+==============================
+current question: tell me about you
+Attempt 2: What are the capabilities and functions of the RAG pre-processing assistant model being used in this conversation?
+Attempt 3: What are the capabilities, limitations, and primary functions of the AI model assisting in this conversation, specifically its role in rewriting user queries for a Retrieval-Augmented Generation pipeline?
+Attempt 4: What are the primary functions, capabilities, and limitations of the AI model used in this conversation, including its role in rewriting user queries and assisting with information retrieval for a Retrieval-Augmented Generation pipeline?
+Attempt 5: What are the capabilities, limitations, and primary functions of the AI model used in this conversation, including its role in rewriting user queries, assisting with information retrieval, and interacting with users in the context of a Retrieval-Augmented Generation pipeline?
+
+
+Processing query: What are the capabilities, limitations, and primary functions of the AI model used in this conversation, including its role in rewriting user queries, assisting with information retrieval, and generating responses in the context of a Retrieval-Augmented Generation pipeline, with specific details about its pre-processing abilities and user interaction capabilities.
+
+Retrieving relevant documents...
+time for retriever: 0.44771790504455566
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Generating final answer with LLM...
+
+Final answer generated.
+
+Final Answer:
+I'm an AI designed to assist you by providing information and answering your questions based on the
+context and metadata provided. My capabilities include answering queries about academic deadlines,
+general knowledge, and more. If you have specific questions or need assistance, feel free to ask!
+No traversal path to visualize.
+INFO:     128.210.106.78:0 - "POST /prompt HTTP/1.1" 200 OK
+
+======== RECEIVED QUERY ========
+user: When is project 1 due for cs34800?
+
+model: The due date for Project Stage 1 for CS34800 is **January 20, 2026** for West Lafayette and **January 19, 2026** for Indianapolis.
+
+user: what about stage 2 and 3?
+
+model: The due dates for Project Stage 2 and Project Stage 3 for CS34800 are as follows:
+
+- **Project Stage 2**: Due on **March 28, 2026**.
+- **Project Stage 3**: Due on **May 1, 2026**. 
+
+If you have any more questions, feel free to ask!
+
+user: tell me about you
+
+model: I'm an AI desi ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: INAPPLICABLE
+INFO:     128.210.106.78:0 - "POST /prompt HTTP/1.1" 200 OK
+
+======== RECEIVED QUERY ========
+user: When is project 1 due for cs34800?
+
+model: The due date for Project Stage 1 for CS34800 is **January 20, 2026** for West Lafayette and **January 19, 2026** for Indianapolis.
+
+user: what about stage 2 and 3?
+
+model: The due dates for Project Stage 2 and Project Stage 3 for CS34800 are as follows:
+
+- **Project Stage 2**: Due on **March 28, 2026**.
+- **Project Stage 3**: Due on **May 1, 2026**. 
+
+If you have any more questions, feel free to ask!
+
+user: tell me about you
+
+model: I'm an AI desi ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: INAPPLICABLE
+INFO:     128.210.106.78:0 - "POST /prompt HTTP/1.1" 200 OK
+
+======== RECEIVED QUERY ========
+user: When is project 1 due for cs34800?
+
+model: The due date for Project Stage 1 for CS34800 is **January 20, 2026** for West Lafayette and **January 19, 2026** for Indianapolis.
+
+user: what about stage 2 and 3?
+
+model: The due dates for Project Stage 2 and Project Stage 3 for CS34800 are as follows:
+
+- **Project Stage 2**: Due on **March 28, 2026**.
+- **Project Stage 3**: Due on **May 1, 2026**. 
+
+If you have any more questions, feel free to ask!
+
+user: tell me about you
+
+model: I'm an AI desi ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: INAPPLICABLE
+INFO:     128.210.106.78:0 - "POST /prompt HTTP/1.1" 200 OK
+INFO:     128.210.106.78:0 - "GET /chat HTTP/1.1" 200 OK
+
+======== RECEIVED QUERY ========
+user: Say hi in Chinese.
+
+==============================
+current question: Say hi in Chinese. ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: INAPPLICABLE
+INFO:     128.210.106.78:0 - "POST /prompt HTTP/1.1" 200 OK
+
+======== RECEIVED QUERY ========
+user: Say hi in Chinese.
+
+model: I can only assist with academic advising questions.
+
+user: hi
+
+==============================
+current question: hi ...
+Language: spanish
+================================
+
+
+Routing the query...
+Routed to: INAPPLICABLE
+INFO:     128.210.106.78:0 - "POST /prompt HTTP/1.1" 200 OK
+
+======== RECEIVED QUERY ========
+user: Say hi in Chinese.
+
+model: I can only assist with academic advising questions.
+
+user: hi
+
+model: Solo puedo ayudar con preguntas de asesoramiento académico.
+
+user: hi
+
+==============================
+current question: hi ...
+Language: chinese
+================================
+
+
+Routing the query...
+Routed to: INAPPLICABLE
+INFO:     128.210.106.78:0 - "POST /prompt HTTP/1.1" 200 OK
+
+======== RECEIVED QUERY ========
+user: Say hi in Chinese.
+
+model: I can only assist with academic advising questions.
+
+user: hi
+
+model: Solo puedo ayudar con preguntas de asesoramiento académico.
+
+user: hi
+
+model: 我只能协助学术咨询问题。
+
+user: Give me information about CS441
+
+==============================
+current question: Give me information about CS441 ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: ADVISOR
+
+Rewritten query for RAG: cs441 course information spring 2026 + user: Say hi in Chinese.
+
+model: I can only assist with academic advising questions.
+
+user: hi
+
+model: Solo puedo ayudar con preguntas de asesoramiento académico.
+
+user: hi
+
+model: 我只能协助学术咨询问题。
+
+user: Give me information about CS441
+
+==============================
+current question: Give me information about CS441
+
+Processing query: cs441 course information spring 2026 + user: Say hi in Chinese.
+
+model: I can only assist with academic advising questions.
+
+user: hi
+
+model: Solo puedo ayudar con preguntas de asesoramiento académico.
+
+user: hi
+
+model: 我只能协助学术咨询问题。
+
+user: Give me information about CS441
+
+==============================
+current question: Give me information about CS441
+
+Retrieving relevant documents...
+time for retriever: 0.32445335388183594
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Generating final answer with LLM...
+
+Final answer generated.
+
+Final Answer:
+The course you're inquiring about is **CS 44100: Data Science Capstone** for the Spring 2026
+semester at Purdue University.   ### Key Details: - **Instructor**: Professor Mary Anne Smart   -
+**Email**: [masmart@purdue.edu](mailto:masmart@purdue.edu)   - **Office Hours**: Tuesdays, 2:30 PM –
+3:30 PM in DSAI 1119D or by appointment   - **Lecture Schedule**: Mondays and Wednesdays from 4:30
+PM to 5:45 PM in Hicks Undergraduate Library G980D    ### Course Description: This capstone course
+integrates your accumulated knowledge and skills to identify and solve realistic data science
+problems, focusing on practical applications. Projects may be sponsored by corporate partners or
+academic/non-academic research groups, utilizing the CRISP-DM methodology.   ### Course Structure:
+1. **Introduction (2 weeks)**: Discuss CRISP-DM and project selection. 2. **Business and Data
+Understanding (4 weeks)**: Explore projects and plan necessary information. 3. **Data Preparation (3
+weeks)**: Format data for analysis. 4. **Modeling (4 weeks)**: Experiment with modeling techniques.
+5. **Evaluation (Remainder of Semester)**: Assess model effectiveness and outcomes.  ###
+Assessments: - **Team Participation (80%)**   - Various reports including Business Understanding,
+Data Understanding, Data Preparation, Modeling, and Evaluation. - **Individual Participation (20%)**
+- Team project presentations and attendance.  ### Important Dates: - **Week 1**: Course introduction
+on January 12 and 14 - **MLK Day**: No class on January 19 - **Spring Break**: March 16 - March 18 -
+**Final Presentations**: Scheduled end of April  ### Contact Information for Assistance: -
+**Graduate Teaching Assistants**:   - Sai Coumar: [scoumar@purdue.edu](mailto:scoumar@purdue.edu)
+- Shrutheesh Iyer: [iyer270@purdue.edu](mailto:iyer270@purdue.edu)     - Pinaki Mohanty:
+[pmohanty@purdue.edu](mailto:pmohanty@purdue.edu)    ### Additional Resources: - Brightspace course
+platform for materials and updates.  Feel free to ask if you need more specific information or
+details!
+No traversal path to visualize.
+INFO:     128.210.106.78:0 - "POST /prompt HTTP/1.1" 200 OK
+
+======== RECEIVED QUERY ========
+user: Say hi in Chinese.
+
+model: I can only assist with academic advising questions.
+
+user: hi
+
+model: Solo puedo ayudar con preguntas de asesoramiento académico.
+
+user: hi
+
+model: 我只能协助学术咨询问题。
+
+user: Give me information about CS441
+
+model: The course you're inquiring about is **CS 44100: Data Science Capstone** for the Spring 2026 semester at Purdue University. 
+
+### Key Details:
+- **Instructor**: Professor Mary Anne Smart  
+- **Email**: [masmart@purdue.edu](mailto:masmart@purdue.edu)  
+- **Off ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: ADVISOR
+
+Rewritten query for RAG: CS441 project group teaching assistant assignment Spring 2026 + user: Say hi in Chinese.
+
+model: I can only assist with academic advising questions.
+
+user: hi
+
+model: Solo puedo ayudar con preguntas de asesoramiento académico.
+
+user: hi
+
+model: 我只能协助学术咨询问题。
+
+user: Give me information about CS441
+
+model: The course you're inquiring about is **CS 44100: Data Science Capstone** for the Spring 2026 semester at Purdue University. 
+
+### Key Details:
+- **Instructor**: Professor Mary Anne Smart  
+- **Email**: [masmart@purdue.edu](mailto:masmart@purdue.edu)  
+- **Office Hours**: Tuesdays, 2:30 PM – 3:30 PM in DSAI 1119D or by appointment  
+- **Lecture Schedule**: Mondays and Wednesdays from 4:30 PM to 5:45 PM in Hicks Undergraduate Library G980D  
+
+### Course Description:
+This capstone course integrates your accumulated knowledge and skills to identify and solve realistic data science problems, focusing on practical applications. Projects may be sponsored by corporate partners or academic/non-academic research groups, utilizing the CRISP-DM methodology. 
+
+### Course Structure:
+1. **Introduction (2 weeks)**: Discuss CRISP-DM and project selection.
+2. **Business and Data Understanding (4 weeks)**: Explore projects and plan necessary information.
+3. **Data Preparation (3 weeks)**: Format data for analysis.
+4. **Modeling (4 weeks)**: Experiment with modeling techniques.
+5. **Evaluation (Remainder of Semester)**: Assess model effectiveness and outcomes.
+
+### Assessments:
+- **Team Participation (80%)**
+  - Various reports including Business Understanding, Data Understanding, Data Preparation, Modeling, and Evaluation.
+- **Individual Participation (20%)**
+  - Team project presentations and attendance.
+
+### Important Dates:
+- **Week 1**: Course introduction on January 12 and 14
+- **MLK Day**: No class on January 19
+- **Spring Break**: March 16 - March 18
+- **Final Presentations**: Scheduled end of April
+
+### Contact Information for Assistance:
+- **Graduate Teaching Assistants**:
+  - Sai Coumar: [scoumar@purdue.edu](mailto:scoumar@purdue.edu)  
+  - Shrutheesh Iyer: [iyer270@purdue.edu](mailto:iyer270@purdue.edu)  
+  - Pinaki Mohanty: [pmohanty@purdue.edu](mailto:pmohanty@purdue.edu)  
+
+### Additional Resources:
+- Brightspace course platform for materials and updates.
+
+Feel free to ask if you need more specific information or details!
+
+user: Does each project group have a different TA?
+
+==============================
+current question: Does each project group have a different TA?
+
+Processing query: CS441 project group teaching assistant assignment Spring 2026 + user: Say hi in Chinese.
+
+model: I can only assist with academic advising questions.
+
+user: hi
+
+model: Solo puedo ayudar con preguntas de asesoramiento académico.
+
+user: hi
+
+model: 我只能协助学术咨询问题。
+
+user: Give me information about CS441
+
+model: The course you're inquiring about is **CS 44100: Data Science Capstone** for the Spring 2026 semester at Purdue University. 
+
+### Key Details:
+- **Instructor**: Professor Mary Anne Smart  
+- **Email**: [masmart@purdue.edu](mailto:masmart@purdue.edu)  
+- **Office Hours**: Tuesdays, 2:30 PM – 3:30 PM in DSAI 1119D or by appointment  
+- **Lecture Schedule**: Mondays and Wednesdays from 4:30 PM to 5:45 PM in Hicks Undergraduate Library G980D  
+
+### Course Description:
+This capstone course integrates your accumulated knowledge and skills to identify and solve realistic data science problems, focusing on practical applications. Projects may be sponsored by corporate partners or academic/non-academic research groups, utilizing the CRISP-DM methodology. 
+
+### Course Structure:
+1. **Introduction (2 weeks)**: Discuss CRISP-DM and project selection.
+2. **Business and Data Understanding (4 weeks)**: Explore projects and plan necessary information.
+3. **Data Preparation (3 weeks)**: Format data for analysis.
+4. **Modeling (4 weeks)**: Experiment with modeling techniques.
+5. **Evaluation (Remainder of Semester)**: Assess model effectiveness and outcomes.
+
+### Assessments:
+- **Team Participation (80%)**
+  - Various reports including Business Understanding, Data Understanding, Data Preparation, Modeling, and Evaluation.
+- **Individual Participation (20%)**
+  - Team project presentations and attendance.
+
+### Important Dates:
+- **Week 1**: Course introduction on January 12 and 14
+- **MLK Day**: No class on January 19
+- **Spring Break**: March 16 - March 18
+- **Final Presentations**: Scheduled end of April
+
+### Contact Information for Assistance:
+- **Graduate Teaching Assistants**:
+  - Sai Coumar: [scoumar@purdue.edu](mailto:scoumar@purdue.edu)  
+  - Shrutheesh Iyer: [iyer270@purdue.edu](mailto:iyer270@purdue.edu)  
+  - Pinaki Mohanty: [pmohanty@purdue.edu](mailto:pmohanty@purdue.edu)  
+
+### Additional Resources:
+- Brightspace course platform for materials and updates.
+
+Feel free to ask if you need more specific information or details!
+
+user: Does each project group have a different TA?
+
+==============================
+current question: Does each project group have a different TA?
+
+Retrieving relevant documents...
+time for retriever: 0.38579726219177246
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Final Answer:
+
+Rewriting: Attempt 1: CS441 project group teaching assistant assignment Spring 2026 + user: Say hi in Chinese.
+
+model: I can only assist with academic advising questions.
+
+user: hi
+
+model: Solo puedo ayudar con preguntas de asesoramiento académico.
+
+user: hi
+
+model: 我只能协助学术咨询问题。
+
+user: Give me information about CS441
+
+model: The course you're inquiring about is **CS 44100: Data Science Capstone** for the Spring 2026 semester at Purdue University. 
+
+### Key Details:
+- **Instructor**: Professor Mary Anne Smart  
+- **Email**: [masmart@purdue.edu](mailto:masmart@purdue.edu)  
+- **Office Hours**: Tuesdays, 2:30 PM – 3:30 PM in DSAI 1119D or by appointment  
+- **Lecture Schedule**: Mondays and Wednesdays from 4:30 PM to 5:45 PM in Hicks Undergraduate Library G980D  
+
+### Course Description:
+This capstone course integrates your accumulated knowledge and skills to identify and solve realistic data science problems, focusing on practical applications. Projects may be sponsored by corporate partners or academic/non-academic research groups, utilizing the CRISP-DM methodology. 
+
+### Course Structure:
+1. **Introduction (2 weeks)**: Discuss CRISP-DM and project selection.
+2. **Business and Data Understanding (4 weeks)**: Explore projects and plan necessary information.
+3. **Data Preparation (3 weeks)**: Format data for analysis.
+4. **Modeling (4 weeks)**: Experiment with modeling techniques.
+5. **Evaluation (Remainder of Semester)**: Assess model effectiveness and outcomes.
+
+### Assessments:
+- **Team Participation (80%)**
+  - Various reports including Business Understanding, Data Understanding, Data Preparation, Modeling, and Evaluation.
+- **Individual Participation (20%)**
+  - Team project presentations and attendance.
+
+### Important Dates:
+- **Week 1**: Course introduction on January 12 and 14
+- **MLK Day**: No class on January 19
+- **Spring Break**: March 16 - March 18
+- **Final Presentations**: Scheduled end of April
+
+### Contact Information for Assistance:
+- **Graduate Teaching Assistants**:
+  - Sai Coumar: [scoumar@purdue.edu](mailto:scoumar@purdue.edu)  
+  - Shrutheesh Iyer: [iyer270@purdue.edu](mailto:iyer270@purdue.edu)  
+  - Pinaki Mohanty: [pmohanty@purdue.edu](mailto:pmohanty@purdue.edu)  
+
+### Additional Resources:
+- Brightspace course platform for materials and updates.
+
+Feel free to ask if you need more specific information or details!
+
+user: Does each project group have a different TA?
+
+==============================
+current question: Does each project group have a different TA?
+
+
+Processing query: Are project groups in CS441 assigned a unique teaching assistant or do multiple groups share the same TA?
+
+Retrieving relevant documents...
+time for retriever: 0.1349320411682129
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Final Answer:
+
+Rewriting: Attempt 1: CS441 project group teaching assistant assignment Spring 2026 + user: Say hi in Chinese.
+
+model: I can only assist with academic advising questions.
+
+user: hi
+
+model: Solo puedo ayudar con preguntas de asesoramiento académico.
+
+user: hi
+
+model: 我只能协助学术咨询问题。
+
+user: Give me information about CS441
+
+model: The course you're inquiring about is **CS 44100: Data Science Capstone** for the Spring 2026 semester at Purdue University. 
+
+### Key Details:
+- **Instructor**: Professor Mary Anne Smart  
+- **Email**: [masmart@purdue.edu](mailto:masmart@purdue.edu)  
+- **Office Hours**: Tuesdays, 2:30 PM – 3:30 PM in DSAI 1119D or by appointment  
+- **Lecture Schedule**: Mondays and Wednesdays from 4:30 PM to 5:45 PM in Hicks Undergraduate Library G980D  
+
+### Course Description:
+This capstone course integrates your accumulated knowledge and skills to identify and solve realistic data science problems, focusing on practical applications. Projects may be sponsored by corporate partners or academic/non-academic research groups, utilizing the CRISP-DM methodology. 
+
+### Course Structure:
+1. **Introduction (2 weeks)**: Discuss CRISP-DM and project selection.
+2. **Business and Data Understanding (4 weeks)**: Explore projects and plan necessary information.
+3. **Data Preparation (3 weeks)**: Format data for analysis.
+4. **Modeling (4 weeks)**: Experiment with modeling techniques.
+5. **Evaluation (Remainder of Semester)**: Assess model effectiveness and outcomes.
+
+### Assessments:
+- **Team Participation (80%)**
+  - Various reports including Business Understanding, Data Understanding, Data Preparation, Modeling, and Evaluation.
+- **Individual Participation (20%)**
+  - Team project presentations and attendance.
+
+### Important Dates:
+- **Week 1**: Course introduction on January 12 and 14
+- **MLK Day**: No class on January 19
+- **Spring Break**: March 16 - March 18
+- **Final Presentations**: Scheduled end of April
+
+### Contact Information for Assistance:
+- **Graduate Teaching Assistants**:
+  - Sai Coumar: [scoumar@purdue.edu](mailto:scoumar@purdue.edu)  
+  - Shrutheesh Iyer: [iyer270@purdue.edu](mailto:iyer270@purdue.edu)  
+  - Pinaki Mohanty: [pmohanty@purdue.edu](mailto:pmohanty@purdue.edu)  
+
+### Additional Resources:
+- Brightspace course platform for materials and updates.
+
+Feel free to ask if you need more specific information or details!
+
+user: Does each project group have a different TA?
+
+==============================
+current question: Does each project group have a different TA?
+Attempt 2: Are project groups in CS441 assigned a unique teaching assistant or do multiple groups share the same TA?
+
+
+Processing query: Are CS441 project groups at Purdue University assigned a unique teaching assistant or do multiple project groups share the same graduate teaching assistant for the Spring 2026 semester?
+
+Retrieving relevant documents...
+time for retriever: 0.1420581340789795
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Final Answer:
+
+Rewriting: Attempt 1: CS441 project group teaching assistant assignment Spring 2026 + user: Say hi in Chinese.
+
+model: I can only assist with academic advising questions.
+
+user: hi
+
+model: Solo puedo ayudar con preguntas de asesoramiento académico.
+
+user: hi
+
+model: 我只能协助学术咨询问题。
+
+user: Give me information about CS441
+
+model: The course you're inquiring about is **CS 44100: Data Science Capstone** for the Spring 2026 semester at Purdue University. 
+
+### Key Details:
+- **Instructor**: Professor Mary Anne Smart  
+- **Email**: [masmart@purdue.edu](mailto:masmart@purdue.edu)  
+- **Office Hours**: Tuesdays, 2:30 PM – 3:30 PM in DSAI 1119D or by appointment  
+- **Lecture Schedule**: Mondays and Wednesdays from 4:30 PM to 5:45 PM in Hicks Undergraduate Library G980D  
+
+### Course Description:
+This capstone course integrates your accumulated knowledge and skills to identify and solve realistic data science problems, focusing on practical applications. Projects may be sponsored by corporate partners or academic/non-academic research groups, utilizing the CRISP-DM methodology. 
+
+### Course Structure:
+1. **Introduction (2 weeks)**: Discuss CRISP-DM and project selection.
+2. **Business and Data Understanding (4 weeks)**: Explore projects and plan necessary information.
+3. **Data Preparation (3 weeks)**: Format data for analysis.
+4. **Modeling (4 weeks)**: Experiment with modeling techniques.
+5. **Evaluation (Remainder of Semester)**: Assess model effectiveness and outcomes.
+
+### Assessments:
+- **Team Participation (80%)**
+  - Various reports including Business Understanding, Data Understanding, Data Preparation, Modeling, and Evaluation.
+- **Individual Participation (20%)**
+  - Team project presentations and attendance.
+
+### Important Dates:
+- **Week 1**: Course introduction on January 12 and 14
+- **MLK Day**: No class on January 19
+- **Spring Break**: March 16 - March 18
+- **Final Presentations**: Scheduled end of April
+
+### Contact Information for Assistance:
+- **Graduate Teaching Assistants**:
+  - Sai Coumar: [scoumar@purdue.edu](mailto:scoumar@purdue.edu)  
+  - Shrutheesh Iyer: [iyer270@purdue.edu](mailto:iyer270@purdue.edu)  
+  - Pinaki Mohanty: [pmohanty@purdue.edu](mailto:pmohanty@purdue.edu)  
+
+### Additional Resources:
+- Brightspace course platform for materials and updates.
+
+Feel free to ask if you need more specific information or details!
+
+user: Does each project group have a different TA?
+
+==============================
+current question: Does each project group have a different TA?
+Attempt 2: Are project groups in CS441 assigned a unique teaching assistant or do multiple groups share the same TA?
+Attempt 3: Are CS441 project groups at Purdue University assigned a unique teaching assistant or do multiple project groups share the same graduate teaching assistant for the Spring 2026 semester?
+
+
+Processing query: Are CS441 project groups at Purdue University assigned a unique teaching assistant or do multiple project groups share the same graduate teaching assistant for the Spring 2026 semester, and if shared, what is the typical ratio of project groups to teaching assistants?
+
+Retrieving relevant documents...
+time for retriever: 0.21217656135559082
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Final Answer:
+
+Rewriting: Attempt 1: CS441 project group teaching assistant assignment Spring 2026 + user: Say hi in Chinese.
+
+model: I can only assist with academic advising questions.
+
+user: hi
+
+model: Solo puedo ayudar con preguntas de asesoramiento académico.
+
+user: hi
+
+model: 我只能协助学术咨询问题。
+
+user: Give me information about CS441
+
+model: The course you're inquiring about is **CS 44100: Data Science Capstone** for the Spring 2026 semester at Purdue University. 
+
+### Key Details:
+- **Instructor**: Professor Mary Anne Smart  
+- **Email**: [masmart@purdue.edu](mailto:masmart@purdue.edu)  
+- **Office Hours**: Tuesdays, 2:30 PM – 3:30 PM in DSAI 1119D or by appointment  
+- **Lecture Schedule**: Mondays and Wednesdays from 4:30 PM to 5:45 PM in Hicks Undergraduate Library G980D  
+
+### Course Description:
+This capstone course integrates your accumulated knowledge and skills to identify and solve realistic data science problems, focusing on practical applications. Projects may be sponsored by corporate partners or academic/non-academic research groups, utilizing the CRISP-DM methodology. 
+
+### Course Structure:
+1. **Introduction (2 weeks)**: Discuss CRISP-DM and project selection.
+2. **Business and Data Understanding (4 weeks)**: Explore projects and plan necessary information.
+3. **Data Preparation (3 weeks)**: Format data for analysis.
+4. **Modeling (4 weeks)**: Experiment with modeling techniques.
+5. **Evaluation (Remainder of Semester)**: Assess model effectiveness and outcomes.
+
+### Assessments:
+- **Team Participation (80%)**
+  - Various reports including Business Understanding, Data Understanding, Data Preparation, Modeling, and Evaluation.
+- **Individual Participation (20%)**
+  - Team project presentations and attendance.
+
+### Important Dates:
+- **Week 1**: Course introduction on January 12 and 14
+- **MLK Day**: No class on January 19
+- **Spring Break**: March 16 - March 18
+- **Final Presentations**: Scheduled end of April
+
+### Contact Information for Assistance:
+- **Graduate Teaching Assistants**:
+  - Sai Coumar: [scoumar@purdue.edu](mailto:scoumar@purdue.edu)  
+  - Shrutheesh Iyer: [iyer270@purdue.edu](mailto:iyer270@purdue.edu)  
+  - Pinaki Mohanty: [pmohanty@purdue.edu](mailto:pmohanty@purdue.edu)  
+
+### Additional Resources:
+- Brightspace course platform for materials and updates.
+
+Feel free to ask if you need more specific information or details!
+
+user: Does each project group have a different TA?
+
+==============================
+current question: Does each project group have a different TA?
+Attempt 2: Are project groups in CS441 assigned a unique teaching assistant or do multiple groups share the same TA?
+Attempt 3: Are CS441 project groups at Purdue University assigned a unique teaching assistant or do multiple project groups share the same graduate teaching assistant for the Spring 2026 semester?
+Attempt 4: Are CS441 project groups at Purdue University assigned a unique teaching assistant or do multiple project groups share the same graduate teaching assistant for the Spring 2026 semester, and if shared, what is the typical ratio of project groups to teaching assistants?
+
+
+Processing query: Are CS441 project groups at Purdue University assigned a unique teaching assistant or do multiple groups share the same graduate teaching assistant for the Spring 2026 semester, and what is the process for assigning teaching assistants to project groups in the Data Science Capstone course?
+
+Retrieving relevant documents...
+time for retriever: 0.3120608329772949
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Final Answer:
+
+Rewriting: Attempt 1: CS441 project group teaching assistant assignment Spring 2026 + user: Say hi in Chinese.
+
+model: I can only assist with academic advising questions.
+
+user: hi
+
+model: Solo puedo ayudar con preguntas de asesoramiento académico.
+
+user: hi
+
+model: 我只能协助学术咨询问题。
+
+user: Give me information about CS441
+
+model: The course you're inquiring about is **CS 44100: Data Science Capstone** for the Spring 2026 semester at Purdue University. 
+
+### Key Details:
+- **Instructor**: Professor Mary Anne Smart  
+- **Email**: [masmart@purdue.edu](mailto:masmart@purdue.edu)  
+- **Office Hours**: Tuesdays, 2:30 PM – 3:30 PM in DSAI 1119D or by appointment  
+- **Lecture Schedule**: Mondays and Wednesdays from 4:30 PM to 5:45 PM in Hicks Undergraduate Library G980D  
+
+### Course Description:
+This capstone course integrates your accumulated knowledge and skills to identify and solve realistic data science problems, focusing on practical applications. Projects may be sponsored by corporate partners or academic/non-academic research groups, utilizing the CRISP-DM methodology. 
+
+### Course Structure:
+1. **Introduction (2 weeks)**: Discuss CRISP-DM and project selection.
+2. **Business and Data Understanding (4 weeks)**: Explore projects and plan necessary information.
+3. **Data Preparation (3 weeks)**: Format data for analysis.
+4. **Modeling (4 weeks)**: Experiment with modeling techniques.
+5. **Evaluation (Remainder of Semester)**: Assess model effectiveness and outcomes.
+
+### Assessments:
+- **Team Participation (80%)**
+  - Various reports including Business Understanding, Data Understanding, Data Preparation, Modeling, and Evaluation.
+- **Individual Participation (20%)**
+  - Team project presentations and attendance.
+
+### Important Dates:
+- **Week 1**: Course introduction on January 12 and 14
+- **MLK Day**: No class on January 19
+- **Spring Break**: March 16 - March 18
+- **Final Presentations**: Scheduled end of April
+
+### Contact Information for Assistance:
+- **Graduate Teaching Assistants**:
+  - Sai Coumar: [scoumar@purdue.edu](mailto:scoumar@purdue.edu)  
+  - Shrutheesh Iyer: [iyer270@purdue.edu](mailto:iyer270@purdue.edu)  
+  - Pinaki Mohanty: [pmohanty@purdue.edu](mailto:pmohanty@purdue.edu)  
+
+### Additional Resources:
+- Brightspace course platform for materials and updates.
+
+Feel free to ask if you need more specific information or details!
+
+user: Does each project group have a different TA?
+
+==============================
+current question: Does each project group have a different TA?
+Attempt 2: Are project groups in CS441 assigned a unique teaching assistant or do multiple groups share the same TA?
+Attempt 3: Are CS441 project groups at Purdue University assigned a unique teaching assistant or do multiple project groups share the same graduate teaching assistant for the Spring 2026 semester?
+Attempt 4: Are CS441 project groups at Purdue University assigned a unique teaching assistant or do multiple project groups share the same graduate teaching assistant for the Spring 2026 semester, and if shared, what is the typical ratio of project groups to teaching assistants?
+Attempt 5: Are CS441 project groups at Purdue University assigned a unique teaching assistant or do multiple groups share the same graduate teaching assistant for the Spring 2026 semester, and what is the process for assigning teaching assistants to project groups in the Data Science Capstone course?
+
+
+Processing query: Are CS441 project groups at Purdue University assigned a unique teaching assistant, and if not, what is the standard teaching assistant to project group ratio for the Spring 2026 semester of the Data Science Capstone course?
+
+Retrieving relevant documents...
+time for retriever: 0.41559481620788574
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Generating final answer with LLM...
+
+Final answer generated.
+
+Final Answer:
+The context does not specify whether each project group has a different TA. It's common for courses
+to assign a single TA to multiple groups, but without additional information, there's a risk of
+hallucination regarding TA assignments. You may want to reach out to Professor Mary Anne Smart or
+one of the graduate teaching assistants for clarification on TA assignments for your specific
+project group.
+No traversal path to visualize.
+INFO:     128.210.106.78:0 - "POST /prompt HTTP/1.1" 200 OK
+
+======== RECEIVED QUERY ========
+user: Say hi in Chinese.
+
+model: I can only assist with academic advising questions.
+
+user: hi
+
+model: Solo puedo ayudar con preguntas de asesoramiento académico.
+
+user: hi
+
+model: 我只能协助学术咨询问题。
+
+user: Give me information about CS441
+
+model: The course you're inquiring about is **CS 44100: Data Science Capstone** for the Spring 2026 semester at Purdue University. 
+
+### Key Details:
+- **Instructor**: Professor Mary Anne Smart  
+- **Email**: [masmart@purdue.edu](mailto:masmart@purdue.edu)  
+- **Off ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: ADVISOR
+
+Rewritten query for RAG: CS 440 course information Spring 2026 semester + user: Say hi in Chinese.
+
+model: I can only assist with academic advising questions.
+
+user: hi
+
+model: Solo puedo ayudar con preguntas de asesoramiento académico.
+
+user: hi
+
+model: 我只能协助学术咨询问题。
+
+user: Give me information about CS441
+
+model: The course you're inquiring about is **CS 44100: Data Science Capstone** for the Spring 2026 semester at Purdue University. 
+
+### Key Details:
+- **Instructor**: Professor Mary Anne Smart  
+- **Email**: [masmart@purdue.edu](mailto:masmart@purdue.edu)  
+- **Office Hours**: Tuesdays, 2:30 PM – 3:30 PM in DSAI 1119D or by appointment  
+- **Lecture Schedule**: Mondays and Wednesdays from 4:30 PM to 5:45 PM in Hicks Undergraduate Library G980D  
+
+### Course Description:
+This capstone course integrates your accumulated knowledge and skills to identify and solve realistic data science problems, focusing on practical applications. Projects may be sponsored by corporate partners or academic/non-academic research groups, utilizing the CRISP-DM methodology. 
+
+### Course Structure:
+1. **Introduction (2 weeks)**: Discuss CRISP-DM and project selection.
+2. **Business and Data Understanding (4 weeks)**: Explore projects and plan necessary information.
+3. **Data Preparation (3 weeks)**: Format data for analysis.
+4. **Modeling (4 weeks)**: Experiment with modeling techniques.
+5. **Evaluation (Remainder of Semester)**: Assess model effectiveness and outcomes.
+
+### Assessments:
+- **Team Participation (80%)**
+  - Various reports including Business Understanding, Data Understanding, Data Preparation, Modeling, and Evaluation.
+- **Individual Participation (20%)**
+  - Team project presentations and attendance.
+
+### Important Dates:
+- **Week 1**: Course introduction on January 12 and 14
+- **MLK Day**: No class on January 19
+- **Spring Break**: March 16 - March 18
+- **Final Presentations**: Scheduled end of April
+
+### Contact Information for Assistance:
+- **Graduate Teaching Assistants**:
+  - Sai Coumar: [scoumar@purdue.edu](mailto:scoumar@purdue.edu)  
+  - Shrutheesh Iyer: [iyer270@purdue.edu](mailto:iyer270@purdue.edu)  
+  - Pinaki Mohanty: [pmohanty@purdue.edu](mailto:pmohanty@purdue.edu)  
+
+### Additional Resources:
+- Brightspace course platform for materials and updates.
+
+Feel free to ask if you need more specific information or details!
+
+user: Does each project group have a different TA?
+
+model: The context does not specify whether each project group has a different TA. It's common for courses to assign a single TA to multiple groups, but without additional information, there's a risk of hallucination regarding TA assignments. You may want to reach out to Professor Mary Anne Smart or one of the graduate teaching assistants for clarification on TA assignments for your specific project group.
+
+user: tell me abut CS440
+
+==============================
+current question: tell me abut CS440
+
+Processing query: CS 440 course information Spring 2026 semester + user: Say hi in Chinese.
+
+model: I can only assist with academic advising questions.
+
+user: hi
+
+model: Solo puedo ayudar con preguntas de asesoramiento académico.
+
+user: hi
+
+model: 我只能协助学术咨询问题。
+
+user: Give me information about CS441
+
+model: The course you're inquiring about is **CS 44100: Data Science Capstone** for the Spring 2026 semester at Purdue University. 
+
+### Key Details:
+- **Instructor**: Professor Mary Anne Smart  
+- **Email**: [masmart@purdue.edu](mailto:masmart@purdue.edu)  
+- **Office Hours**: Tuesdays, 2:30 PM – 3:30 PM in DSAI 1119D or by appointment  
+- **Lecture Schedule**: Mondays and Wednesdays from 4:30 PM to 5:45 PM in Hicks Undergraduate Library G980D  
+
+### Course Description:
+This capstone course integrates your accumulated knowledge and skills to identify and solve realistic data science problems, focusing on practical applications. Projects may be sponsored by corporate partners or academic/non-academic research groups, utilizing the CRISP-DM methodology. 
+
+### Course Structure:
+1. **Introduction (2 weeks)**: Discuss CRISP-DM and project selection.
+2. **Business and Data Understanding (4 weeks)**: Explore projects and plan necessary information.
+3. **Data Preparation (3 weeks)**: Format data for analysis.
+4. **Modeling (4 weeks)**: Experiment with modeling techniques.
+5. **Evaluation (Remainder of Semester)**: Assess model effectiveness and outcomes.
+
+### Assessments:
+- **Team Participation (80%)**
+  - Various reports including Business Understanding, Data Understanding, Data Preparation, Modeling, and Evaluation.
+- **Individual Participation (20%)**
+  - Team project presentations and attendance.
+
+### Important Dates:
+- **Week 1**: Course introduction on January 12 and 14
+- **MLK Day**: No class on January 19
+- **Spring Break**: March 16 - March 18
+- **Final Presentations**: Scheduled end of April
+
+### Contact Information for Assistance:
+- **Graduate Teaching Assistants**:
+  - Sai Coumar: [scoumar@purdue.edu](mailto:scoumar@purdue.edu)  
+  - Shrutheesh Iyer: [iyer270@purdue.edu](mailto:iyer270@purdue.edu)  
+  - Pinaki Mohanty: [pmohanty@purdue.edu](mailto:pmohanty@purdue.edu)  
+
+### Additional Resources:
+- Brightspace course platform for materials and updates.
+
+Feel free to ask if you need more specific information or details!
+
+user: Does each project group have a different TA?
+
+model: The context does not specify whether each project group has a different TA. It's common for courses to assign a single TA to multiple groups, but without additional information, there's a risk of hallucination regarding TA assignments. You may want to reach out to Professor Mary Anne Smart or one of the graduate teaching assistants for clarification on TA assignments for your specific project group.
+
+user: tell me abut CS440
+
+==============================
+current question: tell me abut CS440
+
+Retrieving relevant documents...
+time for retriever: 0.8807363510131836
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Generating final answer with LLM...
+
+Final answer generated.
+
+Final Answer:
+The course you're inquiring about is **CS 44000: Large Scale Data Analytics** for the Spring 2026
+semester at Purdue University.  ### Key Details: - **Instructor**: Jianguo Wang   - **Email**:
+[csjgwang@purdue.edu](mailto:csjgwang@purdue.edu) (ensure to include "[CS440]" in the subject) -
+**Lecture Schedule**: Mondays and Wednesdays from 3:30 PM to 4:20 PM - **Location**: Wilmeth Active
+Learning Center 3087 - **Office Hours**: After class or by appointment  ### Course Description: This
+course focuses on the key concepts, design principles, and systems used to analyze large-scale data,
+aiming to extract valuable insights from "big data."  ### Tentative Topics Include: - Database
+fundamentals - Big data storage (e.g., HDFS) - Big data computing frameworks (e.g., Hadoop and
+Spark) - Data warehouses and lakes - Graph analytics (e.g., Spark Graph) - Data streaming (e.g.,
+Spark Streaming) - Large-scale machine learning (e.g., Spark MLlib) - Vector databases - Cloud-
+native data analytics  ### Grading Structure: - Homeworks: 20% (2 assignments, 10% each) - Midterm
+Exam: 25% - Final Exam: 35% - Project: 20% (2 projects, 10% each) - Extra Credits: 5%  ### Labs and
+PSOs: Labs and PSOs begin in the third week of the semester, with specific schedules for lab
+sessions.  ### Recommendations: For more details or specific inquiries, it might be helpful to reach
+out to the instructor or teaching assistants.
+No traversal path to visualize.
+INFO:     128.210.106.78:0 - "POST /prompt HTTP/1.1" 200 OK
+
+======== RECEIVED QUERY ========
+user: Say hi in Chinese.
+
+model: I can only assist with academic advising questions.
+
+user: hi
+
+model: Solo puedo ayudar con preguntas de asesoramiento académico.
+
+user: hi
+
+model: 我只能协助学术咨询问题。
+
+user: Give me information about CS441
+
+model: The course you're inquiring about is **CS 44100: Data Science Capstone** for the Spring 2026 semester at Purdue University. 
+
+### Key Details:
+- **Instructor**: Professor Mary Anne Smart  
+- **Email**: [masmart@purdue.edu](mailto:masmart@purdue.edu)  
+- **Off ...
+Language: none
+================================
+
+
+Routing the query...
+Routed to: GRAPH_RAG
+
+Rewritten query for RAG: CS440 or CS441 grading structure and point allocation per question + user: Say hi in Chinese.
+
+model: I can only assist with academic advising questions.
+
+user: hi
+
+model: Solo puedo ayudar con preguntas de asesoramiento académico.
+
+user: hi
+
+model: 我只能协助学术咨询问题。
+
+user: Give me information about CS441
+
+model: The course you're inquiring about is **CS 44100: Data Science Capstone** for the Spring 2026 semester at Purdue University. 
+
+### Key Details:
+- **Instructor**: Professor Mary Anne Smart  
+- **Email**: [masmart@purdue.edu](mailto:masmart@purdue.edu)  
+- **Office Hours**: Tuesdays, 2:30 PM – 3:30 PM in DSAI 1119D or by appointment  
+- **Lecture Schedule**: Mondays and Wednesdays from 4:30 PM to 5:45 PM in Hicks Undergraduate Library G980D  
+
+### Course Description:
+This capstone course integrates your accumulated knowledge and skills to identify and solve realistic data science problems, focusing on practical applications. Projects may be sponsored by corporate partners or academic/non-academic research groups, utilizing the CRISP-DM methodology. 
+
+### Course Structure:
+1. **Introduction (2 weeks)**: Discuss CRISP-DM and project selection.
+2. **Business and Data Understanding (4 weeks)**: Explore projects and plan necessary information.
+3. **Data Preparation (3 weeks)**: Format data for analysis.
+4. **Modeling (4 weeks)**: Experiment with modeling techniques.
+5. **Evaluation (Remainder of Semester)**: Assess model effectiveness and outcomes.
+
+### Assessments:
+- **Team Participation (80%)**
+  - Various reports including Business Understanding, Data Understanding, Data Preparation, Modeling, and Evaluation.
+- **Individual Participation (20%)**
+  - Team project presentations and attendance.
+
+### Important Dates:
+- **Week 1**: Course introduction on January 12 and 14
+- **MLK Day**: No class on January 19
+- **Spring Break**: March 16 - March 18
+- **Final Presentations**: Scheduled end of April
+
+### Contact Information for Assistance:
+- **Graduate Teaching Assistants**:
+  - Sai Coumar: [scoumar@purdue.edu](mailto:scoumar@purdue.edu)  
+  - Shrutheesh Iyer: [iyer270@purdue.edu](mailto:iyer270@purdue.edu)  
+  - Pinaki Mohanty: [pmohanty@purdue.edu](mailto:pmohanty@purdue.edu)  
+
+### Additional Resources:
+- Brightspace course platform for materials and updates.
+
+Feel free to ask if you need more specific information or details!
+
+user: Does each project group have a different TA?
+
+model: The context does not specify whether each project group has a different TA. It's common for courses to assign a single TA to multiple groups, but without additional information, there's a risk of hallucination regarding TA assignments. You may want to reach out to Professor Mary Anne Smart or one of the graduate teaching assistants for clarification on TA assignments for your specific project group.
+
+user: tell me abut CS440
+
+model: The course you're inquiring about is **CS 44000: Large Scale Data Analytics** for the Spring 2026 semester at Purdue University.
+
+### Key Details:
+- **Instructor**: Jianguo Wang  
+- **Email**: [csjgwang@purdue.edu](mailto:csjgwang@purdue.edu) (ensure to include "[CS440]" in the subject)
+- **Lecture Schedule**: Mondays and Wednesdays from 3:30 PM to 4:20 PM
+- **Location**: Wilmeth Active Learning Center 3087
+- **Office Hours**: After class or by appointment
+
+### Course Description:
+This course focuses on the key concepts, design principles, and systems used to analyze large-scale data, aiming to extract valuable insights from "big data."
+
+### Tentative Topics Include:
+- Database fundamentals
+- Big data storage (e.g., HDFS)
+- Big data computing frameworks (e.g., Hadoop and Spark)
+- Data warehouses and lakes
+- Graph analytics (e.g., Spark Graph)
+- Data streaming (e.g., Spark Streaming)
+- Large-scale machine learning (e.g., Spark MLlib)
+- Vector databases
+- Cloud-native data analytics
+
+### Grading Structure:
+- Homeworks: 20% (2 assignments, 10% each)
+- Midterm Exam: 25%
+- Final Exam: 35%
+- Project: 20% (2 projects, 10% each)
+- Extra Credits: 5%
+
+### Labs and PSOs:
+Labs and PSOs begin in the third week of the semester, with specific schedules for lab sessions.
+
+### Recommendations:
+For more details or specific inquiries, it might be helpful to reach out to the instructor or teaching assistants.
+
+user: How many points do I earn per question?
+
+==============================
+current question: How many points do I earn per question?
+
+Processing query: CS440 or CS441 grading structure and point allocation per question + user: Say hi in Chinese.
+
+model: I can only assist with academic advising questions.
+
+user: hi
+
+model: Solo puedo ayudar con preguntas de asesoramiento académico.
+
+user: hi
+
+model: 我只能协助学术咨询问题。
+
+user: Give me information about CS441
+
+model: The course you're inquiring about is **CS 44100: Data Science Capstone** for the Spring 2026 semester at Purdue University. 
+
+### Key Details:
+- **Instructor**: Professor Mary Anne Smart  
+- **Email**: [masmart@purdue.edu](mailto:masmart@purdue.edu)  
+- **Office Hours**: Tuesdays, 2:30 PM – 3:30 PM in DSAI 1119D or by appointment  
+- **Lecture Schedule**: Mondays and Wednesdays from 4:30 PM to 5:45 PM in Hicks Undergraduate Library G980D  
+
+### Course Description:
+This capstone course integrates your accumulated knowledge and skills to identify and solve realistic data science problems, focusing on practical applications. Projects may be sponsored by corporate partners or academic/non-academic research groups, utilizing the CRISP-DM methodology. 
+
+### Course Structure:
+1. **Introduction (2 weeks)**: Discuss CRISP-DM and project selection.
+2. **Business and Data Understanding (4 weeks)**: Explore projects and plan necessary information.
+3. **Data Preparation (3 weeks)**: Format data for analysis.
+4. **Modeling (4 weeks)**: Experiment with modeling techniques.
+5. **Evaluation (Remainder of Semester)**: Assess model effectiveness and outcomes.
+
+### Assessments:
+- **Team Participation (80%)**
+  - Various reports including Business Understanding, Data Understanding, Data Preparation, Modeling, and Evaluation.
+- **Individual Participation (20%)**
+  - Team project presentations and attendance.
+
+### Important Dates:
+- **Week 1**: Course introduction on January 12 and 14
+- **MLK Day**: No class on January 19
+- **Spring Break**: March 16 - March 18
+- **Final Presentations**: Scheduled end of April
+
+### Contact Information for Assistance:
+- **Graduate Teaching Assistants**:
+  - Sai Coumar: [scoumar@purdue.edu](mailto:scoumar@purdue.edu)  
+  - Shrutheesh Iyer: [iyer270@purdue.edu](mailto:iyer270@purdue.edu)  
+  - Pinaki Mohanty: [pmohanty@purdue.edu](mailto:pmohanty@purdue.edu)  
+
+### Additional Resources:
+- Brightspace course platform for materials and updates.
+
+Feel free to ask if you need more specific information or details!
+
+user: Does each project group have a different TA?
+
+model: The context does not specify whether each project group has a different TA. It's common for courses to assign a single TA to multiple groups, but without additional information, there's a risk of hallucination regarding TA assignments. You may want to reach out to Professor Mary Anne Smart or one of the graduate teaching assistants for clarification on TA assignments for your specific project group.
+
+user: tell me abut CS440
+
+model: The course you're inquiring about is **CS 44000: Large Scale Data Analytics** for the Spring 2026 semester at Purdue University.
+
+### Key Details:
+- **Instructor**: Jianguo Wang  
+- **Email**: [csjgwang@purdue.edu](mailto:csjgwang@purdue.edu) (ensure to include "[CS440]" in the subject)
+- **Lecture Schedule**: Mondays and Wednesdays from 3:30 PM to 4:20 PM
+- **Location**: Wilmeth Active Learning Center 3087
+- **Office Hours**: After class or by appointment
+
+### Course Description:
+This course focuses on the key concepts, design principles, and systems used to analyze large-scale data, aiming to extract valuable insights from "big data."
+
+### Tentative Topics Include:
+- Database fundamentals
+- Big data storage (e.g., HDFS)
+- Big data computing frameworks (e.g., Hadoop and Spark)
+- Data warehouses and lakes
+- Graph analytics (e.g., Spark Graph)
+- Data streaming (e.g., Spark Streaming)
+- Large-scale machine learning (e.g., Spark MLlib)
+- Vector databases
+- Cloud-native data analytics
+
+### Grading Structure:
+- Homeworks: 20% (2 assignments, 10% each)
+- Midterm Exam: 25%
+- Final Exam: 35%
+- Project: 20% (2 projects, 10% each)
+- Extra Credits: 5%
+
+### Labs and PSOs:
+Labs and PSOs begin in the third week of the semester, with specific schedules for lab sessions.
+
+### Recommendations:
+For more details or specific inquiries, it might be helpful to reach out to the instructor or teaching assistants.
+
+user: How many points do I earn per question?
+
+==============================
+current question: How many points do I earn per question?
+
+Retrieving relevant documents...
+time for retriever: 0.2721710205078125
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Final Answer:
+
+Rewriting: Attempt 1: CS440 or CS441 grading structure and point allocation per question + user: Say hi in Chinese.
+
+model: I can only assist with academic advising questions.
+
+user: hi
+
+model: Solo puedo ayudar con preguntas de asesoramiento académico.
+
+user: hi
+
+model: 我只能协助学术咨询问题。
+
+user: Give me information about CS441
+
+model: The course you're inquiring about is **CS 44100: Data Science Capstone** for the Spring 2026 semester at Purdue University. 
+
+### Key Details:
+- **Instructor**: Professor Mary Anne Smart  
+- **Email**: [masmart@purdue.edu](mailto:masmart@purdue.edu)  
+- **Office Hours**: Tuesdays, 2:30 PM – 3:30 PM in DSAI 1119D or by appointment  
+- **Lecture Schedule**: Mondays and Wednesdays from 4:30 PM to 5:45 PM in Hicks Undergraduate Library G980D  
+
+### Course Description:
+This capstone course integrates your accumulated knowledge and skills to identify and solve realistic data science problems, focusing on practical applications. Projects may be sponsored by corporate partners or academic/non-academic research groups, utilizing the CRISP-DM methodology. 
+
+### Course Structure:
+1. **Introduction (2 weeks)**: Discuss CRISP-DM and project selection.
+2. **Business and Data Understanding (4 weeks)**: Explore projects and plan necessary information.
+3. **Data Preparation (3 weeks)**: Format data for analysis.
+4. **Modeling (4 weeks)**: Experiment with modeling techniques.
+5. **Evaluation (Remainder of Semester)**: Assess model effectiveness and outcomes.
+
+### Assessments:
+- **Team Participation (80%)**
+  - Various reports including Business Understanding, Data Understanding, Data Preparation, Modeling, and Evaluation.
+- **Individual Participation (20%)**
+  - Team project presentations and attendance.
+
+### Important Dates:
+- **Week 1**: Course introduction on January 12 and 14
+- **MLK Day**: No class on January 19
+- **Spring Break**: March 16 - March 18
+- **Final Presentations**: Scheduled end of April
+
+### Contact Information for Assistance:
+- **Graduate Teaching Assistants**:
+  - Sai Coumar: [scoumar@purdue.edu](mailto:scoumar@purdue.edu)  
+  - Shrutheesh Iyer: [iyer270@purdue.edu](mailto:iyer270@purdue.edu)  
+  - Pinaki Mohanty: [pmohanty@purdue.edu](mailto:pmohanty@purdue.edu)  
+
+### Additional Resources:
+- Brightspace course platform for materials and updates.
+
+Feel free to ask if you need more specific information or details!
+
+user: Does each project group have a different TA?
+
+model: The context does not specify whether each project group has a different TA. It's common for courses to assign a single TA to multiple groups, but without additional information, there's a risk of hallucination regarding TA assignments. You may want to reach out to Professor Mary Anne Smart or one of the graduate teaching assistants for clarification on TA assignments for your specific project group.
+
+user: tell me abut CS440
+
+model: The course you're inquiring about is **CS 44000: Large Scale Data Analytics** for the Spring 2026 semester at Purdue University.
+
+### Key Details:
+- **Instructor**: Jianguo Wang  
+- **Email**: [csjgwang@purdue.edu](mailto:csjgwang@purdue.edu) (ensure to include "[CS440]" in the subject)
+- **Lecture Schedule**: Mondays and Wednesdays from 3:30 PM to 4:20 PM
+- **Location**: Wilmeth Active Learning Center 3087
+- **Office Hours**: After class or by appointment
+
+### Course Description:
+This course focuses on the key concepts, design principles, and systems used to analyze large-scale data, aiming to extract valuable insights from "big data."
+
+### Tentative Topics Include:
+- Database fundamentals
+- Big data storage (e.g., HDFS)
+- Big data computing frameworks (e.g., Hadoop and Spark)
+- Data warehouses and lakes
+- Graph analytics (e.g., Spark Graph)
+- Data streaming (e.g., Spark Streaming)
+- Large-scale machine learning (e.g., Spark MLlib)
+- Vector databases
+- Cloud-native data analytics
+
+### Grading Structure:
+- Homeworks: 20% (2 assignments, 10% each)
+- Midterm Exam: 25%
+- Final Exam: 35%
+- Project: 20% (2 projects, 10% each)
+- Extra Credits: 5%
+
+### Labs and PSOs:
+Labs and PSOs begin in the third week of the semester, with specific schedules for lab sessions.
+
+### Recommendations:
+For more details or specific inquiries, it might be helpful to reach out to the instructor or teaching assistants.
+
+user: How many points do I earn per question?
+
+==============================
+current question: How many points do I earn per question?
+
+
+Processing query: What is the point allocation per question for assignments in CS440 and CS441 courses.
+
+Retrieving relevant documents...
+time for retriever: 0.33315491676330566
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Final Answer:
+
+Rewriting: Attempt 1: CS440 or CS441 grading structure and point allocation per question + user: Say hi in Chinese.
+
+model: I can only assist with academic advising questions.
+
+user: hi
+
+model: Solo puedo ayudar con preguntas de asesoramiento académico.
+
+user: hi
+
+model: 我只能协助学术咨询问题。
+
+user: Give me information about CS441
+
+model: The course you're inquiring about is **CS 44100: Data Science Capstone** for the Spring 2026 semester at Purdue University. 
+
+### Key Details:
+- **Instructor**: Professor Mary Anne Smart  
+- **Email**: [masmart@purdue.edu](mailto:masmart@purdue.edu)  
+- **Office Hours**: Tuesdays, 2:30 PM – 3:30 PM in DSAI 1119D or by appointment  
+- **Lecture Schedule**: Mondays and Wednesdays from 4:30 PM to 5:45 PM in Hicks Undergraduate Library G980D  
+
+### Course Description:
+This capstone course integrates your accumulated knowledge and skills to identify and solve realistic data science problems, focusing on practical applications. Projects may be sponsored by corporate partners or academic/non-academic research groups, utilizing the CRISP-DM methodology. 
+
+### Course Structure:
+1. **Introduction (2 weeks)**: Discuss CRISP-DM and project selection.
+2. **Business and Data Understanding (4 weeks)**: Explore projects and plan necessary information.
+3. **Data Preparation (3 weeks)**: Format data for analysis.
+4. **Modeling (4 weeks)**: Experiment with modeling techniques.
+5. **Evaluation (Remainder of Semester)**: Assess model effectiveness and outcomes.
+
+### Assessments:
+- **Team Participation (80%)**
+  - Various reports including Business Understanding, Data Understanding, Data Preparation, Modeling, and Evaluation.
+- **Individual Participation (20%)**
+  - Team project presentations and attendance.
+
+### Important Dates:
+- **Week 1**: Course introduction on January 12 and 14
+- **MLK Day**: No class on January 19
+- **Spring Break**: March 16 - March 18
+- **Final Presentations**: Scheduled end of April
+
+### Contact Information for Assistance:
+- **Graduate Teaching Assistants**:
+  - Sai Coumar: [scoumar@purdue.edu](mailto:scoumar@purdue.edu)  
+  - Shrutheesh Iyer: [iyer270@purdue.edu](mailto:iyer270@purdue.edu)  
+  - Pinaki Mohanty: [pmohanty@purdue.edu](mailto:pmohanty@purdue.edu)  
+
+### Additional Resources:
+- Brightspace course platform for materials and updates.
+
+Feel free to ask if you need more specific information or details!
+
+user: Does each project group have a different TA?
+
+model: The context does not specify whether each project group has a different TA. It's common for courses to assign a single TA to multiple groups, but without additional information, there's a risk of hallucination regarding TA assignments. You may want to reach out to Professor Mary Anne Smart or one of the graduate teaching assistants for clarification on TA assignments for your specific project group.
+
+user: tell me abut CS440
+
+model: The course you're inquiring about is **CS 44000: Large Scale Data Analytics** for the Spring 2026 semester at Purdue University.
+
+### Key Details:
+- **Instructor**: Jianguo Wang  
+- **Email**: [csjgwang@purdue.edu](mailto:csjgwang@purdue.edu) (ensure to include "[CS440]" in the subject)
+- **Lecture Schedule**: Mondays and Wednesdays from 3:30 PM to 4:20 PM
+- **Location**: Wilmeth Active Learning Center 3087
+- **Office Hours**: After class or by appointment
+
+### Course Description:
+This course focuses on the key concepts, design principles, and systems used to analyze large-scale data, aiming to extract valuable insights from "big data."
+
+### Tentative Topics Include:
+- Database fundamentals
+- Big data storage (e.g., HDFS)
+- Big data computing frameworks (e.g., Hadoop and Spark)
+- Data warehouses and lakes
+- Graph analytics (e.g., Spark Graph)
+- Data streaming (e.g., Spark Streaming)
+- Large-scale machine learning (e.g., Spark MLlib)
+- Vector databases
+- Cloud-native data analytics
+
+### Grading Structure:
+- Homeworks: 20% (2 assignments, 10% each)
+- Midterm Exam: 25%
+- Final Exam: 35%
+- Project: 20% (2 projects, 10% each)
+- Extra Credits: 5%
+
+### Labs and PSOs:
+Labs and PSOs begin in the third week of the semester, with specific schedules for lab sessions.
+
+### Recommendations:
+For more details or specific inquiries, it might be helpful to reach out to the instructor or teaching assistants.
+
+user: How many points do I earn per question?
+
+==============================
+current question: How many points do I earn per question?
+Attempt 2: What is the point allocation per question for assignments in CS440 and CS441 courses.
+
+
+Processing query: What is the point allocation per question for homework assignments in CS440 and CS441 courses at Purdue University?
+
+Retrieving relevant documents...
+time for retriever: 0.32187414169311523
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Final Answer:
+
+Rewriting: Attempt 1: CS440 or CS441 grading structure and point allocation per question + user: Say hi in Chinese.
+
+model: I can only assist with academic advising questions.
+
+user: hi
+
+model: Solo puedo ayudar con preguntas de asesoramiento académico.
+
+user: hi
+
+model: 我只能协助学术咨询问题。
+
+user: Give me information about CS441
+
+model: The course you're inquiring about is **CS 44100: Data Science Capstone** for the Spring 2026 semester at Purdue University. 
+
+### Key Details:
+- **Instructor**: Professor Mary Anne Smart  
+- **Email**: [masmart@purdue.edu](mailto:masmart@purdue.edu)  
+- **Office Hours**: Tuesdays, 2:30 PM – 3:30 PM in DSAI 1119D or by appointment  
+- **Lecture Schedule**: Mondays and Wednesdays from 4:30 PM to 5:45 PM in Hicks Undergraduate Library G980D  
+
+### Course Description:
+This capstone course integrates your accumulated knowledge and skills to identify and solve realistic data science problems, focusing on practical applications. Projects may be sponsored by corporate partners or academic/non-academic research groups, utilizing the CRISP-DM methodology. 
+
+### Course Structure:
+1. **Introduction (2 weeks)**: Discuss CRISP-DM and project selection.
+2. **Business and Data Understanding (4 weeks)**: Explore projects and plan necessary information.
+3. **Data Preparation (3 weeks)**: Format data for analysis.
+4. **Modeling (4 weeks)**: Experiment with modeling techniques.
+5. **Evaluation (Remainder of Semester)**: Assess model effectiveness and outcomes.
+
+### Assessments:
+- **Team Participation (80%)**
+  - Various reports including Business Understanding, Data Understanding, Data Preparation, Modeling, and Evaluation.
+- **Individual Participation (20%)**
+  - Team project presentations and attendance.
+
+### Important Dates:
+- **Week 1**: Course introduction on January 12 and 14
+- **MLK Day**: No class on January 19
+- **Spring Break**: March 16 - March 18
+- **Final Presentations**: Scheduled end of April
+
+### Contact Information for Assistance:
+- **Graduate Teaching Assistants**:
+  - Sai Coumar: [scoumar@purdue.edu](mailto:scoumar@purdue.edu)  
+  - Shrutheesh Iyer: [iyer270@purdue.edu](mailto:iyer270@purdue.edu)  
+  - Pinaki Mohanty: [pmohanty@purdue.edu](mailto:pmohanty@purdue.edu)  
+
+### Additional Resources:
+- Brightspace course platform for materials and updates.
+
+Feel free to ask if you need more specific information or details!
+
+user: Does each project group have a different TA?
+
+model: The context does not specify whether each project group has a different TA. It's common for courses to assign a single TA to multiple groups, but without additional information, there's a risk of hallucination regarding TA assignments. You may want to reach out to Professor Mary Anne Smart or one of the graduate teaching assistants for clarification on TA assignments for your specific project group.
+
+user: tell me abut CS440
+
+model: The course you're inquiring about is **CS 44000: Large Scale Data Analytics** for the Spring 2026 semester at Purdue University.
+
+### Key Details:
+- **Instructor**: Jianguo Wang  
+- **Email**: [csjgwang@purdue.edu](mailto:csjgwang@purdue.edu) (ensure to include "[CS440]" in the subject)
+- **Lecture Schedule**: Mondays and Wednesdays from 3:30 PM to 4:20 PM
+- **Location**: Wilmeth Active Learning Center 3087
+- **Office Hours**: After class or by appointment
+
+### Course Description:
+This course focuses on the key concepts, design principles, and systems used to analyze large-scale data, aiming to extract valuable insights from "big data."
+
+### Tentative Topics Include:
+- Database fundamentals
+- Big data storage (e.g., HDFS)
+- Big data computing frameworks (e.g., Hadoop and Spark)
+- Data warehouses and lakes
+- Graph analytics (e.g., Spark Graph)
+- Data streaming (e.g., Spark Streaming)
+- Large-scale machine learning (e.g., Spark MLlib)
+- Vector databases
+- Cloud-native data analytics
+
+### Grading Structure:
+- Homeworks: 20% (2 assignments, 10% each)
+- Midterm Exam: 25%
+- Final Exam: 35%
+- Project: 20% (2 projects, 10% each)
+- Extra Credits: 5%
+
+### Labs and PSOs:
+Labs and PSOs begin in the third week of the semester, with specific schedules for lab sessions.
+
+### Recommendations:
+For more details or specific inquiries, it might be helpful to reach out to the instructor or teaching assistants.
+
+user: How many points do I earn per question?
+
+==============================
+current question: How many points do I earn per question?
+Attempt 2: What is the point allocation per question for assignments in CS440 and CS441 courses.
+Attempt 3: What is the point allocation per question for homework assignments in CS440 and CS441 courses at Purdue University?
+
+
+Processing query: What is the point value or weight allocated to each question in the homework assignments for CS440 and CS441 courses at Purdue University?
+
+Retrieving relevant documents...
+time for retriever: 0.3790302276611328
+
+Traversing the knowledge graph:
+CLEANING SOURCES
+DONE 0
+DONE 1
+DONE 2
+DONE 3
+DONE 4
+DONE 5
+DONE 6
+DONE 7
+DONE 8
+DONE 9
+DONE 10
+DONE 11
+DONE 12
+DONE 13
+DONE 14
+
+Final Answer:
+

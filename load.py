@@ -899,6 +899,14 @@ def rewrite_query_for_rag(
             2. Everything you say will be used as the next query. 
             3. If the last ANSWER shown below is sufficient for the QUESTION below, then simply return "SUFFICIENT". No more, no less.
             
+            SOME ADVICE:
+                - Imagine you are doing a google search. What you search will be differant from the question you have.
+                - Consider that raw questions rarely preform well in RAG. More key words, or concepts will improve results.
+                - Consider lower casing more often (cs 182 gets more results than CS182). 
+                - Actually use more words if the question itself is short. This will help the RAG. 
+                - For questions asking about classes, include the year or semester if you think it will help. If the current year is 2025 do not put 2024, 2026, unless the question specifically implies that.
+                - Consider tagging exact words (like keeping acronyms) like some google searches do to enhance the search. The expanded word can be very differant vector wise.
+            
             Last rewrite: {rewrite}
 
             Last question: {old_answer}
