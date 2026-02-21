@@ -12,3 +12,5 @@ faiss-cpu
 pytz
 cerebras
 beautifulsoup4
+itsdangerous
+pypdf

@@ -61,7 +61,7 @@ print("✓ GraphRAG Loaded.")
 
 app = FastAPI()
 
-app.mount("/static", StaticFiles(directory="/root/GraphPackage/assets"), name="static")
+#app.mount("/static", StaticFiles(directory="/root/GraphPackage/assets"), name="static")
 
 app.add_middleware(
     CORSMiddleware,
@@ -766,3 +766,5 @@ async def upload_file(
 if __name__ == "__main__":
     print("🚀 Starting GraphRAG Chat Server at http://localhost:8000/")
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
+
