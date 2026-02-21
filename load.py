@@ -622,7 +622,7 @@ def compress_docs(
     query: str,
     docs: List[Document],
     llm_client=client,
-    model: str = "llama-3.3-70b",
+    model: str = "gpt-oss-120b",
     max_tokens: int = 5000
 ) -> List[Document]:
     """
@@ -712,7 +712,7 @@ def router(
     query: str,
     docs: List[Document],
     llm_client=client,
-    model: str = "llama-3.3-70b",
+    model: str = "gpt-oss-120b",
     max_tokens: int = 2000
 ) -> str:
     """
@@ -766,7 +766,8 @@ def router(
     (Use docs only if needed for classification)
     {combined_text}
     """
-
+    
+    print("BEFORE ROUTE")
     completion = llm_client.chat.completions.create(
         messages=[{"role": "user", "content": prompt}],
         model=model,
@@ -775,14 +776,15 @@ def router(
         top_p=1,
         stream=False
     )
-
+    print("AFTER ROUTE")
     result = completion.choices[0].message.content.strip()
 
     # Ensure router only returns the routing keyword
     if result.upper() not in ("ADVISOR", "GRAPH_RAG", "INAPPLICABLE"):
         # Safety fallback — assume GraphRAG
         return "GRAPH_RAG"
-
+    
+    print(result.upper(), "ROUTING")
     return result.upper()
 
 
@@ -794,7 +796,7 @@ def rewrite_query_for_rag(
     llm_client=client,
     rewrite=None,
     old_answer=None,
-    model: str = "llama-3.3-70b",
+    model: str = "gpt-oss-120b",
     max_tokens: int = 3000,
     timezone: str = "America/Chicago"
 ) -> str:
@@ -898,6 +900,7 @@ def rewrite_query_for_rag(
             1. Do not say things like "Let me try to rephrase the question again to yield better results." just give the final corrected query. 
             2. Everything you say will be used as the next query. 
             3. If the last ANSWER shown below is sufficient for the QUESTION below, then simply return "SUFFICIENT". No more, no less.
+            4. Consider if wordiness is the problem based on your past attempts. 
             
             SOME ADVICE:
                 - Imagine you are doing a google search. What you search will be differant from the question you have.
@@ -1155,7 +1158,7 @@ def _advisor(query: str, llm_client=client) -> str:
  
     response = llm_client.chat.completions.create(
         messages=[{"role": "user", "content": prompt}],
-        model="llama-3.3-70b",
+        model="gpt-oss-120b",
         max_completion_tokens=10000,
         temperature=0,
         stream=False
@@ -1175,7 +1178,7 @@ def translate_text_multilingual(
     text: str,
     target_language: str = "Spanish",
     llm_client=client,                 # your Cerebras client (or swap for OpenAI)
-    model: str = "llama-3.3-70b",
+    model: str = "gpt-oss-120b",
     max_tokens: int = 4000
 ) -> str:
     """
@@ -1265,8 +1268,11 @@ class QueryEngine:
         Based on the following context (and its history) and metadata, answer the query, for questions about dates reference exact date and time.
         If the context looks sparse, even if you think you know the answer, give a warning about hallucination risk.
         
-        Context:
+        CONTEXT:
+        ###############################################################
         {context}
+        ###############################################################
+        END OF CONTEXT
 
         Metadata:
         {metadata_block}
@@ -1383,9 +1389,9 @@ class QueryEngine:
         for num, ctx in enumerate(expanded_contexts):
             if ctx == "NO" or ctx is None:
                 continue
-            expanded_context += ("\n" + ctx + f"\n================WEBPAGE: {len(ctx.strip())}=================\n") if expanded_context else ctx
+            expanded_context += ("\n" + ctx + f"\n================WEBPAGE: {len(ctx.strip())}=================\n") if expanded_context else f"\n================WEBPAGE: {len(ctx.strip())}=================\n" + ctx
 
-        # print("final expanded context:", expanded_context + "\n")
+        print("final expanded context:", expanded_context + "\n")
 
         if (len(expanded_context) == 0 and final == False):
             return expanded_context, traversal_path, filtered_content, ""
@@ -1639,6 +1645,7 @@ class GraphRAG:
         orig_query = query
         print("\nRouting the query...")
         route = router(query, docs=[])
+        print("route")
         print(f"Routed to: {route}")
         if route == "ADVISOR-":
             return _advisor(query)

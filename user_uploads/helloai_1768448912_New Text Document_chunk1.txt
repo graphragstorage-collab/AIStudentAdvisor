@@ -1,0 +1,157 @@
+**Purdue University Data Science Program Overview**
+
+The Data Science major at Purdue University combines computer science and statistics, preparing students for careers in various fields, including healthcare, security, and business. The program is jointly offered by the Department of Computer Science and Department of Statistics, providing a comprehensive education in data science.
+
+###
+
+**About the Program**
+
+Majoring in data science at Purdue will place you at the forefront of an emerging field and prepare you for an exciting career at the intersection of computer science and statistics. Created jointly by Purdue’s Department of Computer Science and Department of Statistics, the data science major will open pathways to careers in virtually every area of society, from healthcare, security, and sustainability to education, business, and economics.
+
+###
+
+**Curriculum and Degree Requirements for College of Science**
+
+A College of Science degree is conferred when a student successfully completes all requirements in their degree program. Students will complete coursework or approved experiential learning activities to meet the following three degree components: Major, Science Core, Curriculum, and Electives.
+
+Students may use any of the following options to meet College of Science degree requirements:
+- **Purdue Coursework**
+- **AP, IB, and CLEP credit**: The use of AP and IB coursework varies between College of Science degree plans.
+- **Transfer Credit**: Students should consult the Admissions Transfer Credit Resource page for all available transfer options.
+
+College of Science degree programs vary widely in their approval and use of the preceding options, thus students are strongly encouraged to work closely with their academic advisors and to regularly consult their MyPurduePlan to view the use of each option in their degree plan. Most College of Science degree programs contain elective credits that students may use to pursue courses related to their interests or support their major area of study. The elective area of a degree plan may also be used to complete minors, second majors, and certificates such as the Entrepreneurial Certificate. With the exception of courses on the No Count List, any Purdue course may be used to meet the elective area of a student’s degree plan.
+
+###
+
+**College of Science Core Requirements**
+
+All students starting Purdue University in the Fall semester of 2007 or later are required to pursue the 2007 Science Core curriculum, which mandates the completion of approved coursework and/or experiential learning opportunities in the following academic areas:
+- Composition and Presentation
+- Computing
+- Cultural Diversity (Language and Culture)
+- General Education
+- Great Issues in Science
+- Laboratory Science
+- Mathematics
+- Multidisciplinary Experience
+- Statistics
+- Teambuilding and Collaboration
+
+### 
+
+**Earning Core Curricular Requirements through Experience**
+
+Students may meet selected core curriculum requirements through approved experiential learning opportunities. Interested students should contact their academic advisor for more information on this option and incorporating experiential learning into their four-year program of study. 
+
+For more information on earning requirements through experience, please [click here](#).
+
+###
+
+**Degree Requirements**
+
+- **Total Credits Required**: 120
+
+### 
+
+**Data Science Major Courses (50-54 credits)**
+
+1. **CS 18000** - Problem Solving And Object-Oriented Programming (satisfies Computing and Teambuilding for College of Science core)
+2. **CS 18200** - Foundations Of Computer Science
+3. **CS 19100** - Freshman Resources Seminar
+4. **CS 19300** - Tools
+5. **CS 25100** - Data Structures And Algorithms
+6. **CS 37300** - Data Mining And Machine Learning
+7. **CS 38003** - Python Programming
+8. **MA 35100** - Elementary Linear Algebra
+9. **STAT 35500** - Statistics For Data Science
+10. **STAT 41600** - Probability
+11. **STAT 41700** - Statistical Theory
+12. **CS 24200** - Introduction To Data Science or **STAT 24200** - Introduction To Data Science
+13. **CS 49000** - Topics In Computer Sciences For Undergraduates (Large Scale Data Analysis (LSDA)) or **STAT 49000** - Topics In Statistics For Undergraduates (Large Scale Data Analysis (LSDA))
+14. **MA 26100** - Multivariate Calculus or **MA 27101** - Honors Multivariate Calculus
+
+**Ethics Elective (3 credits)**: Choose one option.
+- **ILS 23000** - Data Science And Society: Ethical Legal Social Issues
+- **PHIL 20700** - Ethics For Technology, Engineering, And Design
+- **PHIL 20800** - Ethics Of Data Science (must be 3.00 Credit Hour option)
+
+**CS Electives (6 credits)**: Choose two CS electives from the following list.
+- **CS 31400** - Numerical Methods
+- **CS 35500** - Introduction To Cryptography
+- **CS 47100** - Introduction to Artificial Intelligence
+- **CS 47300** - Web Information Search And Management
+- **CS 49000** - Topics In Computer Sciences For Undergraduates - IDV-Introduction to Data Visualization
+- **CS 30700** - Software Engineering I or **CS 40800** - Software Testing
+- **CS 34800** - Information Systems or **CS 44800** - Introduction To Relational Database Systems
+- **CS 38100** - Introduction To The Analysis Of Algorithms or **CS 48300** - Introduction To The Theory Of Computation
+
+**Statistics Elective (3 credits)**: Choose one.
+- **STAT 42000** - Introduction To Time Series
+- **STAT 50600** - Statistical Programming And Data Management
+- **STAT 51200** - Applied Regression Analysis
+- **STAT 51300** - Statistical Quality Control
+- **STAT 51400** - Design Of Experiments
+- **STAT 52200** - Sampling And Survey Techniques
+- **STAT 52500** - Intermediate Statistical Methodology
+- **MA 49000** - Topics In Mathematics For Undergraduates - Elementary Stochastic Processes or **STAT 49000** - Topics In Statistics For Undergraduates - Elementary Stochastic Processes
+
+**CS Capstone (0-3 credits)**: Choose one option below.
+
+**For-Credit Options**:
+- **STAT 49000** - Topics In Statistics For Undergraduates (Data Science Capstone or Research Project In Data Science) - Credit Hours: 3.00
+- **CS 49000** - Topics In Computer Sciences For Undergraduates - Introduction to Data Visualization (if taken after CS 37300; could not be used as CS Elective) - Credit Hours: 3.00
+- **CS 30700** - Software Engineering I
+- **CS 49700** - Honors Research Project
+- **EPCS 41100** - Senior Design Participation In EPICS
+- **EPCS 41200** - Senior Design Participation In EPICS
+
+**Zero-Credit Options**:
+- **CS 38600** - Professional Practice IV or **STAT 38600** - Cooperative Work Experience IV
+- **CS 48700** - Professional Practice V or **STAT 48700** - Cooperative Work Experience V
+- **CS 49000** - Research Project in Data Science - Credit Hours: 0.00
+- **STAT 49000** - Research Project in Data Science - Credit Hours: 0.00
+
+### 
+
+**Other Departmental/Program Course Requirements (29-58 credits)**
+
+**College of Science Core Requirements**
+- **First-Year Composition - Credit Hours: 3.00-4.00** (satisfies Written Communication and Information Literacy for core)
+  - **ENGL 10600** - First-Year Composition
+  - **ENGL 10800** - Accelerated First-Year Composition
+  - **SCLA 10100** - Transformative Texts, Critical Thinking And Communication I: Antiquity To Modernity
+  - **HONR 19903** - Interdisciplinary Approaches In Writing
+
+- **Technical Writing and Presentation - Credit Hours: 0.00 - 6.00** (Select courses COULD satisfy Oral Communication for core; COM 21700 is strongly recommended)
+
+- **Team-Building & Collaboration - Credit Hours: 0.00 - 3.00**
+
+- **Language & Culture - Credit Hours: 0.00 - 9.00** (Select courses COULD satisfy Humanities for core)
+
+  - Language/Culture Option I
+  - Language/Culture Option II
+  - Language/Culture Option III
+
+- **Great Issues In Science - Credit Hours: 3.00**
+
+- **Multidisciplinary Experience - Credit Hours: 0.00 - 3.00** (Select courses COULD satisfy Science, Technology, Society for core)
+
+- **Laboratory Science - Credit Hours: 6.00-8.00** (satisfies Science for core)
+
+  - Laboratory Science Option I
+  - Laboratory Science Option II
+
+- **Mathematics - Credit Hours: 8.00-10.00** (satisfies Quantitative Reasoning for core)
+  - **MA 16100** - Plane Analytic Geometry And Calculus I (Must have C or better to meet prerequisite for CS 18200)
+  - **MA 16500** - Analytic Geometry And Calculus I (Must have C or better to meet prerequisite for CS 18200)
+  - **MA 16200** - Plane Analytic Geometry And Calculus II or **MA 16600** - Analytic Geometry And Calculus II
+
+- **Computing** - Met with required major courses.
+
+- **General Education** (Select courses COULD satisfy Behavioral/Social Science for core) - Credit Hours: 9.00
+
+  - General Education Option I
+  - General Education Option II
+  - General Education Option III
+
+**Note**: The core requirements are labeled as Science Core Selection in the four-year plan of study. Requirements may also be met with zero-credit experiential learning options; see your advisor for more information.

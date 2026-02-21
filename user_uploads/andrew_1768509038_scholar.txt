@@ -1,0 +1,57 @@
+**Purdue University Rosen Center for Advanced Computing: Scholar Cluster Overview**
+===========================================================
+
+The Purdue University Rosen Center for Advanced Computing offers access to the Scholar cluster, a high-performance computing (HPC) resource tailored for classroom learning and research. This cluster features 6 interactive login servers and 16 batch worker nodes, making it an excellent platform for educating and exploring HPC concepts.
+
+###
+
+**Key Features and Specifications**
+
+- Designed for classroom learning and research in high-performance computing (HPC).
+- Part of the Purdue University Rosen Center for Advanced Computing.
+- Accessible as a conventional cluster or an interactive resource.
+- Includes a job scheduler for efficiently distributing batch jobs onto worker nodes.
+- Provides a desktop-like environment on login servers with a variety of software packages available.
+- Supports Linux remote desktop, Jupyter notebook server, and R Studio server.
+- Compatible with curricula and research projects, including those for CS180 and other computer science courses.
+
+###
+
+**Technical Specifications**
+
+- **Scholar Front-Ends**: 3 nodes equipped with AMD EPYC 9634 and Intel Xeon Gold 6126 processors.
+- **Scholar Sub-Clusters**: A, B, G, H, H-MIG, I-MIG, and J, each with different node configurations and processor types.
+- **Processors**: AMD EPYC and Intel Xeon.
+- **Cores**: Up to 168 cores per node.
+- **Memory**: Up to 768 GB per node.
+- **GPUs**: NVIDIA Tesla V100, NVIDIA A30, and NVIDIA A40.
+
+###
+
+**Class Account Request and Access**
+
+- Classes can be scheduled for access to the Scholar cluster through the Class Account Request page.
+- Registered students are granted automatic login privileges.
+- The cluster supports multiple software packages and tool chains, including Jupyter and R Studio, usable without requiring Linux knowledge or experience.
+
+###
+
+**Scholar Specifications**
+
+- **Scholar Front-Ends**
+  - Number of Nodes: 3
+  - Processors per Node: 
+    - No GPU: 2 AMD EPYC 9634 (Genoa) 84-Core Processors
+    - With GPU: 2 Intel Xeon Gold 6126 (Skylake) 12-Core Processors with one NVIDIA Tesla V100 32GB GPU
+  - Cores per Node: 168 (No GPU), 24 (With GPU)
+  - Memory per Node: 384 GB (No GPU), 768 GB (With GPU)
+  - Retires in: 2029 (No GPU), 2027 (With GPU)
+
+- **Scholar Sub-Clusters**
+  - *Sub-Cluster A*: 4 nodes, 2 AMD EPYC 7713 ("Milan") 64-Core Processors, 128 cores, 256 GB memory, retires in 2027.
+  - *Sub-Cluster B*: 3 nodes, 1 AMD EPYC 7702P ("Rome") 64-Core Processor, 64 cores, 256 GB memory, retires in 2026.
+  - *Sub-Cluster G*: 4 nodes, 2 Intel Xeon Silver 4110 ("Skylake") 8-Core Processors with one NVIDIA Tesla V100 16GB GPU, 16 cores, 192 GB memory, retires in 2027.
+  - *Sub-Cluster H*: 2 nodes, 2 AMD EPYC 7543 3rd generation ("Milan") 32-Core Processors with two NVIDIA A30 24GB GPUs, 64 cores, 512 GB memory, retires in 2027.
+  - *Sub-Cluster H-MIG*: 2 nodes, 2 AMD EPYC 7543 3rd generation ("Milan") 32-Core Processors with eight 6GB Multi-Instance GPUs (MIGs) configured from two NVIDIA A30 24GB GPUs, 64 cores, 512 GB memory, retires in 2027.
+  - *Sub-Cluster I-MIG*: 1 node, 2 AMD EPYC 9554 ("Genoa") 64-Core Processors with four 6GB Multi-Instance GPUs (MIGs) configured from one NVIDIA A30 24GB GPU, 128 cores, 384 GB memory, retires in 2029.
+  - *Sub-Cluster J*: 4 nodes, 2 Intel Xeon Gold 6126 ("Skylake") 12-Core Processors with two NVIDIA A40 48GB GPUs, 24 cores, 192 GB memory, retires in 2029.

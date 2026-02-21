@@ -1,5 +1,7 @@
 ---
 
+CS348 Spring 2026 Calendar: This is the schedule for CS348 spring 2026. 
+
 ### Important Notes
 - This schedule is preliminary and subject to change.
 - Some schedule text may be clipped in spreadsheet views; ensure full visibility when referencing original tables.

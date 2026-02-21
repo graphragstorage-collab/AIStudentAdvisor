@@ -358,232 +358,311 @@ async def chat_page(session: Optional[str] = Cookie(default=None)):   # <<< FIXE
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Purdue GraphRAG Chat</title>
-    <link rel="icon" href="/static/favicon.ico" />
+<title>Purdue GraphRAG Chat</title>
+<link rel="icon" href="/static/favicon.ico" />
 
-    <style>
-        body {
-            margin: 0;
-            background: #f5f5f5;
-            font-family: Arial, sans-serif;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        #topbar {
-            position: fixed;
-            top: 10px;
-            right: 15px;
-            z-index: 1000;
-        }
-       #upload-btn {
-           position: fixed;
-           top: 40px;
-           right: 15px;
-           z-index: 1000;
-           padding: 6px 14px;
-           background: #000;
-           color: gold;
-           border-radius: 8px;
-           border: 1px solid #DAA520;
-          cursor: pointer;
-          font-weight: bold;
-       }
+<style>
+    body { 
+        margin: 0; 
+        background: #282828; 
+        font-family: Arial, sans-serif; 
+        height: 100vh; 
+        display: flex; 
+        flex-direction: column; 
+    }
+    #topbar { 
+        position: fixed; 
+        top: 10px; 
+        right: 15px; 
+        z-index: 1000; 
+    }
+    #upload-btn { 
+        padding: .6% 1.2%; 
+        margin-top: .4%;
+        border-radius: 12px;
+        border: 1px solid #212020; 
+        cursor: pointer; 
+        font-weight: bold; 
+        background: #dfdddd;
+    }
+    #logout-btn { 
+        padding: 6px 12px; 
+        background: #454444; 
+        color: #dfdddd; 
+        text-decoration: none; 
+        border-radius: 12px; 
+        border: 1px solid #212020; 
+        font-weight: bold; 
+        font-size: 14px; 
+    }
+    #logout-btn:hover { 
+        background: #2e2d2d; 
+        color: #dfdddd;
+    }
+    #upload-btn:hover { 
+        background: #2e2d2d; 
+        color: #dfdddd; 
+    }
+    #chatbox { 
+        flex: 1; 
+        overflow-y: auto; 
+        overflow-x: hidden;
+        padding: 20px; 
+        background: #282828; 
+    }
+    .msg-user { 
+        background: #C8E6C9; 
+        margin: 10px 0; 
+        padding: 10px 14px; 
+        border-radius: 8px; 
+        width: fit-content; 
+        max-width: 80%; 
+    }
+    .msg-bot { 
+        background: #dfdddd; 
+        margin: 10px 0; 
+        padding: 10px 14px;
+        border-radius: 8px; 
+        width: fit-content; 
+        max-width: 80%; 
+        white-space: pre-wrap; 
+    }
 
-        #logout-btn {
-            padding: 6px 14px;
-            background: #000;
-            color: gold;
-            text-decoration: none;
-            border-radius: 8px;
-            border: 1px solid #DAA520;
-            font-weight: bold;
-            font-size: 14px;
-        }
+    .feedback-container { 
+        margin-top: 5px; 
+        display: flex; 
+        gap: 10px; 
+    }
+    .vote-btn { 
+        background: none; 
+        border: 1px solid #ccc; 
+        border-radius: 4px; 
+        cursor: pointer; 
+        font-size: 12px; 
+        padding: 2px 8px; 
+        color: #555; 
+        transition: all 0.2s; 
+    }
+    .vote-btn:hover { 
+        background: #ddd; 
+        color: #000; 
+    }
+    .vote-btn.voted { 
+        background: #DAA520; 
+        color: #dfdddd; 
+        border-color: #DAA520;
+    }
 
-        #logout-btn:hover {
-            background: #333;
-        }
-        #chatbox {
-            flex: 1;
-            overflow-y: auto;
-            padding: 20px;
-            background: white;
-            border-bottom: 2px solid #DAA520;
-        }
-        .msg-user {
-            background: #C8E6C9;
-            margin: 10px 0;
-            padding: 10px 14px;
-            border-radius: 8px;
-            width: fit-content;
-            max-width: 80%;
-        }
-        .msg-bot {
-            background: #eee;
-            margin: 10px 0;
-            padding: 10px 14px;
-            border-radius: 8px;
-            width: fit-content;
-            max-width: 80%;
-            white-space: pre-wrap;
-        }
-        #translator-section {
-            padding: 10px;
-            border-bottom: 2px solid #DAA520;
-            background: #fff;
-        }
-        #input-section {
-            padding: 8px;
-            background: #fff;
-            border-top: 2px solid #DAA520;
-        }
-        #promptbar {
-            width: 100%;
-            padding: 12px;
-            border-radius: 12px;
-            border: 2px solid #DAA520;
-            font-size: 16px;
-        }
-        button.lang-btn {
-            padding: 7px 14px;
-            background: #f2e1a3;
-            border-radius: 6px;
-            border: 1px solid #DAA520;
-            cursor: pointer;
-        }
-        button.lang-btn.active {
-            background: #000;
-            color: gold;
-        }
-        @media (max-width: 600px) {
-            #promptbar { font-size: 15px; }
-        }
-    </style>
+    #translator-section { 
+        /* border-radius: 10px; */
+        /* background: rgb(25, 25, 25);  */
+        margin-top: 1.5%;
+        margin-left: 1%;
+        margin-bottom: 1%;
+    }
+    #input-section { 
+        margin-bottom: 2%;
+        margin-left: 1%;
+        margin-right: 1%;
+        display: flex;
+        padding-right: 28px;
+        padding-left: 0px; 
+        background: rgb(25, 25, 25); 
+    }
+    #promptbar { 
+        margin-left: .2%;
+        flex-grow: 1;
+        width: inherit;
+        padding: 12px; 
+        border-radius: 12px; 
+        font-size: 16px; 
+        background: #dfdddd;
+    }
+    #bottom-color {
+        overflow: hidden;
+        width:auto;
+        height: auto;
+        background: rgb(25, 25, 25); 
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    button.lang-btn { 
+        background: #454444; 
+        color: #dfdddd;
+        padding: 7px 14px; 
+        border-radius: 6px; 
+        cursor: pointer; 
+        font-weight: bold;
+        
+    }
+    button.lang-btn.active { 
+        background: #212020; 
+        color: #ddd9d9; 
+    }
+    @media (max-width: 600px) { 
+        #promptbar { 
+            font-size: 15px; 
+        } 
+    }
+</style>
 </head>
-
 <body>
 
 <div id="topbar">
-    <a href="/logout" id="logout-btn">Logout</a>
-    <button id="upload-btn">Upload File</button>
-    <input type="file" id="file-input" accept=".txt, .pdf" hidden />
+<a href="/logout" id="logout-btn">Logout</a>
 </div>
 
 <div id="chatbox">
-    <div class="msg-bot">Welcome! Select a language below, then ask a question.</div>
+<div class="msg-bot">Welcome! Select a language below, then ask a question.</div>
 </div>
-
+<div id = "bottom-color">
 <div id="translator-section">
-    <button class="lang-btn active" data-lang="none">Original</button>
-    <button class="lang-btn" data-lang="spanish">Spanish</button>
-    <button class="lang-btn" data-lang="french">French</button>
-    <button class="lang-btn" data-lang="german">German</button>
-    <button class="lang-btn" data-lang="japanese">Japanese</button>
-    <button class="lang-btn" data-lang="chinese">Chinese</button>
+<button class="lang-btn active" data-lang="none">Original</button>
+<button class="lang-btn" data-lang="spanish">Spanish</button>
+<button class="lang-btn" data-lang="french">French</button>
+<button class="lang-btn" data-lang="german">German</button>
+<button class="lang-btn" data-lang="japanese">Japanese</button>
+<button class="lang-btn" data-lang="chinese">Chinese</button>
 </div>
 
 <div id="input-section">
-    <input id="promptbar" placeholder="Not satisfied with results? Contribute and upload files to our database! Study guides, how to guides, anything!" />
+<input type="file" id="file-input" accept=".txt, .pdf" hidden />
+<button id="upload-btn"><img src= "upload.png" width="20px" height="20px"/></button>
+<input id="promptbar" placeholder="Not satisfied with results? Contribute and upload files to our database! Study guides, how to guides, anything!" />
 </div>
-
+</div>
 <script>
-    const chatbox = document.getElementById("chatbox");
-    const bar = document.getElementById("promptbar");
+const chatbox = document.getElementById("chatbox");
+const bar = document.getElementById("promptbar");
+let currentLanguage = "none";
+let history = [];
 
-    let currentLanguage = "none";
-    let history = [];
-
-    document.querySelectorAll(".lang-btn").forEach(btn=>{
-        btn.onclick = ()=>{
-            document.querySelectorAll(".lang-btn").forEach(b=>b.classList.remove("active"));
-            btn.classList.add("active");
-            currentLanguage = btn.dataset.lang;
-        };
-    });
-
-    function addMessage(msg, sender){
-        let div = document.createElement("div");
-        div.className = sender === "user" ? "msg-user" : "msg-bot";
-        div.innerText = msg;
-        chatbox.appendChild(div);
-        chatbox.scrollTop = chatbox.scrollHeight;
-        history.push({role: sender === "user" ? "user" : "model", content: msg});
-    }
-
-    function addThinking(){
-        let d = document.createElement("div");
-        d.className = "msg-bot";
-        d.innerText = "Thinking...";
-        chatbox.appendChild(d);
-        chatbox.scrollTop = chatbox.scrollHeight;
-        return d;
-    }
-
-    function buildPayload(question){
-        return history.map(h => `${h.role}: ${h.content}`).join("\n\n") +
-               "\n\n==============================\ncurrent question: " + question;
-    }
-
-    bar.addEventListener("keydown", async e=>{
-        if(e.key=="Enter"){
-            let text = bar.value.trim();
-            if(!text) return;
-            addMessage(text, "user");  // ← This adds to history
-            bar.value = "";
-            let thinking = addThinking();
-            let payload = buildPayload(text);
-
-            let res = await fetch("/prompt", {
-                method:"POST",
-                headers:{"Content-Type":"application/json"},
-                body: JSON.stringify({query: payload, lang: currentLanguage})
-            });
-
-            let answer = await res.text();
-            thinking.innerText = answer;
-            history.push({role:"model", content:answer});
-        }
-    });
-
-    bar.focus();
-
-    // File upload handling
-    const uploadBtn = document.getElementById("upload-btn");
-    const fileInput = document.getElementById("file-input");
-
-    uploadBtn.onclick = () => {
-        fileInput.click(); // open file explorer
+document.querySelectorAll(".lang-btn").forEach(btn=>{
+    btn.onclick = ()=>{
+        document.querySelectorAll(".lang-btn").forEach(b=>b.classList.remove("active"));
+        btn.classList.add("active");
+        currentLanguage = btn.dataset.lang;
     };
+});
 
-    fileInput.onchange = async () => {
-        const file = fileInput.files[0];
-        if (!file) return;
+function scrollToBottom(){ chatbox.scrollTop = chatbox.scrollHeight; }
 
-        if (!(file.name.endsWith(".txt") || file.name.endsWith(".pdf"))) {
-            alert("Only .txt and .pdf files are allowed.");
-            return;
-        }
+function addMessage(msg, sender){
+    let div = document.createElement("div");
+    div.className = sender === "user" ? "msg-user" : "msg-bot";
+    div.innerText = msg;
+    chatbox.appendChild(div);
+    scrollToBottom();
+    history.push({role: sender === "user" ? "user" : "model", content: msg});
+}
 
-        const formData = new FormData();
-        formData.append("file", file);
+function addBotResponse(questionText, answerText) {
+    let container = document.createElement("div");
+    container.className = "msg-bot";
 
-        const res = await fetch("/upload", {
-            method: "POST",
-            body: formData
+    let textDiv = document.createElement("div");
+    textDiv.innerText = answerText;
+    container.appendChild(textDiv);
+
+    let btnDiv = document.createElement("div");
+    btnDiv.className = "feedback-container";
+
+    let upBtn = document.createElement("button");
+    upBtn.innerText = "Upvote";
+    upBtn.className = "vote-btn";
+    upBtn.onclick = () => sendVote("/upvote", questionText, answerText, upBtn, downBtn);
+
+    let downBtn = document.createElement("button");
+    downBtn.innerText = "Downvote";
+    downBtn.className = "vote-btn";
+    downBtn.onclick = () => sendVote("/downvote", questionText, answerText, downBtn, upBtn);
+
+    btnDiv.appendChild(upBtn);
+    btnDiv.appendChild(downBtn);
+    container.appendChild(btnDiv);
+
+    chatbox.appendChild(container);
+    scrollToBottom();
+    history.push({role: "model", content: answerText});
+}
+
+async function sendVote(endpoint, q, a, clickedBtn, otherBtn) {
+    clickedBtn.classList.add("voted");
+    clickedBtn.disabled = true;
+    otherBtn.disabled = true;
+    clickedBtn.innerText = (endpoint === "/upvote") ? "Upvoted" : "Downvoted";
+
+    await fetch(endpoint, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({ question: q, answer: a })
+    });
+}
+
+function addThinking(){
+    let d = document.createElement("div");
+    d.className = "msg-bot";
+    d.innerText = "Thinking...";
+    chatbox.appendChild(d);
+    scrollToBottom();
+    return d;
+}
+
+function buildPayload(question){
+    return history.map(h => `${h.role}: ${h.content}`).join("\n\n") +
+            "\n\n==============================\ncurrent question: " + question;
+}
+
+bar.addEventListener("keydown", async e=>{
+    if(e.key=="Enter"){
+        let text = bar.value.trim();
+        if(!text) return;
+
+        addMessage(text, "user");
+        bar.value = "";
+        let thinking = addThinking();
+        let payload = buildPayload(text);
+
+        let res = await fetch("/prompt", {
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body: JSON.stringify({query: payload, lang: currentLanguage})
         });
 
-        const msg = await res.text();
-        alert(msg);
+        let answer = await res.text();
+        thinking.remove();
 
-        fileInput.value = ""; // reset input
-    };
-    
+        addBotResponse(text, answer);
+    }
+});
+
+bar.focus();
+
+const uploadBtn = document.getElementById("upload-btn");
+const fileInput = document.getElementById("file-input");
+
+uploadBtn.onclick = () => { 
+    fileInput.click(); 
+};
+
+fileInput.onchange = async () => {
+    const file = fileInput.files[0];
+    if (!file) return;
+    if (!(file.name.endsWith(".txt") || file.name.endsWith(".pdf"))) {
+        alert("Only .txt and .pdf files are allowed.");
+        return;
+    }
+    const formData = new FormData();
+    formData.append("file", file);
+    const res = await fetch("/upload", { method: "POST", body: formData });
+    const msg = await res.text();
+    alert(msg);
+    fileInput.value = "";
+};
 </script>
-
 </body>
 </html>
-"""
+    """
     return HTMLResponse(html)
 
 
@@ -678,9 +757,9 @@ async def upload_file(
         return text.strip()
 
     def chunk_text(text: str):
-        starttime = time.time()
+        #starttime = time.time()
         header = create_header(text[0 : MAX_CHARS]) + "\n"
-        print(time.time() - starttime)
+        #print(time.time() - starttime)
         return [header + text[i:i + MAX_CHARS] for i in range(0, len(text), MAX_CHARS)]
 
     def pdf_to_text(path: str) -> str:
@@ -758,6 +837,35 @@ async def upload_file(
     return {
         "File uploaded successfully. Thank you for your contribution!"
     }
+
+class FeedbackInput(BaseModel):
+    question: str
+    answer: str
+
+@app.post("/upvote")
+async def upvote_endpoint(
+    data: FeedbackInput,
+    session: Optional[str] = Cookie(default=None)
+):
+    user = get_session_username(session) or "Anonymous"
+    # Just printing to server console
+    print(f"\n UPVOTE RECEIVED from {user}")
+    print(f"Question: {data.question}")
+    print(f"Answer:   {data.answer[:50]}...") # truncate for cleanliness
+    return {"status": "success"}
+
+@app.post("/downvote")
+async def downvote_endpoint(
+    data: FeedbackInput,
+    session: Optional[str] = Cookie(default=None)
+):
+    user = get_session_username(session) or "Anonymous"
+    # Just printing to server console
+    print(f"\n DOWNVOTE RECEIVED from {user}")
+    print(f"Question: {data.question}")
+    print(f"Answer:   {data.answer[:50]}...")
+    return {"status": "success"}
+
 
 # =================================================================
 # 10. START SERVER
