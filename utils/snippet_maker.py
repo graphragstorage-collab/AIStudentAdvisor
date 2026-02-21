@@ -65,61 +65,102 @@ def create_snippet(query: str, text: str, llm_client=llm_client,
 
 
     prompt = f"""
-    You are an expert RAG assistant.
+    You are an expert RAG recall-oriented relevance classifier.
 
     TASK:
-    Given a document and a QUERY (with the user's chat HISTORY), WITHOUT CHANGING THE TEXT DETERMINE IF IT IS RELEVANT TO THE QUERY.
+    Given a DOCUMENT and a QUERY (considering the user's CHAT HISTORY),
+    decide whether REMOVING this document would make it harder
+    to answer the query well.
 
+    PRIMARY GOAL:
+    Maximize recall, but only keep documents that meaningfully help
+    with the user's specific task or intent.
 
-    STRICT RULES:
-    - Do NOT write explanations.
-    - Do NOT give commentary.
-    - Do NOT create summaries.
-    - Only say YES or NO.
+    STRICT OUTPUT FORMAT:
+    - Respond with YES or NO
+    - Give a brief justification (1 sentence preferred, max 2)
+    - End with #YES or #NO
 
-    ADVICE:
-    - Focus on relevance to the QUERY.
-    - If the answer to the question is explicitly in the text, answer YES.
-    - If a part does not contribute to the answer straight up answer with nothing "".
-    - If the document is not relevant to the query, answer NO.
-    - If someone asks about a class and it is not exactly a match (CS 811 vs CS 81100) you should still consider it relevant.
-    - CONSIDER THE CHAT HISTORY WHEN MAKING YOUR DECISION.
-    
+    DECISION RULES:
+    Answer YES if the document:
+    - Directly or partially answers the query
+    - Provides background, definitions, or constraints needed to act
+    - Helps with comparison, planning, pacing, or preparation
+    - Covers one of multiple topics/classes mentioned in the query
+    - Is supportive context a human expert would actually use
 
-    --- History + QUERY ---
+    Answer NO only if:
+    - The document is clearly unrelated
+    - It does not help accomplish the user's task
+    - A knowledgeable human would confidently discard it
+
+    TASK FIT CONSTRAINT:
+    If the query is procedural, temporal, or recovery-oriented
+    (e.g., missing a week, catching up, what to study next),
+    answer YES only if the document provides:
+    - Week-by-week structure
+    - Specific topics, lectures, or assignments
+    - Actionable or concrete guidance
+
+    Purely high-level or static documents (e.g., course catalogs,
+    degree requirements, program overviews) should be NO for such
+    queries unless they include task-level or week-level detail.
+
+    CRITICAL CONSTRAINTS:
+    - Do NOT reject a document solely because it does not directly answer the query.
+    - Do NOT justify NO using absence-of-information arguments alone.
+    - Do NOT keep documents that are only tangentially academic
+    but do not help with the user's stated task.
+
+    UNCERTAINTY RULE:
+    - When uncertain, choose YES only if the document could reasonably
+    help the user take action.
+    - Otherwise, choose NO.
+
+    CONSIDER:
+    - The full chat history
+    - The user's underlying intent
+    - Whether the document helps the user do something, not just understand something
+
+    --- QUERY ---
     {query}
 
     --- DOCUMENT ---
     {text}
     """
-    # global openai_client
-    # completion = openai_client.responses.create(
-    #     model=model,
-    #     input=prompt,
-    #     max_output_tokens=max_tokens
-    # )
+
+
+    global openai_client
+    completion = openai_client.responses.create(
+         model=model,
+         input=prompt,
+         max_output_tokens=max_tokens
+    )
     
-    passing = False
-    while not passing:
-        try:
-            completion = llm_client.chat.completions.create(
-                messages=[{"role": "user", "content": prompt}],
-                model="llama-3.3-70b",
-                max_completion_tokens=max_tokens,
-                temperature=0.3,   # Deterministic routing
-                top_p=1,
-                stream=False   
-            )
-            passing = True
-        except Exception as e: 
-            print(e)
+    #passing = False
+    #while not passing:
+    #    try:
+    #        completion = llm_client.chat.completions.create(
+    #            messages=[{"role": "user", "content": prompt}],
+    #            model="llama-3.3-70b",
+    #            max_completion_tokens=max_tokens,
+    #            temperature=0.3,   # Deterministic routing
+    #            top_p=1,
+    #            stream=False   
+    #        )
+    #        passing = True
+    #    except Exception as e: 
+    #        print(e)
 
 
 
     
 
-    # answer = completion.output_text.strip()
-    answer = completion.choices[0].message.content.strip()
+    answer = completion.output_text.strip()
+    # with open("justify.txt", "a") as f:
+    #     f.write(answer + "\n\n\n\n\n")
+    answer = answer.split("#")[-1]
+    #answer = completion.choices[0].message.content.strip()
  
     return answer
 

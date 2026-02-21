@@ -22,3 +22,31 @@ If you encounter any issues, you can report them to the support staff to ensure 
 
 ### Important Note:
 This information is based on the gathered context, and sourcing additional details directly from Purdue's official resources could be beneficial to confirm any updates or specific procedural changes.
+
+===============================
+2026-01-15 20:01:32
+user: I just received access to the scholar cluster! Can you tell me what nodes I should use to access GPU?
+
+==============================
+current question: I just received access to the scholar cluster! Can you tell me what nodes I should use to access GPU?
+
+model: To access GPU resources on the Scholar cluster, you can use the following nodes:
+
+1. **With GPU Node**:
+   - **Configuration**: 2 Intel Xeon Gold (Skylake) with 1 NVIDIA Tesla V100.
+
+2. **Sub-Cluster A**:
+   - **Configuration**: 2 AMD EPYC (Milan) with 2 NVIDIA A100 GPUs.
+
+3. **Sub-Cluster B**:
+   - **Configuration**: 1 AMD EPYC (Rome) with 1 NVIDIA Tesla V100.
+
+4. **Sub-Cluster C**:
+   - **Configuration**: 2 Intel Xeon Silver (Skylake) with 1 NVIDIA Tesla V100.
+
+5. **Special Nodes**:
+   - **H-MIG**: 2 AMD EPYC (Milan) with 8 GPU Multi-Instance.
+   - **I-MIG**: 2 AMD EPYC (Genoa) with 4 GPU Multi-Instance.
+   - **J Node**: 2 Intel Xeon Gold (Skylake) with 2 NVIDIA A100 GPUs.
+
+When submitting jobs, specify one of these nodes in your SLURM job submission script to utilize the GPU resources available. If you have any questions about how to submit jobs or configure your environment, feel free to ask!
