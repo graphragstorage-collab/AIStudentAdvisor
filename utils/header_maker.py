@@ -48,7 +48,7 @@ def create_header(text: str, llm_client=llm_client, model="gpt-4o-mini", max_tok
         try:
             completion = llm_client.chat.completions.create(
                 messages=[{"role": "user", "content": prompt}],
-                model="llama-3.3-70b",
+                model="gpt-oss-120b",
                 max_completion_tokens=max_tokens,
                 temperature=0.3,   # Deterministic routing
                 top_p=1,

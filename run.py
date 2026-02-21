@@ -139,12 +139,17 @@ def update_account_login(username: str, new_ip: str):
 
 
 def append_conversation(username: str, history_text: str):
-    path = f"{CONVO_DIR}/{username}_history.txt"
-    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    with open(path, "a") as f:
-        f.write("\n===============================\n")
-        f.write(now + "\n")
-        f.write(history_text + "\n")
+    try:
+        path = f"{CONVO_DIR}/{username}_history.txt"
+        now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        with open(path, "a", encoding="utf-8") as f:
+            f.write("\n===============================\n")
+            f.write(now + "\n")
+            f.write(history_text + "\n")
+    except Exception as e:
+        print(f"⚠️  ERROR in append_conversation: {type(e).__name__}: {str(e)}")
+        import traceback
+        traceback.print_exc()
 
 
 # =================================================================
@@ -623,25 +628,36 @@ async def prompt(
    
      
     current_question = decoded_query  # Fallback if format doesn't match
+    
 
 
     try:
         answer = graph_rag2.query(current_question)  # Use current_question instead
         # answer = graph_rag.query(current_question)
+        print("Model answer")
         if target_lang == "none":
+            print("No translation requested, returning original answer.")
             append_conversation(username, current_question + "\n\nmodel: " + answer)
+            print("Conversation appended without translation.")
             return answer
-
+        
+        print("Translating answer to", target_lang)
         translated = translate_text_multilingual(
             answer, target_language=target_lang.capitalize()
         )
+        print("Translation complete")
+        
         append_conversation(
             username,
             current_question + f"\n\n---\n\n[Translated to {target_lang}]:\n\n" + translated
         )
+        print("Conversation appended")
         return translated
 
     except Exception as e:
+        print(f"❌ EXCEPTION IN /prompt: {type(e).__name__}: {str(e)}")
+        import traceback
+        traceback.print_exc()
         return f"Server error: TRY AGAIN LATER"
 
 

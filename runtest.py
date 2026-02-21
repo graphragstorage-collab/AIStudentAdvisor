@@ -139,12 +139,17 @@ def update_account_login(username: str, new_ip: str):
 
 
 def append_conversation(username: str, history_text: str):
-    path = f"{CONVO_DIR}/{username}_history.txt"
-    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    with open(path, "a") as f:
-        f.write("\n===============================\n")
-        f.write(now + "\n")
-        f.write(history_text + "\n")
+    try:
+        path = f"{CONVO_DIR}/{username}_history.txt"
+        now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        with open(path, "a", encoding="utf-8") as f:
+            f.write("\n===============================\n")
+            f.write(now + "\n")
+            f.write(history_text + "\n")
+    except Exception as e:
+        print(f"⚠️  ERROR in append_conversation: {type(e).__name__}: {str(e)}")
+        import traceback
+        traceback.print_exc()
 
 
 # =================================================================
@@ -721,6 +726,9 @@ async def prompt(
         return translated
 
     except Exception as e:
+        print(f"❌ EXCEPTION IN /prompt: {type(e).__name__}: {str(e)}")
+        import traceback
+        traceback.print_exc()
         return f"Server error: TRY AGAIN LATER"
 
 

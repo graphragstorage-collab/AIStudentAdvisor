@@ -8,7 +8,7 @@ API_KEYS = [
     "csk-f43h2hjymmty4489n22n5966ty6336fvw59m4m4d8rr499xt",
 ]
 
-MODEL = "llama-3.3-70b"  # ⚠️ must support vision
+MODEL = "gpt-oss-140b"  # ⚠️ must support vision
 MAX_TOKENS = 4096
 TEMPERATURE = 0.3
 
