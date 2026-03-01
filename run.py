@@ -15,6 +15,7 @@ from load import *  # GraphRAG, translate_text_multilingual
 
 from utils.transform import transform_raw_text
 from utils.header_maker import create_header
+from utils.upload_handler import process_upload
 
 from pypdf import PdfReader
 import re
@@ -464,6 +465,65 @@ async def chat_page(session: Optional[str] = Cookie(default=None)):   # <<< FIXE
         @media (max-width: 600px) {
             #promptbar { font-size: 15px; }
         }
+
+            /* Upload Modal Styles */
+            #upload-modal {
+                position: fixed;
+                top: 0; left: 0; right: 0; bottom: 0;
+                display: none;
+                align-items: center;
+                justify-content: center;
+                background: rgba(40,40,40,0.55);
+                z-index: 2000;
+            }
+            #upload-modal .modal-content {
+                background: #fffbe6;
+                color: #212020;
+                border-radius: 16px;
+                padding: 32px 28px 24px 28px;
+                box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+                min-width: 280px;
+                max-width: 90vw;
+                text-align: center;
+                font-size: 18px;
+                position: relative;
+                border: 2px solid #DAA520;
+            }
+            #modal-close {
+                position: absolute;
+                top: 12px;
+                right: 18px;
+                font-size: 28px;
+                color: #DAA520;
+                cursor: pointer;
+                font-weight: bold;
+                transition: color 0.2s;
+            }
+            #modal-close:hover {
+                color: #212020;
+            }
+            /* Loading Spinner Styles */
+            #upload-loading {
+                position: fixed;
+                top: 0; left: 0; right: 0; bottom: 0;
+                display: none;
+                align-items: center;
+                justify-content: center;
+                background: rgba(40,40,40,0.25);
+                z-index: 1999;
+            }
+            .spinner {
+                border: 6px solid #f3f3f3;
+                border-top: 6px solid #DAA520;
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+                animation: spin 1s linear infinite;
+            }
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
     </style>
 </head>
 
@@ -490,6 +550,18 @@ async def chat_page(session: Optional[str] = Cookie(default=None)):   # <<< FIXE
 
 <div id="input-section">
     <input id="promptbar" placeholder="Not satisfied with results? Contribute and upload files to our database! Study guides, how to guides, anything!" />
+</div>
+
+<!-- Upload Modal Popup -->
+<div id="upload-modal">
+    <div class="modal-content">
+        <span id="modal-close">&times;</span>
+        <div id="modal-message"></div>
+    </div>
+</div>
+<!-- Loading Spinner -->
+<div id="upload-loading">
+    <div class="spinner"></div>
 </div>
 
 <script>
@@ -554,8 +626,13 @@ async def chat_page(session: Optional[str] = Cookie(default=None)):   # <<< FIXE
     bar.focus();
 
     // File upload handling
+
     const uploadBtn = document.getElementById("upload-btn");
     const fileInput = document.getElementById("file-input");
+    const uploadModal = document.getElementById("upload-modal");
+    const modalClose = document.getElementById("modal-close");
+    const modalMsg = document.getElementById("modal-message");
+    const uploadLoading = document.getElementById("upload-loading");
 
     uploadBtn.onclick = () => {
         fileInput.click(); // open file explorer
@@ -566,23 +643,48 @@ async def chat_page(session: Optional[str] = Cookie(default=None)):   # <<< FIXE
         if (!file) return;
 
         if (!(file.name.endsWith(".txt") || file.name.endsWith(".pdf"))) {
-            alert("Only .txt and .pdf files are allowed.");
+            showUploadModal("❌ Only .txt and .pdf files are allowed");
             return;
         }
 
         const formData = new FormData();
         formData.append("file", file);
 
-        const res = await fetch("/upload", {
-            method: "POST",
-            body: formData
-        });
-
-        const msg = await res.text();
-        alert(msg);
-
+        showUploadLoading();
+        let msg = "";
+        try {
+            const res = await fetch("/upload", {
+                method: "POST",
+                body: formData
+            });
+            if (res.ok) {
+                const data = await res.json();
+                msg = data.message || "✅ File uploaded successfully!";
+            } else {
+                const error = await res.json();
+                msg = error.detail || "❌ Upload failed.";
+            }
+        } catch (e) {
+            msg = "❌ Upload failed. Please try again.";
+        }
+        hideUploadLoading();
+        showUploadModal(msg);
         fileInput.value = ""; // reset input
     };
+
+    function showUploadModal(message) {
+        modalMsg.innerText = message;
+        uploadModal.style.display = "flex";
+    }
+    modalClose.onclick = () => {
+        uploadModal.style.display = "none";
+    };
+    function showUploadLoading() {
+        uploadLoading.style.display = "flex";
+    }
+    function hideUploadLoading() {
+        uploadLoading.style.display = "none";
+    }
     
 </script>
 
@@ -677,103 +779,20 @@ async def upload_file(
     file: UploadFile = File(...),
     session: Optional[str] = Cookie(default=None),
 ):
-    # -----------------------------
-    # Auth
-    # -----------------------------
+    """
+    Upload and process a file: extract text, check relevance with GPT,
+    chunk it, save it, and add to GraphRAG knowledge base.
+    """
     username = get_session_username(session)
     if not username:
         raise HTTPException(status_code=401, detail="Not logged in")
 
-    # -----------------------------
-    # Internal helpers
-    # -----------------------------
-    MAX_CHARS = 8000
-
-    def clean_text(text: str) -> str:
-        text = re.sub(r"\s+", " ", text)
-        return text.strip()
-
-    def chunk_text(text: str):
-        starttime = time.time()
-        header = create_header(text[0 : MAX_CHARS]) + "\n"
-        print(time.time() - starttime)
-        return [header + text[i:i + MAX_CHARS] for i in range(0, len(text), MAX_CHARS)]
-
-    def pdf_to_text(path: str) -> str:
-        reader = PdfReader(path)
-        pages = []
-        for page in reader.pages:
-            page_text = page.extract_text()
-            if page_text:
-                pages.append(page_text)
-        return "\n".join(pages)
-
-    # -----------------------------
-    # File validation
-    # -----------------------------
-    filename = os.path.basename(file.filename)
-    name, ext = os.path.splitext(filename)
-    ext = ext.lower()
-
-    if ext not in {".txt", ".pdf"}:
-        raise HTTPException(status_code=400, detail="Only .txt or .pdf allowed")
-
-    save_dir = "./user_uploads"
-    os.makedirs(save_dir, exist_ok=True)
-
-    timestamp = int(time.time())
-
-    # -----------------------------
-    # Save temp upload
-    # -----------------------------
-    temp_path = os.path.join(
-        save_dir, f"_tmp_{username}_{timestamp}{ext}"
-    )
-
-    with open(temp_path, "wb") as f:
-        f.write(await file.read())
-
-    # -----------------------------
-    # Extract text
-    # -----------------------------
-    if ext == ".txt":
-        with open(temp_path, "r", encoding="utf-8", errors="ignore") as f:
-            raw_text = f.read()
-    else:  # PDF
-        raw_text = pdf_to_text(temp_path)
-
-    os.remove(temp_path)
-
-    raw_text = clean_text(raw_text)
-    if not raw_text:
-        raise HTTPException(status_code=400, detail="No readable text found")
-
-    # -----------------------------
-    # Chunk + save
-    # -----------------------------
-    chunks = chunk_text(raw_text)
-    saved_files = []
-
-    for i, chunk in enumerate(chunks):
-        if len(chunks) == 1:
-            out_name = f"{username}_{timestamp}_{name}.txt"
-        else:
-            out_name = f"{username}_{timestamp}_{name}_chunk{i+1}.txt"
-
-        out_path = os.path.join(save_dir, out_name)
-        with open(out_path, "w", encoding="utf-8") as f:
-            chunk = transform_raw_text(chunk)
-            f.write(chunk)
-        add_document_to_graphrag(graph_rag2, out_path)
-
-        saved_files.append(out_name)
-
-    # -----------------------------
-    # Response
-    # -----------------------------
-    return {
-        "File uploaded successfully. Thank you for your contribution!"
-    }
+    success, message = await process_upload(file, username, graph_rag2)
+    
+    if not success:
+        raise HTTPException(status_code=400, detail=message)
+    
+    return {"message": message}
 
 # =================================================================
 # 10. START SERVER

@@ -1,0 +1,98 @@
+## CS 180 – Algorithms and Complexity 1 (University of San Francisco) – Lecture Outline
+
+### Key Topics
+- Definition and properties of algorithms
+- Pseudocode representation
+- Searching algorithms:
+  - Linear search
+  - Binary search
+  - Input-output specifications and complexity comparison
+- Sorting algorithms:
+  - Bubble sort
+  - Insertion sort
+  - Procedural descriptions
+  - Pass analysis
+  - Worst-case comparison counts
+- Illustrative examples:
+  - Prime-checking
+  - Maximum-element
+  - Cashier’s change-making
+- Algorithmic properties:
+  - Correctness
+  - Effectiveness
+  - Finiteness
+  - Generality
+
+This header identifies the primary focus on fundamental algorithm design, analysis, and implementation techniques presented in the introductory lecture for the CS 180 course.
+
+### Growth Functions
+Common growth functions include:
+- Constant: \(O(1)\)
+- Logarithmic: \(O(\log n)\)
+- Linear: \(O(n)\)
+- Linearithmic: \(O(n \log n)\)
+- Quadratic: \(O(n^2)\)
+- Cubic: \(O(n^3)\)
+- Polynomial: \(O(n^k)\), where \(k\) is a constant
+- Exponential: \(O(2^n)\), \(O(c^n)\), where \(c\) is a constant
+- Factorial: \(O(n!)\)
+
+### Important Big-O Relationships
+- \(\log_2 n\) and \(n \log_2 n\)
+- \(\log_2 n\) and \(n^{1/8}\)
+- \((\log_2 n)^4\) and \(n\)
+- \(n \log n\) and \(n^2\)
+  
+### Example: Maximum Subarray
+[LeetCode Problem: Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
+
+Given \(n\) integers stored in array \(S\) of size \(n\), find \(i\) and \(j\) (\(1 \leq j \leq i \leq n\)) such that \(S[i] + ... + S[j]\) is a maximum. 
+
+**Example:**
+- Input: \(n = 12\), array: \(4, -7, 4, 0, 5, -8, 13, -2, 4, 6, -6, 2\)
+- Maximum sum: \(22\) for \(j = 3\) and \(i = 10\)
+
+### Solutions
+#### Solution 1: Find All Possible Solutions
+**Procedure:** MaxSum1(S, n)  
+- Initialize `max := 0`
+- Loop through `i` from 1 to \(n\)
+  - Loop through `j` from 1 to \(i\)
+    - Initialize `sum := 0`
+    - Loop through `k` from `j` to `i`
+      - Add `S(k)` to `sum`
+      - If `sum > max`, set `max := sum`
+- Return `max`
+- **Time Complexity:** \(O(n^3)\)
+
+#### Solution 2: Don’t Re-compute
+**Procedure:** MaxSum2(S, n)  
+- Initialize `max := 0`
+- Loop through `i` from 1 to \(n\)
+  - Loop through `j` from 1 to \(i - 1\)
+    - Update `sum(j,i) := sum(j,i - 1) + S(i)`
+    - If `sum(j,i) > max`, set `max := sum(j,i)`
+    - Set `sum(i,i) := S(i)`
+    - If `sum(i,i) > max`, set `max := sum(i,i)`
+- Return `max`
+- **Time Complexity:** \(O(n^2)\)
+
+#### Solution 3: Fast Updating (Optional)
+**Procedure:** MaxSum3(S, n)  
+- Initialize `max := S(1)`, `sum := S(1)`
+- Loop through `i` from 2 to \(n\)
+  - If `sum > 0`, update `sum := sum + S(i)`
+  - Else, set `sum := S(i)`
+  - If `sum > max`, set `max := sum`
+- Return `max`
+- **Time Complexity:** \(O(n)\)
+
+### Problem-Solving Tips
+- Fully understand the problem.
+- Solve it manually to gain insight.
+- Develop an initial straightforward algorithm.
+- Critically evaluate your solution for possible improvements.
+- Watch for repeated or duplicated computations that could reduce efficiency.
+
+### Recommended Exercise
+- KR 3.2: Solve problems numbered 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39.

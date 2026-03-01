@@ -110,17 +110,26 @@ def add_document_to_graphrag(graph_rag, file_path: str):
     # -------------------------------------------------------------
     # 2. Embed the new document and update FAISS vector store
     # -------------------------------------------------------------
+
     embedding_model = graph_rag.embedding_model
     vec = embedding_model.embed_documents([new_doc.page_content])
 
     # Add to the internal store
     vs = graph_rag.vector_store
 
+    # Only add if embedding is valid
+    if vec.shape[0] == 0 or vec.shape[1] == 0:
+        print(f"Warning: Skipping document '{file_path}' due to empty embedding.")
+        return None
+
     # If FAISS not initialized, create fresh index
     if vs.index is None:
         dim = vec.shape[1]
         vs.index = faiss.IndexFlatIP(dim)
         vs._dim = dim
+    elif vec.shape[1] != vs._dim:
+        print(f"Warning: Skipping document '{file_path}' due to embedding dimension mismatch ({vec.shape[1]} vs {vs._dim}).")
+        return None
 
     # Add embedding and document
     vs.index.add(vec)
@@ -213,16 +222,25 @@ class OpenAIEmbeddingModel:
         """
         Returns a 2D numpy array of shape (len(texts), dim) with L2-normalized vectors.
         """
-        if not texts:
-            return np.zeros((0, 0), dtype="float32")
+        # Validate and truncate input
+        cleaned_texts = []
+        for t in texts:
+            if not isinstance(t, str):
+                continue
+            t = t.strip()
+            if not t:
+                continue
+            # Truncate to 16000 characters (approx 4000 tokens)
+            if len(t) > 16000:
+                t = t[:16000]
+            cleaned_texts.append(t)
 
-        # print("WEBPAGE: " + texts[:100] + "\n__________________________\n")
-        # for text in texts:
-        #     print("WEBPAGE: " + text[:100] + "\n__________________________\n")
+        if not cleaned_texts:
+            return np.zeros((0, 0), dtype="float32")
 
         response = self.client.embeddings.create(
             model=self.model,
-            input=texts
+            input=cleaned_texts
         )
         vectors = [d.embedding for d in response.data]
         arr = np.array(vectors, dtype="float32")

@@ -427,3 +427,14 @@ Both the midterm and final are in-person, closed-book, and closed-notes, with no
 - There are weekly practice sessions led by TAs that are mandatory for students.
 
 If you have any more specific questions or details you need about CS 18200, feel free to ask!
+
+===============================
+2026-02-20 20:45:53
+user: what is the required text for cs 182
+
+==============================
+current question: what is the required text for cs 182
+
+model: The required text for CS 18200 – Foundations of Computer Science is:
+
+**K. Rosen, *Discrete Mathematics and Its Applications* (7th/8th ed.) with online student resources.**

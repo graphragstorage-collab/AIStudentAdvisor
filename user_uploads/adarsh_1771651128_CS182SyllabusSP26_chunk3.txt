@@ -1,0 +1,65 @@
+# Purdue University – Department of Computer Science
+## CS 18200 Foundations of Computer Science (Spring 2026)
+
+### Course Outline
+- **Course Code**: CS 18200 
+- **Semester**: Spring 2026
+
+### Course Schedule
+Details regarding schedules will be provided in the course portal.
+
+### Prerequisites
+See Brightspace for specific prerequisite information.
+
+### Staff
+Course staff and their contact information will be available on the course Brightspace page.
+
+### Communication Channels
+- Course announcements and materials will be distributed via Brightspace.
+- Email communication is encouraged.
+
+### Course Description
+An overview of the foundations of computer science will be provided. Further details are accessible in the course materials.
+
+### Learning Outcomes
+Students are expected to achieve specified learning outcomes by the end of the course. For detailed outcomes, refer to the course content on Brightspace.
+
+### Required Texts
+Specific texts will be listed on the course Brightspace materials.
+
+### Technology Platforms
+- **Brightspace**: Course management.
+- **Gradescope**: For submitting assignments and receiving grades.
+- **Ed Discussion**: For course-related discussions and inquiries.
+
+### Grading Scheme
+The grading scheme will be detailed in the course portal. It typically includes homework, quizzes, and exams.
+
+### Policies
+
+#### Homework
+Policies regarding homework submission will be specified in the course materials.
+
+#### Quizzes
+Details about quizzes and their scheduling will be included on Brightspace.
+
+#### Exams
+Examination policies and schedules will be outlined in the course materials.
+
+#### Accommodations
+Purdue University is committed to accessibility. If you anticipate or experience barriers due to a disability, please contact the Disability Resource Center at [drc@purdue.edu](mailto:drc@purdue.edu) or 765-494-1247. Accommodations require confirmation from the DRC.
+
+### Nondiscrimination Statement
+Purdue University fosters a community that values every individual's worth, encouraging understanding and respect. More details are on the course Brightspace site under University Policies.
+
+### Mental Health Statement
+- If you are experiencing stress or anxiety, consider using WellTrack for resources.
+- For support, contact the Office of the Dean of Students at 765-494-1747.
+- Free wellness coaching sessions are available through BoilerConnect.
+- Should you require mental health services, reach out to Counseling and Psychological Services (CAPS) at 765-494-6995 or visit their office during business hours.
+
+### Emergency Preparation
+In the event of a campus emergency, course requirements and schedules may change. Notifications will be made via the course website or email communication.
+
+### Disclaimer
+The syllabus is subject to change. All changes will be announced on Brightspace.
