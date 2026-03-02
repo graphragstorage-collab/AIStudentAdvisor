@@ -1,0 +1,102 @@
+**Purdue University Data Science Program Overview**
+
+The Data Science major at Purdue University combines computer science and statistics, preparing students for careers in various fields, including healthcare, security, and business. The program is jointly offered by the Department of Computer Science and the Department of Statistics, providing a comprehensive education in data science.
+
+### University Core Requirements
+
+For a complete listing of University Core Course Selectives, visit the [University Senate Website](https://www.purdue.edu/senate).
+
+- Human Cultures: Behavioral/Social Science (BSS)
+- Human Cultures: Humanities (HUM)
+- Information Literacy (IL)
+- Oral Communication (OC)
+- Quantitative Reasoning (QR)
+- Science #1 (SCI)
+- Science #2 (SCI)
+- Science, Technology, and Society (STS)
+- Written Communication (WC)
+
+### Prerequisite Information
+
+For current prerequisites for courses, click [here](#). 
+
+### Additional Requirements
+
+Click [here](#) for Data Science Supplemental Information.
+
+### Program Requirements
+
+#### Fall 1st Year
+- CS 18000 - Problem Solving And Object-Oriented Programming ♦ *
+- CS 19100 - Freshman Resources Seminar
+- CS 19300 - Tools
+- MA 16100 - Plane Analytic Geometry And Calculus I or MA 16500 - Analytic Geometry And Calculus I
+- Science Core Selection - Credit Hours: 3.00 - 4.00
+- Electives - Credit Hours: 3.00  
+
+Total: 16-18 Credits
+
+#### Spring 1st Year
+- CS 18200 - Foundations Of Computer Science *
+- CS 38003 - Python Programming
+- ENGL 10600 - First-Year Composition or ENGL 10800 - Accelerated First-Year Composition or HONR 19903 - Interdisciplinary Approaches In Writing or SCLA 10100 - Transformative Texts, Critical Thinking And Communication I: Antiquity To Modernity
+- MA 16200 - Plane Analytic Geometry And Calculus II or MA 16600 - Analytic Geometry And Calculus II
+- Science Core Selection - Credit Hours: 3.00 - 4.00
+- Electives - Credit Hours: 1.00  
+
+Total: 15-18 Credits
+
+#### Fall 2nd Year
+- STAT 35500 - Statistics For Data Science
+- CS 24200 - Introduction To Data Science or STAT 24200 - Introduction To Data Science
+- MA 26100 - Multivariate Calculus or MA 27101 - Honors Multivariate Calculus
+- Science Core Selection - Credit Hours: 3.00 - 4.00
+- Elective - Credit Hours: 1.00 - 3.00  
+
+Total: 14-18 Credits
+
+#### Spring 2nd Year
+- CS 25100 - Data Structures And Algorithms *
+- MA 35100 - Elementary Linear Algebra
+- STAT 41600 - Probability
+- ILS 23000 - Data Science And Society: Ethical Legal Social Issues ♦ or PHIL 20700 - Ethics For Technology, Engineering, And Design ♦ or PHIL 20800 - Ethics Of Data Science ♦ - (must be 3.00 Credit Hour option)
+- Science Core Selection - Credit Hours: 3.00 - 4.00
+- Elective - Credit Hours: 1.00 - 2.00  
+
+Total: 16-18 Credits
+
+#### Fall 3rd Year
+- CS 37300 - Data Mining And Machine Learning
+- STAT 41700 - Statistical Theory
+- COM 21700 - Science Writing And Presentation
+- Science Core Selection - Credit Hours: 3.00 - 4.00
+- Elective - Credit Hours: 3.00  
+
+Total: 15-16 Credits
+
+#### Spring 3rd Year
+- CS Elective - Credit Hours: 3.00
+- Statistics Elective - Credit Hours: 3.00
+- Science Core Selection - Credit Hours: 3.00 - 4.00
+- Science Core Selection - Credit Hours: 3.00 - 4.00
+- Elective - Credit Hours: 3.00  
+
+Total: 15-17 Credits
+
+#### Fall 4th Year
+- CS 49000 - Topics In Computer Sciences For Undergraduates - (Large Scale Data Analytics (LSDA)) or STAT 49000 - Topics In Statistics For Undergraduates - (Large Scale Data Analytics (LSDA))
+- CS Elective - Credit Hours: 3.00
+- Science Core Selection - Credit Hours: 3.00 - 4.00
+- Elective - Credit Hours: 3.00
+- Elective - Credit Hours: 3.00
+- Elective - Credit Hours: 1.00 - 3.00  
+
+Total: 16-17 Credits
+
+#### Spring 4th Year
+- Capstone Experience/Course - Credit Hours: 0.00 - 3.00
+- Science Core Selection - Credit Hours: 3.00 - 4.00
+- Science Core Selection - Credit Hours: 3.00 - 4.00
+- Elective - Credit Hours: 3.00
+- Elective - Credit Hours: 3.00
+- Elective - Credit Hours: 1.00  

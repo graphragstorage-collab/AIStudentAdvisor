@@ -1,0 +1,6 @@
+
+===============================
+2025-12-07 18:58:13
+user: Who is the professor of cs 381
+
+model: The professor for CS 38100 — Introduction To The Analysis Of Algorithms is Alexandros Psomas, along with Tamal Krishna Dey. If you have any further questions, feel free to ask!

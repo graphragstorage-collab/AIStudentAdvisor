@@ -1,0 +1,96 @@
+**Purdue University – Department of Computer Science – CS 18200 Foundations of Computer Science (Spring 2026) – Course Outline**
+
+### Course Identification
+- **Course Title:** CS 18200 – Foundations of Computer Science
+- **Prerequisites:** CS 18000 and MATH 16100  
+
+### Term & Sections
+- **Term:** Spring 2026
+- **Sections:**
+  - LE1: TR 10:30‑11:45 am, WALC 1055
+  - LE2: TR 03:00‑04:15 pm, WALC 1055
+  - LE3: TR 04:30‑05:45 pm, WALC 1055  
+
+### Leadership Team
+- **Director:** Justin D. Gillingham
+- **Instructors:** Wojciech Szpankowski, Sarah Sellke
+- **Head Graduate Teaching Assistants (GTAs):** Arun Narayanan Hariharan, Andrew Haas  
+
+### Contact Information
+- **Email:** CS‑18200‑COOR@lists.purdue.edu
+- **Office Hours:** Full staff list and office hours available on Brightspace  
+
+### Communication Channels
+- **TAs and Teaching Staff:** Office hours available
+- **Ed Discussion:** For general questions
+- **Email to Coordinators:** Expect responses within 2-3 business days  
+
+### Accommodations
+- **Requests:** Routed through Office of the Dean of Students (ODOS) or Disability Resource Center (DRC)
+- **Privacy:** FERPA compliance – parental email responses not permitted  
+
+### Course Description
+- Introduction to discrete mathematics tools for computer science, including:
+  - Logic
+  - Proof methods
+  - Functions, sets
+  - Number theory
+  - Algorithm analysis
+  - Induction
+  - Counting
+  - Probability
+  - Graph theory
+  - Finite-state automata
+  - Regular expressions
+  - Context-free languages
+  - Turing machines
+  - Computability  
+
+### Learning Outcomes
+- Apply discrete mathematics principles
+- Analyze algorithm complexity (Big O, Θ, Ω)
+- Solve graph-theory problems  
+
+### Required Text
+- K. Rosen, *Discrete Mathematics and Its Applications* (7th/8th ed.) with online student resources  
+
+### Technology Platforms
+- Brightspace, Gradescope, Ed Discussion  
+
+### Assessment Structure
+- Homework: 20%
+- Quizzes: 10%
+- Midterm Exam: 35%
+- Final Exam: 35%
+- **Policies:** Lowest homework and quiz scores dropped; one quiz retake allowed  
+
+### Grading Scale
+- Letter grades A+ through D‑ with numeric cutoffs; instructor discretion for irregular performance  
+
+### Course Policies
+- **Homework Submission:** Hand-written homework submitted via Gradescope
+- **Late Submission Penalty:** 15% penalty for 1-day late submissions; no acceptance after 24 hours
+- **Quizzes:** Administered online (Sunday 1 PM–Monday 1 PM) or in-class; 1-hour completion window  
+
+### PSO Sessions
+- Weekly Practice/Study/Observation sessions led by graduate TAs
+- Mandatory attendance; problems posted on Brightspace, no solutions provided  
+
+### Exams
+- One evening midterm and one comprehensive final
+- **Format:** In-person, closed-book/notes, no electronic devices permitted  
+
+### Additional Course Information
+- **Netiquette Rules:** Guidelines for respectful online interactions including avoiding offensive language, promoting an open mind, and considering the impact of one’s communication style.
+- **Nondiscrimination Statement:** Purdue University fosters a community that values respect among its members, with resources available for diversity and inclusion.
+- **Accessibility:** Contact the Disability Resource Center for accommodations. Email: drc@purdue.edu; Phone: 765-494-1247.
+- **Mental Health Resources:** 
+  - For stress or mental health support, contact Purdue University Counseling and Psychological Services (CAPS) at 765-494-6995 or visit the office at the Purdue University Student Health Center (PUSH).
+
+### Emergency Preparation
+- In the event of a major campus emergency, course requirements, deadlines, and grading structures are subject to change. Relevant updates will be communicated via email or posted on the course website.  
+
+### Disclaimer
+- This syllabus is subject to change, with changes announced on Brightspace.  
+
+*All information reflects the official Purdue University CS 18200 course page for Spring 2026.*

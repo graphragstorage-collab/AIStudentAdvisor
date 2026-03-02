@@ -1,0 +1,111 @@
+CS 18200 – Foundations of Computer Science (Purdue University, Department of Computer Science) – Spring 2026 Course Outline
+
+### Course Information
+- **Sections & Times:** 
+  - LE1: TR 10:30-11:45 am, WALC 1055
+  - LE2: TR 03:00-04:15 pm, WALC 1055
+  - LE3: TR 04:30-05:45 pm, WALC 1055  
+- **Prerequisites:** 
+  - CS 18000
+  - MATH 16100  
+- **Instruction Team:** 
+  - Director: Justin D. Gillingham
+  - Professors: Wojciech Szpankowski & Sarah Sellke
+  - GTAs: Arun Narayanan Hariharan & Andrew Haas  
+- **Contact:** 
+  - [CS-18200-COOR@lists.purdue.edu](mailto:CS-18200-COOR@lists.purdue.edu) 
+  - (staff list & office hours on Brightspace)  
+
+### Communication Channels
+- Brightspace
+- Ed Discussion
+- Email (coordinators only) – standard response time is 2-3 business days; accommodations via ODOS/DRC (no medical documents requested)  
+
+### Course Description
+This course covers introductory discrete mathematics tools for computer science, including:
+- Logic
+- Proof methods
+- Functions
+- Sets
+- Relations
+- Number theory
+- Algorithm analysis
+- Induction
+- Counting
+- Probability
+- Trees/graphs
+- Finite-state automata
+- Regular expressions
+- Context-free languages
+- Turing machines
+- Computability  
+
+### Required Text
+- K. Rosen, *Discrete Mathematics and Its Applications* (7th/8th ed.) 
+  - The student site includes examples, self-assessment, and a proof-writing guide.  
+
+### Learning Outcomes
+Students will be able to:
+- Apply discrete mathematics principles
+- Analyze algorithm complexity (Big O, Θ, Ω)
+- Use graph theory and algorithms to solve real-world problems  
+
+### Technology Platforms
+- Brightspace
+- Gradescope
+- Ed Discussion  
+
+### Grading Scheme (Tentative)
+- Homework: 20%
+- Quizzes: 10%
+- Midterm: 35% (Monday, Mar 9, 8-10 PM)
+- Final: 35% (university-set date, likely Saturday, May 9, 2026)  
+- Note: The lowest homework and quiz scores will be dropped.  
+
+### Grade Scale
+- A+: 99-100
+- A: 93-99
+- A-: 90-93
+- B+: 86-90
+- B: 83-86
+- B-: 80-83
+- C+: 76-80
+- C: 73-76
+- C-: 70-73
+- D+: 66-70
+- D: 63-66
+- D-: 60-63  
+
+### Homework Policy
+- 10-11 assignments will be posted on Brightspace and submitted via Gradescope, handwritten only. 
+- A 15% penalty will be applied for each 24-hour late period, and no submissions will be accepted after one day.  
+
+### Quiz Policy
+- Approximately 10 quizzes (online & in-class) with a 1-hour window for completion.
+- One retake is allowed (highest score counts) with pools of equivalent questions.
+- Online quizzes will be available from Sunday 1 PM to Monday 1 PM.  
+
+### PSO Sessions
+Weekly Practice/Study/Observation sessions led by a graduate TA, with undergraduate TAs assisting; attendance is expected. Problems will be posted on Brightspace, but solutions will not be provided.  
+
+### Exams
+One evening midterm and one comprehensive final, both in-person, closed-book/notes, and without electronic devices.  
+
+### Accommodation/FERPA
+- Extensions require ODOS/DRC approval; faculty do not request medical documentation. 
+- FERPA regulations prevent faculty from responding to parent emails.  
+
+### Nondiscrimination Statement
+Purdue University is committed to maintaining a community that recognizes and values the worth and dignity of every person, fostering understanding and mutual respect. More details are available on our course Brightspace table of contents under University Policies.  
+
+### Accessibility
+Purdue University is committed to accessibility. If you anticipate or experience barriers due to a disability, contact the Disability Resource Center at [drc@purdue.edu](mailto:drc@purdue.edu) or call 765-494-1247. Accommodations can only be arranged with confirmation from the DRC. Students must notify the DRC ([purdue.edu/drc](https://www.purdue.edu/drc)) of any conditions requiring accommodations.  
+
+### Mental Health Statement
+If you experience stress, anxiety, or feel overwhelmed, try WellTrack for tools and resources. Contact the Office of the Dean of Students at 765-494-1747 during M-F, 8 am-5 pm for support. Free sessions with a Purdue Wellness Coach are available via BoilerConnect, and Counseling and Psychological Services (CAPS) can be reached at 765-494-6995. 
+
+### Emergency Preparation
+In the event of a major campus emergency, course requirements, deadlines, and grading percentages may change. Relevant changes will be posted on the course website or can be obtained by contacting instructors or TAs.
+
+### Disclaimer
+This syllabus is subject to change; announcements will be made on Brightspace.

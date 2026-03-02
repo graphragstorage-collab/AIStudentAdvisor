@@ -1,0 +1,134 @@
+
+===============================
+2026-02-20 19:19:50
+user: tell me about cs471 this semester
+
+==============================
+current question: tell me about cs471 this semester
+
+model: The course **CS47100: Introduction to Artificial Intelligence** for the Spring 2026 semester covers various aspects of AI, including search algorithms, constraint satisfaction, logic, reasoning under uncertainty, machine learning, and planning. 
+
+### Course Information:
+- **Instructors:** 
+  - **Raymond A. Yeh** (Email: rayyeh@purdue.edu)
+  - **Brian Bullins** (Email: bbullins@purdue.edu)
+
+### Schedule:
+- **Lecture Times:** 
+  - **LE1:** Tuesday & Thursday, 1:30 PM - 2:45 PM (Location: MTHW 210)
+  - **LE2:** Tuesday & Thursday, 4:30 PM - 5:45 PM (Location: SMTH 108)
+
+### Important Dates:
+- **Assignments:** Four assignments throughout the semester.
+  - **Assignment 1 due:** February 6, 2026, 11:59 PM
+  - **Assignment 2 due:** March 6, 2026, 11:59 PM
+  - **Assignment 3 due:** April 3, 2026, 11:59 PM
+  - **Assignment 4 due:** April 24, 2026, 11:59 PM
+- **Midterm Exam:** March 23, 2026, 8:00 PM - 10:00 PM
+- **Final Exam:** May 6, 2026, 8:00 AM - 10:00 AM
+
+### Grading Breakdown:
+- Assignments: 33%
+- Midterm Exam: 33%
+- Final Exam: 34%
+
+### Additional Resources:
+- Course materials will be accessible via **Brightspace** and students are encouraged to use **Ed Discussion** for inquiries.
+
+### Office Hours:
+- **Raymond A. Yeh:** Monday, 9:00 AM - 10:00 AM (Ends on Mar. 2) via Zoom
+- **Brian Bullins:** Office Hours TBD (Starts Mar. 9) via Zoom
+- Various TAs available throughout the week for additional support.
+
+If you have specific questions about any aspect, feel free to ask!
+
+===============================
+2026-02-20 19:22:51
+user: tell me about cs471 this semester
+
+model: The course **CS47100: Introduction to Artificial Intelligence** for the Spring 2026 semester covers various aspects of AI, including search algorithms, constraint satisfaction, logic, reasoning under uncertainty, machine learning, and planning. 
+
+### Course Information:
+- **Instructors:** 
+  - **Raymond A. Yeh** (Email: rayyeh@purdue.edu)
+  - **Brian Bullins** (Email: bbullins@purdue.edu)
+
+### Schedule:
+- **Lecture Times:** 
+  - **LE1:** Tuesday & Thursday, 1:30 PM - 2:45 PM (Location: MTHW 210)
+  - **LE2:** Tuesday & Thursday, 4:30 PM - 5:45 PM (Location: SMTH 108)
+
+### Important Dates:
+- **Assignments:** Four assignments throughout the semester.
+  - **Assignment 1 due:** February 6, 2026, 11:59 PM
+  - **Assignment 2 due:** March 6, 2026, 11:59 PM
+  - **Assignment 3 due:** April 3, 2026, 11:59 PM
+  - **Assignment 4 due:** April 24, 2026, 11:59 PM
+- **Midterm Exam:** March 23, 2026, 8:00 PM - 10:00 PM
+- **Final Exam:** May 6, 2026, 8:00 AM - 10:00 AM
+
+### Grading Breakdown:
+- Assignments: 33%
+- Midterm Exam: 33%
+- Final Exam: 34%
+
+### Additional Resources:
+- Course materials will be accessible via **Brightspace** and students are encouraged to use **Ed Discussion** for inquiries.
+
+### Office Hours:
+- **Raymond A. Yeh:** Monday, 9:00 AM - 10:00 AM (Ends on Mar. 2) via Zoom
+- **Brian Bullins:** Office Hours TBD (Starts Mar. 9) via Zoom
+- Various TAs available throughout the week for additional support.
+
+If you have specific questions about any aspect, feel free to ask!
+
+user: tell me about cs381 this semester
+
+==============================
+current question: tell me about cs381 this semester
+
+model: The course **CS381: Fundamental Algorithms** for the Spring 2026 semester at Purdue University covers fundamental algorithms in computer science. Here are the key details:
+
+### Instructors:
+- **Mike Atallah** (Email: matallah@purdue.edu)
+- **Kent Quanrud** (Email: krq@purdue.edu)
+
+### Schedule:
+- **Lectures:** 
+  - **Tuesday and Thursday**: 
+      - 10:30 AM - 11:45 AM (Location: SMTH 108)
+      - 1:30 PM - 2:45 PM (Location: BHEE 170)
+
+### Important Dates:
+- **Homework Assignments Due:**
+  - Homework 0: January 22
+  - Homework 1: January 29
+  - Homework 2: February 5
+  - Homework 3: February 12
+  - Homework 4: February 26
+  - Homework 5: March 5
+  - Homework 6: March 12
+  - Homework 7: March 26
+  - Homework 8: April 9
+  - Homework 9: April 16
+  - Homework 10: April 23
+
+- **Midterm Exams:**
+  - Midterm Exam 1: February 18, 2026, from 8:00 PM to 10:00 PM 
+  - Midterm Exam 2: April 1, 2026, from 8:00 PM to 10:00 PM 
+
+- **Final Exam:** Date to be determined (TBD).
+
+### Topics Covered:
+The course includes a range of topics such as:
+- Searching and sorting algorithms
+- Induction and recursion
+- Graph algorithms (depth-first and breadth-first search)
+- NP-Completeness and optimization problems
+- Network flow and disjoint paths
+- Randomized algorithms and data structures
+
+### Additional Resources:
+Course materials are available online, and students are encouraged to attend office hours for support.
+
+If you need more specific information about the course, feel free to ask!

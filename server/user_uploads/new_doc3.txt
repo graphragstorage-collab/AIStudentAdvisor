@@ -1,0 +1,85 @@
+WEBPAGE: https://www.cs.purdue.edu/academic-programs/courses/canonical/cs251.html
+
+_________________________________________________________________________________
+
+CS 251 — Data Structures (Canonical Course)
+Prerequisites:
+CS 18200 — Foundations of Computer Science
+CS 24000 — Programming in C
+Course Topics — Algorithm Analysis
+Running time analysis of algorithms and implementations
+Review of proof methods and mathematics concepts
+Mathematical induction and recursion
+Experimental running time analysis
+Benchmarking and counting instructions
+Importance of constants
+Asymptotic running time analysis
+Big-O and Θ notations
+Best, expected, worst-case running times
+Comparing growth: log n vs constants, linear vs quadratic vs exponential
+Course Topics — Core Data Structures
+Abstract data types (ADTs) and common operations
+One- and two-dimensional arrays, dynamic arrays
+Linked lists
+Stacks and queues
+Comparison of stack/queue implementations
+Course Topics — Trees
+Tree definitions and ADTs
+Pointer-based tree implementations
+Tree traversals and explorations
+Binary trees: properties, ADTs, traversals
+Representing & manipulating arithmetic expressions using trees
+Course Topics — Searching and Sorting
+Binary search
+Basic sorting: Bubble sort, Selection sort, Insertion sort
+Efficient sorting: Mergesort, Quicksort
+Non-comparison sorts: Bucket sort, Counting sort, Radix sort
+Course Topics — Heaps
+Heap definitions, properties, ADTs
+Array implementation of heaps
+Priority queue operations: insertion, extract-min/max
+Building heaps: incremental vs bottom-up
+Heapsort
+Course Topics — Binary Search Trees
+BST properties, performance, ADTs
+Basic operations: search, insert, delete
+Course Topics — Balanced Search Trees
+Balanced search tree definitions, properties, performance
+Red-black trees and 2-3 trees
+Maintaining balance under insertions and deletions
+Course Topics — Hashing
+ADTs and hash-table implementations
+Hash functions
+Collision handling: open hashing, linear probing, double hashing
+Effects of table size and load factor on performance
+Course Topics — Specialized Data Structures
+Union-Find data structures
+Spatial data structures and spatial queries
+Course Topics — Strings & Tries
+Trie representations, ADTs, and operations
+Ternary and suffix trie variations
+Data compression and Huffman code generation
+Substring search algorithms
+Boyer-Moore
+Knuth-Morris-Pratt (KMP)
+Course Topics — Graphs
+Graph definitions, terminology, properties, ADTs
+Graph representations: edge list, adjacency list, adjacency matrix
+Undirected graphs:
+DFS, BFS
+Connected components
+Directed graphs:
+DFS and BFS revisited
+Topological sorting and applications
+Strongly-connected components (optional)
+Selected graph algorithms:
+Shortest paths: Dijkstra, Bellman-Ford
+Minimum spanning trees: Prim, Kruskal
+Purdue Website Footer and Department Info
+Purdue University Department of Computer Science
+305 N. University Street, West Lafayette, IN 47907
+Phone: (765) 494-6010
+Fax: (765) 496-1690
+Campus resources include BoilerConnect, Brightspace, myPurdue, Outlook, room reservations, overrides, system status, Lawson Building Hours, Fix It, and more.
+Social media links: Facebook, Instagram, Twitter, LinkedIn, YouTube.
+Institutional statements: Accessibility, EA/EO, Integrity Statement, Free Expression, Privacy Policy.

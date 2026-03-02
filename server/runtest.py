@@ -1,0 +1,802 @@
+import uvicorn
+from fastapi import FastAPI, Response, Request, Depends, Cookie, HTTPException
+from fastapi.responses import HTMLResponse, PlainTextResponse, RedirectResponse
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi import UploadFile, File
+from pydantic import BaseModel
+from itsdangerous import Signer, BadSignature
+import os
+import time
+import datetime
+from typing import Optional   # <<< FIXED
+
+from load import *  # GraphRAG, translate_text_multilingual
+
+from utils.transform import transform_raw_text
+from utils.header_maker import create_header
+from utils.upload_handler import process_upload
+
+from pypdf import PdfReader
+import re
+
+
+# =================================================================
+# 0. INITIAL SETUP
+# =================================================================
+
+ACCOUNTS_DIR = "./accounts"
+CONVO_DIR = "./conversations"
+
+os.makedirs(ACCOUNTS_DIR, exist_ok=True)
+os.makedirs(CONVO_DIR, exist_ok=True)
+
+COOKIE_SIGNER = Signer("SUPER_SECRET_KEY_CHANGE_ME")
+
+
+# =================================================================
+# 1. LOAD GRAPH-RAG
+# =================================================================
+
+print("Loading GraphRAG…")
+# graph_rag = GraphRAG()
+# graph_rag.load_from_disk(
+#     vector_store_path="vector_store.json",
+#     graph_path="knowledge_graph.json"
+# )
+
+# Load new nodes (unchanged)
+graph_rag2 = GraphRAG(initialize_empty=False)
+uploads = os.listdir("./user_uploads")
+for upload in uploads:
+    if upload.endswith(".txt"):
+        add_document_to_graphrag(graph_rag2, os.path.join("./user_uploads", upload))
+        # add_document_to_graphrag(graph_rag, os.path.join("./user_uploads", upload))
+
+print("✓ GraphRAG Loaded.")
+
+
+# =================================================================
+# 2. FASTAPI APP SETUP
+# =================================================================
+
+app = FastAPI()
+
+app.mount("/static", StaticFiles(directory="/root/GraphPackage/assets"), name="static")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+# =================================================================
+# 3. HELPER FUNCTIONS
+# =================================================================
+
+def get_client_ip(request: Request):
+    return request.client.host
+
+
+def set_session(response: Response, username: str):
+    signed = COOKIE_SIGNER.sign(username.encode()).decode()
+    response.set_cookie("session", signed, httponly=True, max_age=86400*7)
+
+def clear_session(response):
+    response.delete_cookie(
+        key="session",
+        path="/",      # MUST match original path
+    )
+
+
+def get_session_username(session_cookie: Optional[str]):  # <<< FIXED
+    if not session_cookie:
+        return None
+    try:
+        raw = COOKIE_SIGNER.unsign(session_cookie).decode()
+        return raw
+    except BadSignature:
+        return None
+
+
+def read_account(username: str):
+    path = f"{ACCOUNTS_DIR}/{username}.txt"
+    if not os.path.exists(path):
+        return None
+
+    with open(path, "r") as f:
+        first = f.readline().strip()
+
+    parts = first.split(",")
+    if len(parts) != 3:
+        return None
+
+    password, ip, ts = parts
+    try:
+        ts = float(ts)
+    except:
+        ts = 0
+
+    return password, ip, ts
+
+
+def update_account_login(username: str, new_ip: str):
+    path = f"{ACCOUNTS_DIR}/{username}.txt"
+    if not os.path.exists(path):
+        return False
+
+    with open(path, "r") as f:
+        lines = f.readlines()
+
+    timestamp = time.time()
+    lines[0] = f"{lines[0].split(',')[0]},{new_ip},{timestamp}\n"
+
+    with open(path, "w") as f:
+        f.writelines(lines)
+
+    return True
+
+
+def append_conversation(username: str, history_text: str):
+    try:
+        path = f"{CONVO_DIR}/{username}_history.txt"
+        now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        with open(path, "a", encoding="utf-8") as f:
+            f.write("\n===============================\n")
+            f.write(now + "\n")
+            f.write(history_text + "\n")
+    except Exception as e:
+        print(f"⚠️  ERROR in append_conversation: {type(e).__name__}: {str(e)}")
+        import traceback
+        traceback.print_exc()
+
+
+# =================================================================
+# 4. LOGIN PAGE (GET)
+# =================================================================
+
+@app.get("/", response_class=HTMLResponse)
+async def login_page(request: Request, session: Optional[str] = Cookie(default=None)):
+    return RedirectResponse("/login")
+
+@app.get("/logout")
+async def logout_page():
+    response = RedirectResponse("/login", status_code=302)
+    clear_session(response)
+    return response
+
+
+@app.get("/login", response_class=HTMLResponse)
+async def login_page(request: Request, session: Optional[str] = Cookie(default=None)):   # <<< FIXED
+    # Auto-login if 24-hour IP rule passes
+    username = get_session_username(session)
+    if username:
+        acc = read_account(username)
+        if acc:
+            stored_pw, stored_ip, last_ts = acc
+            client_ip = get_client_ip(request)
+            if stored_ip == client_ip and (time.time() - last_ts) < 86400:
+                return RedirectResponse("/chat")
+
+    # Show login page
+    html = r"""
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Purdue Login</title>
+    <style>
+        body {
+            margin: 0; background: #fdfdfd;
+            font-family: Arial, sans-serif;
+            display: flex; align-items: center; justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            width: 90%; max-width: 400px;
+            padding: 30px;
+            border-radius: 12px;
+            background: white;
+            border: 2px solid #DAA520;
+            box-shadow: 0 0 10px rgba(0,0,0,0.15);
+        }
+        h2 {
+            margin-top: 0; color: black;
+            text-align: center;
+        }
+        input {
+            width: 100%; padding: 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            background: black;
+            color: gold;
+            border-radius: 8px;
+            cursor: pointer;
+            border: none;
+            font-weight: bold;
+        }
+        button:hover { opacity: 0.8; }
+        .footer-link {
+            margin-top: 15px; text-align: center;
+        }
+        a { color: #C2912A; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Purdue Login</h2>
+    <form method="POST" action="/login">
+        <input name="username" placeholder="Username" required />
+        <input name="password" placeholder="Password" required type="password" />
+        <button type="submit">Login</button>
+    </form>
+    <div class="footer-link">
+        <a href="/signup">Create an account</a>
+    </div>
+</div>
+
+</body>
+</html>
+"""
+    return HTMLResponse(html)
+
+
+# =================================================================
+# 5. LOGIN SUBMIT (POST)
+# =================================================================
+
+@app.post("/login")
+async def login_post(request: Request):
+    form = await request.form()
+    username = form.get("username", "")
+    password = form.get("password", "")
+    client_ip = get_client_ip(request)
+
+    acc = read_account(username)
+    if not acc:
+        return HTMLResponse("Invalid username. <a href='/login'>Try again</a>")
+
+    stored_pw, stored_ip, last_ts = acc
+
+    if password != stored_pw:
+        return HTMLResponse("Incorrect password. <a href='/login'>Try again</a>")
+
+    update_account_login(username, client_ip)
+
+    response = RedirectResponse("/chat", status_code=302)
+    set_session(response, username)
+    return response
+
+
+# =================================================================
+# 6. SIGNUP
+# =================================================================
+
+@app.get("/signup", response_class=HTMLResponse)
+async def signup_page():
+    html = r"""
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Account</title>
+    <style>
+        body {
+            margin: 0; background: #fafafa;
+            font-family: Arial;
+            display: flex; align-items: center; justify-content: center;
+            height: 100vh;
+        }
+        .box {
+            width: 90%; max-width: 420px;
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid #DAA520;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.15);
+        }
+        input { width: 100%; padding: 12px; margin: 8px 0; border-radius: 8px; border: 1px solid #ccc; }
+        button {
+            width: 100%; padding: 14px; border-radius: 8px;
+            background: #000; color: gold; border: none; cursor: pointer;
+        }
+        button:hover { opacity: 0.85; }
+    </style>
+</head>
+<body>
+<div class="box">
+    <h2 style="text-align:center;">Create Account</h2>
+    <form method="POST" action="/signup">
+        <input name="username" placeholder="Username" required />
+        <input name="password" placeholder="Password (no commas)" required type="password" />
+        <input name="confirm" placeholder="Confirm Password" required type="password" />
+        <button type="submit">Register</button>
+    </form>
+</div>
+</body>
+</html>
+"""
+    return HTMLResponse(html)
+
+
+@app.post("/signup")
+async def signup_post(request: Request):
+    form = await request.form()
+    username = form.get("username", "")
+    password = form.get("password", "")
+    confirm = form.get("confirm", "")
+
+    if "," in password:
+        return HTMLResponse("Password cannot contain commas.")
+
+    if password != confirm:
+        return HTMLResponse("Passwords do not match.")
+
+    acc_path = f"{ACCOUNTS_DIR}/{username}.txt"
+    if os.path.exists(acc_path):
+        return HTMLResponse("Username already exists.")
+
+    with open(acc_path, "w") as f:
+        f.write(f"{password},none,0\n")
+
+    return RedirectResponse("/login", status_code=302)
+
+
+# =================================================================
+# 7. CHAT PAGE
+# =================================================================
+
+@app.get("/chat", response_class=HTMLResponse)
+async def chat_page(session: Optional[str] = Cookie(default=None)):   # <<< FIXED
+    username = get_session_username(session)
+    if not username:
+        return RedirectResponse("/login")
+    if read_account(username) is None:
+        return RedirectResponse("/login")
+
+    html = r"""
+<!DOCTYPE html>
+<html>
+<head>
+<title>Purdue GraphRAG Chat</title>
+<link rel="icon" href="/static/favicon.ico" />
+
+<style>
+    body { 
+        margin: 0; 
+        background: #282828; 
+        font-family: Arial, sans-serif; 
+        height: 100vh; 
+        display: flex; 
+        flex-direction: column; 
+    }
+    #topbar { 
+        position: fixed; 
+        top: 10px; 
+        right: 15px; 
+        z-index: 1000; 
+    }
+    #upload-btn { 
+        padding: .6% 1.2%; 
+        margin-top: .4%;
+        border-radius: 12px;
+        border: 1px solid #212020; 
+        cursor: pointer; 
+        font-weight: bold; 
+        background: #dfdddd;
+    }
+    #logout-btn { 
+        padding: 6px 12px; 
+        background: #454444; 
+        color: #dfdddd; 
+        text-decoration: none; 
+        border-radius: 12px; 
+        border: 1px solid #212020; 
+        font-weight: bold; 
+        font-size: 14px; 
+    }
+    #logout-btn:hover { 
+        background: #2e2d2d; 
+        color: #dfdddd;
+    }
+    #upload-btn:hover { 
+        background: #2e2d2d; 
+        color: #dfdddd; 
+    }
+    #chatbox { 
+        flex: 1; 
+        overflow-y: auto; 
+        overflow-x: hidden;
+        padding: 20px; 
+        background: #282828; 
+    }
+    .msg-user { 
+        background: #C8E6C9; 
+        margin: 10px 0; 
+        padding: 10px 14px; 
+        border-radius: 8px; 
+        width: fit-content; 
+        max-width: 80%; 
+    }
+    .msg-bot { 
+        background: #dfdddd; 
+        margin: 10px 0; 
+        padding: 10px 14px;
+        border-radius: 8px; 
+        width: fit-content; 
+        max-width: 80%; 
+        white-space: pre-wrap; 
+    }
+
+    .feedback-container { 
+        margin-top: 5px; 
+        display: flex; 
+        gap: 10px; 
+    }
+    .vote-btn { 
+        background: none; 
+        border: 1px solid #ccc; 
+        border-radius: 4px; 
+        cursor: pointer; 
+        font-size: 12px; 
+        padding: 2px 8px; 
+        color: #555; 
+        transition: all 0.2s; 
+    }
+    .vote-btn:hover { 
+        background: #ddd; 
+        color: #000; 
+    }
+    .vote-btn.voted { 
+        background: #DAA520; 
+        color: #dfdddd; 
+        border-color: #DAA520;
+    }
+
+    #translator-section { 
+        /* border-radius: 10px; */
+        /* background: rgb(25, 25, 25);  */
+        margin-top: 1.5%;
+        margin-left: 1%;
+        margin-bottom: 1%;
+    }
+    #input-section { 
+        margin-bottom: 2%;
+        margin-left: 1%;
+        margin-right: 1%;
+        display: flex;
+        padding-right: 28px;
+        padding-left: 0px; 
+        background: rgb(25, 25, 25); 
+    }
+    #promptbar { 
+        margin-left: .2%;
+        flex-grow: 1;
+        width: inherit;
+        padding: 12px; 
+        border-radius: 12px; 
+        font-size: 16px; 
+        background: #dfdddd;
+    }
+    #bottom-color {
+        overflow: hidden;
+        width:auto;
+        height: auto;
+        background: rgb(25, 25, 25); 
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    button.lang-btn { 
+        background: #454444; 
+        color: #dfdddd;
+        padding: 7px 14px; 
+        border-radius: 6px; 
+        cursor: pointer; 
+        font-weight: bold;
+        
+    }
+    button.lang-btn.active { 
+        background: #212020; 
+        color: #ddd9d9; 
+    }
+    @media (max-width: 600px) { 
+        #promptbar { 
+            font-size: 15px; 
+        } 
+    }
+</style>
+</head>
+<body>
+
+<div id="topbar">
+<a href="/logout" id="logout-btn">Logout</a>
+</div>
+
+<div id="chatbox">
+<div class="msg-bot">Welcome! Select a language below, then ask a question.</div>
+</div>
+<div id = "bottom-color">
+<div id="translator-section">
+<button class="lang-btn active" data-lang="none">Original</button>
+<button class="lang-btn" data-lang="spanish">Spanish</button>
+<button class="lang-btn" data-lang="french">French</button>
+<button class="lang-btn" data-lang="german">German</button>
+<button class="lang-btn" data-lang="japanese">Japanese</button>
+<button class="lang-btn" data-lang="chinese">Chinese</button>
+</div>
+
+<div id="input-section">
+<input type="file" id="file-input" accept=".txt, .pdf" hidden />
+<button id="upload-btn"><img src= "upload.png" width="20px" height="20px"/></button>
+<input id="promptbar" placeholder="Not satisfied with results? Contribute and upload files to our database! Study guides, how to guides, anything!" />
+</div>
+</div>
+<script>
+const chatbox = document.getElementById("chatbox");
+const bar = document.getElementById("promptbar");
+let currentLanguage = "none";
+let history = [];
+
+document.querySelectorAll(".lang-btn").forEach(btn=>{
+    btn.onclick = ()=>{
+        document.querySelectorAll(".lang-btn").forEach(b=>b.classList.remove("active"));
+        btn.classList.add("active");
+        currentLanguage = btn.dataset.lang;
+    };
+});
+
+function scrollToBottom(){ chatbox.scrollTop = chatbox.scrollHeight; }
+
+function addMessage(msg, sender){
+    let div = document.createElement("div");
+    div.className = sender === "user" ? "msg-user" : "msg-bot";
+    div.innerText = msg;
+    chatbox.appendChild(div);
+    scrollToBottom();
+    history.push({role: sender === "user" ? "user" : "model", content: msg});
+}
+
+function addBotResponse(questionText, answerText) {
+    let container = document.createElement("div");
+    container.className = "msg-bot";
+
+    let textDiv = document.createElement("div");
+    textDiv.innerText = answerText;
+    container.appendChild(textDiv);
+
+    let btnDiv = document.createElement("div");
+    btnDiv.className = "feedback-container";
+
+    let upBtn = document.createElement("button");
+    upBtn.innerText = "Upvote";
+    upBtn.className = "vote-btn";
+    upBtn.onclick = () => sendVote("/upvote", questionText, answerText, upBtn, downBtn);
+
+    let downBtn = document.createElement("button");
+    downBtn.innerText = "Downvote";
+    downBtn.className = "vote-btn";
+    downBtn.onclick = () => sendVote("/downvote", questionText, answerText, downBtn, upBtn);
+
+    btnDiv.appendChild(upBtn);
+    btnDiv.appendChild(downBtn);
+    container.appendChild(btnDiv);
+
+    chatbox.appendChild(container);
+    scrollToBottom();
+    history.push({role: "model", content: answerText});
+}
+
+async function sendVote(endpoint, q, a, clickedBtn, otherBtn) {
+    clickedBtn.classList.add("voted");
+    clickedBtn.disabled = true;
+    otherBtn.disabled = true;
+    clickedBtn.innerText = (endpoint === "/upvote") ? "Upvoted" : "Downvoted";
+
+    await fetch(endpoint, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({ question: q, answer: a })
+    });
+}
+
+function addThinking(){
+    let d = document.createElement("div");
+    d.className = "msg-bot";
+    d.innerText = "Thinking...";
+    chatbox.appendChild(d);
+    scrollToBottom();
+    return d;
+}
+
+function buildPayload(question){
+    return history.map(h => `${h.role}: ${h.content}`).join("\n\n") +
+            "\n\n==============================\ncurrent question: " + question;
+}
+
+bar.addEventListener("keydown", async e=>{
+    if(e.key=="Enter"){
+        let text = bar.value.trim();
+        if(!text) return;
+
+        addMessage(text, "user");
+        bar.value = "";
+        let thinking = addThinking();
+        let payload = buildPayload(text);
+
+        let res = await fetch("/prompt", {
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body: JSON.stringify({query: payload, lang: currentLanguage})
+        });
+
+        let answer = await res.text();
+        thinking.remove();
+
+        addBotResponse(text, answer);
+    }
+});
+
+bar.focus();
+
+const uploadBtn = document.getElementById("upload-btn");
+const fileInput = document.getElementById("file-input");
+
+uploadBtn.onclick = () => { 
+    fileInput.click(); 
+};
+
+fileInput.onchange = async () => {
+    const file = fileInput.files[0];
+    if (!file) return;
+    if (!(file.name.endsWith(".txt") || file.name.endsWith(".pdf"))) {
+        alert("Only .txt and .pdf files are allowed.");
+        return;
+    }
+    const formData = new FormData();
+    formData.append("file", file);
+    const res = await fetch("/upload", { method: "POST", body: formData });
+    const msg = await res.text();
+    alert(msg);
+    fileInput.value = "";
+};
+</script>
+</body>
+</html>
+    """
+    return HTMLResponse(html)
+
+
+# =================================================================
+# 8. MODEL INTERACTION ENDPOINT
+# =================================================================
+
+class PromptInput(BaseModel):
+    query: str
+    lang: str = "none"
+
+
+@app.post("/prompt", response_class=PlainTextResponse)
+async def prompt(
+    request: Request,
+    request_data: PromptInput,
+    session: Optional[str] = Cookie(default=None)
+):
+    username = get_session_username(session)
+    if not username:
+        return "Not logged in."
+
+    decoded_query = request_data.query
+    target_lang = (request_data.lang or "none").lower()
+
+    print("\n======== RECEIVED QUERY ========")
+    print(decoded_query[:500], "...")
+    print("Language:", target_lang)
+    print("================================\n")
+
+    # Extract just the current question (remove history and separator)
+    # if "\n\n==============================\ncurrent question: " in decoded_query:
+    #     current_question = "user: " + decoded_query.split("\n\n==============================\ncurrent question: ")[-1]
+    # else:
+    #     current_question = decoded_query  # Fallback if format doesn't match
+
+   
+     
+    current_question = decoded_query  # Fallback if format doesn't match
+
+
+    try:
+        answer = graph_rag2.query(current_question)  # Use current_question instead
+        # answer = graph_rag.query(current_question)
+        if target_lang == "none":
+            append_conversation(username, current_question + "\n\nmodel: " + answer)
+            return answer
+
+        translated = translate_text_multilingual(
+            answer, target_language=target_lang.capitalize()
+        )
+        append_conversation(
+            username,
+            current_question + f"\n\n---\n\n[Translated to {target_lang}]:\n\n" + translated
+        )
+        return translated
+
+    except Exception as e:
+        print(f"❌ EXCEPTION IN /prompt: {type(e).__name__}: {str(e)}")
+        import traceback
+        traceback.print_exc()
+        return f"Server error: TRY AGAIN LATER"
+
+
+# =================================================================
+# 9. HEALTH CHECK
+# =================================================================
+
+@app.get("/health")
+def health_check():
+    return {"status": "ok", "service": "GraphRAG Chat Server"}
+
+
+# =================================================================
+# 9. FILE UPLOAD ENDPOINT
+@app.post("/upload")
+async def upload_file(
+    file: UploadFile = File(...),
+    session: Optional[str] = Cookie(default=None),
+):
+    """
+    Upload and process a file: extract text, check relevance with GPT,
+    chunk it, save it, and add to GraphRAG knowledge base.
+    """
+    username = get_session_username(session)
+    if not username:
+        raise HTTPException(status_code=401, detail="Not logged in")
+
+    success, message = await process_upload(file, username, graph_rag2)
+    
+    if not success:
+        raise HTTPException(status_code=400, detail=message)
+    
+    return {"message": message}
+
+class FeedbackInput(BaseModel):
+    question: str
+    answer: str
+
+@app.post("/upvote")
+async def upvote_endpoint(
+    data: FeedbackInput,
+    session: Optional[str] = Cookie(default=None)
+):
+    user = get_session_username(session) or "Anonymous"
+    # Just printing to server console
+    print(f"\n UPVOTE RECEIVED from {user}")
+    print(f"Question: {data.question}")
+    print(f"Answer:   {data.answer[:50]}...") # truncate for cleanliness
+    return {"status": "success"}
+
+@app.post("/downvote")
+async def downvote_endpoint(
+    data: FeedbackInput,
+    session: Optional[str] = Cookie(default=None)
+):
+    user = get_session_username(session) or "Anonymous"
+    # Just printing to server console
+    print(f"\n DOWNVOTE RECEIVED from {user}")
+    print(f"Question: {data.question}")
+    print(f"Answer:   {data.answer[:50]}...")
+    return {"status": "success"}
+
+
+# =================================================================
+# 10. START SERVER
+# =================================================================
+
+if __name__ == "__main__":
+    print("🚀 Starting GraphRAG Chat Server at http://localhost:8000/")
+    uvicorn.run(app, host="0.0.0.0", port=8000)

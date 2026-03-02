@@ -1,0 +1,105 @@
+**Purdue University – Department of Computer Science – CS 18200 Foundations of Computer Science (Spring 2026) – Course Outline**  
+
+### Course Sections  
+- LE1: Tuesdays and Thursdays 10:30-11:45 am, WALC 1055  
+- LE2: Tuesdays and Thursdays 3:00-4:15 pm, WALC 1055  
+- LE3: Tuesdays and Thursdays 4:30-5:45 pm, WALC 1055  
+
+### Prerequisites  
+- CS 18000  
+- MATH 16100  
+
+### Instructional Team  
+- Director: Justin D. Gillingham  
+- Instructors: Wojciech Szpankowski, Sarah Sellke  
+- Head GTAs: Arun Narayanan Hariharan, Andrew Haas  
+- Coordinators: [CS-18200-COOR@lists.purdue.edu](mailto:CS-18200-COOR@lists.purdue.edu)  
+
+### Communication  
+- Questions about lectures and homework should be directed to PSO TAs and available during office hours.  
+- Utilize Ed Discussion for general inquiries.  
+- Email for accommodations/extensions should be directed to ODOS.  
+- Standard email response time: 2-3 business days.  
+- No responses to emails from parents (FERPA compliance).  
+
+### Course Description  
+This course introduces discrete mathematics tools for computer science, covering:  
+- Logic  
+- Proof methods  
+- Functions and sets  
+- Number theory  
+- Algorithms  
+- Growth functions  
+- Induction and recursion  
+- Counting and probability  
+- Trees and graphs  
+- Finite-state automata  
+- Regular expressions  
+- Context-free languages  
+- Turing machines  
+- Computability  
+
+### Learning Outcomes  
+- Apply discrete math principles.  
+- Analyze algorithm complexity (Big O, Θ, Ω).  
+- Solve graph-theory problems.  
+
+### Required Text  
+- K. Rosen, *Discrete Mathematics and Its Applications* (7th/8th ed.) – student site resources included.  
+
+### Technology Platforms  
+- Brightspace  
+- Gradescope  
+- Ed Discussion  
+
+### Grading Scheme  
+- Homework: 20% (lowest dropped)  
+- Quizzes: 10% (lowest dropped)  
+- Midterm: 35%  
+- Final Exam: 35% (date set by the university)  
+
+### Homework Policy  
+- 10-11 handwritten assignments submitted via Gradescope.  
+- 15% penalty for each 24-hour late period, with no submissions accepted after one day.  
+
+### Quiz Policy  
+- Approximately 10 quizzes (online and in-class).  
+- One retake allowed; highest score counts.  
+- Online quizzes available Sunday 1 PM – Monday 1 PM, 1-hour completion time.  
+
+### PSO Sessions  
+- Weekly problem practice led by a graduate TA; mandatory attendance.  
+- Materials posted on Brightspace (no solutions posted).  
+
+### Exams  
+- One evening midterm and one comprehensive final exam.  
+- All exams are in-person, closed-book, closed-notes, with no electronic devices allowed.  
+
+### Accommodation Procedure  
+- Contact ODOS for accommodations; coordinators forward approved requests.  
+- No medical documentation required from instructors.  
+
+### Grading Scale  
+Letter grade cutoffs:  
+- A+: 99-100  
+- A: 93-99  
+- A-: 90-93  
+- B+: 86-90  
+- B: 83-86  
+- B-: 80-83  
+- C+: 76-80  
+- C: 73-76  
+- C-: 70-73  
+- D+: 66-70  
+- D: 63-66  
+- D-: 60-63  
+
+### Additional Course Expectations  
+- Active participation in PSO sessions and timely completion of assignments is crucial for success. Logs into course websites daily for updates are recommended.  
+- Homework is typically due Fridays at 11:00 PM.  
+- Plan to submit 60 minutes before the deadline to avoid penalties.  
+
+### Summary of Course Components  
+- **Homework**: 10-11 assignments; late submissions incur penalties.  
+- **Quizzes**: Approximately 10; format includes retakes.  
+- **Exams**: Scheduled midterm and final exam; no electronic devices permitted.  

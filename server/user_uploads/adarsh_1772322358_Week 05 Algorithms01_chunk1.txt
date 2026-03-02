@@ -1,0 +1,202 @@
+# CS 180 – Algorithms and Complexity 1 (University of San Francisco) – Lecture Outline
+
+## Key Topics
+- Definition and properties of algorithms
+- Pseudocode representation
+- Searching algorithms (linear search, binary search) with input-output specifications and complexity comparison
+- Sorting algorithms (bubble sort, insertion sort) including procedural descriptions, pass analysis, worst-case comparison counts
+- Illustrative examples (prime-checking, maximum-element, cashier’s change-making)
+- Algorithmic correctness, effectiveness, finiteness, and generality
+
+This header identifies the primary focus on fundamental algorithm design, analysis, and implementation techniques presented in the introductory lecture for the CS 180 course.
+
+###
+
+## Lecture Structure
+1. Introduction
+2. Searching algorithms
+   - Linear search
+   - Binary search
+3. Sorting algorithms
+   - Bubble Sort
+   - Insertion Sort
+
+###
+
+## 1. Algorithms
+- **Definition**: An algorithm is a finite sequence of precise instructions for performing a computation or solving a problem.
+- **Characteristics**:
+  - Defined on specified inputs and generates an output
+  - Stops after finitely many instructions are executed
+
+###
+
+## 2. Properties of an Algorithm
+- **Input**: An algorithm has input values from a specified set.
+- **Output**: From each set of input values, an algorithm produces output values from a specified set; the output values are called the solution to the problem.
+- **Correctness**
+- **Effectiveness**
+- **Finiteness**
+- **Generality**
+
+###
+
+## 3. How To Express an Algorithm?
+- **Pseudocode**: An intermediate between an English description and an implementation in a particular language.
+
+### Example 1: Prime Checking
+```
+procedure is_prime(m)
+   for k = 2 to sqrt(m) do
+      if m mod k == 0 then
+         return (false)
+      end if
+   end for
+   return (true)
+end is_prime
+```
+
+### Example 2: Finding Maximum Element
+```
+procedure findMax(s, n)
+   myMax = s1
+   k = 2
+   while k ≤ n do
+      if sk > myMax then
+         myMax = sk
+      end if
+      k = k + 1
+   end while
+   return (myMax)
+end findMax
+```
+
+###
+
+## 4. Searching Algorithms
+### Searching
+- Given a sequence of n elements and an element x, determine whether x is present. 
+- If x is present, return the location; if not, return -1.
+- **Representation**: Elements are represented in an array in non-decreasing order (e.g., -5, -1, 0, 4, 4, 8, 12).
+
+### Search in a Sorted Array
+- **Linear Search**: Compare x with each element until a match is found, or the end of the list is reached.
+- **Binary Search**: Compare x with the middle element of the array.
+   - If equal, x is found; otherwise, search in either the left or the right half of the array.
+
+###
+
+## 5. Linear Search
+### Input Array
+- `A = [-5, -3, 1, 2, 3, 6, 7, 8, 10, 10, 11, 12, 14, 15, 26, 37]`
+### Comparisons
+- For `x = 3`: 
+- For `x = 31`: 
+
+### Linear Search Procedure
+```
+procedure linearSearch(x: integer, a1, a2, …, an: integers)
+   k = 1
+   while (k ≤ n and x ≠ ak) do
+      k = k + 1
+   end while
+   if k ≤ n then
+      location = k
+   else
+      location = -1
+   return location // index or -1 if not found
+```
+
+###
+
+## 6. Binary Search
+### Comparisons Done
+- For `x = 7`
+- For `x = 18`
+
+### Binary Search Procedure
+```
+procedure binarySearch(a[1, …, n], x)
+   left = 1
+   right = n
+   while left < right do
+      m = ⌊(left + right)/2⌋
+      if x > am then
+         left = m + 1
+      else
+         right = m
+   end while
+   if x = a[left] then
+      location = left
+   else
+      location = 0
+   return location
+```
+
+### Efficiency of Binary Search
+- Number of iterations:
+   - Binary Search executes at most log2 n iterations 
+   - Linear Search executes up to n iterations 
+   - Overall, for more than 20 elements, Binary Search is faster.
+
+###
+
+## 7. Sorting Algorithms
+### Sorting Goal
+- Arrange n elements in non-decreasing order.
+
+### Bubble Sort
+- **Basic Idea**: 
+   - Compare adjacent elements and exchange their positions to place them in non-decreasing order if necessary.
+   - Perform repeated passes over the data until sorted.
+   - Example (Pass 1 and Pass 2 outlined in detail).
+
+### Bubble Sort Procedure
+```
+procedure Bubblesort(a1, …, an)
+   for i := 1 to n-1 do {number of passes to position all items}
+      for j := 1 to n-i do {sequence of all pair positions in unsorted region}
+         if aj > aj+1 then
+            swap(aj, aj+1) {a1, …, an is in non-decreasing order}
+```
+- [Bubble Sort Visualization](https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html)
+
+### Maximum Passes Condition
+- Input array sorted in reverse order yields maximum comparisons.
+
+###
+
+## 8. Insertion Sort
+### Basic Idea
+- Scan data/array from left to right.
+- Maintain entries to the left in non-decreasing order, and sort entries to the right.
+
+### Insertion Sort Procedure
+```
+procedure InsertionSort(a1, …, an)
+   for j := 2 to n do {a1,…,aj-1 are now sorted}
+      m := aj {set aside aj to insert later}
+      i := 1
+      while aj > ai do {find insert position}
+         i := i + 1
+      for k := 0 to j-i-1 do {open insert position}
+         aj-k := aj-k-1 {by moving elements >aj}
+      ai := m {insert aj in position i}
+```
+
+### Complexity of Insertion Sort
+- Worst-case comparisons: \( \sigma_{j=1}^{n} \sigma_{i=1}^{j} 1 = \sigma_{j=1}^{n} j = \frac{n(n+1)}{2} \).
+
+###
+
+## 9. Cashier's Algorithm
+### Example
+- Make change for 67 cents using the fewest number of coins with available denominations of quarters (25 cents), dimes (10 cents), nickels (5 cents), and pennies (1 cent).
+
+### Theorem
+- The Cashier’s Algorithm makes change using the fewest coins possible when denominations include quarters, dimes, nickels, and pennies.
+### Lemma
+- If n is a positive integer, then n cents in change using quarters, dimes, nickels, and pennies has at most two coins from each type.
+
+### Summary
+- **Cashier's Algorithm does not always produce correct results for certain denominations**.

@@ -1,0 +1,73 @@
+**Algorithms and Complexity 1 – Lecture Outline (CS 180)**  
+*University of San Francisco, Department of Computer Science*  
+
+### Key Topics Covered:
+- **Definition and Properties of Algorithms**  
+  An algorithm is defined as a finite sequence of precise instructions for performing a computation or solving a problem. Key properties include:
+  - Specified inputs and outputs
+  - Correctness
+  - Effectiveness
+  - Finiteness
+  - Generality  
+
+- **Pseudocode Notation**  
+  Pseudocode serves as an intermediate representation between natural-language descriptions and concrete programming languages. Example procedures include:
+  - `is_prime(m)` for checking primality
+  - `findMax(s, n)` for locating the maximum element in a sequence.
+
+### Searching Algorithms:
+- **Linear Search**  
+  This searching method examines each element in the array sequentially. In the worst case, it requires `O(n)` operations.
+  
+- **Binary Search**  
+  This algorithm follows a divide-and-conquer approach and works on a sorted array, achieving `O(log₂ n)` complexity. Steps include:
+  - Compare the target value `x` with the middle element of the array.
+  - If a match is found, return the index.
+  - Else, search in the left or right half based on comparison.
+
+### Sorting Algorithms:
+- **Bubble Sort**  
+  In Bubble Sort, adjacent elements are compared and swapped to achieve non-decreasing order. Key points include:
+  - Repeated passes through the data until sorted
+  - The algorithm's worst-case performance is `Θ(n²)`.
+
+- **Insertion Sort**  
+  This algorithm builds a sorted array by scanning left to right, placing each new element in the correct position among the sorted elements. 
+
+### Algorithmic Analysis:
+- Discussion revolves around efficiency, number of iterations, work per iteration, and conditions under which one algorithm outperforms another. For example, binary search outperforms linear search when the dataset exceeds 20 elements.
+
+### Cashier’s Algorithm:
+- This greedy algorithm efficiently makes change using U.S. coin denominations (quarters, dimes, nickels, and pennies). A theorem demonstrates its optimality in specific cases regarding coin usage. 
+
+### Pseudocode Examples:
+- **Prime Number Check**  
+  ```
+  procedure is_prime(m)
+      for k = 2 to sqrt(m) do
+          if m mod k == 0 then return(false)
+      end for
+      return(true)
+  end is_prime
+  ```
+
+- **Find Maximum Element**  
+  ```
+  procedure findMax(s, n)
+      myMax = s1
+      k = 2
+      while k ≤ n do
+          if sk > myMax then myMax = sk
+          k = k + 1
+      end while
+      return(myMax)
+  end findMax
+  ```
+
+### Efficiency Considerations:
+- For sorted arrays:
+  - Linear Search: Compares each element until a match is found, yielding at most `n` iterations.
+  - Binary Search: Halves the search space with each comparison, requiring at most `log₂ n` iterations.
+
+### Visualizations:  
+For algorithm visualizations, refer to the USFCA Galles comparison-sort site [here](https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html).

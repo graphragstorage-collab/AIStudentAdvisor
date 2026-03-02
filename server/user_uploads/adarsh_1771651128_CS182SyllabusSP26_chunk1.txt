@@ -1,0 +1,110 @@
+###
+**Purdue University – Department of Computer Science – CS 18200 Foundations of Computer Science (Spring 2026)**
+
+### Course Outline
+- Sections:
+  - LE1 (20866): TR 10:30 am - 11:45 am, WALC 1055
+  - LE2 (20867): TR 03:00 pm - 04:15 pm, WALC 1055
+  - LE3 (10663): TR 04:30 pm - 05:45 pm, WALC 1055
+
+### Course Prerequisites
+- CS 18000 and MATH 16100
+
+### Course Leadership Team
+- **Director:** Mr. Justin D. Gillingham
+- **Instructors:** Professors Wojciech Szpankowski and Sarah Sellke
+- **Head GTAs:** Arun Narayanan Hariharan and Andrew Haas
+- **Email:** [CS-18200-COOR@LISTS.PURDUE.EDU](mailto:CS-18200-COOR@LISTS.PURDUE.EDU)
+
+A complete list of course staff, along with their office hours, is available on Brightspace.
+
+### Channels of Communication
+- Questions related to lectures and homework should be directed to the teaching assistants of your PSO session and the teaching staff during office hours.
+- For questions of general interest, you may post on Ed Discussion.
+- You may email the CS 18200 Coordinators, noting the standard response time for emails is 2 - 3 business days. Direct emails to instructors are discouraged.
+
+**Emergency Accommodations:** 
+- Contact the Office of the Dean of Students (ODOS) for any accommodations/extensions due to emergencies. You may notify the course coordinators about the situation, but final approval is dependent on ODOS confirmation.
+
+**FERPA Compliance:** 
+- Emails from parents cannot be responded to due to privacy regulations.
+
+### Course Description
+This course provides a broad introduction to fundamental discrete mathematical tools, facts, and reasoning relevant to computer science, covering:
+- Logic
+- Proof methods
+- Functions, sums, and sets
+- Relations
+- Number theory
+- Algorithms and growth functions
+- Induction, recursions, and recursive algorithms
+- Counting
+- Basic probability theory
+- Trees and graphs
+- Finite state automata, regular expressions, and context-free languages
+- Turing machines, computable and uncomputable functions
+
+### Learning Expectations
+Success in this course requires:
+- Motivation and responsibility
+- Regular class attendance and active participation in PSO sessions
+- Utilization of office hours
+- Prompt review of course materials after class
+- Early initiation of homework assignments
+- Daily login to course websites for updates
+
+### Learning Resources, Technology, and Texts
+- **Required Texts:**
+  - K. Rosen, *Discrete Mathematics and Its Applications*, McGraw-Hill; 7th or 8th edition.
+  - The textbook's Student Site provides additional resources, examples, self-assessments, and proof guides.
+- **Technology Platforms:** The course will utilize Brightspace, Gradescope, and Ed Discussion.
+
+### Learning Outcomes
+Upon completing the course, students will be able to:
+- Apply principles of discrete mathematics to analyze and solve complex problems.
+- Analyze and evaluate the complexity of algorithms using asymptotic notation (Big O, Big Θ, and Big Ω).
+- Apply graph theory concepts and algorithms to solve real-world problems including network design and shortest path analysis.
+
+### Grading Scheme
+- **Course Component Overall Weight:**
+  - Individual Homework: 20% (Weeks 1-15)
+  - Individual Quizzes: 10% (Weeks 1-15)
+  - Midterm Exam: 35% (Monday, March 9, 8 PM - 10 PM)
+  - Final Exam: 35% (Scheduled by University)
+
+**Note:** The lowest homework and lowest quiz score are dropped.
+
+### Grading Scale
+| Grade | Score Range          |
+|-------|----------------------|
+| A+    | 99-100               |
+| A     | 93-99                |
+| A-    | 90-93                |
+| B+    | 86-90                |
+| B     | 83-86                |
+| B-    | 80-83                |
+| C+    | 76-80                |
+| C     | 73-76                |
+| C-    | 70-73                |
+| D+    | 66-70                |
+| D     | 63-66                |
+| D-    | 60-63                |
+
+### Homework
+- There will be 10 - 11 homework assignments. Assignments are posted on Brightspace and submitted via Gradescope.
+- All homework must be handwritten.
+- Late submissions will incur a penalty of 15% after one day, and no homework will be accepted after one day.
+
+### Quizzes
+- Approximately 10 quizzes will be administered, primarily on Brightspace, with some in class.
+- Quizzes can be retaken, with the highest score recorded. 
+
+### PSO (Practice/Study/Observation)
+PSOs are intended for practice and are led by TAs.
+- Problems will be posted on Brightspace without solutions.
+
+### Exams
+The course comprises one evening exam and one comprehensive final exam.
+- Exams are in-person and closed book/notes; electronic devices are not permitted. 
+
+**Final Note:** The material for exams will encompass lectures, PSOs, homework, and quizzes.
