@@ -1,6 +1,6 @@
 import uvicorn
 from fastapi import FastAPI, Response, Request, Depends, Cookie, HTTPException
-from fastapi.responses import HTMLResponse, PlainTextResponse, RedirectResponse
+from fastapi.responses import HTMLResponse, PlainTextResponse, RedirectResponse, FileResponse, JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi import UploadFile, File
@@ -27,9 +27,12 @@ import re
 
 ACCOUNTS_DIR = "./accounts"
 CONVO_DIR = "./conversations"
+USER_UPLOADS_DIR = "./user_uploads"
+REACT_BUILD_DIR = "./website/build"
 
 os.makedirs(ACCOUNTS_DIR, exist_ok=True)
 os.makedirs(CONVO_DIR, exist_ok=True)
+os.makedirs(USER_UPLOADS_DIR, exist_ok=True)
 
 COOKIE_SIGNER = Signer("SUPER_SECRET_KEY_CHANGE_ME")
 
@@ -57,10 +60,17 @@ print("✓ GraphRAG Loaded.")
 
 
 # =================================================================
-# 2. FASTAPI APP SETUP
+# 2. APP SETUP (FASTAPI + REACT)
 # =================================================================
 
 app = FastAPI()
+
+if os.path.exists(REACT_BUILD_DIR):
+    app.mount("/static", StaticFiles(directory=os.path.join(REACT_BUILD_DIR, "static")), name="static")
+    print(f"Serving React from {REACT_BUILD_DIR}")
+else:
+    print(f"React build directory not found at {REACT_BUILD_DIR}. Run 'npm run build'") # shouldn't happen unless build dir doesn't exist
+
 
 #app.mount("/static", StaticFiles(directory="/root/GraphPackage/assets"), name="static")
 
@@ -82,7 +92,7 @@ def get_client_ip(request: Request):
 
 def set_session(response: Response, username: str):
     signed = COOKIE_SIGNER.sign(username.encode()).decode()
-    response.set_cookie("session", signed, httponly=True, max_age=86400*7)
+    response.set_cookie("session", signed, httponly=True, max_age=86400*7, path="/")
 
 def clear_session(response):
     response.delete_cookie(
@@ -139,6 +149,7 @@ def update_account_login(username: str, new_ip: str):
     return True
 
 
+# add this to sql database later? have to account for multiple histories
 def append_conversation(username: str, history_text: str):
     try:
         path = f"{CONVO_DIR}/{username}_history.txt"
@@ -154,105 +165,22 @@ def append_conversation(username: str, history_text: str):
 
 
 # =================================================================
-# 4. LOGIN PAGE (GET)
+# 4.  STATUS (LOGIN PAGE IS IN WEBSITE/SRC/COMPONENTS)
 # =================================================================
 
-@app.get("/", response_class=HTMLResponse)
-async def login_page(request: Request, session: Optional[str] = Cookie(default=None)):
-    return RedirectResponse("/login")
-
-@app.get("/logout")
-async def logout_page():
-    response = RedirectResponse("/login", status_code=302)
-    clear_session(response)
-    return response
-
-
-@app.get("/login", response_class=HTMLResponse)
-async def login_page(request: Request, session: Optional[str] = Cookie(default=None)):   # <<< FIXED
-    # Auto-login if 24-hour IP rule passes
+@app.get("/api/auth/status")
+async def auth_status(session: Optional[str] = Cookie(default=None)):
     username = get_session_username(session)
-    if username:
-        acc = read_account(username)
-        if acc:
-            stored_pw, stored_ip, last_ts = acc
-            client_ip = get_client_ip(request)
-            if stored_ip == client_ip and (time.time() - last_ts) < 86400:
-                return RedirectResponse("/chat")
-
-    # Show login page
-    html = r"""
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Purdue Login</title>
-    <style>
-        body {
-            margin: 0; background: #fdfdfd;
-            font-family: Arial, sans-serif;
-            display: flex; align-items: center; justify-content: center;
-            height: 100vh;
-        }
-        .container {
-            width: 90%; max-width: 400px;
-            padding: 30px;
-            border-radius: 12px;
-            background: white;
-            border: 2px solid #DAA520;
-            box-shadow: 0 0 10px rgba(0,0,0,0.15);
-        }
-        h2 {
-            margin-top: 0; color: black;
-            text-align: center;
-        }
-        input {
-            width: 100%; padding: 12px;
-            margin: 8px 0;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-        }
-        button {
-            width: 100%;
-            padding: 14px;
-            background: black;
-            color: gold;
-            border-radius: 8px;
-            cursor: pointer;
-            border: none;
-            font-weight: bold;
-        }
-        button:hover { opacity: 0.8; }
-        .footer-link {
-            margin-top: 15px; text-align: center;
-        }
-        a { color: #C2912A; text-decoration: none; }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <h2>Purdue Login</h2>
-    <form method="POST" action="/login">
-        <input name="username" placeholder="Username" required />
-        <input name="password" placeholder="Password" required type="password" />
-        <button type="submit">Login</button>
-    </form>
-    <div class="footer-link">
-        <a href="/signup">Create an account</a>
-    </div>
-</div>
-
-</body>
-</html>
-"""
-    return HTMLResponse(html)
+    if username and read_account(username):
+        return {"authenticated": True, "username": username}
+    return {"authenticated": False}
 
 
 # =================================================================
-# 5. LOGIN SUBMIT (POST)
+# 5. LOGIN
 # =================================================================
 
-@app.post("/login")
+@app.post("/api/login")
 async def login_post(request: Request):
     form = await request.form()
     username = form.get("username", "")
@@ -261,71 +189,30 @@ async def login_post(request: Request):
 
     acc = read_account(username)
     if not acc:
-        return HTMLResponse("Invalid username. <a href='/login'>Try again</a>")
-
+        return JSONResponse(
+            status_code=401,
+            content={"success": False, "error": "Incorrect username or password."}
+        )
     stored_pw, stored_ip, last_ts = acc
 
     if password != stored_pw:
-        return HTMLResponse("Incorrect password. <a href='/login'>Try again</a>")
+        return JSONResponse(
+            status_code=401,
+            content={"success": False, "error": "Incorrect username or password."}
+        )
 
     update_account_login(username, client_ip)
 
-    response = RedirectResponse("/chat", status_code=302)
+    response = JSONResponse(content={"success": True})
     set_session(response, username)
     return response
 
 
 # =================================================================
-# 6. SIGNUP
+# 6. SIGNUP + LOGOUT
 # =================================================================
 
-@app.get("/signup", response_class=HTMLResponse)
-async def signup_page():
-    html = r"""
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Create Account</title>
-    <style>
-        body {
-            margin: 0; background: #fafafa;
-            font-family: Arial;
-            display: flex; align-items: center; justify-content: center;
-            height: 100vh;
-        }
-        .box {
-            width: 90%; max-width: 420px;
-            padding: 30px;
-            border-radius: 12px;
-            border: 2px solid #DAA520;
-            background: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.15);
-        }
-        input { width: 100%; padding: 12px; margin: 8px 0; border-radius: 8px; border: 1px solid #ccc; }
-        button {
-            width: 100%; padding: 14px; border-radius: 8px;
-            background: #000; color: gold; border: none; cursor: pointer;
-        }
-        button:hover { opacity: 0.85; }
-    </style>
-</head>
-<body>
-<div class="box">
-    <h2 style="text-align:center;">Create Account</h2>
-    <form method="POST" action="/signup">
-        <input name="username" placeholder="Username" required />
-        <input name="password" placeholder="Password (no commas)" required type="password" />
-        <input name="confirm" placeholder="Confirm Password" required type="password" />
-        <button type="submit">Register</button>
-    </form>
-</div>
-</body>
-</html>
-"""
-    return HTMLResponse(html)
-
-
-@app.post("/signup")
+@app.post("/api/signup")
 async def signup_post(request: Request):
     form = await request.form()
     username = form.get("username", "")
@@ -333,366 +220,31 @@ async def signup_post(request: Request):
     confirm = form.get("confirm", "")
 
     if "," in password:
-        return HTMLResponse("Password cannot contain commas.")
-
+        return JSONResponse(
+            status_code=400,
+            content={"success": False, "error": "Password cannot contain commas."}
+        )
     if password != confirm:
-        return HTMLResponse("Passwords do not match.")
-
+        return JSONResponse(
+            status_code=400,
+            content={"success": False, "error": "Passwords do not match."}
+        )
     acc_path = f"{ACCOUNTS_DIR}/{username}.txt"
     if os.path.exists(acc_path):
-        return HTMLResponse("Username already exists.")
-
+        return JSONResponse(
+            status_code=400,
+            content={"success": False, "error": "Username already exists."}
+        )
     with open(acc_path, "w") as f:
         f.write(f"{password},none,0\n")
 
-    return RedirectResponse("/login", status_code=302)
+    return {"success": True}
 
-
-# =================================================================
-# 7. CHAT PAGE
-# =================================================================
-
-@app.get("/chat", response_class=HTMLResponse)
-async def chat_page(session: Optional[str] = Cookie(default=None)):   # <<< FIXED
-    username = get_session_username(session)
-    if not username:
-        return RedirectResponse("/login")
-    if read_account(username) is None:
-        return RedirectResponse("/login")
-
-    html = r"""
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Purdue GraphRAG Chat</title>
-    <link rel="icon" href="/static/favicon.ico" />
-
-    <style>
-        body {
-            margin: 0;
-            background: #f5f5f5;
-            font-family: Arial, sans-serif;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        #topbar {
-            position: fixed;
-            top: 10px;
-            right: 15px;
-            z-index: 1000;
-        }
-       #upload-btn {
-           position: fixed;
-           top: 40px;
-           right: 15px;
-           z-index: 1000;
-           padding: 6px 14px;
-           background: #000;
-           color: gold;
-           border-radius: 8px;
-           border: 1px solid #DAA520;
-          cursor: pointer;
-          font-weight: bold;
-       }
-
-        #logout-btn {
-            padding: 6px 14px;
-            background: #000;
-            color: gold;
-            text-decoration: none;
-            border-radius: 8px;
-            border: 1px solid #DAA520;
-            font-weight: bold;
-            font-size: 14px;
-        }
-
-        #logout-btn:hover {
-            background: #333;
-        }
-        #chatbox {
-            flex: 1;
-            overflow-y: auto;
-            padding: 20px;
-            background: white;
-            border-bottom: 2px solid #DAA520;
-        }
-        .msg-user {
-            background: #C8E6C9;
-            margin: 10px 0;
-            padding: 10px 14px;
-            border-radius: 8px;
-            width: fit-content;
-            max-width: 80%;
-        }
-        .msg-bot {
-            background: #eee;
-            margin: 10px 0;
-            padding: 10px 14px;
-            border-radius: 8px;
-            width: fit-content;
-            max-width: 80%;
-            white-space: pre-wrap;
-        }
-        #translator-section {
-            padding: 10px;
-            border-bottom: 2px solid #DAA520;
-            background: #fff;
-        }
-        #input-section {
-            padding: 8px;
-            background: #fff;
-            border-top: 2px solid #DAA520;
-        }
-        #promptbar {
-            width: 100%;
-            padding: 12px;
-            border-radius: 12px;
-            border: 2px solid #DAA520;
-            font-size: 16px;
-        }
-        button.lang-btn {
-            padding: 7px 14px;
-            background: #f2e1a3;
-            border-radius: 6px;
-            border: 1px solid #DAA520;
-            cursor: pointer;
-        }
-        button.lang-btn.active {
-            background: #000;
-            color: gold;
-        }
-        @media (max-width: 600px) {
-            #promptbar { font-size: 15px; }
-        }
-
-            /* Upload Modal Styles */
-            #upload-modal {
-                position: fixed;
-                top: 0; left: 0; right: 0; bottom: 0;
-                display: none;
-                align-items: center;
-                justify-content: center;
-                background: rgba(40,40,40,0.55);
-                z-index: 2000;
-            }
-            #upload-modal .modal-content {
-                background: #fffbe6;
-                color: #212020;
-                border-radius: 16px;
-                padding: 32px 28px 24px 28px;
-                box-shadow: 0 4px 24px rgba(0,0,0,0.18);
-                min-width: 280px;
-                max-width: 90vw;
-                text-align: center;
-                font-size: 18px;
-                position: relative;
-                border: 2px solid #DAA520;
-            }
-            #modal-close {
-                position: absolute;
-                top: 12px;
-                right: 18px;
-                font-size: 28px;
-                color: #DAA520;
-                cursor: pointer;
-                font-weight: bold;
-                transition: color 0.2s;
-            }
-            #modal-close:hover {
-                color: #212020;
-            }
-            /* Loading Spinner Styles */
-            #upload-loading {
-                position: fixed;
-                top: 0; left: 0; right: 0; bottom: 0;
-                display: none;
-                align-items: center;
-                justify-content: center;
-                background: rgba(40,40,40,0.25);
-                z-index: 1999;
-            }
-            .spinner {
-                border: 6px solid #f3f3f3;
-                border-top: 6px solid #DAA520;
-                border-radius: 50%;
-                width: 60px;
-                height: 60px;
-                animation: spin 1s linear infinite;
-            }
-            @keyframes spin {
-                0% { transform: rotate(0deg); }
-                100% { transform: rotate(360deg); }
-            }
-    </style>
-</head>
-
-<body>
-
-<div id="topbar">
-    <a href="/logout" id="logout-btn">Logout</a>
-    <button id="upload-btn">Upload File</button>
-    <input type="file" id="file-input" accept=".txt, .pdf" hidden />
-</div>
-
-<div id="chatbox">
-    <div class="msg-bot">Welcome! Select a language below, then ask a question.</div>
-</div>
-
-<div id="translator-section">
-    <button class="lang-btn active" data-lang="none">Original</button>
-    <button class="lang-btn" data-lang="spanish">Spanish</button>
-    <button class="lang-btn" data-lang="french">French</button>
-    <button class="lang-btn" data-lang="german">German</button>
-    <button class="lang-btn" data-lang="japanese">Japanese</button>
-    <button class="lang-btn" data-lang="chinese">Chinese</button>
-</div>
-
-<div id="input-section">
-    <input id="promptbar" placeholder="Not satisfied with results? Contribute and upload files to our database! Study guides, how to guides, anything!" />
-</div>
-
-<!-- Upload Modal Popup -->
-<div id="upload-modal">
-    <div class="modal-content">
-        <span id="modal-close">&times;</span>
-        <div id="modal-message"></div>
-    </div>
-</div>
-<!-- Loading Spinner -->
-<div id="upload-loading">
-    <div class="spinner"></div>
-</div>
-
-<script>
-    const chatbox = document.getElementById("chatbox");
-    const bar = document.getElementById("promptbar");
-
-    let currentLanguage = "none";
-    let history = [];
-
-    document.querySelectorAll(".lang-btn").forEach(btn=>{
-        btn.onclick = ()=>{
-            document.querySelectorAll(".lang-btn").forEach(b=>b.classList.remove("active"));
-            btn.classList.add("active");
-            currentLanguage = btn.dataset.lang;
-        };
-    });
-
-    function addMessage(msg, sender){
-        let div = document.createElement("div");
-        div.className = sender === "user" ? "msg-user" : "msg-bot";
-        div.innerText = msg;
-        chatbox.appendChild(div);
-        chatbox.scrollTop = chatbox.scrollHeight;
-        history.push({role: sender === "user" ? "user" : "model", content: msg});
-    }
-
-    function addThinking(){
-        let d = document.createElement("div");
-        d.className = "msg-bot";
-        d.innerText = "Thinking...";
-        chatbox.appendChild(d);
-        chatbox.scrollTop = chatbox.scrollHeight;
-        return d;
-    }
-
-    function buildPayload(question){
-        return history.map(h => `${h.role}: ${h.content}`).join("\n\n") +
-               "\n\n==============================\ncurrent question: " + question;
-    }
-
-    bar.addEventListener("keydown", async e=>{
-        if(e.key=="Enter"){
-            let text = bar.value.trim();
-            if(!text) return;
-            addMessage(text, "user");  // ← This adds to history
-            bar.value = "";
-            let thinking = addThinking();
-            let payload = buildPayload(text);
-
-            let res = await fetch("/prompt", {
-                method:"POST",
-                headers:{"Content-Type":"application/json"},
-                body: JSON.stringify({query: payload, lang: currentLanguage})
-            });
-
-            let answer = await res.text();
-            thinking.innerText = answer;
-            history.push({role:"model", content:answer});
-        }
-    });
-
-    bar.focus();
-
-    // File upload handling
-
-    const uploadBtn = document.getElementById("upload-btn");
-    const fileInput = document.getElementById("file-input");
-    const uploadModal = document.getElementById("upload-modal");
-    const modalClose = document.getElementById("modal-close");
-    const modalMsg = document.getElementById("modal-message");
-    const uploadLoading = document.getElementById("upload-loading");
-
-    uploadBtn.onclick = () => {
-        fileInput.click(); // open file explorer
-    };
-
-    fileInput.onchange = async () => {
-        const file = fileInput.files[0];
-        if (!file) return;
-
-        if (!(file.name.endsWith(".txt") || file.name.endsWith(".pdf"))) {
-            showUploadModal("❌ Only .txt and .pdf files are allowed");
-            return;
-        }
-
-        const formData = new FormData();
-        formData.append("file", file);
-
-        showUploadLoading();
-        let msg = "";
-        try {
-            const res = await fetch("/upload", {
-                method: "POST",
-                body: formData
-            });
-            if (res.ok) {
-                const data = await res.json();
-                msg = data.message || "✅ File uploaded successfully!";
-            } else {
-                const error = await res.json();
-                msg = error.detail || "❌ Upload failed.";
-            }
-        } catch (e) {
-            msg = "❌ Upload failed. Please try again.";
-        }
-        hideUploadLoading();
-        showUploadModal(msg);
-        fileInput.value = ""; // reset input
-    };
-
-    function showUploadModal(message) {
-        modalMsg.innerText = message;
-        uploadModal.style.display = "flex";
-    }
-    modalClose.onclick = () => {
-        uploadModal.style.display = "none";
-    };
-    function showUploadLoading() {
-        uploadLoading.style.display = "flex";
-    }
-    function hideUploadLoading() {
-        uploadLoading.style.display = "none";
-    }
-    
-</script>
-
-</body>
-</html>
-"""
-    return HTMLResponse(html)
-
+@app.post("/api/logout")
+async def logout_post():
+    response = JSONResponse(content={"success": True})
+    clear_session(response)
+    return response
 
 # =================================================================
 # 8. MODEL INTERACTION ENDPOINT
@@ -703,7 +255,7 @@ class PromptInput(BaseModel):
     lang: str = "none"
 
 
-@app.post("/prompt", response_class=PlainTextResponse)
+@app.post("/api/prompt")
 async def prompt(
     request: Request,
     request_data: PromptInput,
@@ -711,7 +263,7 @@ async def prompt(
 ):
     username = get_session_username(session)
     if not username:
-        return "Not logged in."
+        raise HTTPException(status_code=401, detail="Not logged in")
 
     decoded_query = request_data.query
     target_lang = (request_data.lang or "none").lower()
@@ -741,7 +293,7 @@ async def prompt(
             print("No translation requested, returning original answer.")
             append_conversation(username, current_question + "\n\nmodel: " + answer)
             print("Conversation appended without translation.")
-            return answer
+            return {"answer": answer}
         
         print("Translating answer to", target_lang)
         translated = translate_text_multilingual(
@@ -754,13 +306,13 @@ async def prompt(
             current_question + f"\n\n---\n\n[Translated to {target_lang}]:\n\n" + translated
         )
         print("Conversation appended")
-        return translated
+        return {"answer": translated}
 
     except Exception as e:
         print(f"❌ EXCEPTION IN /prompt: {type(e).__name__}: {str(e)}")
         import traceback
         traceback.print_exc()
-        return f"Server error: TRY AGAIN LATER"
+        raise HTTPException(status_code=500, detail="Server error. TRY AGAIN LATER.")
 
 
 # =================================================================
@@ -773,8 +325,10 @@ def health_check():
 
 
 # =================================================================
-# 9. FILE UPLOAD ENDPOINT
-@app.post("/upload")
+# 10. FILE UPLOAD ENDPOINT
+# =================================================================
+
+@app.post("/api/upload")
 async def upload_file(
     file: UploadFile = File(...),
     session: Optional[str] = Cookie(default=None),
@@ -792,14 +346,47 @@ async def upload_file(
     if not success:
         raise HTTPException(status_code=400, detail=message)
     
-    return {"message": message}
+    return {"success": True, "message": message}
 
 # =================================================================
-# 10. START SERVER
+# 11. REACT FRONTEND
+# =================================================================
+
+@app.get("/", response_class=HTMLResponse)
+@app.get("/login", response_class=HTMLResponse)
+@app.get("/signup", response_class=HTMLResponse)
+@app.get("/chat", response_class=HTMLResponse)
+async def serve_react_app():
+    index_path = os.path.join(REACT_BUILD_DIR, "index.html")
+    if os.path.exists(index_path):
+        return FileResponse(index_path)
+    else:
+        return HTMLResponse(f"""
+        <html>
+            <head><title>React App Not Built</title></head>
+            <body style="font-family: Arial; padding: 40px; background: #f5f5f5;">
+                <div style="max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; border: 2px solid #DAA520;">
+                    <h1>React App Not Built</h1>
+                    <p>build the React app first by creating the build dir in website:</p>
+                    <pre style="background: #f0f0f0; padding: 10px; border-radius: 5px;">
+cd website
+npm install
+npm run build
+                    </pre>
+                    <p>Expected build path: <code>{REACT_BUILD_DIR}</code></p>
+                    <p>API endpoints are still available at <code>/api/*</code></p>
+                </div>
+            </body>
+        </html>
+        """)
+
+# =================================================================
+# 12. START SERVER
 # =================================================================
 
 if __name__ == "__main__":
     print("🚀 Starting GraphRAG Chat Server at http://localhost:8000/")
+    print("React should be working...")
     uvicorn.run(app, host="0.0.0.0", port=8000)
 
 
