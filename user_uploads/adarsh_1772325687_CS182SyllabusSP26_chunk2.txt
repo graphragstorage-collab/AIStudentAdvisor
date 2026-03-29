@@ -1,0 +1,137 @@
+**Purdue University – Department of Computer Science – CS 18200 “Foundations of Computer Science” (Spring 2026) – Course Outline & Policies**
+
+### Course Identification
+- **Course Code**: CS 18200
+- **Course Title**: Foundations of Computer Science
+- **Offered By**: Purdue University’s Department of Computer Science
+- **Term**: Spring 2026
+
+### Sections & Schedule
+- **LE1**: TR, 10:30 AM - 11:45 AM, WALC 1055  
+- **LE2**: TR, 03:00 PM - 04:15 PM, WALC 1055  
+- **LE3**: TR, 04:30 PM - 05:45 PM, WALC 1055  
+
+### Prerequisites
+- CS 18000
+- MATH 16100
+
+### Leadership Team
+- **Director**: Justin D. Gillingham
+- **Instructors**: Professors Wojciech Szpankowski and Sarah Sellke
+- **Head GTAs**: Arun Narayanan Hariharan and Andrew Haas
+- **Contact**: CS-18200-COOR@lists.purdue.edu
+
+### Communication Channels
+- TA office hours
+- Ed Discussion for general questions
+- Email to course coordinators (response time: 2-3 business days)
+- ODOS for accommodations/extensions 
+- Note: No direct instructor email; FERPA compliance prohibits responding to parent inquiries.
+
+### Course Description
+CS 18200 provides introductory coverage of discrete mathematics tools and reasoning for computer science, including:
+- Logic
+- Proof methods
+- Functions
+- Sets
+- Number theory
+- Algorithms
+- Induction
+- Counting
+- Probability
+- Graph theory
+- Finite-state automata
+- Regular expressions
+- Context-free languages
+- Turing machines
+- Computability
+
+### Learning Outcomes
+Upon completion, students will be able to:
+- Apply discrete-math foundations
+- Analyze algorithms (Big-O/Θ/Ω)
+- Solve complex problems using graph-theoretic algorithms
+
+### Required Text
+- K. Rosen, *Discrete Mathematics and Its Applications* (7th/8th edition) with accompanying student site resources.
+
+### Technology Platforms
+- **Brightspace**: course site
+- **Gradescope**: homework submission
+- **Ed Discussion**: Q&A
+
+### Assessment Structure
+- **Individual Homework**: 20% (lowest score dropped)
+- **Individual Quizzes**: 10% (lowest score dropped)
+- **Midterm Exam**: 35% (Monday, March 9, 8 PM - 10 PM)
+- **Final Exam**: 35% (University-determined date, potentially Saturday, May 9, 2026)
+
+### Grading Scale
+Standard letter-grade cutoffs:
+- A+ 99-100 
+- A 93-99 
+- ...
+- D- 60-63  
+*Instructor discretion applies for atypical performance.*
+
+### Homework Policy
+- 10-11 handwritten assignments posted on Brightspace, submitted via Gradescope.
+- 15% penalty for submissions 1-24 hours late; no acceptance after 24 hours.
+
+### Quiz Policy
+- Approximately 10 quizzes, mostly online via Brightspace.
+- One retake allowed, highest score recorded; online windows: Sunday 1 PM - Monday 1 PM, 1-hour completion time.
+
+### PSO (Practice/Study/Observation) Sessions
+- Mandatory weekly sessions led by graduate TAs, with additional undergraduate TA support.
+- Problem sets posted on Brightspace; solutions not posted.
+
+### Exam Policy
+- One in-person evening midterm and one comprehensive final.
+- Closed-book/closed-notes; electronic devices prohibited.
+
+### Attendance Policy
+Students are expected to:
+- Attend all classes and in-person exams unless ill or have excused absences (grief/bereavement, military service, jury duty, parenting leave, medically excused absences).
+- Notify course coordinators in advance for anticipated conflicts.
+
+### Conduct and Courtesy
+Students must maintain a professional and respectful classroom environment:
+- No talking during lectures.
+- Silencing personal electronics.
+- Arriving on time and staying for the entire class.
+- Treating others with respect.
+- Non-disruptive personal electronics are allowed.
+
+### Netiquette Guidelines
+- Be polite and courteous.
+- Reflect on what others are saying.
+- Avoid all caps, flames, and offensive language.
+- Use clear subject lines and avoid abbreviations unless known to the entire class.
+- Keep discussions collegial and professional.
+- Do not post inappropriate material or solutions to homework/exam problems.
+
+### AI Policy
+Students may use AI as a tool for learning but are not permitted to use AI to complete homework assignments or during quizzes.
+
+### Academic Integrity
+Adhere to Purdue’s academic honesty policies as described at [Purdue Academic Integrity Policy](http://spaf.cerias.purdue.edu/cpolicy.html). 
+- Students must submit their own work and correctly reference any material used from online sources.
+- Sharing or copying solutions is considered cheating.  
+
+### Penalties
+- First instance of academic dishonesty: zero for that assignment + letter grade deduction.
+- Second instance: course grade of F.
+- Instances of dishonesty on exams result in a course grade of F and reporting to the Dean of Students Office.
+
+### Copyright Expectations
+All course materials are the instructor’s property. Students may use course materials for their own use but cannot distribute without written consent.
+
+### Conclusion
+This document outlines the key policies, expectations, and requirements for CS 18200: Foundations of Computer Science for Spring 2026, ensuring a structured and respectful learning environment for all participants.
+
+### Additional Information
+All policies and guidelines are subject to change, and you are encouraged to reach out to course coordinators for clarifications as needed.
+
+### Contact
+For questions or concerns regarding the course, please contact the course coordinators at CS-18200-COOR@lists.purdue.edu.
