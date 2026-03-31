@@ -1,0 +1,192 @@
+**Mathematical Induction and Structural Induction in Computer Science (CS101, Department of Computer Science, University of Example)**
+
+This document provides an in-depth exploration of mathematical induction and structural induction, as covered in Week 7 of the CS101 course. Key topics include a review of mathematical induction, strong induction, and recursive definitions, with specific references to sections KR 5.2 and KR 5.3. The document outlines various examples and exercises designed to illustrate the principles of induction, including proofs related to Fibonacci numbers, postage problems, and the Game of Nim. It emphasizes the importance of these concepts in computer science, particularly in algorithm design and analysis. The content is structured to facilitate understanding of both the theoretical and practical applications of induction methods in mathematical reasoning and programming.
+
+elements are all powers of 2)
+• 1T
+• if a T, then 2a T
+36
+Example 1 (part 1 of 5)
+Show that the set 𝑆 defined by specifying that
+  3𝑆 and
+
+ if xS and y𝑆, then x + y 𝑆,
+is the set of all positive integers that are
+multiples of 3.
+37
+Example 1 (part 2 of 5)
+Show that the set 𝑆 defined by specifying that
+  3𝑆 and
+
+ if xS and y𝑆, then x + y 𝑆,
+is the set of all positive integers that are multiples of 3.
+[Solution]
+Let A be the set of all positive integers divisible by 3.
+We want to show 𝐴 =  𝑆.
+1. A ⊆  S
+2. S ⊆  A
+38
+Example 1 (part 3 of 5)
+recall:
+ A is the set of all positive integers divisible by 3
+ 3𝑆 and if xS and y𝑆, then x + y 𝑆
+1. outline of proof for A ⊆  S
+ P(n): 3n𝑆
+ Basis Step (n=1): P(1) holds since 3𝑆
+ Inductive Step: to show P(k)  → P(k + 1)
+  Inductive Hypothesis: 3k𝑆
+
+  3(k+1) = 3k + 3
+   3k𝑆  (I.H.)
+   3𝑆  (recursive definition of S)
+   3k +  3 𝑆 (recursive definition of S)
+
+  P(k + 1) holds, and we concludes our inductive step
+
+ Conclusion: A ⊆  S
+39
+Example 1 (part 4 of 5)
+recall:
+ A is the set of all positive integers divisible by 3
+ 3𝑆 and if xS and y𝑆, then x + y 𝑆
+1. outline of proof for S ⊆  A
+ TBD
+40
+Balanced Parentheses
+Example: Give a recursive definition of the set  of balanced
+parentheses P.
+• Note: (())() is balanced, (()() and ())( are not
+
+Solution:
+BASIS STEP:  () ∊ P
+RECURSIVE STEP:
+If w ∊ P, then () w ∊ P ,  (w) ∊ P and w () ∊ P.
+• (() ()) is in P
+• ()((), (()))(() are not in P
+42
+Rooted Trees
+Definition: A rooted tree consists of a set of vertices
+containing a distinguished vertex called the root, and edges
+connecting these vertices.
+
+The edges may have a direction
+(from the root or to the root)
+Uses of Rooted Trees in CS
+• In data structures used to organize data and allow fast searching (or
+other queries)
+• To represent relations (e.g., file structure, hierarchy in an
+organizations or systems, classify objects by properties)
+root r
+
+43
+Recursive Definition
+of Rooted Trees
+• A single vertex r is a rooted tree.
+BASIS STEP:
+• Suppose that T1, T2, …,Tn are disjoint rooted trees with
+roots r1, r2,…, rn, respectively .
+• The rooted tree is formed by starting with a root r,
+which is not in any of the rooted treesT1, T2, …,Tn, and
+adding an edge from r to each of the roots r1, r2,…, rn.
+RECURSIVE STEP:
+Trees are studied in Chapter 11.
+44
+Full Binary Trees
+Definition: The set of full binary trees is
+defined recursively by these steps:
+• BASIS STEP:  A single vertex r is a full binary.
+• RECURSIVE STEP: Assume T1 and T2 are two disjoint full
+binary trees. Then, there is a full binary tree T consisting
+of
+• a root r
+• an edge connecting r to the root of the left subtree T1
+• an edge connecting r to the root of the right subtree T2.
+• Notation: T = T1∙T2
+
+45
+Building Up Full Binary Trees
+• Full binary trees and their
+properties play a central
+role in data structures
+and algorithms.
+• “Full“ refers to every
+vertex either being a
+leaf or having two
+subtrees
+
+2. STRUCTURAL INDUCTION
+46
+Definition: T o prove a property of the elements of a recursively defined
+set, we use structural induction.
+BASIS STEP: Show that the result holds for all elements specified in the
+basis step of the recursive definition.
+RECURSIVE STEP: Show that if the statement is true for each of the
+elements used to construct new elements in the recursive step of the
+definition, the result holds for these new elements.
+The validity of structural induction can be shown to follow from the
+principle of mathematical induction.
+47
+Height of Full Binary Trees
+The height h(T) of a full binary tree T is defined recursively:
+1. BASIS STEP:
+• height h(T) = 0 if T consisting of only a root r
+2. RECURSIVE STEP:
+• height h(T) = 1 + max {h(T1), h(T2)} if T = T1∙T2  andT1 and
+T2 are full binary trees.
+Height(T) = 3
+48
+Number of vertices of Full Binary Trees
+The number of vertices n(T) of a full binary tree T is
+defined recursively as follows:
+1. BASIS STEP:
+• n(T) = 1 if T consisting of only a root r.
+2. RECURSIVE STEP:
+• n(T) = 1 + n(T1) + n(T2)  if T = T1∙T2  with T1 and T2 are full binary
+trees
+T2T1
+Example: n(T) = 5+5+1 = 11
+49
+Structural Induction and Binary Trees
+Theorem:  If T is a full binary tree, then n(T) ≤ 2h(T)+1 – 1.
+Tree T with root 1
+• Left subtree (root 2) has height 2
+• Right subtree (root 3) has height 1
+• Tree T has height 3
+• A tree of height 3 can have at most 15 vertices
+
+50
+Structural Induction and Binary Trees
+Theorem: If T is a full binary tree, then n(T) ≤ 2h(T)+1 – 1.
+Proof: Use structural induction.
+BASIS  STEP: The result holds for a full binary tree consisting of only the
+root:
+  n(T) = 1 and h(T) = 0.
+Hence, n(T) = 1 ≤ 20+1 – 1   = 1.
+RECURSIVE STEP:
+Let T1   be the tree rooted at the left child of root r and
+T2   be the tree rooted at the right child.
+As T1 and T2 are full binary trees,
+we have n(T1) ≤ 2h(T1)+1 – 1 and n(T2) ≤ 2h(T2)+1  – 1.
+−
+2
+.
+T2T1
+51
+RECURSIVE STEP:
+As T1 and T2 are full binary trees,
+we have n(T1) ≤ 2h(T1)+1 – 1 and n(T2) ≤ 2h(T2)+1  – 1.
+n(T)   =  1 + n(T1) + n(T2)      (by recursive formula of n(T))
+          ≤  1 + (2h(T1)+1 – 1) + (2h(T2)+1 – 1)     (by induct. hyp.)
+          ≤  2∙max{2h(T1)+1 ,2h(T2)+1 } – 1
+          =  2∙2max{h(T1),h(T2)} +1 – 1 (max{2x, 2y} = 2max{x,y} )
+          =  2∙2h(T) – 1          (by recursive definition of h(T))
+          =  2h(T)+1 – 1
+−
+2
+.
+T2T1
+Recommended Exercises
+KR 5.3
+ 22, 23, 25, 27, 29,
+ 37, 45,
+52

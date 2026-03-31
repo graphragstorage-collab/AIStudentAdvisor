@@ -1,0 +1,438 @@
+**Mathematical Induction and Structural Induction in Computer Science (CS101, Department of Computer Science, University of Example)**
+
+This document provides an in-depth exploration of mathematical induction and structural induction, as covered in Week 7 of the CS101 course. Key topics include a review of mathematical induction, strong induction, and recursive definitions, with specific references to sections KR 5.2 and KR 5.3. The document outlines various examples and exercises designed to illustrate the principles of induction, including proofs related to Fibonacci numbers, postage problems, and the Game of Nim. It emphasizes the importance of these concepts in computer science, particularly in algorithm design and analysis. The content is structured to facilitate understanding of both the theoretical and practical applications of induction methods in mathematical reasoning and programming.
+
+Strong Induction &
+Structural Induction
+Week 7
+1. Review of Mathematical Induction
+2. Strong Induction and Well Ordering (KR 5.2)
+3. Recursive Definitions and Structural Induction (KR5.3)
+1
+2
+Template for Writing Mathematical Induction Proofs
+[Warm Up Example (KR Exercise 5.1.6) (part 1 of 5)]
+Prove that for all positive integers 𝑛,
+෍
+𝑖=1
+𝑖=𝑛
+𝑖 ⋅ 𝑖! = 𝑛 + 1 ! − 1
+3
+[Warm Up Example (2/5)] Prove that for all positive integers 𝑛,
+෍
+𝑖=1
+𝑖=𝑛
+𝑖 ⋅ 𝑖! = 𝑛 + 1 ! − 1
+[Proof] Let 𝑃 𝑛  be the statement that
+෍
+𝑖=1
+𝑖=𝑛
+𝑖 ⋅ 𝑖! = 𝑛 + 1 ! − 1
+Basis Step (𝑛 = 1): 𝑃(1) is true, because
+4
+LHS of 𝑃(1) RHS of 𝑃(1)
+෍
+𝑖=1
+𝑖=𝑛
+𝑖 ⋅ 𝑖! = 1 𝑛 + 1 ! − 1 = 2 − 1 = 1
+[Warm Up Example (part 3 of 5)]
+Inductive Step: we will show 𝑃 𝑘 → 𝑃(𝑘 + 1)
+    Inductive Hypothesis:  Assume 𝑃 𝑘  is true for an arbitrary fixed integer 𝑘 ≥ 1.
+෍
+𝑖=1
+𝑖=𝑘
+𝑖 ⋅ 𝑖! = 𝑘 + 1 ! − 1
+
+ we want to show 𝑃(𝑘 + 1) is true:
+෍
+𝑖=1
+𝑖=𝑘+1
+𝑖 ⋅ 𝑖! = k + 2 ! − 1
+5
+[Warm Up Example (part 4 of 5)]
+Inductive Step: we will show 𝑃 𝑘 → 𝑃(𝑘 + 1)
+ Inductive Hypothesis:  Assume 𝑃 𝑘  is true for an arbitrary fixed integer 𝑘 ≥ 1.
+෍
+𝑖=1
+𝑖=𝑘
+𝑖 ⋅ 𝑖! = 𝑘 + 1 ! − 1
+ we want to show 𝑃(𝑘 + 1) is true:
+෍
+𝑖=1
+𝑖=𝑘+1
+𝑖 ⋅ 𝑖! = k + 2 ! − 1
+
+෍
+𝑖=1
+𝑖=𝑘+1
+𝑖 ⋅ 𝑖! = ෍
+𝑖=1
+𝑖=𝑘
+𝑖 ⋅ 𝑖! + 𝑘 + 1 𝑘 + 1 !
+= 𝑘 + 1 ! − 1 + 𝑘 + 1 𝑘 + 1 !
+= 𝑘 + 2 𝑘 + 1 ! − 1
+= 𝑘 + 2 ! − 1
+We conclude that
+෍
+𝑖=1
+𝑖=𝑘+1
+𝑖 ⋅ 𝑖! = k + 2 ! − 1
+This completes the inductive step.
+6
+[Warm Up Example (part 5 of 5)]
+[Conclusion]
+By completing both the basis step and the inductive step, we have
+proved that for all positive integers
+෍
+𝑖=1
+𝑖=𝑛
+𝑖 ⋅ 𝑖! = 𝑛 + 1 ! − 1
+7
+Recursively Defined Functions
+Definition:  A recursive definition of a function on N consists of two parts.
+1. BASIS STEP: Specify the value of the function at 𝑛 = 0 (i.e. f(0)).
+2. RECURSIVE STEP: A rule for finding the value of 𝑓(𝑛) from 𝑓(𝑘) for 𝑘 < 𝑛.
+A function f(n) is the same as a sequence a0, a1, … , ai  …  where f(i) = ai.
+(See recurrence relations as seen in Section 2.4.)
+8
+Recursively Defined Functions
+[Example 1 (part 1 of 6) ] Suppose f is defined by:
+𝑓 0 =  3
+𝑓(𝑛 +  1)  =  2𝑓(𝑛)  +  3
+
+a) Find 𝑓(1), 𝑓(2), 𝑓(3), and 𝑓(4).
+b) Show 𝑓 𝑛 = 3 ∙ 2𝑛+1 − 3 using induction.
+9
+Recursively Defined Functions
+[Example 1 (part 2 of 6) ] Suppose f is defined by:
+𝑓 0 =  3
+𝑓(𝑛 +  1)  =  2𝑓(𝑛)  +  3
+
+a) Find 𝑓(1), 𝑓(2), 𝑓(3), and 𝑓(4).
+[Solution]
+• f(1) = 2f(0) + 3 = 2∙3 + 3 = 9
+• f(2) = 2f(1)+ 3 = 2∙9 + 3 = 21
+• f(3) = 2f(2) + 3 = 2∙21 + 3 = 45
+• f(4) = 2f(3) + 3 = 2∙45 + 3 = 93
+10
+11
+[Example 1 (part 3 of 6) ] Suppose f is defined by:
+𝑓 0 =  3
+𝑓(𝑛 +  1)  =  2𝑓(𝑛)  +  3
+b) Show 𝑓 𝑛 = 3 ∙ 2𝑛+1 − 3 using induction.
+[Solution]
+Let P(n) be the statement that 𝑓 𝑛 = 3 ∙ 2𝑛+1 − 3  for all natural
+numbers.
+12
+[Example 1 (part 4 of 6) ] Suppose f is defined by:
+𝑓 0 =  3
+𝑓(𝑛 +  1)  =  2𝑓(𝑛)  +  3
+b) Show 𝑓 𝑛 = 3 ∙ 2𝑛+1 − 3 using induction.
+[Solution] Let P(n) be the statement that 𝑓 𝑛 = 3 ∙ 2𝑛+1 − 3  for
+all natural numbers.
+Basis Step (n =  0):  P(0) is true because
+  𝑓 0 = 3 ∙ 20+1 − 3 =  6 –  3 =  3
+ agrees with the function definition 𝑓 0 =  3
+13
+[Example 1 (part 5 of 6) ] Suppose f is defined by:
+𝑓 0 =  3
+𝑓(𝑛 +  1)  =  2𝑓(𝑛)  +  3
+b) Show 𝑓 𝑛 = 3 ∙ 2𝑛+1 − 3 using induction.
+Inductive Step: we will show 𝑃 𝑘 → 𝑃(𝑘 + 1)
+    Inductive Hypothesis:
+• Assume 𝑃 𝑘 : 𝑓 k = 3 ∙ 2k+1 − 3 is true for an arbitrary fixed
+integer 𝑘 ≥ 1.
+• we want to show 𝑃(𝑘 + 1):  𝑓 k + 1 = 3 ∙ 2k+2 − 3 is true.
+𝑓(k +  1)  =  2𝑓(k)  +  3
+=  2 (3 ∙ 2k+1 − 3)  +  3
+=  3 ∙ 2k+2  −  6 +  3
+= 3 ∙ 2k+2 − 3
+We conclude that 𝑓 k + 1 = 3 ∙ 2k+2 − 3
+This completes the inductive step.
+
+14
+[Example 1 (part 6 of 6) ] Suppose f is defined by:
+𝑓 0 =  3
+𝑓(𝑛 +  1)  =  2𝑓(𝑛)  +  3
+b) Show 𝑓 𝑛 = 3 ∙ 2𝑛+1 − 3 using induction.
+[Conclusion]
+By completing both the basis step and the inductive step, we have
+proved that for all positive integers 𝑓 𝑛 = 3 ∙ 2𝑛+1 − 3 .
+
+Strong Induction
+Strong Induction: To prove that P(n) is true for all positive
+integers n, complete two steps:
+1. BASIS STEP: Verify that P(1) is true.
+2. INDUCTIVE STEP: Show that
+[P(1) ∧ P(2) ∧∙∙∙ ∧ P(k)] → P(k + 1)  is true for all positive
+integers k.
+• Strong Induction are used when we cannot easily prove a
+result using mathematical induction.
+• Strong induction and the principles of mathematical
+induction are equivalent.
+15
+Example 2 (part 1 of 3): Show that any integer greater than 1
+can be written as the product of primes.
+[Solution]
+Let 𝑃(𝑛) be the proposition that 𝑛 can be written as the
+product of primes for all 𝑛 > 2.
+16
+Example 2 ((part 2 of 3): Show that any integer greater than 1 can be
+written as the product of primes.
+[Solution]  Let 𝑃(𝑛) be the proposition that 𝑛 can be written as the
+product of primes.
+1. BASIS STEP (𝑛 = 2): 𝑃(2) is true because 2 is a prime number.
+2. INDUCTIVE STEP:
+• Inductive Hypothesis:
+ Assume 𝑃(𝑗) is true for all integers 𝑗 with 2 ≤  𝑗 ≤  𝑘
+We must show that 𝑃(𝑘 + 1) is true for every integer 𝑘 ≥  1
+𝑃(k + 1):  k + 1 can be written as the product of primes.
+17
+INDUCTIVE STEP: Show that
+[ P(2) ∧∙∙∙ ∧ P(k)] → P(k + 1)  holds for all positive integers k.
+Example 2 ((part 3 of 3): Show that any integer greater than 1 can be
+written as the product of primes.
+[Solution]
+INDUCTIVE STEP:  We must show that 𝑃(𝑘 + 1) is true.
+• Case 1: 𝑘 + 1 is prime. Done!
+• Case 2: 𝑘 + 1 is composite:
+  𝑘 +  1 =  𝑎 ⋅ 𝑏 with 2 ≤  𝑎, 𝑏 < 𝑘 + 1
+• Use inductive hypothesis to write 𝑎 and 𝑏 as the product of primes.
+This completes the inductive step.
+Conclusion: By completing both the basis step and the inductive step,
+we have proved that any integer greater than 1 can be written as the
+product of primes.
+18
+INDUCTIVE STEP: Show that
+[ P(2) ∧∙∙∙ ∧ P(k)] → P(k + 1)  holds for all positive integers k.
+19
+Example 3 (part 1 of 3): Prove that every amount of postage of 12 cents or more
+can be formed using only 4-cent and 5-cent stamps.
+Solution:
+Let P(n) be the proposition that postage of n cents can be formed using 4-cent
+and 5-cent stamps for 𝑛 ≥ 12.
+BASIS STEP (n = 12, 13, 14, 15):
+20
+Example 3 (part 2 of 3): : Prove that every amount of postage of 12 cents or more
+can be formed using only 4-cent and 5-cent stamps.
+Solution:
+Let P(n) be the proposition that postage of n cents can be formed using 4-cent
+and 5-cent stamps for 𝑛 ≥ 12.
+BASIS STEP (n = 12, 13, 14, 15):
+ Verify that P(12), P(13), P(14), and P(15) hold.
+  P(12) : uses three 4-cent stamps.
+  P(13) : uses two 4-cent stamps and one 5-cent stamp.
+  P(14) : uses one 4-cent stamp and two 5-cent stamps.
+  P(15) : uses three 5-cent stamps.
+INDUCTIVE STEP:
+Show that  [ P(12) ∧ P(13) ∧ P(14) ∧ P(15) ∧∙∙ ∧ P(k)] → P(k + 1)  holds for all
+positive integers k.
+21
+Example 3 (part 3 of 3): : Prove that every amount of postage of 12 cents or more
+can be formed using only 4-cent and 5-cent stamps.
+INDUCTIVE STEP:
+The inductive hypothesis  assumes for an arbitrary k ≥ 15, P(j) holds for 12 ≤ j ≤ k.
+We must show that P(k + 1) holds.
+𝑘 + 1 = 4 + 𝑘 − 3
+• By the inductive hypothesis, P(k − 3) holds since k − 3 ≥ 12. That is postage of
+k-3 cents can be formed using 4-cent and 5-cent stamps.
+• To obtain postage of (k+1) cents, add a 4-cent stamp to a postage of (k-3)
+cents which can be formed using 4-cent and 5-cent stamps.
+We have concluded the inductive step.
+
+By strong induction, every amount of postage of 12 cents or more can be formed
+using only 4-cent and 5-cent stamps.
+Think-Pair-Share (KR 5.2 Exercise 3)
+Prove that every amount of postage of 8 cents or more can
+be formed using only 3-cent and 5-cent stamps.
+1) Verify that P(8), P(9), and P(10) are true.
+(more challenging version: what are the base cases?)
+2) Inductive Step:
+1) What is the inductive hypothesis?
+2) Complete the inductive step.
+22
+Fibonacci Numbers
+The Fibonacci numbers are defined as:
+f0 = 0
+f1 = 1
+fn = fn−1 + fn−2
+    with
+f2 = f1 + f0 = 1 + 0 = 1
+f3 = f2 + f1 = 1 + 1 = 2
+f4 = f3 + f2  = 2 + 1 = 3
+f5 = f4 + f3 = 3 + 2 = 5
+Fibonacci
+(1170- 1250)
+23
+Fibonacci Numbers are defined by: f0 = 0, f1 = 1, fn = fn−1 + fn−2
+[Example 4 (part 1 of 5)]  Show that whenever n ≥ 3, 𝑓𝑛 > 𝛼𝑛−2,
+where 𝛼 =
+1+ 5
+2  (the golden ratio).
+24
+[Example 4 (part 2 of 5)] ]  Show that whenever n ≥ 3, 𝑓𝑛 > 𝛼𝑛−2,
+where 𝛼 =
+1+ 5
+2  (the golden ratio).
+Solution:  Let P(n) be the statement  fn > αn−2 .
+We will use strong induction to show that P(n) is true when n ≥ 3.
+25
+[Example 4 (part 3 of 5)] ]  Show that whenever n ≥ 3, 𝑓𝑛 > 𝛼𝑛−2,
+where 𝛼 =
+1+ 5
+2  (the golden ratio).
+Solution:  Let P(n) be the statement  fn > αn−2 .
+We will use strong induction to show that P(n) is true when n ≥ 3.
+BASIS STEP:
+1.  n=3: P(3) holds since 𝛼 =
+1+ 5
+2  < 2 = f3
+2.  n=4: P(4) holds since α2  = (3 + √5)/2 < 3 = f4
+26
+27
+[Example 4 (part 4 of 5)] ] Show that when n ≥ 3, fn > αn − 2, where  α = (1 + √5)/2.
+• Recall P(n) is the statement  fn > αn−2
+INDUCTIVE STEP:
+• Assume that P(j) (P(j): 𝑓𝑗 > αj−2) holds for all integers j  with 3 ≤ j ≤ k with k ≥ 4.
+• We will show that P(k + 1) holds, i.e.,  show that  fk+1 > αk−1 .
+28
+[Example 4 (part 5 of 5)] ] Show that when n ≥ 3, fn > αn − 2, where  α = (1 + √5)/2.
+• Recall P(n) is the statement  fn > αn−2
+INDUCTIVE STEP:
+• Assume that P(j) (P(j): 𝑓𝑗 > αj−2) holds for all integers j  with 3 ≤ j ≤ k with k ≥ 4.
+• We will show that P(k + 1) holds, i.e.,  show that  fk+1 > αk−1 .
+fk+1 =  fk + fk−1  (recursive definition of fk+1 )
+ > αk−2 + αk−3  (inductive hypothesis)
+ = αk−1
+αk−2   + αk−3
+= α ∙αk−3  + 1 ∙αk−3
+= (α + 1) ∙αk−3
+= α2 ∙αk−3
+= αk−1
+Game of Nim: two-player strategy game
+[Example 5] Given are two stacks of coins, each containing 𝑛 coins. Two
+players take turns removing coins from one of the two stacks. They need to
+take at least 1 coin and can take all the coins in the stack. The player who
+removes the last coin wins.
+• A is the player who goes first
+• B is the player who goes second
+• Use strong induction to show that player B can always win the game.
+29
+Game of Nim: Examples
+n=20
+ 20 20
+A 5 20
+B 2 20
+A 2 1
+B 2 0
+A 0 0
+30
+n=20
+ 20 20
+A 15 20
+B 15 15
+A 15 3
+B 3 3
+A 2 3
+B 2 2
+A 0 2
+B 0 0
+Game of Nim: 2-player strategy game
+P(n): “If both stacks contain 𝑛 coins each and it is A’s turn, then B
+can always win if she plays correctly. ”
+Basis Step: Verify that P(1) is true.
+𝑛 = 1: each stack contains 1 coin.
+• Player A takes one coin from one of the stacks
+• Player B takes the remaining coin from the other stack. B wins!
+Induction Hypothesis:
+Assume P(k) is true for 1 ≤ k < n.
+Means: if both stacks contain k coins each and it is A’s turn, then
+B can always win if she plays correctly. ”
+31
+Game of Nim: 2-player strategy game
+Induction Hypothesis:
+Assume P(k) is true for 1 ≤ k < n.
+Means, if both stacks contain k coins each and it is A’ s turn, then B
+can always win if she plays correctly. ”
+Induction Step: show that P(n) holds.
+Let S1 and S2 be the two stacks of coins. W.l.o.g., let S1 be the stack
+player A  removes coins from.
+• Assume player A removes x coins.
+32
+Game of Nim: 2-player strategy game
+Induction Step: show that P(n) holds.
+Let S1 and S2 be the two stacks. W.l.o.g., let S1 be the stack player A
+removes coins from.
+• Assume player A removes x coins.
+• This leaves n-x coins in stack S1 and n coins in S2.
+• B plays next and removes x coins from stack S2.
+• If n-x is 0, then B wins. Otherwise, 1 ≤ n-x .
+• This leaves two stacks of n-x coins each and it is A’s turn.
+• By the I.H., Player B can win the game as there are two stacks,
+each containing n-x coins,  1 ≤ n-x < n, and it is A’s turn.
+Using this strategy, player B will win the game.
+33
+Recommended Exercise
+KR 5.2
+ 1, 3, 5, 7, 11
+KR 5.3
+ 1, 3, 5, 7, 9, 12, 13,
+34
+Examples of Recursive Definitions
+1. 𝒇(𝒏)  =  𝟐𝒏
+𝑓(0)  =  1,
+𝑓(𝑛 + 1)  =  2 𝑓(𝑛)
+2. 𝒇(𝒏)  =  𝒏!
+𝑓(0)  =  1
+𝑓(𝑛 +  1)  =  (𝑛 +  1)  ⋅  𝑓(𝑛)
+35
+Examples of Recursive Definitions
+3. Set S (natural numbers)
+• 0𝑆, 1𝑆
+• If 𝑎, 𝑏𝑆, then 𝑎 + 𝑏 𝑆
+4. Set S (all positive multiples of 3)
+• 3𝑆
+• If x, y𝑆, then x + y 𝑆
+5. Set T (elements are all powers of 2)
+• 1T
+• if a T, then 2a T
+36
+Example 1 (part 1 of 5)
+Show that the set 𝑆 defined by specifying that
+  3𝑆 and
+
+ if xS and y𝑆, then x + y 𝑆,
+is the set of all positive integers that are
+multiples of 3.
+37
+Example 1 (part 2 of 5)
+Show that the set 𝑆 defined by specifying that
+  3𝑆 and
+
+ if xS and y𝑆, then x + y 𝑆,
+is the set of all positive integers that are multiples of 3.
+[Solution]
+Let A be the set of all positive integers divisible by 3.
+We want to show 𝐴 =  𝑆.
+1. A ⊆  S
+2. S ⊆  A
+38
+Example 1 (part 3 of 5)
+recall:
+ A is the set of all positive integers divisible by 3
+ 3𝑆 and if xS and y𝑆, then x + y 𝑆
+1. outline of proof for A ⊆  S
+ P(n): 3n𝑆
+ Basis Step (n=1): P(1) holds since 3𝑆
+ Inductive Step: to show P(k)  → P(k + 1)
+  Inductive Hypothesis: 3k𝑆
+
+  3(k+1) = 3k + 3
+   3k𝑆  (I.H.)
+   3𝑆  (recursive definition of S)
+   3k +  3 𝑆 (recursive definition of S)
+
+  P(k + 1) holds, and we concludes our inductive step
+
+ Conclusion: A ⊆  S
+39

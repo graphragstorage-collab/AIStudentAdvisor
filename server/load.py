@@ -609,28 +609,10 @@ class KnowledgeGraph:
 
 
 # -----------------------------------------------------
-# Cerebras client for compression
+# Shared chat client/model for routing, rewrite, advising, translation
 # -----------------------------------------------------
-from cerebras.cloud.sdk import Cerebras
-
-api_keys = [
-    "csk-tn98d46prf8mvhwvyy8d5y48ncck2w2xc6336y9dxvcd4eyt",
-    "csk-f43h2hjymmty4489n22n5966ty6336fvw59m4m4d8rr499xt",
-    "csk-d8wcjrn639wftfcp8858yr9wtvrw8y5dm4mkfcp52xh6rnem",
-    "csk-twcjfk4mwmtm3hnkd6pn6n282whrvte88c9pcrct69tw38m6",
-    "csk-mppyvph8kxx9n6dxxcmhrnxjwkveyxjfrrm23eyyyxfjmfy4",
-    "csk-n9r5k3h62pcjwn5393k4wct8y65enw6pkypmwwrj4cm8j23n",
-    "csk-2j548nk43nw2ftr6368yxekdtp6rfw355c45832etttc8522",
-    "csk-tpwdj98pewtepj4c5v3d8eejnx8t3rrdj8yh54f2vd8vprk6",
-    "csk-mknjvx8xxpm2v4nryhe6v963cwxekdmm3dd8ftydtvjhnyn8",
-    "csk-5ht9eh59wd289pycrk9vvfdcffxxrpmyjx9e29hyk3jfjjcx",
-    "csk-fvj93vywv283cmt69mvyhmywyymrpd2fndhm9x3djmh8mc2h",
-    "csk-m49vrdt4mfc5n3mxk4496wddevdrrx39erxyf3d3cv58jytm"
-]
-
-client = Cerebras(
-    api_key=api_keys[2]
-)
+DEFAULT_CHAT_MODEL = os.getenv("LLM_MODEL", "gpt-4o-mini")
+client = OpenAI()
 
 
 # -----------------------------------------------------
@@ -640,7 +622,7 @@ def compress_docs(
     query: str,
     docs: List[Document],
     llm_client=client,
-    model: str = "gpt-oss-120b",
+    model: str = DEFAULT_CHAT_MODEL,
     max_tokens: int = 5000
 ) -> List[Document]:
     """
@@ -692,7 +674,7 @@ def compress_docs(
     completion = llm_client.chat.completions.create(
         messages=[{"role": "user", "content": prompt}],
         model=model,
-        max_completion_tokens=max_tokens,
+        max_tokens=max_tokens,
         temperature=0.15,
         top_p=1,
         stream=False
@@ -730,7 +712,7 @@ def router(
     query: str,
     docs: List[Document],
     llm_client=client,
-    model: str = "gpt-oss-120b",
+    model: str = DEFAULT_CHAT_MODEL,
     max_tokens: int = 2000
 ) -> str:
     """
@@ -789,7 +771,7 @@ def router(
     completion = llm_client.chat.completions.create(
         messages=[{"role": "user", "content": prompt}],
         model=model,
-        max_completion_tokens=max_tokens,
+        max_tokens=max_tokens,
         temperature=0.0,   # Deterministic routing
         top_p=1,
         stream=False
@@ -814,7 +796,7 @@ def rewrite_query_for_rag(
     llm_client=client,
     rewrite=None,
     old_answer=None,
-    model: str = "gpt-oss-120b",
+    model: str = DEFAULT_CHAT_MODEL,
     max_tokens: int = 3000,
     timezone: str = "America/Chicago"
 ) -> str:
@@ -940,7 +922,7 @@ def rewrite_query_for_rag(
     completion = llm_client.chat.completions.create(
         messages=[{"role": "user", "content": prompt}],
         model=model,
-        max_completion_tokens=max_tokens,
+        max_tokens=max_tokens,
         temperature=0.1,
         top_p=1,
         stream=False
@@ -1176,8 +1158,8 @@ def _advisor(query: str, llm_client=client) -> str:
  
     response = llm_client.chat.completions.create(
         messages=[{"role": "user", "content": prompt}],
-        model="gpt-oss-120b",
-        max_completion_tokens=10000,
+        model=DEFAULT_CHAT_MODEL,
+        max_tokens=10000,
         temperature=0,
         stream=False
     )
@@ -1196,7 +1178,7 @@ def translate_text_multilingual(
     text: str,
     target_language: str = "Spanish",
     llm_client=client,                 # your Cerebras client (or swap for OpenAI)
-    model: str = "gpt-oss-120b",
+    model: str = DEFAULT_CHAT_MODEL,
     max_tokens: int = 4000
 ) -> str:
     """
@@ -1224,7 +1206,7 @@ def translate_text_multilingual(
     completion = llm_client.chat.completions.create(
         messages=[{"role": "user", "content": prompt}],
         model=model,
-        max_completion_tokens=max_tokens,
+        max_tokens=max_tokens,
         temperature=0,
         stream=False
     )
@@ -1665,7 +1647,7 @@ class GraphRAG:
         route = router(query, docs=[])
         print("route")
         print(f"Routed to: {route}")
-        if route == "ADVISOR-":
+        if route == "ADVISOR":
             return _advisor(query)
         
         elif route == "INAPPLICABLE":
