@@ -37,6 +37,7 @@ import textwrap
 import time
 import datetime
 import pytz
+from SQL.update import get_or_create_document
 
 print("HERE")
 #nltk.download('punkt', quiet=False)
@@ -190,6 +191,8 @@ def add_document_to_graphrag(graph_rag, file_path: str):
     # print(f"  → New node index: {new_index}")
     # print(f"  → Concepts extracted: {concepts}")
     # print(f"  → Edges created: {len(list(G.neighbors(new_index)))}")
+
+    get_or_create_document(new_doc.page_content)
 
     return new_index
 
@@ -1695,4 +1698,3 @@ class GraphRAG:
     # Example query
 #    answer = graph_rag.query("Is GraphRag useful for Purdue?")
 #    print("Answer:", answer)
-

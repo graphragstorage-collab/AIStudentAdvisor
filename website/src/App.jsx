@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from 'r
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Chat from './components/Chat';
+import VotePage from './components/VotePage';
 import './App.css';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/chat" element={<Chat />} />
+          <Route path="/vote" element={<VotePage />} />
         </Routes>
       </div>
     </Router>

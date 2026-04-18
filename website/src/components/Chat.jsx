@@ -1,18 +1,23 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './Chat.css';
+
+const welcomeMessage = {
+  role: 'model',
+  content: 'Welcome! Select a language below, then ask a question.'
+};
 
 const Chat = () => {
   const [isUploading, setIsUploading] = useState(false);
-  const [messages, setMessages] = useState([
-    { role: 'model', content: 'Welcome! Select a language below, then ask a question.' }
-  ]);
+  const [messages, setMessages] = useState([welcomeMessage]);
+  const [conversationId, setConversationId] = useState(null);
   const [currentLanguage, setCurrentLanguage] = useState('none');
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const chatboxRef = useRef(null);
   const fileInputRef = useRef(null);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const languages = [
     { id: 'none', name: 'Original' },
@@ -23,22 +28,52 @@ const Chat = () => {
     { id: 'chinese', name: 'Chinese' }
   ];
 
+  const createConversation = async () => {
+    const response = await fetch('/api/my/conversations', {
+      method: 'POST',
+      credentials: 'include'
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to create conversation');
+    }
+
+    const data = await response.json();
+    setConversationId(data.conversation_id);
+    return data.conversation_id;
+  };
+
   useEffect(() => {
-    // Check if user is authenticated
     checkAuthStatus();
   }, []);
+
+  useEffect(() => {
+    const requestedConversationId = location.state?.conversationId;
+    if (requestedConversationId) {
+      setConversationId(requestedConversationId);
+      setMessages([welcomeMessage]);
+      setInputValue('');
+    }
+  }, [location.state]);
 
   const checkAuthStatus = async () => {
     try {
       const response = await fetch('/api/auth/status', {
         credentials: 'include',
         headers: {
-          'Accept': 'application/json',
+          Accept: 'application/json',
         }
       });
       const data = await response.json();
       if (!data.authenticated) {
         navigate('/login');
+        return;
+      }
+
+      if (location.state?.conversationId) {
+        setConversationId(location.state.conversationId);
+      } else {
+        await createConversation();
       }
     } catch (error) {
       console.error('Auth check failed:', error);
@@ -53,8 +88,8 @@ const Chat = () => {
   }, [messages]);
 
   const buildPayload = (question) => {
-    return messages.map(m => `${m.role}: ${m.content}`).join('\n\n') +
-           '\n\n==============================\ncurrent question: ' + question;
+    return messages.map((m) => `${m.role}: ${m.content}`).join('\n\n') +
+      '\n\n==============================\ncurrent question: ' + question;
   };
 
   const handleSend = async () => {
@@ -63,12 +98,13 @@ const Chat = () => {
     const question = inputValue.trim();
     setInputValue('');
 
-    setMessages(prev => [...prev, { role: 'user', content: question }]);
+    setMessages((prev) => [...prev, { role: 'user', content: question }]);
 
     setIsLoading(true);
-    setMessages(prev => [...prev, { role: 'model', content: 'Thinking...' }]);
+    setMessages((prev) => [...prev, { role: 'model', content: 'Thinking...' }]);
 
     try {
+      const activeConversationId = conversationId ?? await createConversation();
       const payload = buildPayload(question);
 
       const response = await fetch('/api/prompt', {
@@ -78,7 +114,8 @@ const Chat = () => {
         },
         body: JSON.stringify({
           query: payload,
-          lang: currentLanguage
+          lang: currentLanguage,
+          conversation_id: activeConversationId
         }),
         credentials: 'include'
       });
@@ -88,14 +125,17 @@ const Chat = () => {
       }
 
       const data = await response.json();
+      if (data.conversation_id) {
+        setConversationId(data.conversation_id);
+      }
 
-      setMessages(prev => {
+      setMessages((prev) => {
         const newMessages = [...prev];
         newMessages[newMessages.length - 1] = { role: 'model', content: data.answer };
         return newMessages;
       });
     } catch (error) {
-      setMessages(prev => {
+      setMessages((prev) => {
         const newMessages = [...prev];
         newMessages[newMessages.length - 1] = {
           role: 'model',
@@ -124,6 +164,21 @@ const Chat = () => {
       navigate('/login');
     }
   };
+
+  const handleNewConversation = async () => {
+    if (isLoading) return;
+
+    setMessages([welcomeMessage]);
+    setInputValue('');
+
+    try {
+      await createConversation();
+    } catch (error) {
+      console.error('Failed to create conversation:', error);
+      alert('Could not start a new conversation. Please try again.');
+    }
+  };
+
   const handleFileUpload = () => {
     fileInputRef.current.click();
   };
@@ -151,24 +206,21 @@ const Chat = () => {
 
       const result = await response.json();
       alert(result.message);
-    }
-    catch (error) {
+    } catch (error) {
       alert('Error uploading file. Please try again.');
-    }
-    finally {
+    } finally {
       setIsUploading(false);
       e.target.value = '';
     }
-
-    e.target.value = '';
   };
-
 
   return (
     <div className="chat-container">
       <div className="topbar">
-        <button onClick={handleLogout} className="logout-btn">Logout</button>
+        <button onClick={handleNewConversation} className="new-chat-btn">New Chat</button>
+        <button onClick={() => navigate('/vote')} className="vote-btn">Voting</button>
         <button onClick={handleFileUpload} className="upload-btn">Upload File</button>
+        <button onClick={handleLogout} className="logout-btn">Logout</button>
         <input
           type="file"
           ref={fileInputRef}
@@ -187,7 +239,7 @@ const Chat = () => {
       </div>
 
       <div className="translator-section">
-        {languages.map(lang => (
+        {languages.map((lang) => (
           <button
             key={lang.id}
             className={`lang-btn ${currentLanguage === lang.id ? 'active' : ''}`}
@@ -205,7 +257,7 @@ const Chat = () => {
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={handleKeyDown}
-          disabled={isLoading}
+          disabled={isLoading || conversationId === null}
         />
       </div>
     </div>

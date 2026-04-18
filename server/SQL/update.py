@@ -479,8 +479,32 @@ def insert_document_text(text_value):
     return next_id
 
 
+def get_or_create_document(text_value):
+    rows = execute_sql(
+        "SELECT Document_id FROM Document WHERE text = %s LIMIT 1",
+        (text_value,),
+        fetch=True
+    )
+
+    if rows:
+        return rows[0]["Document_id"]
+
+    rows = execute_sql(
+        "SELECT COALESCE(MAX(Document_id), -1) AS max_id FROM Document",
+        fetch=True
+    )
+    next_id = int(rows[0]["max_id"]) + 1
+
+    execute_sql(
+        "INSERT INTO Document (Document_id, text) VALUES (%s, %s)",
+        (next_id, text_value)
+    )
+
+    return next_id
+
+
 def attach_document_to_turn(conversation_id, turn_id, document_text):
-    document_id = insert_document_text(document_text)
+    document_id = get_or_create_document(document_text)
     execute_sql(
         """
         INSERT INTO Retrieval (Turn_id, Conversation_id, Document_id)

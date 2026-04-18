@@ -16,7 +16,7 @@
   gap: 10px;
 }
 
-.logout-btn, .upload-btn {
+.logout-btn, .upload-btn, .vote-btn, .new-chat-btn {
   padding: 6px 14px;
   background: #000;
   color: gold;
@@ -32,7 +32,7 @@
   top: 40px;
 }
 
-.logout-btn:hover, .upload-btn:hover {
+.logout-btn:hover, .upload-btn:hover, .vote-btn:hover, .new-chat-btn:hover {
   background: #333;
 }
 

@@ -16,10 +16,20 @@ CREATE TABLE IF NOT EXISTS Turn (
     Conversation_id INT,
     question TEXT,
     answer TEXT,
-    rating INT,
+    rating INT DEFAULT 0,
     time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (Turn_id, Conversation_id),
     FOREIGN KEY (Conversation_id) REFERENCES Conversation(Conversation_id)
+);
+
+CREATE TABLE IF NOT EXISTS Vote (
+    Turn_id INT,
+    Conversation_id INT,
+    User_id INT,
+    vote INT,
+    PRIMARY KEY (Turn_id, Conversation_id, User_id),
+    FOREIGN KEY (Turn_id, Conversation_id)
+        REFERENCES Turn(Turn_id, Conversation_id)
 );
 
 CREATE TABLE IF NOT EXISTS Document (

@@ -209,6 +209,9 @@ def append_conversation(username: str, history_text: str):
         traceback.print_exc()
 
 
+initialize_all()
+
+
 # =================================================================
 # 4. STATUS
 # =================================================================
