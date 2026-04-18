@@ -9,6 +9,7 @@ from itsdangerous import Signer, BadSignature
 import os
 import time
 import datetime
+import zlib
 from typing import Optional
 
 from load import *
@@ -84,6 +85,54 @@ app.add_middleware(
 
 def get_client_ip(request: Request):
     return request.client.host
+
+
+def username_to_user_id(username: str) -> int:
+    return zlib.crc32(str(username).encode("utf-8")) & 0x7FFFFFFF
+
+
+def get_current_user_id(session: Optional[str]) -> int:
+    username = get_session_username(session)
+    if not username:
+        raise HTTPException(status_code=401, detail="Not logged in")
+    return username_to_user_id(username)
+
+
+def user_owns_conversation(user_id: int, conversation_id: int) -> bool:
+    rows = execute_sql(
+        """
+        SELECT 1
+        FROM Conversation
+        WHERE Conversation_id = %s AND User_id = %s
+        LIMIT 1
+        """,
+        (conversation_id, user_id),
+        fetch=True
+    )
+    return bool(rows)
+
+
+def get_next_conversation_id() -> int:
+    rows = execute_sql(
+        "SELECT COALESCE(MAX(Conversation_id), 0) AS max_conversation_id FROM Conversation",
+        fetch=True
+    )
+    return int(rows[0]["max_conversation_id"]) + 1
+
+
+def create_conversation_for_user(username: str) -> int:
+    user_id = username_to_user_id(username)
+    ensure_user_exists(user_id, username)
+    conversation_id = get_next_conversation_id()
+    insert_conversation(conversation_id, user_id)
+    return conversation_id
+
+
+def extract_user_question(query_text: str) -> str:
+    marker = "current question:"
+    if marker in query_text:
+        return query_text.split(marker, 1)[1].strip()
+    return query_text.strip()
 
 
 def set_session(response: Response, username: str):
@@ -251,6 +300,7 @@ async def logout_post():
 class PromptInput(BaseModel):
     query: str
     lang: str = "none"
+    conversation_id: Optional[int] = None
 
 
 @app.post("/api/prompt")
@@ -272,28 +322,39 @@ async def prompt(
     print("================================\n")
 
     current_question = decoded_query
+    user_id = username_to_user_id(username)
+    conversation_id = request_data.conversation_id
+
+    if conversation_id is None:
+        conversation_id = create_conversation_for_user(username)
+    elif not user_owns_conversation(user_id, int(conversation_id)):
+        raise HTTPException(status_code=403, detail="Conversation does not belong to the current user")
+
+    question_for_storage = extract_user_question(decoded_query)
 
     try:
         answer = graph_rag2.query(current_question)
         print("Model answer")
         if target_lang == "none":
+            insert_turn_auto(int(conversation_id), question_for_storage, answer, 0)
             print("No translation requested, returning original answer.")
             append_conversation(username, current_question + "\n\nmodel: " + answer)
             print("Conversation appended without translation.")
-            return {"answer": answer}
+            return {"answer": answer, "conversation_id": int(conversation_id)}
 
         print("Translating answer to", target_lang)
         translated = translate_text_multilingual(
             answer, target_language=target_lang.capitalize()
         )
         print("Translation complete")
+        insert_turn_auto(int(conversation_id), question_for_storage, translated, 0)
 
         append_conversation(
             username,
             current_question + f"\n\n---\n\n[Translated to {target_lang}]:\n\n" + translated
         )
         print("Conversation appended")
-        return {"answer": translated}
+        return {"answer": translated, "conversation_id": int(conversation_id)}
 
     except Exception as e:
         print(f"❌ EXCEPTION IN /prompt: {type(e).__name__}: {str(e)}")
@@ -332,6 +393,151 @@ async def upload_file(
     return {"success": True, "message": message}
 
 
+@app.get("/api/my/conversations")
+def get_my_conversations(
+    session: Optional[str] = Cookie(default=None),
+    order_time: bool = True,
+    order_rating: bool = False
+):
+    username = get_session_username(session)
+    if not username:
+        raise HTTPException(status_code=401, detail="Not logged in")
+
+    user_id = username_to_user_id(username)
+    ensure_user_exists(user_id, username)
+
+    query = """
+        SELECT
+            c.Conversation_id,
+            c.User_id,
+            u.Username,
+            MAX(t.time) AS latest_time,
+            AVG(t.rating) AS avg_rating,
+            COUNT(t.Turn_id) AS turn_count
+        FROM Conversation c
+        JOIN User u ON c.User_id = u.User_id
+        LEFT JOIN Turn t ON c.Conversation_id = t.Conversation_id
+        WHERE c.User_id = %s
+        GROUP BY c.Conversation_id, c.User_id, u.Username
+    """
+
+    if order_time and order_rating:
+        query += " ORDER BY latest_time DESC, avg_rating DESC"
+    elif order_time:
+        query += " ORDER BY latest_time DESC"
+    elif order_rating:
+        query += " ORDER BY avg_rating DESC"
+    else:
+        query += " ORDER BY c.Conversation_id ASC"
+
+    return execute_sql(query, (user_id,), fetch=True)
+
+
+@app.post("/api/my/conversations")
+def create_my_conversation(session: Optional[str] = Cookie(default=None)):
+    username = get_session_username(session)
+    if not username:
+        raise HTTPException(status_code=401, detail="Not logged in")
+
+    conversation_id = create_conversation_for_user(username)
+    return {"conversation_id": conversation_id}
+
+
+@app.get("/api/my/conversation/{conversation_id}")
+def get_my_conversation_turns(
+    conversation_id: int,
+    session: Optional[str] = Cookie(default=None)
+):
+    user_id = get_current_user_id(session)
+    if not user_owns_conversation(user_id, conversation_id):
+        raise HTTPException(status_code=403, detail="Conversation does not belong to the current user")
+
+    return get_turns(conversation_id)
+
+
+@app.post("/api/vote")
+async def vote(request: Request, session: Optional[str] = Cookie(default=None)):
+    data = await request.json()
+    turn_id = int(data["turn_id"])
+    conversation_id = int(data["conversation_id"])
+    vote_value = int(data["vote"])
+
+    if vote_value not in (-1, 0, 1):
+        raise HTTPException(status_code=400, detail="Vote must be -1, 0, or 1")
+
+    user_id = get_current_user_id(session)
+    if not user_owns_conversation(user_id, conversation_id):
+        raise HTTPException(status_code=403, detail="Conversation does not belong to the current user")
+
+    if vote_value == 0:
+        execute_sql(
+            """
+            DELETE FROM Vote
+            WHERE Turn_id = %s AND Conversation_id = %s AND User_id = %s
+            """,
+            (turn_id, conversation_id, user_id)
+        )
+    else:
+        execute_sql(
+            """
+            INSERT INTO Vote (User_id, Turn_id, Conversation_id, vote)
+            VALUES (%s, %s, %s, %s)
+            ON DUPLICATE KEY UPDATE vote = VALUES(vote)
+            """,
+            (user_id, turn_id, conversation_id, vote_value)
+        )
+
+    return {"success": True}
+
+
+@app.get("/api/votes/{turn_id}")
+def get_vote_score(
+    turn_id: int,
+    conversation_id: Optional[int] = None,
+    session: Optional[str] = Cookie(default=None)
+):
+    where_clauses = ["Turn_id = %s"]
+    params = [turn_id]
+
+    if conversation_id is not None:
+        user_id = get_current_user_id(session)
+        if not user_owns_conversation(user_id, conversation_id):
+            raise HTTPException(status_code=403, detail="Conversation does not belong to the current user")
+        where_clauses.append("Conversation_id = %s")
+        params.append(conversation_id)
+
+    score_rows = execute_sql(
+        f"""
+        SELECT COALESCE(SUM(vote), 0) AS score
+        FROM Vote
+        WHERE {' AND '.join(where_clauses)}
+        """,
+        tuple(params),
+        fetch=True
+    )
+
+    user_vote = 0
+    username = get_session_username(session)
+    if username:
+        user_rows = execute_sql(
+            f"""
+            SELECT vote
+            FROM Vote
+            WHERE {' AND '.join(where_clauses)} AND User_id = %s
+            LIMIT 1
+            """,
+            tuple(params + [username_to_user_id(username)]),
+            fetch=True
+        )
+        if user_rows:
+            user_vote = int(user_rows[0]["vote"])
+
+    return {
+        "score": int(score_rows[0]["score"]) if score_rows else 0,
+        "user_vote": user_vote,
+    }
+
+
 # =================================================================
 # 11. REACT FRONTEND
 # =================================================================
@@ -340,6 +546,7 @@ async def upload_file(
 @app.get("/login", response_class=HTMLResponse)
 @app.get("/signup", response_class=HTMLResponse)
 @app.get("/chat", response_class=HTMLResponse)
+@app.get("/vote", response_class=HTMLResponse)
 async def serve_react_app():
     index_path = os.path.join(REACT_BUILD_DIR, "index.html")
     if os.path.exists(index_path):
