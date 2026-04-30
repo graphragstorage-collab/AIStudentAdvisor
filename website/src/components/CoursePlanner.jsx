@@ -122,7 +122,7 @@ const CoursePlanner = () => {
               min="1"
               max="18"
               value={creditsPerSemester}
-              onChange={(event) => setCreditsPerSemester(event.target.value)}
+              onChange={(event) => setCreditsPerSemester(Number(event.target.value))}
             />
           </label>
           <label className="taken-input">
