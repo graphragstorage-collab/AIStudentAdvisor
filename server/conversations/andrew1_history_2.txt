@@ -1,0 +1,85 @@
+
+===============================
+2026-04-29 10:38:41
+Q:
+Tell me about fall CS 300 level courses I should take and what I should expect out of them.
+
+A:
+For **Fall 2025**, the Purdue CS **300-level courses** listed in the provided context are:
+
+- **CS 30700 — Software Engineering I** — Jeffrey A. Turkstra  
+- **CS 31100 — Competitive Programming II** — Arvind Ramaswami  
+- **CS 31400 — Numerical Methods** — Alex Pothen  
+- **CS 33400 — Fundamentals of Computer Graphics** — Voicu S. Popescu  
+- **CS 34800 — Information Systems** — Hisham R. Benotman  
+- **CS 35200 — Compilers: Principles and Practice** — Changhee Jung  
+- **CS 35400 — Operating Systems** — Douglas E. Comer  
+- **CS 35500 — Introduction To Cryptography** — Hemanta K. Maji  
+- **CS 36100 — Great Issues In Computer Science** — Gustavo A. J. Rodriguez-Rivera  
+- **CS 37300 — Data Mining And Machine Learning** — Dan Goldwasser, Bruno Ribeiro  
+- **CS 38003 — Python Programming** — Sai Lakshminarayanan Balakrishnan  
+- **CS 38100 — Introduction To The Analysis Of Algorithms** — Alexandros Psomas, Tamal Krishna Dey  
+
+Source context: Purdue **2025 Fall Courses** page in the provided material.
+
+### What you should expect
+The context gives detailed expectations for only a few of these, so there is some **hallucination risk** if I go beyond what’s explicitly provided.
+
+#### From the course titles alone, you can generally expect:
+- **CS 30700 Software Engineering I**: team-based software development, design practices, testing, and project organization.
+- **CS 31100 Competitive Programming II**: advanced problem solving, algorithmic thinking, and contest-style coding.
+- **CS 31400 Numerical Methods**: computational techniques for solving mathematical problems approximately.
+- **CS 33400 Computer Graphics**: graphical rendering, geometric modeling, and graphics systems concepts.
+- **CS 34800 Information Systems**: databases and information organization.  
+  - The provided context includes a **CS34800 Lecture 1** page discussing:
+    - relational data models
+    - schemas vs. instances
+    - primary and foreign keys
+    - relational tables and domains  
+  So you should expect foundational database concepts at minimum.
+- **CS 35200 Compilers**: programming language translation, parsing, and compiler design.
+- **CS 35400 Operating Systems**: processes, memory, systems-level abstractions, and OS design.
+- **CS 35500 Cryptography**: encryption, security primitives, and mathematical foundations of secure communication.
+- **CS 36100 Great Issues in Computer Science**: broader social, ethical, or professional issues in computing.
+- **CS 37300 Data Mining and Machine Learning**: extracting patterns from data and basic ML methods.
+- **CS 38003 Python Programming**: Python software development and language fluency.
+- **CS 38100 Analysis of Algorithms**: algorithm design and analysis.
+
+#### For **CS 38100**, the context is much more specific
+Although the detailed materials are for **Spring 2026**, they strongly suggest what the course is like:
+- Topics include:
+  - searching and sorting
+  - induction and recursion
+  - graph algorithms
+  - NP-completeness
+  - network flow
+  - randomized algorithms and data structures
+- Structure includes:
+  - weekly homework
+  - midterms and a final
+  - proofs of correctness
+  - algorithm design and analysis
+- Grading in that version:
+  - Homework **25%**
+  - Midterm 1 **20%**
+  - Midterm 2 **25%**
+  - Final **30%**
+- Homework was due weekly by **Thursday at 11:59 PM**
+- Late work policy in that version: up to **4 days late** with a **35% penalty**
+
+Because this detailed CS 381 information is from **Spring 2026**, not Fall 2025, treat it as a **strong clue, not a guaranteed Fall 2025 syllabus**.
+
+### How to choose among them
+A simple way to decide:
+
+- Choose **CS 38100** if you want stronger theory/algorithms foundations.
+- Choose **CS 34800** if you want databases / data systems.
+- Choose **CS 35400** if you want systems and low-level computing.
+- Choose **CS 35200** if you like languages, compilers, and program internals.
+- Choose **CS 37300** if you want AI/ML/data-oriented work.
+- Choose **CS 35500** if you like math-heavy security topics.
+- Choose **CS 30700** if you want practical software engineering experience.
+
+If you want, I can also turn this into:
+1. a **recommended fall 300-level schedule**, or  
+2. a **“which course fits my interests/career goals” guide**.
