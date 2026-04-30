@@ -8,7 +8,7 @@ import {
 } from '../data/coursePlanner';
 import './CoursePlanner.css';
 
-const defaultTaken = 'MA16100, MA16200, CS19300, CS18000, CS18200, CS24000';
+const defaultTaken = 'CS18000, CS18200, CS24000';
 
 const buildGraphLayout = (nodes, edges) => {
   const width = 1120;
@@ -70,8 +70,7 @@ const CoursePlanner = () => {
     <div className="planner-page">
       <header className="app-shell-nav">
         <div className="brand-mark" aria-label="AI Student Advisor">
-          <span>AI</span>
-          <strong>Student Advisor</strong>
+          <strong>AI Student Advisor</strong>
         </div>
         <nav>
           <button type="button" onClick={() => navigate('/chat')}>CHAT</button>

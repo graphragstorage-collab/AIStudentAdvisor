@@ -166,8 +166,7 @@ const VotePage = () => {
     <div className="vote-page">
       <header className="app-shell-nav">
         <div className="brand-mark" aria-label="AI Student Advisor">
-          <span>AI</span>
-          <strong>Student Advisor</strong>
+          <strong>AI Student Advisor</strong>
         </div>
         <nav>
           <button type="button" onClick={() => navigate('/chat')}>CHAT</button>

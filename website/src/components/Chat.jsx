@@ -219,8 +219,7 @@ const Chat = () => {
     <div className="chat-container">
       <header className="app-shell-nav">
         <div className="brand-mark" aria-label="AI Student Advisor">
-          <span>AI</span>
-          <strong>Student Advisor</strong>
+          <strong>AI Student Advisor</strong>
         </div>
         <nav>
           <button type="button" className="active">CHAT</button>
