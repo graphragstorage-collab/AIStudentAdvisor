@@ -545,11 +545,11 @@ def get_vote_score(
 # 11. REACT FRONTEND
 # =================================================================
 
-@app.get("/", response_class=HTMLResponse)
 @app.get("/login", response_class=HTMLResponse)
 @app.get("/signup", response_class=HTMLResponse)
 @app.get("/chat", response_class=HTMLResponse)
 @app.get("/vote", response_class=HTMLResponse)
+@app.get("/planner", response_class=HTMLResponse)
 async def serve_react_app():
     index_path = os.path.join(REACT_BUILD_DIR, "index.html")
     if os.path.exists(index_path):
@@ -573,6 +573,11 @@ npm run build
             </body>
         </html>
         """)
+
+
+@app.get("/", response_class=HTMLResponse)
+async def root_login_redirect():
+    return RedirectResponse("/login", status_code=302)
 
 
 # =========================

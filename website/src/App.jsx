@@ -4,6 +4,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Chat from './components/Chat';
 import VotePage from './components/VotePage';
+import CoursePlanner from './components/CoursePlanner';
 import './App.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/chat" element={<Chat />} />
           <Route path="/vote" element={<VotePage />} />
+          <Route path="/planner" element={<CoursePlanner />} />
         </Routes>
       </div>
     </Router>

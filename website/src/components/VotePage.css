@@ -1,8 +1,18 @@
 .vote-page {
   min-height: 100vh;
-  padding: 24px;
-  background: #f6f7f8;
-  color: #111;
+  background:
+    radial-gradient(circle at 16% 10%, rgba(107, 229, 190, 0.16), transparent 30%),
+    linear-gradient(180deg, #151c43 0%, #0f1534 60%, #080c22 100%);
+  color: #f7fbff;
+}
+
+.vote-page-header,
+.vote-toolbar,
+.vote-status,
+.vote-feed {
+  width: min(1040px, calc(100% - 32px));
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .vote-page-header {
@@ -10,33 +20,39 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 20px;
+  padding: 30px 0 18px;
 }
 
 .vote-page-header h1 {
-  margin: 0 0 6px;
-  font-size: 28px;
+  margin: 0 0 8px;
+  font-size: clamp(34px, 6vw, 62px);
+  line-height: 0.98;
 }
 
 .vote-page-header p {
   margin: 0;
-  color: #555;
+  color: rgba(247, 251, 255, 0.72);
 }
 
 .vote-page-actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
 .back-btn,
 .new-chat-btn {
-  padding: 10px 14px;
-  background: #000;
-  color: gold;
-  border: 1px solid #daa520;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
+  padding: 10px 16px;
+  border: 1px solid rgba(107, 229, 190, 0.45);
+  border-radius: 999px;
+  background: rgba(107, 229, 190, 0.16);
+  color: #fff;
+  font-weight: 900;
+}
+
+.back-btn:hover,
+.new-chat-btn:hover {
+  background: rgba(107, 229, 190, 0.3);
 }
 
 .vote-toolbar {
@@ -44,47 +60,54 @@
   align-items: center;
   gap: 12px;
   margin-bottom: 18px;
+  padding: 14px;
+  border: 1px solid rgba(107, 229, 190, 0.22);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .vote-toolbar label {
-  font-weight: 600;
+  font-weight: 900;
+  color: #6be5be;
 }
 
 .vote-toolbar select {
   min-width: 220px;
   padding: 10px 12px;
-  border: 1px solid #ccc;
+  border: 1px solid rgba(107, 229, 190, 0.34);
   border-radius: 8px;
-  background: #fff;
+  background: rgba(8, 12, 32, 0.8);
+  color: #fff;
 }
 
 .vote-status {
   padding: 14px 16px;
   margin-bottom: 16px;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+  border: 1px solid rgba(107, 229, 190, 0.22);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .vote-status.error {
-  border-color: #d88;
-  background: #fff5f5;
-  color: #8a1f1f;
+  border-color: rgba(255, 125, 125, 0.45);
+  background: rgba(255, 125, 125, 0.12);
+  color: #ffd6d6;
 }
 
 .vote-feed {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  padding-bottom: 36px;
 }
 
 .vote-card {
   position: relative;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 12px;
   padding: 18px 72px 18px 18px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(107, 229, 190, 0.22);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
 }
 
 .vote-card-content {
@@ -95,23 +118,21 @@
 
 .turn-id {
   font-size: 12px;
-  color: #777;
+  color: #6be5be;
+  font-weight: 900;
 }
 
 .turn-q {
-  font-weight: 700;
+  font-weight: 900;
 }
 
 .turn-a {
+  color: rgba(247, 251, 255, 0.76);
   white-space: pre-wrap;
   line-height: 1.5;
 }
 
 @media (max-width: 720px) {
-  .vote-page {
-    padding: 16px;
-  }
-
   .vote-page-header {
     flex-direction: column;
   }
