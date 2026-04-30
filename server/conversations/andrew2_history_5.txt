@@ -1,0 +1,141 @@
+
+===============================
+2026-04-29 10:28:17
+Q:
+tell me about fall CS 300 level courses I should take and what I should expect out of them.
+
+A:
+Hallucination risk warning: the context is sparse for **Fall** offerings. It includes a Purdue CS **2025 Fall** course list and some **Spring 2026** material, but not a full official **Fall 2026** schedule. So I can summarize the fall **300-level courses visible in the context** and what to expect, but I should not claim this is the complete current Fall 2026 list.
+
+Here are the **Fall Purdue CS 300-level courses** shown in the provided context from the **2025 Fall course page**:
+
+### CS 30700 — Software Engineering I
+- **Instructor listed in context:** Jeffrey A. Turkstra
+- **What to expect:**
+  - Agile methods
+  - Software lifecycle concepts
+  - Team-based project work
+  - Practical software development rather than deep theory
+- **Good for:** students who want industry-style development experience.
+- **Workload vibe:** usually steady and project-centered; success can depend a lot on team coordination.
+
+### CS 31100 — Competitive Programming II
+- **Instructor listed in context:** Arvind Ramaswami
+- **What to expect:**
+  - Algorithmic problem solving
+  - Contest-style programming
+  - Fast, efficient coding under constraints
+- **Good for:** students who enjoy coding challenges, ICPC-style prep, or technical interview practice.
+- **Workload vibe:** intellectually sharp and practice-heavy.
+
+### CS 31400 — Numerical Methods
+- **Instructor listed in context:** Alex Pothen
+- **What to expect:**
+  - Computational math methods
+  - Solving numerical problems approximately and efficiently
+  - More mathematical/computational than typical programming-project courses
+- **Good for:** students interested in scientific computing, applied math, or engineering-oriented computation.
+- **Workload vibe:** conceptually technical, with math maturity helpful.
+
+### CS 33400 — Fundamentals of Computer Graphics
+- **Instructor listed in context:** Voicu S. Popescu
+- **What to expect:**
+  - Rendering
+  - Geometric transformations
+  - Graphics programming
+- **Good for:** students interested in visual computing, game graphics, simulation, or interactive systems.
+- **Workload vibe:** programming-heavy with mathematically geometric ideas.
+
+### CS 34800 — Information Systems
+- **Instructor listed in context:** Hisham R. Benotman
+- **What to expect:**
+  - Relational database design
+  - SQL
+  - Database-backed applications
+  - Practical data modeling and querying
+- **Good for:** software engineering, backend development, data applications, and anyone wanting useful industry database skills.
+- **Workload vibe:** practical and applied; expect SQL, schema design, and database application work.
+
+### CS 35500 — Introduction to Cryptography
+- **Instructor listed in context:** Hemanta K. Maji
+- **What to expect:**
+  - Mathematical foundations of cryptography
+  - Encryption/hash/signature concepts
+  - Proof-oriented reasoning depending on instructor emphasis
+- **Good for:** students interested in security and theory.
+- **Workload vibe:** typically mathematically demanding.
+
+### CS 36100 — Great Issues in Computer Science
+- **Instructor listed in context:** Gustavo A. J. Rodriguez-Rivera
+- **What to expect:**
+  - Ethics
+  - Privacy
+  - Intellectual property
+  - Social impacts of computing
+- **Good for:** students wanting a lighter technical load and broader professional context.
+- **Workload vibe:** usually more reading/writing/discussion than coding.
+
+### CS 37300 — Data Mining and Machine Learning
+- **Instructor listed in context:** Dan Goldwasser, Bruno Ribeiro
+- **What to expect:**
+  - Applied ML algorithms
+  - Classification, clustering, data preprocessing
+- **Good for:** students interested in AI/data science applications.
+- **Workload vibe:** can be moderately to highly demanding, depending on your stats/programming background.
+
+### CS 38003 — Python Programming
+- **Instructor listed in context:** Sai Lakshminarayanan Balakrishnan
+- **What to expect:**
+  - Python-focused programming
+  - Likely practical coding and language fluency
+- **Good for:** students wanting a useful programming elective or more Python comfort.
+- **Workload vibe:** generally more accessible than proof-heavy theory classes.
+
+### CS 38100 — Introduction to the Analysis of Algorithms
+- **Instructor listed in context:** Alexandros Psomas, Tamal Krishna Dey
+- **What to expect:**
+  - Advanced algorithm analysis
+  - NP-completeness
+  - Dynamic programming
+  - Greedy methods
+  - Proof-heavy reasoning
+- **Good for:** students who are strong in mathematical thinking and want deeper algorithmic foundations.
+- **Workload vibe:** one of the more theory-heavy and difficult 300-levels.
+
+## Recommendations by interest
+
+### If you want practical software skills
+Take:
+- **CS 30700**
+- **CS 34800**
+- **CS 38003**
+
+### If you want theory / interview prep
+Take:
+- **CS 31100**
+- **CS 38100**
+- possibly **CS 35500**
+
+### If you want AI / data
+Take:
+- **CS 37300**
+- **CS 34800** as a useful complement for data systems
+
+### If you want visually interesting programming
+Take:
+- **CS 33400**
+
+### If you want a lighter technical balance
+Take:
+- **CS 36100**
+
+## What I’d broadly expect from these courses
+- **307, 348, 334, 373**: more applied/project or implementation oriented
+- **381, 355, 311**: more intellectually intense, algorithmic, or mathematical
+- **361**: broader social/professional issues, less coding-heavy
+- **314**: math/computation bridge course
+- **38003**: practical programming utility
+
+If you want, I can also give you:
+1. a **best 2–4 course combo for Fall** based on your interests, or  
+2. a **ranking of these 300-level courses by difficulty, workload, and usefulness for jobs**.

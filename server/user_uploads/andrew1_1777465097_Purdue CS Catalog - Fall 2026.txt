@@ -1,0 +1,168 @@
+**Purdue University Computer Science Catalog: Projected Fall 2026 Course Offerings for West Lafayette and Indianapolis Campuses** 
+
+This document outlines the anticipated Computer Science courses for Fall 2026 at Purdue University, detailing offerings for both the West Lafayette and Indianapolis campuses. It includes information on course names, descriptions, instructor assignments, difficulty ratings, and historical average GPAs, based on established curriculum trends and recent catalog data within the Computer Science department.
+
+Purdue  University  Computer  Science
+Catalog
+
+-
+
+Fall
+
+2026
+
+(Projected)
+
+This  document  provides  a  comprehensive  overview  of  the  projected  Fall  2026  Computer
+Science
+
+courses
+
+for
+
+both
+
+the
+
+West
+
+Lafayette
+
+and
+
+Indianapolis
+
+campuses.
+
+Instructor
+
+assignments,
+
+difficulty
+
+ratings,
+
+and
+
+historical
+
+average
+
+GPAs
+
+are
+
+based
+
+on
+
+standard
+
+Purdue
+
+University
+
+Computer
+
+Science
+
+curriculum
+
+trends
+
+and
+
+recent
+
+catalog
+
+data.
+
+Undergraduate  West  Lafayette  Catalog
+Course  Name  Course  Description  &  Notes
+Fall  2026  Instructor
+Difficulty  Avg  GPA
+
+CS  10100  Digital  Literacy
+Basic  computing  concepts  for  non-majors.  No  prior  background  needed.
+TBA  Low  ~3.5
+CS  15900  C  Programming
+Foundational  C  programming,  primarily  for  First-Year  Engineering.  Heavy  focus  on  syntax  and  memory  basics.
+William  N.  Crum  (Historical)
+Med-High  ~2.8
+CS  18000  Problem  Solving  And  OOP
+Gateway  course  for  CS  majors.  Intensive  introduction  to  OOP  using  Java.  Includes  a  major  team  project.
+H.  E.  Dunsmore  (Historical)
+Med-High  ~3.0
+Course  Name  Course  Description  &  Notes
+Fall  2026  Instructor
+Difficulty  Avg  GPA
+
+CS  18200  Foundations  Of  Computer  Science
+Discrete  mathematics,  logic,  proofs,  combinatorics.  Highly  theoretical;  strong  math  background  recommended.
+Anuran  Makur  [3]  High  ~2.7
+CS  24000  Programming  In  C
+Advanced  C,  pointers,  memory  allocation,  and  data  structures.  First  major  hurdle  for  CS  majors.
+Jeffrey  A.  Turkstra  (Historical)
+High  ~2.6
+CS  25000  Computer  Architecture
+Digital  logic,  assembly  language,  CPU  design.  Hardware-focused.
+TBA  High  ~2.7
+CS  25100  Data  Structures  And  Algorithms
+Core  algorithmic  concepts.  The  most  important  class  for  passing  software  engineering  job  interviews.
+TBA  High  ~2.8
+CS  25200  Systems  Programming
+Operating  systems  at  the  user  level,  networking,  concurrency.  Very
+G.  Rodriguez-Rivera  (Historical)
+Very  High  ~2.6
+Course  Name  Course  Description  &  Notes
+Fall  2026  Instructor
+Difficulty  Avg  GPA
+
+time-consuming.
+CS  38100  Analysis  Of  Algorithms
+Advanced  algorithms,  NP-completeness.  Capstone  of  the  theoretical  CS  track.
+TBA  Very  High  ~2.7
+CS  400-Level  Electives  (407,  422,  426,  448,  etc.)
+Senior-level  track  requirements  covering  Networking,  Security,  DB  internals,  AI.
+Varies  Varies  ~2.8  -  3.5
+
+Undergraduate  Indianapolis  Catalog
+Course  Name  Course  Description
+Fall  2026  Instructor
+Difficulty  Avg  GPA
+
+CS  18200  Foundations  Of  Computer  Science
+Discrete  mathematics,  logic,  proofs.  Taught  cross-campus.
+Abdullah  Imran  [3]  High  ~2.7
+CSCI  40300  Intro  To  Operating  Systems
+Core  OS  concepts,  resource  management,  synchronization.  Legacy  IUPUI/Indy
+TBA  High  ~2.8
+Course  Name  Course  Description
+Fall  2026  Instructor
+Difficulty  Avg  GPA
+
+track.
+CSCI  48400  Theory  Of  Computation
+Automata,  Turing  machines,  and  formal  languages.  Highly  theoretical.
+Snehasis  Mukhopadhyay  (Historical)
+High  ~2.9
+
+Graduate  Catalog  (500/600  Level)
+Course  Name  /  Topic  Track  Course  Description  Fall  2026  Instructor
+
+CS  59200  ATP  AI  Thought  Partners
+Graduate  seminar  on  AI  models  as  thought  partners.  Emphasizes  student  presentations.
+Ilia  Sucholutsky  [1]
+Systems  &  Architecture  (502,  503,  525,  593-PCA)
+Compilers,  OS  internals,  parallel  computing,  computer  architecture.  Very  rigorous  workload.
+C.  Jung,  P.  Fonseca,  M.  Taram
+Security  (523,  527,  528,  592-AAS)
+Legal  aspects,  software/network  security,  AI  Agentic  Security.  Research-heavy  CERIAS  topics.
+E.  Spafford,  A.  Bianchi,  E.  Bertino  [2]
+AI  &  Machine  Learning  (578,  587,  593-TML)
+Statistical  ML,  Deep  Learning,  Trustworthy  ML.  Project-heavy  track  requiring  GPU  usage.
+A.  Makur,  B.  Ribeiro,  H.  Xiao  [2]
+
+References
+1.  Purdue  CS  Graduate  Variable  Title  Courses  (Fall  2026  Data) 2.  College  of  Science  -  All  Current  Approved  Courses 3.  BoilerClasses  -  CS  182  Foundations  of  Computer  Science  Fall  2026

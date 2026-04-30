@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown'; // Added import
 import './Chat.css';
 
 const welcomeMessage = {
@@ -243,7 +244,8 @@ const Chat = () => {
       <div className="chatbox" ref={chatboxRef}>
         {messages.map((msg, index) => (
           <div key={index} className={`msg-${msg.role === 'user' ? 'user' : 'bot'}`}>
-            {msg.content}
+            {/* Render content as Markdown */}
+            <ReactMarkdown>{msg.content}</ReactMarkdown>
           </div>
         ))}
       </div>
