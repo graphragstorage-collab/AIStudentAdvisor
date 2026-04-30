@@ -1,0 +1,84 @@
+**CS381: Advanced Data Structures - Binomial Heaps Analysis and Operations** 
+
+This document presents an in-depth analysis of binomial heaps, focusing on their structural properties, insertion, and deletion operations, as part of the CS381 course in the Computer Science department. The discussion includes the mathematical foundation of heap ranks, the merging process of heaps, and the amortized time complexities associated with insertion and deletion operations. The findings illustrate the efficiency of binomial heaps in managing dynamic sets of elements, emphasizing their logarithmic performance characteristics in deletion and constant time complexity in insertion.
+
+Hw10-CS381
+Andrew Qian
+April 2026
+1 23.1
+1. A heap of rank i is 2 i nodes in size.
+2. The binomial heap can have anywhere from 1 heap tolog(n) + 1 heaps
+(rounded down). Two heaps of i merge to become a heap of i + 1 rank with
+double the nodes. The rules for insertion can end up in a scenario in which you
+have a tree of rank 0, rank 1, rank 2, rank 3, all the way up to ranklog(n)
+(rounded down) which total up to n nodes. Or it could have heaps of any
+of those ranks merged already to give a smaller count of heaps. This can be
+intuited by a binary representation of n with each 1 being a heap. The max
+possible heaps is therefore shown from this setup.
+3.
+Induction Hypothesis: A tree of rank i ¿ 0 has i children under its
+root and each children is the root of a tree of rank j - 1 where j is
+the children number from the left.
+Induction base: the tree is rank 1, the 1 child of the root is rank 0.
+Step:
+1. Assume tree of rank i - 1 fulfills the hypothesis. To
+make a tree of rank i you merge two rank i - 1 heaps.
+2. Merge by comparing roots. The smaller root becomes
+new root, larger root becomes a child. Now the tree of
+rank i has i children and the ith child is one of the two
+trees used to merge. The other children from j = 1 to j =
+i - 1 all have j - 1 rank.
+This proves the induction hypothesis that all trees of rank i ¿ 0 will
+have i children with the jth child have j - 1 rank for j = 1 to j = i.
+4.
+Insertion:
+1. Merge the initial value x with any rank 0 heap. Then
+merge the rank 1 heap with any rank 1 heap, and so on,
+until there is no other heap of the same rank. Store the
+1
+heaps as linked lists with each node being a structure with
+pointers to children and with a overall structure of all the
+roots and the minimum root. This allows us to track the
+minimum value for deletion. For merging, set the larger
+root to be pointed to by the smaller root creating a new
+tree, then remove the larger root from the binomial outer
+structure.
+Runtime: This is amortized O(1) because we can repre-
+sent the insertion of a new element into the binomial heap
+as taking the binary representation of n (total number of
+nodes in heap before insertion) and adding one to it. Each
+time a one flips (besides the 0th bit) it is a merge. We can
+then assign credits like we did for incrementing a binary
+number, 1 to the 0th bit, 1/2 to the 1st bit, 1/4 to the 2nd
+bit, and so on. Every-time an item is inserted this way,
+the amount of current credits will be enough cover the
+number of flips IE the number of merges. The amortized
+time is therefore constant.
+Deletion:
+2. Remove the root of the tree with the minimum value.
+Then proceed to merge up each child heap with other
+heaps of the same size, then merge up the resulting heap
+until there is at most one heap per rank. Iterate through
+all children pointed to by the minimum root and pre-
+form the merge operation shown in the insertion algorithm
+above for each children. Update the minimum value to be
+one of the children or another root.
+Runtime: This is amortized O(logn). The process of re-
+moving the value is constant, the process of going through
+each child is O(logn) given there is at most logn children
+corresponding to the highest possible rank. Unlike for in-
+sertion, if we include deletion, we can switch from assign-
+ing credits to assigning potential. The potential is where
+we use existing ranks within the binomial heap to make
+a binary representation, with 1 denoting the existence of
+rank i for the ith bit. We can then say the potential is then
+number of 1 values in that representation. This means ev-
+ery insertion changes the potential by a constant amount
+or brings the potential down (+1 or completly wipes the
+potential) while for deletion, the number of new heaps is
+at most logn. The new logn heaps means the potential for
+logn new merges for future insertion and deletions. This
+2
+means deletion is amortized, as shown with this potential
+function, to be O(logn) time complexity.
+3

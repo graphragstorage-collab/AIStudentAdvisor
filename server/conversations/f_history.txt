@@ -1,9 +1,0 @@
-
-===============================
-2026-03-02 01:11:20
-model: Welcome! Select a language below, then ask a question.
-
-==============================
-current question: who is teaching cs471
-
-model: The instructors for CS47100: Introduction to Artificial Intelligence are **Raymond A. Yeh** and **Brian Bullins**. If you have any more questions about the course, feel free to ask!

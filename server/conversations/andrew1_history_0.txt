@@ -1,0 +1,50 @@
+
+===============================
+2026-04-29 08:33:29
+Q:
+hi
+
+A:
+I can only assist with academic advising questions.
+
+===============================
+2026-04-29 08:33:44
+Q:
+who is your favorite professor?
+
+A:
+I can only assist with academic advising questions.
+
+===============================
+2026-04-29 10:47:25
+Q:
+give me all 200 classes for Fall 2026
+
+A:
+For **Fall 2026**, the **200-level Computer Science classes** in the provided Purdue CS course offerings context are:
+
+### West Lafayette — Undergraduate
+- **CS 21100** — Competitive Programming I — **Ethan Dickey**
+- **CS 24000** — Programming In C — **Konstantinos Ameranis**
+- **CS 24200** — Introduction To Data Science — **Tony Bergstrom**
+- **CS 24300** — Artificial Intelligence Basics — **Yexiang Xue**
+- **CS 25000** — Computer Architecture — **George B. Adams, III**
+- **CS 25100** — Data Structures And Algorithms — **Andres Bejarano**
+- **CS 25200** — Systems Programming — **Gustavo Adolfo Junipero Rodriguez-Rivera**
+- **CS 25300** — Data Structures And Algorithms For DS/AI — **Konstantinos Ameranis**
+- **CS 29100-LE1** — Soph Development Seminar — **John R Langenkamp**
+
+### Indianapolis — Undergraduate
+- **CS 21100** — Competitive Programming I — **Deming Chu**
+- **CS 24000** — Programming In C — **Christopher K. May**
+- **CS 24200** — Introduction To Data Science — **Tony Bergstrom**
+- **CS 24300** — Artificial Intelligence Basics — **Mary Anne Smart**
+- **CS 25000** — Computer Architecture — **George B. Adams, III**
+- **CS 25100** — Data Structures And Algorithms — **Federico Cifuentes-Urtubey**
+- **CS 25200** — Systems Programming — **Christopher K. May**
+- **CS 25300** — Data Structures And Algorithms For DS/AI — **Federico Cifuentes-Urtubey**
+
+If you want, I can also:
+- group them by **required vs elective**,
+- include **prerequisites** where available, or
+- make a **clean schedule-planning checklist** for Fall 2026.

@@ -1,0 +1,34 @@
+Purdue University Fall 2026 CS & Mathematics Course Q&A Directory: Comprehensive Overview of Undergraduate and Graduate Courses Offered by the Computer Science and Mathematics Departments, Including Course Titles, Instructors, and Content Descriptions.
+
+.
+Q: What is covered in Differential Geometry?
+A: Curves, surfaces, Riemannian geometry, and curvature.
+MA 58400 — Algebraic Number Theory
+Q: What is MA 58400?
+A: MA 58400 is "Algebraic Number Theory," a Graduate course offered in Fall 2026.
+Q: Who teaches MA 58400?
+A: MA 58400 (Algebraic Number Theory) is taught by Shkredov, Ilia.
+Q: What is covered in Algebraic Number Theory?
+A: Dedekind domains, class number, Dirichlet unit theorem, and local fields.
+MA 58500 — Mathematical Logic I
+Q: What is MA 58500?
+A: MA 58500 is "Mathematical Logic I," a Graduate course offered in Fall 2026.
+Q: Who teaches MA 58500?
+A: MA 58500 (Mathematical Logic I) is taught by Thomas, Margaret.
+Q: What is covered in Mathematical Logic I?
+A: Predicate logic, completeness, and Godel's incompleteness theorems.
+MA 59500-QI — Mathematics for Quantum Information Science
+Q: What is MA 59500-QI?
+A: MA 59500-QI is "Mathematics for Quantum Information Science," a Graduate course offered in Fall 2026.
+Q: Who teaches MA 59500-QI?
+A: MA 59500-QI (Mathematics for Quantum Information Science) is taught by TBA.
+Q: What is covered in Mathematics for Quantum Information Science?
+A: Mathematical foundations of quantum computing and information theory.
+MA 59500-SQM — Semiclassical Analysis in Quantum Mechanics
+Q: What is MA 59500-SQM?
+A: MA 59500-SQM is "Semiclassical Analysis in Quantum Mechanics," a Graduate course offered in Fall
+2026.
+Q: Who teaches MA 59500-SQM?
+A: MA 59500-SQM (Semiclassical Analysis in Quantum Mechanics) is taught by TBA.
+Q: What is covered in Semiclassical Analysis in Quantum Mechanics?
+A: Wave-particle correspondence and semiclassical methods in PDE.

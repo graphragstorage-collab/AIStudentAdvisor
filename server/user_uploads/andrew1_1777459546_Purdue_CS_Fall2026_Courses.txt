@@ -1,0 +1,232 @@
+Purdue University Course Offerings for Fall 2026 in Computer Science
+
+This document outlines the undergraduate and graduate course offerings for the Computer Science department at Purdue University, covering both the West Lafayette and Indianapolis campuses. The catalog includes a comprehensive list of courses such as CS 10100 Digital Literacy, CS 18000 Problem Solving and Object-Oriented Programming, and CS 50100 Computing for Science and Engineering, among others. Each course is accompanied by the instructor's name, providing essential information for students planning their academic schedules. The offerings encompass a range of topics, from foundational skills in programming and data science to advanced studies in artificial intelligence and cryptography, reflecting the department's commitment to providing a robust education in computer science.
+
+Computer Science Courses
+Fall 2026
+Purdue University — West Lafayette & Indianapolis
+Undergraduate — West Lafayette
+Catalog Title Instructor
+CS 10100 Digital Literacy Fabrizio Cicala
+CS 17300 AI Competency Andres Bejarano
+CS 17600 Data Engineering In Python Xiaojin Liu
+CS 17700 Programming With Multimedia Objects Marta A. Crowe
+CS 18000 Problem Solving And Object-Oriented
+Programming Michael H. Borkowski
+CS 18200 Foundations Of Computer Science Anuran Makur
+CS 19000-CCC College Career Community In CS Jermaine Williams, Jr
+CS 21100 Competitive Programming I Ethan Dickey
+CS 24000 Programming In C Konstantinos Ameranis
+CS 24200 Introduction To Data Science Tony Bergstrom
+CS 24300 Artificial Intelligence Basics Yexiang Xue
+CS 25000 Computer Architecture George B. Adams, III
+CS 25100 Data Structures And Algorithms Andres Bejarano
+CS 25200 Systems Programming Gustavo Adolfo Junipero Rodriguez-
+rivera
+CS 25300 Data Structures And Algorithms For
+DS/AI Konstantinos Ameranis
+CS 29100-LE1 Soph Development Seminar John R Langenkamp
+CS 30700 Software Engineering I Jeffrey A. Turkstra
+CS 31100 Competitive Programming II Arvind Ramaswami
+CS 31400 Numerical Methods Alex Pothen
+CS 33400 Fundamentals Of Computer Graphics Daniel G. Aliaga
+CS 34800 Information Systems Hisham R. Benotman
+CS 35200 Compilers: Principles And Practice Changhee Jung
+CS 35400 Operating Systems Douglas E. Comer
+CS 35500 Introduction To Cryptography Hemanta K. Maji
+CS 36100 Great Issues In Computer Science Gustavo Adolfo Junipero Rodriguez-
+rivera
+CS 37300 Data Mining And Machine Learning Ruqi Zhang / Sotirios Nousias
+CS 38100 Introduction To The Analysis Of
+Algorithms Simina Branzei / Mikhail Atallah
+CS 39000-AF1 AI Forge I Bruno Ribeiro
+CS 39700 Honors Seminar Christina Garman
+CS 40700 Software Engineering Senior Project H. E. Dunsmore
+CS 40800 Software Testing Lin Tan
+CS 42200 Computer Networks Vamsi Addanki
+CS 42600 Computer Security Mohammadkazem Taram
+CS 43900 Introduction To Data Visualization Xavier Tricoche
+CS 44000 Large Scale Data Analytics Chunwei Liu
+CS 44100 Data Science Capstone Zachary Kingston
+CS 44800 Introduction To Relational Database
+Systems Elisa Bertino
+CS 45600 Programming Languages Suresh Jagannathan
+CS 45800 Introduction To Robotics Ahmed Qureshi
+CS 47100 Introduction To Artificial Intelligence Raymond A. Yeh / Brian Bullins
+CS 47300 Web Information Search And
+Management Hisham R. Benotman
+CS 47500 Human-Computer Interaction Sooyeon Jeong
+CS 47800 Introduction To Bioinformatics Michael Gribskov
+CS 48300 Introduction To The Theory Of
+Computation Wei Zhan
+CS 48900 Embedded Systems Douglas E. Comer
+CS 49000-001 Computational Genomics Majid Kazemian
+CS 49700 Honors Research Project Chunyi Peng
+Catalog Title Instructor
+CS 10100 Digital Literacy Fabrizio Cicala
+CS 17300 AI Competency Andres Bejarano
+CS 17600 Data Engineering In Python Xiaojin Liu
+CS 17700 Programming With Multimedia Objects Marta A. Crowe
+CS 18000 Problem Solving And Object-Oriented
+Programming Michael H. Borkowski
+CS 18200 Foundations Of Computer Science Anuran Makur
+CS 19000-CCC College Career Community In CS Jermaine Williams, Jr
+CS 21100 Competitive Programming I Ethan Dickey
+CS 24000 Programming In C Konstantinos Ameranis
+CS 24200 Introduction To Data Science Tony Bergstrom
+CS 24300 Artificial Intelligence Basics Yexiang Xue
+CS 25000 Computer Architecture George B. Adams, III
+CS 25100 Data Structures And Algorithms Andres Bejarano
+CS 25200 Systems Programming Gustavo Adolfo Junipero Rodriguez-
+rivera
+CS 25300 Data Structures And Algorithms For
+DS/AI Konstantinos Ameranis
+CS 29100-LE1 Soph Development Seminar John R Langenkamp
+CS 30700 Software Engineering I Jeffrey A. Turkstra
+CS 31100 Competitive Programming II Arvind Ramaswami
+CS 31400 Numerical Methods Alex Pothen
+CS 33400 Fundamentals Of Computer Graphics Daniel G. Aliaga
+CS 34800 Information Systems Hisham R. Benotman
+CS 35200 Compilers: Principles And Practice Changhee Jung
+CS 35400 Operating Systems Douglas E. Comer
+CS 35500 Introduction To Cryptography Hemanta K. Maji
+CS 36100 Great Issues In Computer Science Gustavo Adolfo Junipero Rodriguez-
+rivera
+CS 37300 Data Mining And Machine Learning Ruqi Zhang / Sotirios Nousias
+CS 38100 Introduction To The Analysis Of
+Algorithms Simina Branzei / Mikhail Atallah
+CS 39000-AF1 AI Forge I Bruno Ribeiro
+CS 39700 Honors Seminar Christina Garman
+CS 40700 Software Engineering Senior Project H. E. Dunsmore
+CS 40800 Software Testing Lin Tan
+CS 42200 Computer Networks Vamsi Addanki
+CS 42600 Computer Security Mohammadkazem Taram
+CS 43900 Introduction To Data Visualization Xavier Tricoche
+CS 44000 Large Scale Data Analytics Chunwei Liu
+CS 44100 Data Science Capstone Zachary Kingston
+CS 44800 Introduction To Relational Database
+Systems Elisa Bertino
+CS 45600 Programming Languages Suresh Jagannathan
+CS 45800 Introduction To Robotics Ahmed Qureshi
+CS 47100 Introduction To Artificial Intelligence Raymond A. Yeh / Brian Bullins
+CS 47300 Web Information Search And
+Management Hisham R. Benotman
+CS 47500 Human-Computer Interaction Sooyeon Jeong
+CS 47800 Introduction To Bioinformatics Michael Gribskov
+CS 48300 Introduction To The Theory Of
+Computation Wei Zhan
+CS 48900 Embedded Systems Douglas E. Comer
+CS 49000-001 Computational Genomics Majid Kazemian
+CS 49700 Honors Research Project Chunyi Peng
+Undergraduate — Indianapolis
+Catalog Title Instructor
+CS 15900 C Programming Carrie Melinda Rector
+CS 18000 Problem Solving And Object-Oriented
+Programming Abdullah Imran
+CS 18200 Foundations Of Computer Science Abdullah Imran
+CS 21100 Competitive Programming I Deming Chu
+CS 24000 Programming In C Christopher K. May
+CS 24200 Introduction To Data Science Tony Bergstrom
+CS 24300 Artificial Intelligence Basics Mary Anne Smart
+CS 25000 Computer Architecture George B. Adams, III
+CS 25100 Data Structures And Algorithms Federico Cifuentes-Urtubey
+CS 25200 Systems Programming Christopher K. May
+CS 25300 Data Structures And Algorithms For
+DS/AI Federico Cifuentes-Urtubey
+CS 30700 Software Engineering I Jeffrey A. Turkstra
+CS 35400 Operating Systems Kihong Park
+CS 37300 Data Mining And Machine Learning Mary Anne Smart
+CS 38003 Python Programming Sai Lakshminarayanan Balakrishnan
+CS 38100 Introduction To The Analysis Of
+Algorithms Kent Quanrud
+CS 47300 Web Information Search And
+Management Hisham R. Benotman
+CSCI — Indianapolis
+Catalog Title Instructor
+CSCI 40200 Architecture Of Computers Lucas A. Moser
+CSCI 40300 Introduction To Operating Systems Aaditya Kharel
+CSCI 43500 Multimedia Information Systems Jiang Yu Zheng
+CSCI 45000 Principles Of Software Engineering Stephen P. France
+CSCI 48400 Theory Of Computation Snehasis Mukhopadhyay
+CSCI 48700 Artificial Intelligence Snehasis Mukhopadhyay
+CSCI 49000-003 Computer Vision Jiang Yu Zheng
+CSCI 49000-AIT AI for Internet of Things Andrew P. Hoblitzell
+CSCI 49000-DPL Deep Learning Aaditya Kharel
+CSCI 49000-VA1 Visual Analytics Gavriil Tsechpenakis
+CSCI 49500 Explorations In Applied Computing Gavriil Tsechpenakis
+CSCIN 3000 Mobile Computing Fundamentals Lucas A. Moser
+Graduate — West Lafayette
+Catalog Title Instructor
+CS 50100 Computing For Science And
+Engineering Vernon J. Rego
+CS 50200 Compiling And Programming Systems Zhiyuan Li
+CS 50500 Distributed Systems Yongle Zhang
+CS 51400 Numerical Analysis Suchuan Dong
+CS 51500 Numerical Linear Algebra David Gleich
+CS 52600 Information Security Christina Garman
+CS 53200 Geometric Modeling Algorithms Bedrich Benes
+CS 53500 Interactive Computer Graphics Voicu S. Popescu
+CS 53600 Data Communication And Computer
+Networks Chunyi Peng
+CS 54100 Database Systems Walid G. Aref
+CS 55500 Cryptography Hanshen Xiao
+CS 56000 Reasoning About Programs Benjamin J. Delaware
+CS 57100 Artificial Intelligence Qiuyue Xue
+CS 57300 Data Mining Rajiv Khanna
+CS 57700 Natural Language Processing Dan Goldwasser
+CS 57800 Statistical Machine Learning Ruizhe Zhang
+CS 58000 Algorithm Design, Analysis, And
+Implementation Jeremiah M. Blocki
+CS 58100 Algorithmic Game Theory Alexandros Psomas
+CS 58900 Quantum Computing Yuxiang Peng
+CS 59100-RS1 Res Sem First Yr Gr Student Hemanta K. Maji
+CS 59100-TA1 Effective Teaching In CS Quiondriya Gee
+CS 59200-ATP AI Thought Partners Ilia Sucholutsky
+CS 59200-FIA Fault Injection Attacks Dave (Jing) Tian
+CS 59200-MLA Machine Learning & Algorithms Paul Valiant
+CS 59200-MSD ML System Co-Design Haoran You
+CS 59200-STB Special Topics In Blockchains Mahimna Kelkar
+CS 59300-ASE AI-Assisted Software Engineering Tianyi Zhang
+CS 59300-HCI Human-Computer Interaction Jason Wu
+CS 59300-ILR Imitation Learning/Robotics Rohan Paleja
+CS 59300-MLT Machine Learning Theory Steve Hanneke
+CS 59300-RL1 Reinforcement Learning Joseph Campbell
+CS 63800 Multimedia Networking And Operating
+Systems Sonia Fahmy
+Catalog Title Instructor
+CS 50100 Computing For Science And
+Engineering Vernon J. Rego
+CS 50200 Compiling And Programming Systems Zhiyuan Li
+CS 50500 Distributed Systems Yongle Zhang
+CS 51400 Numerical Analysis Suchuan Dong
+CS 51500 Numerical Linear Algebra David Gleich
+CS 52600 Information Security Christina Garman
+CS 53200 Geometric Modeling Algorithms Bedrich Benes
+CS 53500 Interactive Computer Graphics Voicu S. Popescu
+CS 53600 Data Communication And Computer
+Networks Chunyi Peng
+CS 54100 Database Systems Walid G. Aref
+CS 55500 Cryptography Hanshen Xiao
+CS 56000 Reasoning About Programs Benjamin J. Delaware
+CS 57100 Artificial Intelligence Qiuyue Xue
+CS 57300 Data Mining Rajiv Khanna
+CS 57700 Natural Language Processing Dan Goldwasser
+CS 57800 Statistical Machine Learning Ruizhe Zhang
+CS 58000 Algorithm Design, Analysis, And
+Implementation Jeremiah M. Blocki
+CS 58100 Algorithmic Game Theory Alexandros Psomas
+CS 58900 Quantum Computing Yuxiang Peng
+CS 59100-RS1 Res Sem First Yr Gr Student Hemanta K. Maji
+CS 59100-TA1 Effective Teaching In CS Quiondriya Gee
+CS 59200-ATP AI Thought Partners Ilia Sucholutsky
+CS 59200-FIA Fault Injection Attacks Dave (Jing) Tian
+CS 59200-MLA Machine Learning & Algorithms Paul Valiant
+CS 59200-MSD ML System Co-Design Haoran You
+CS 59200-STB Special Topics In Blockchains Mahimna Kelkar
+CS 59300-ASE AI-Assisted Software Engineering Tianyi Zhang
+CS 59300-HCI Human-Computer Interaction Jason Wu
+CS 59300-ILR Imitation Learning/Robotics Rohan Paleja
+CS 59300-MLT Machine Learning Theory Steve Hanneke
+CS 59300-RL1 Reinforcement Learning Joseph Campbell
+CS 63800 Multimedia Networking And Operating
+Systems Sonia Fahmy

@@ -1,0 +1,277 @@
+
+===============================
+2026-04-29 09:03:07
+Q:
+Who is the teacher for competitive programing for 2026?
+
+A:
+The instructor for **Competitive Programming I (CS 21100)** in Spring 2026 is **Ethan Dickey**. For **Competitive Programming II (CS 31100)**, the instructor is **Ninghui Li**.
+
+===============================
+2026-04-29 09:07:53
+Q:
+Is there a third class?
+
+A:
+The context does not provide details on a third competitive programming class beyond **Competitive Programming I (CS 21100)** and **Competitive Programming II (CS 31100)**. Given the information available, it appears these are the only two listed competitive programming courses.
+
+**Warning:** There is a risk of hallucination for additional classes, as the context does not explicitly mention a third competitive programming course.
+
+===============================
+2026-04-29 10:30:26
+Q:
+Tell me about fall CS 300 level courses I should take and what I should expect out of them.
+
+A:
+Warning: the context is somewhat sparse for advising, so I should avoid over-claiming. Also, the explicit 300-level fall course list in the provided context is from the Purdue CS **2025 Fall** course page, not a confirmed **2026 Fall** schedule.
+
+For Purdue CS **fall 300-level courses** shown in the context, here are the main options and what you should expect:
+
+### 300-level fall CS courses listed
+From the provided Purdue CS fall listing:
+
+- **CS 30700 — Software Engineering I** — Jeffrey A. Turkstra  
+- **CS 31100 — Competitive Programming II** — Arvind Ramaswami  
+- **CS 31400 — Numerical Methods** — Alex Pothen  
+- **CS 33400 — Fundamentals of Computer Graphics** — Voicu S. Popescu  
+- **CS 34800 — Information Systems** — Hisham R. Benotman  
+- **CS 35200 — Compilers: Principles and Practice** — Changhee Jung  
+- **CS 35400 — Operating Systems** — Douglas E. Comer  
+- **CS 35500 — Introduction to Cryptography** — Hemanta K. Maji  
+- **CS 36100 — Great Issues in Computer Science** — Gustavo A. J. Rodriguez-Rivera  
+- Also listed in the “AI, ML, Data…” section:
+  - **CS 37300 — Data Mining and Machine Learning** — Dan Goldwasser, Bruno Ribeiro  
+  - **CS 38003 — Python Programming** — Sai Lakshminarayanan Balakrishnan  
+  - **CS 38100 — Introduction to the Analysis of Algorithms** — Alexandros Psomas, Tamal Krishna Dey  
+
+Source timing note: this came from the Purdue CS **2025 Fall** course page in the context, not a page timestamped **2026**.
+
+## What to expect from each
+
+### CS 30700 — Software Engineering I
+Good if you want practical team-based software development experience.
+
+**Expect:**
+- group projects
+- software design and engineering workflow
+- version control, testing, documentation
+- more emphasis on building software than on theory
+
+**Best for:** students interested in internships, industry prep, and large-codebase development.
+
+---
+
+### CS 31100 — Competitive Programming II
+Good if you enjoy problem solving and algorithmic speed.
+
+**Expect:**
+- difficult programming problems
+- strong emphasis on algorithms and implementation
+- contest-style thinking
+- fast coding under constraints
+
+**Best for:** students who liked data structures/algorithms and want to sharpen technical interview or contest skills.
+
+---
+
+### CS 31400 — Numerical Methods
+Good if you like math, scientific computing, or engineering applications.
+
+**Expect:**
+- approximation methods
+- solving equations numerically
+- floating-point/computational error issues
+- mathematically grounded programming
+
+**Best for:** students interested in scientific computing, simulation, optimization, or applied math.
+
+---
+
+### CS 33400 — Fundamentals of Computer Graphics
+Good if you want visual computing experience.
+
+**Expect:**
+- geometric transformations
+- rendering concepts
+- graphics pipelines
+- mathematically heavy material, often involving vectors/matrices
+
+**Best for:** students interested in graphics, game development, visualization, or vision-adjacent topics.
+
+---
+
+### CS 34800 — Information Systems
+This is one of the better documented courses in the context.
+
+**Expect:**
+- databases and the relational model
+- schema design and refinement
+- SQL and some NoSQL exposure
+- database-backed application development
+- transactions and concurrency control
+- OLAP/data warehousing overview
+
+From the syllabus context, you should also expect:
+- homework assignments
+- quizzes
+- in-class participation
+- a **small database-backed web/mobile application project**
+- at least one **lab exam** and two midterms in the Spring 2026 version of the syllabus
+
+**Best for:** students interested in backend development, databases, full-stack work, or data-oriented applications.
+
+---
+
+### CS 35200 — Compilers: Principles and Practice
+Good if you want a deep systems/languages course.
+
+**Expect:**
+- programming language translation concepts
+- parsing, syntax/semantics ideas
+- code generation/optimization themes
+- challenging implementation details
+
+**Best for:** students who enjoy programming languages, systems, and lower-level software.
+
+---
+
+### CS 35400 — Operating Systems
+A classic and usually demanding systems course.
+
+**Expect:**
+- processes/threads
+- scheduling
+- memory management
+- synchronization/concurrency
+- system-level programming
+
+**Best for:** students interested in systems, infrastructure, embedded/software performance, or serious CS foundations.
+
+---
+
+### CS 35500 — Introduction to Cryptography
+Good if you like theory plus security applications.
+
+**Expect:**
+- mathematical reasoning
+- encryption/signatures/protocol foundations
+- proofs or proof-style thinking
+- less “hacking,” more formal crypto concepts
+
+**Best for:** students interested in security, privacy, or mathematically rigorous CS.
+
+---
+
+### CS 36100 — Great Issues in Computer Science
+Usually broader and less technical than the others.
+
+**Expect:**
+- discussion-oriented exploration of major issues in computing
+- social, ethical, professional, or historical perspectives
+- reading/writing/presentation components may matter more than coding
+
+**Best for:** students who want balance alongside technical courses.
+
+---
+
+### CS 37300 — Data Mining and Machine Learning
+Good if you want applied data/ML exposure.
+
+**Expect:**
+- models for learning from data
+- statistical/computational thinking
+- programming assignments with data
+- possible math involving probability, linear algebra, optimization
+
+**Best for:** students interested in AI/ML, analytics, and data-driven applications.
+
+---
+
+### CS 38003 — Python Programming
+Likely more skill-focused and practical.
+
+**Expect:**
+- Python fluency
+- scripting and application-oriented coding
+- possibly less theory than upper-level core CS courses
+
+**Best for:** students wanting practical coding skill, especially if Python will help with research, internships, or ML/data work.
+
+---
+
+### CS 38100 — Introduction to the Analysis of Algorithms
+There is also Spring 2026 context for a closely related algorithms course.
+
+**Expect:**
+- algorithm design and analysis
+- graph algorithms
+- recursion/induction
+- NP-completeness
+- randomized algorithms
+- mathematically rigorous problem solving
+
+The Spring 2026 CS381 context specifically included topics like:
+- searching/sorting
+- DFS/BFS and shortest paths
+- SAT and reductions
+- NP-completeness
+- spanning trees
+- network flow
+- randomized algorithms
+
+**Best for:** students who want strong theoretical foundations and preparation for technical interviews, advanced algorithms, or grad-school-style problem solving.
+
+## What should you take?
+That depends on your goals:
+
+### If you want software engineering / industry prep
+Take:
+- **CS 30700**
+- **CS 34800**
+- **CS 35400**
+
+### If you want algorithms / interviews / contests
+Take:
+- **CS 31100**
+- **CS 38100**
+
+### If you want systems
+Take:
+- **CS 35200**
+- **CS 35400**
+- possibly **CS 34800** if you want database systems exposure
+
+### If you want AI / data
+Take:
+- **CS 34800**
+- **CS 37300**
+- **CS 38003** if you want stronger Python productivity
+
+### If you want math-heavy courses
+Take:
+- **CS 31400**
+- **CS 35500**
+- **CS 38100**
+
+## My practical recommendations
+If you want a balanced and useful semester, strong combinations would be:
+
+- **CS 35400 + CS 34800 + CS 30700**  
+  practical, employable, broad
+
+- **CS 38100 + CS 31100 + CS 35500**  
+  theory-heavy, interview/contest/math focused
+
+- **CS 37300 + CS 34800 + CS 38003**  
+  data/ML/application oriented
+
+- **CS 35200 + CS 35400 + CS 38100**  
+  very rigorous and likely heavy workload
+
+## Important caveat
+Because the course listing in context is from **2025 Fall**, I cannot guarantee these exact same offerings or instructors for **Fall 2026** as of the current timestamp **2026-04-29 05:29:54 -05:00**.
+
+If you want, I can also:
+1. rank these courses by **difficulty**,  
+2. suggest the best set based on your **career goal**, or  
+3. build you a **Fall schedule** with light/medium/heavy workload options.
