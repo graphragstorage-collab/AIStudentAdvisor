@@ -1,6 +1,6 @@
 :root {
   color: #f7fbff;
-  background: #151c43;
+  background: #080808;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -8,10 +8,10 @@
 }
 
 a {
-  color: #6be5be;
+  color: #cfb991;
   text-decoration: none;
 }
 
 a:hover {
-  color: #9ff3d8;
+  color: #e8dcc2;
 }
