@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
 import './Chat.css';
 
 const welcomeMessage = {
@@ -30,9 +31,8 @@ const Chat = () => {
 
   const parseChatHistory = (historyString) => {
     if (!historyString || historyString.trim() === "") return [welcomeMessage];
-    
+
     const historyMessages = [];
-    // Split by the equals sign separator (matching 10 or more to be safe)
     const blocks = historyString.split(/={10,}/);
 
     blocks.forEach(block => {
@@ -42,15 +42,12 @@ const Chat = () => {
       const aIndex = block.indexOf('A:');
 
       if (qIndex !== -1 && aIndex !== -1) {
-        // Grab everything between "Q:" and "A:"
         const qText = block.substring(qIndex + 2, aIndex).trim();
-        // Grab everything after "A:" to the end of the block
         const aText = block.substring(aIndex + 2).trim();
 
         if (qText) historyMessages.push({ role: 'user', content: qText });
         if (aText) historyMessages.push({ role: 'model', content: aText });
       } else if (qIndex !== -1) {
-        // Handle edge case where a question exists but the answer got cut off
         const qText = block.substring(qIndex + 2).trim();
         if (qText) historyMessages.push({ role: 'user', content: qText });
       }
@@ -85,10 +82,10 @@ const Chat = () => {
       });
 
       if (!response.ok) throw new Error('Failed to navigate conversation');
-      
+
       const data = await response.json();
       setConversationId(data.conversation_id);
-      
+
       await fetchChatHistory();
       setInputValue('');
     } catch (error) {
@@ -112,7 +109,7 @@ const Chat = () => {
       if (location.state?.conversationId) {
         setConversationId(location.state.conversationId);
       } else {
-        handleNavigate('stay'); 
+        handleNavigate('stay');
       }
     } catch (error) {
       navigate('/login');
@@ -171,51 +168,88 @@ const Chat = () => {
   const handleFileChange = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
+    if (!file.name.endsWith('.txt') && !file.name.endsWith('.pdf')) {
+      alert('Only .txt and .pdf files are allowed.');
+      return;
+    }
     const formData = new FormData();
     formData.append('file', file);
     setIsUploading(true);
     try {
-      await fetch('/api/upload', { method: 'POST', body: formData, credentials: 'include' });
-      alert("File uploaded!");
-    } catch (error) { alert('Upload failed.'); } 
-    finally { setIsUploading(false); e.target.value = ''; }
+      const response = await fetch('/api/upload', { method: 'POST', body: formData, credentials: 'include' });
+      const result = await response.json();
+      alert(result.message);
+    } catch (error) {
+      alert('Error uploading file. Please try again.');
+    } finally {
+      setIsUploading(false);
+      e.target.value = '';
+    }
   };
 
   return (
     <div className="chat-container">
-      <div className="topbar">
-        <button 
-          onClick={() => handleNavigate('back')} 
-          className="nav-btn" 
-          disabled={isLoading}
-        >
-          Back
-        </button>
-        <button 
-          onClick={() => handleNavigate('forward')} 
-          className="nav-btn" 
-          disabled={isLoading}
-        >
-          Forward
-        </button>
-        
-        <button onClick={() => navigate('/vote')} className="vote-btn">Voting</button>
-        <button onClick={handleFileUpload} className="upload-btn">Upload File</button>
-        <button onClick={() => fetch('/api/logout', {method: 'POST'}).then(() => navigate('/login'))} className="logout-btn">Logout</button>
-        <input type="file" ref={fileInputRef} onChange={handleFileChange} accept=".txt,.pdf" hidden />
-      </div>
+      <header className="app-shell-nav">
+        <div className="brand-mark" aria-label="AI Student Advisor">
+          <span>AI</span>
+          <strong>Student Advisor</strong>
+        </div>
+        <nav>
+          <button type="button" className="active">CHAT</button>
+          <button type="button" onClick={() => navigate('/planner')}>COURSE GRAPH</button>
+          <button type="button" onClick={() => navigate('/vote')}>VOTING</button>
+        </nav>
+        <div className="utility-actions">
+          <button
+            type="button"
+            className="nav-btn"
+            onClick={() => handleNavigate('back')}
+            disabled={isLoading}
+          >
+            ← Back
+          </button>
+          <button
+            type="button"
+            className="nav-btn"
+            onClick={() => handleNavigate('forward')}
+            disabled={isLoading}
+          >
+            Forward →
+          </button>
+          <button onClick={handleFileUpload} className="upload-btn" disabled={isUploading}>
+            {isUploading ? 'Uploading...' : 'Upload File'}
+          </button>
+          <button
+            onClick={() => fetch('/api/logout', { method: 'POST', credentials: 'include' }).then(() => navigate('/login'))}
+            className="logout-btn"
+          >
+            Logout
+          </button>
+          <input
+            type="file"
+            ref={fileInputRef}
+            onChange={handleFileChange}
+            accept=".txt,.pdf"
+            hidden
+          />
+        </div>
+      </header>
 
       <div className="chatbox" ref={chatboxRef}>
         {messages.map((msg, index) => (
-          <div key={index}>
-            <div className={`msg-${msg.role === 'user' ? 'user' : 'bot'}`}>{msg.content}</div>
+          <div key={index} className={`msg-${msg.role === 'user' ? 'user' : 'bot'}`}>
+            <ReactMarkdown>{msg.content}</ReactMarkdown>
           </div>
         ))}
       </div>
 
       <div className="translator-section">
         {languages.map((lang) => (
-          <button key={lang.id} className={`lang-btn ${currentLanguage === lang.id ? 'active' : ''}`} onClick={() => setCurrentLanguage(lang.id)}>
+          <button
+            key={lang.id}
+            className={`lang-btn ${currentLanguage === lang.id ? 'active' : ''}`}
+            onClick={() => setCurrentLanguage(lang.id)}
+          >
             {lang.name}
           </button>
         ))}
@@ -224,12 +258,15 @@ const Chat = () => {
       <div className="input-section">
         <input
           className="promptbar"
-          placeholder="Ask a question..."
+          placeholder="Ask the advisor anything about Purdue courses, schedules, requirements, or planning."
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && handleSend()}
           disabled={isLoading}
         />
+        <button type="button" onClick={handleSend} disabled={isLoading}>
+          Send
+        </button>
       </div>
     </div>
   );

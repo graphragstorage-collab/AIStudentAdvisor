@@ -164,6 +164,18 @@ const VotePage = () => {
 
   return (
     <div className="vote-page">
+      <header className="app-shell-nav">
+        <div className="brand-mark" aria-label="AI Student Advisor">
+          <span>AI</span>
+          <strong>Student Advisor</strong>
+        </div>
+        <nav>
+          <button type="button" onClick={() => navigate('/chat')}>CHAT</button>
+          <button type="button" onClick={() => navigate('/planner')}>COURSE GRAPH</button>
+          <button type="button" className="active">VOTING</button>
+        </nav>
+      </header>
+
       <div className="vote-page-header">
         <div>
           <h1>Turn Voting</h1>
