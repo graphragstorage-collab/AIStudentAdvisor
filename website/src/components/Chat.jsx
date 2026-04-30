@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import CoursePlanner from './CoursePlanner.jsx';
 import './Chat.css';
 
 const welcomeMessage = {
@@ -14,6 +15,8 @@ const Chat = () => {
   const [currentLanguage, setCurrentLanguage] = useState('none');
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [showPlanner, setShowPlanner] = useState(false);
+  
   const chatboxRef = useRef(null);
   const fileInputRef = useRef(null);
   const navigate = useNavigate();
@@ -30,32 +33,24 @@ const Chat = () => {
 
   const parseChatHistory = (historyString) => {
     if (!historyString || historyString.trim() === "") return [welcomeMessage];
-    
     const historyMessages = [];
-    // Split by the equals sign separator (matching 10 or more to be safe)
     const blocks = historyString.split(/={10,}/);
 
     blocks.forEach(block => {
       if (block.trim() === '') return;
-
       const qIndex = block.indexOf('Q:');
       const aIndex = block.indexOf('A:');
 
       if (qIndex !== -1 && aIndex !== -1) {
-        // Grab everything between "Q:" and "A:"
         const qText = block.substring(qIndex + 2, aIndex).trim();
-        // Grab everything after "A:" to the end of the block
         const aText = block.substring(aIndex + 2).trim();
-
         if (qText) historyMessages.push({ role: 'user', content: qText });
         if (aText) historyMessages.push({ role: 'model', content: aText });
       } else if (qIndex !== -1) {
-        // Handle edge case where a question exists but the answer got cut off
         const qText = block.substring(qIndex + 2).trim();
         if (qText) historyMessages.push({ role: 'user', content: qText });
       }
     });
-
     return historyMessages.length > 0 ? historyMessages : [welcomeMessage];
   };
 
@@ -75,24 +70,19 @@ const Chat = () => {
   const handleNavigate = async (direction) => {
     if (isLoading) return;
     setIsLoading(true);
-
     try {
       const response = await fetch('/api/my/conversations', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ direction: direction }),
+        body: JSON.stringify({ direction }),
         credentials: 'include'
       });
-
-      if (!response.ok) throw new Error('Failed to navigate conversation');
-      
+      if (!response.ok) throw new Error('Failed to navigate');
       const data = await response.json();
       setConversationId(data.conversation_id);
-      
       await fetchChatHistory();
       setInputValue('');
     } catch (error) {
-      console.error('Navigation failed:', error);
       alert('Could not change conversation.');
     } finally {
       setIsLoading(false);
@@ -107,7 +97,6 @@ const Chat = () => {
       });
       const data = await response.json();
       if (!data.authenticated) { navigate('/login'); return; }
-
       await fetchChatHistory();
       if (location.state?.conversationId) {
         setConversationId(location.state.conversationId);
@@ -125,23 +114,18 @@ const Chat = () => {
     if (chatboxRef.current) {
       chatboxRef.current.scrollTop = chatboxRef.current.scrollHeight;
     }
-  }, [messages]);
-
-  const buildPayload = (question) => {
-    return messages.map((m) => `${m.role === 'user' ? 'Q' : 'A'}: ${m.content}`).join('\n\n') +
-      '\n\n==============================\ncurrent question: ' + question;
-  };
+  }, [messages, showPlanner]);
 
   const handleSend = async () => {
     if (!inputValue.trim() || isLoading) return;
     const question = inputValue.trim();
     setInputValue('');
-    setMessages((prev) => [...prev, { role: 'user', content: question }]);
+    setMessages((prev) => [...prev, { role: 'user', content: question }, { role: 'model', content: 'Thinking...' }]);
     setIsLoading(true);
-    setMessages((prev) => [...prev, { role: 'model', content: 'Thinking...' }]);
 
     try {
-      const payload = buildPayload(question);
+      const historyStr = messages.map((m) => `${m.role === 'user' ? 'Q' : 'A'}: ${m.content}`).join('\n\n');
+      const payload = `${historyStr}\n\n==============================\ncurrent question: ${question}`;
       const response = await fetch('/api/prompt', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -182,55 +166,80 @@ const Chat = () => {
   };
 
   return (
-    <div className="chat-container">
-      <div className="topbar">
-        <button 
-          onClick={() => handleNavigate('back')} 
-          className="nav-btn" 
-          disabled={isLoading}
-        >
-          Back
-        </button>
-        <button 
-          onClick={() => handleNavigate('forward')} 
-          className="nav-btn" 
-          disabled={isLoading}
-        >
-          Forward
-        </button>
-        
-        <button onClick={() => navigate('/vote')} className="vote-btn">Voting</button>
-        <button onClick={handleFileUpload} className="upload-btn">Upload File</button>
-        <button onClick={() => fetch('/api/logout', {method: 'POST'}).then(() => navigate('/login'))} className="logout-btn">Logout</button>
-        <input type="file" ref={fileInputRef} onChange={handleFileChange} accept=".txt,.pdf" hidden />
-      </div>
-
-      <div className="chatbox" ref={chatboxRef}>
-        {messages.map((msg, index) => (
-          <div key={index}>
-            <div className={`msg-${msg.role === 'user' ? 'user' : 'bot'}`}>{msg.content}</div>
-          </div>
-        ))}
-      </div>
-
-      <div className="translator-section">
-        {languages.map((lang) => (
-          <button key={lang.id} className={`lang-btn ${currentLanguage === lang.id ? 'active' : ''}`} onClick={() => setCurrentLanguage(lang.id)}>
-            {lang.name}
+    <div className="chat-page-wrapper">
+      <header className="app-header">
+        <div className="header-brand">
+          <span className="eyebrow">RETRIEVAL-AUGMENTED ADVISING</span>
+          <h1>AI Student Advisor</h1>
+        </div>
+        <div className="header-nav">
+          <button onClick={() => handleNavigate('back')} className="nav-btn-outline" disabled={isLoading}>Back</button>
+          <button onClick={() => handleNavigate('forward')} className="nav-btn-outline" disabled={isLoading}>Forward</button>
+          <button 
+            onClick={() => setShowPlanner(!showPlanner)} 
+            className={`nav-btn-outline ${showPlanner ? 'active' : ''}`}
+          >
+            {showPlanner ? "Chat" : "Course Planner"}
           </button>
-        ))}
-      </div>
+          <button onClick={() => navigate('/vote')} className="nav-btn-gold">Voting</button>
+          <button onClick={handleFileUpload} className="nav-btn-gold" disabled={isUploading}>
+            {isUploading ? "Uploading..." : "Upload File"}
+          </button>
+          <button 
+            onClick={() => fetch('/api/logout', {method: 'POST'}).then(() => navigate('/login'))} 
+            className="nav-btn-black"
+          >
+            Logout
+          </button>
+          <input type="file" ref={fileInputRef} onChange={handleFileChange} accept=".txt,.pdf" hidden />
+        </div>
+      </header>
 
-      <div className="input-section">
-        <input
-          className="promptbar"
-          placeholder="Ask a question..."
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-          disabled={isLoading}
-        />
-      </div>
+      <main className="content-container">
+        {showPlanner ? (
+          <div className="planner-view">
+            <CoursePlanner />
+          </div>
+        ) : (
+          <div className="chat-view">
+            <div className="chat-history" ref={chatboxRef}>
+              {messages.map((msg, index) => (
+                <div key={index} className={`message-row ${msg.role}`}>
+                  <div className="message-bubble">
+                    <span className="sender-label">{msg.role === 'user' ? 'STUDENT' : 'ADVISOR'}</span>
+                    <p>{msg.content}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="chat-controls">
+              <div className="lang-picker">
+                {languages.map((lang) => (
+                  <button 
+                    key={lang.id} 
+                    className={`lang-chip ${currentLanguage === lang.id ? 'active' : ''}`}
+                    onClick={() => setCurrentLanguage(lang.id)}
+                  >
+                    {lang.name}
+                  </button>
+                ))}
+              </div>
+              <div className="input-wrapper">
+                <input
+                  className="main-input"
+                  placeholder="Ask a question about requirements, course planning, or academic policy..."
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                  onKeyDown={(e) => e.key === 'Enter' && handleSend()}
+                  disabled={isLoading}
+                />
+                <button onClick={handleSend} className="send-btn" disabled={isLoading}>→</button>
+              </div>
+            </div>
+          </div>
+        )}
+      </main>
     </div>
   );
 };
