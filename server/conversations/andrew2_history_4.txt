@@ -1,0 +1,210 @@
+
+===============================
+2026-04-29 10:23:41
+Q:
+tell me about fall CS 300 level courses I should take and what I should expect out of them.
+
+A:
+Hallucination-risk warning: the context is mostly about Spring 2026, and the only Fall source is a **Fall 2025** Purdue CS course list page. So I can summarize likely **300-level CS options** and what they’re generally like, but I should not pretend this is an official **Fall 2026** schedule.
+
+For **Fall** 300-level Purdue CS courses visible in the context, the main ones are:
+
+### CS 30700 — Software Engineering I
+**What to expect**
+- Team-based software development
+- Agile / software lifecycle concepts
+- A substantial semester project
+- Grade can depend a lot on your team dynamic and execution
+
+**Who should take it**
+- Good if you want practical industry-style experience
+- Especially useful if you like building software more than theory
+
+**Expectation level**
+- Usually more project- and coordination-heavy than proof-heavy
+- Moderate difficulty, but team issues can make it feel harder
+
+---
+
+### CS 31100 — Competitive Programming II
+**What to expect**
+- Advanced algorithmic problem solving
+- Contest-style programming
+- Good preparation for ICPC/interviews
+
+**Who should take it**
+- Best if you already enjoy fast-paced coding challenges
+- Strong fit for students who like algorithms and solving under time pressure
+
+**Expectation level**
+- Can be intense conceptually and mentally
+- Less about software engineering, more about sharp algorithmic thinking
+
+---
+
+### CS 31400 — Numerical Methods
+**What to expect**
+- Computational math / numerical computation
+- Likely approximation methods, solving equations, numerical linear algebra ideas
+
+**Who should take it**
+- Good if you like math, scientific computing, simulation, or technical computing
+
+**Expectation level**
+- Math-heavy
+- Usually less “build an app” and more “understand computational techniques”
+
+---
+
+### CS 33400 — Fundamentals of Computer Graphics
+**What to expect**
+- Rendering
+- Geometric transformations
+- Shading / graphics pipeline concepts
+- Often uses OpenGL/C++
+
+**Who should take it**
+- Great if you like visual computing, games, graphics, animation, or interactive systems
+
+**Expectation level**
+- Medium to medium-high difficulty
+- Mix of programming and math intuition
+
+---
+
+### CS 34800 — Information Systems
+**What to expect**
+From the Spring 2026 syllabus, this course covers:
+- Relational database design
+- SQL
+- Schema design and refinement
+- Database-backed app development
+- Transactions and concurrency control
+- NoSQL overview
+- OLAP / warehousing overview
+
+**Specific expectations from the syllabus**
+- 6 homework assignments
+- Weekly quizzes
+- In-class participation via iClicker
+- 1 SQL lab exam
+- 2 evening midterm exams
+- 1 individual application project
+- No final exam listed in the calendar
+
+**Grade breakdown**
+- Assignments: 10%
+- Brightspace Quizzes: 2%
+- Participation: 3%
+- Lab Exam: 20%
+- Midterm 1: 25%
+- Midterm 2: 30%
+- Project: 10%
+
+**Who should take it**
+- Excellent if you want practical database and backend knowledge
+- Useful for software engineering, data, and full-stack work
+
+**Expectation level**
+- Practical and applied
+- Moderate workload, especially if you’re comfortable with SQL and web/app integration
+
+---
+
+### CS 35200 — Compilers: Principles and Practice
+**What to expect**
+- Programming language translation / compiler internals
+- Usually one of the more systems-heavy upper-level courses
+
+**Who should take it**
+- Great if you like programming languages, systems, and internals
+
+**Expectation level**
+- High workload
+- Conceptually and implementation-wise demanding
+
+---
+
+### CS 35400 — Operating Systems
+**What to expect**
+- Core OS ideas
+- Kernel/system concepts
+- Typically substantial C/C++ systems programming
+
+**Who should take it**
+- Strong choice for systems-minded students
+- Useful for low-level software, performance, infrastructure roles
+
+**Expectation level**
+- Usually considered one of the harder, heavier-workload options
+
+---
+
+### CS 35500 — Introduction to Cryptography
+**What to expect**
+- Mathematical foundations of modern crypto
+- Likely topics like RSA, AES, hashes, formal crypto reasoning
+
+**Who should take it**
+- Great if you like math, security, and theoretical rigor
+
+**Expectation level**
+- High difficulty
+- More mathematical than many application-focused electives
+
+---
+
+### CS 36100 — Great Issues in Computer Science
+**What to expect**
+- Ethics, privacy, IP, and societal impacts of computing
+- Discussion and writing oriented
+
+**Who should take it**
+- Good if you want a lighter technical load alongside harder courses
+- Also useful for graduation requirements depending on plan
+
+**Expectation level**
+- Generally lighter than the technical 300-levels
+- More reading/writing than programming
+
+---
+
+## Quick recommendations by interest
+
+### If you want practical SWE skills
+- **CS 30700**
+- **CS 34800**
+
+### If you want systems depth
+- **CS 35200**
+- **CS 35400**
+
+### If you want math/theory flavor
+- **CS 31100**
+- **CS 31400**
+- **CS 35500**
+
+### If you want something visually engaging
+- **CS 33400**
+
+### If you want a lighter companion course
+- **CS 36100**
+
+---
+
+## Good combinations
+- **307 + 348**: very practical, software/project oriented
+- **348 + 355**: applied databases + mathematical security
+- **334 + 307**: creative programming + team software work
+- **352 + 361** or **354 + 361**: balance a hard systems course with a lighter one
+
+---
+
+## My honest advice
+If you want the best mix of usefulness and survivability, **CS 34800** and **CS 30700** are strong bets for many students.  
+If you want challenge and technical prestige, **CS 35400** or **CS 35200** are stronger but usually tougher.  
+If you like math/security, **CS 35500** is attractive but not usually an “easy elective.”
+
+If you want, I can also turn this into:
+1. a **ranked list from easiest to hardest**, or  
+2. a **recommended fall schedule** based on your interests like SWE, AI, data, systems, or security.

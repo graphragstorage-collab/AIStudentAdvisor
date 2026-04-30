@@ -1,0 +1,159 @@
+
+===============================
+2026-01-22 18:58:47
+user: hi
+
+==============================
+current question: hi
+
+model: I can only assist with academic advising questions.
+
+===============================
+2026-01-22 18:59:06
+user: hi
+
+model: I can only assist with academic advising questions.
+
+user: what kind of guides you have done can I have examples
+
+==============================
+current question: what kind of guides you have done can I have examples
+
+model: I can only assist with academic advising questions.
+
+===============================
+2026-01-22 18:59:29
+user: hi
+
+model: I can only assist with academic advising questions.
+
+user: what kind of guides you have done can I have examples
+
+model: I can only assist with academic advising questions.
+
+user: should I take com217
+
+==============================
+current question: should I take com217
+
+model: To determine whether you should take COM 21700 (Science Writing and Presentation), consider the following:
+
+1. **Core Requirement**: COM 21700 may fulfill the Oral Communication requirement for your degree, so check if you need that credit.
+
+2. **Skill Development**: This course can enhance your writing and presentation skills, which are valuable in both academic and professional settings, especially in fields related to data science where you may need to communicate complex information effectively.
+
+3. **Curriculum Fit**: Look at your overall course load and how COM 21700 fits into your schedule. 
+
+4. **Advisor Consultation**: It's always a good idea to discuss with your academic advisor how this course aligns with your academic and career goals.
+
+If you believe these reasons align with your needs, then taking COM 21700 could be beneficial.
+
+===============================
+2026-01-22 18:59:58
+user: hi
+
+model: I can only assist with academic advising questions.
+
+user: what kind of guides you have done can I have examples
+
+model: I can only assist with academic advising questions.
+
+user: should I take com217
+
+model: To determine whether you should take COM 21700 (Science Writing and Presentation), consider the following:
+
+1. **Core Requirement**: COM 21700 may fulfill the Oral Communication requirement for your degree, so check if you need that credit.
+
+2. **Skill Development**: This course can enhance your writing and presentation skills, which are valuable in both academic and professional settings, especially in fields related to data science where you may need to communicate complex information effectively.
+
+3. **Curriculum Fit**: Look at your overall course load and how COM 21700 fits into your schedule. 
+
+4. **Advisor Consultation**: It's always a good idea to discuss with your academic advisor how this course aligns with your academic and career goals.
+
+If you believe these reasons align with your needs, then taking COM 21700 could be beneficial.
+
+user: what cs track should I take
+
+==============================
+current question: what cs track should I take
+
+model: When deciding on a Computer Science track, consider the following options based on your interests and career goals:
+
+1. **Core Computer Science Track**:
+   - Focuses on fundamental concepts of computer science.
+   - Includes courses like CS 18000 (Problem Solving and Object-Oriented Programming), CS 18200 (Foundations of Computer Science), and CS 25100 (Data Structures and Algorithms).
+
+2. **Machine Intelligence Concentration**:
+   - Ideal if you're interested in Data Mining, Machine Learning, or Artificial Intelligence.
+   - Core courses include CS 37300 (Data Mining and Machine Learning) and CS 47300 (Web Information Search).
+
+3. **Data Science Track**:
+   - If you want to combine statistics and computer science for data analytics roles.
+   - Core courses include CS 24200 (Introduction to Data Science), STAT 35500 (Statistics for Data Science), and CS 37300.
+
+4. **Software Engineering Focus**:
+   - Suitable for careers in software development and project management.
+   - Courses like CS 30700 (Software Engineering I) and CS 40800 (Software Testing) would be beneficial.
+
+5. **Specialized Electives**:
+   - You may choose from electives based on your interests in areas like cybersecurity, cloud computing, or artificial intelligence.
+
+Consider how these tracks align with your personal interests and career aspirations. Discussing your options with an academic advisor can provide tailored advice based on your academic progress and goals.
+
+===============================
+2026-01-22 19:00:58
+user: hi
+
+model: I can only assist with academic advising questions.
+
+user: what kind of guides you have done can I have examples
+
+model: I can only assist with academic advising questions.
+
+user: should I take com217
+
+model: To determine whether you should take COM 21700 (Science Writing and Presentation), consider the following:
+
+1. **Core Requirement**: COM 21700 may fulfill the Oral Communication requirement for your degree, so check if you need that credit.
+
+2. **Skill Development**: This course can enhance your writing and presentation skills, which are valuable in both academic and professional settings, especially in fields related to data science where you may need to communicate complex information effectively.
+
+3. **Curriculum Fit**: Look at your overall course load and how COM 21700 fits into your schedule. 
+
+4. **Advisor Consultation**: It's always a good idea to discuss with your academic advisor how this course aligns with your academic and career goals.
+
+If you believe these reasons align with your needs, then taking COM 21700 could be beneficial.
+
+user: what cs track should I take
+
+model: When deciding on a Computer Science track, consider the following options based on your interests and career goals:
+
+1. **Core Computer Science Track**:
+   - Focuses on fundamental concepts of computer science.
+   - Includes courses like CS 18000 (Problem Solving and Object-Oriented Programming), CS 18200 (Foundations of Computer Science), and CS 25100 (Data Structures and Algorithms).
+
+2. **Machine Intelligence Concentration**:
+   - Ideal if you're interested in Data Mining, Machine Learning, or Artificial Intelligence.
+   - Core courses include CS 37300 (Data Mining and Machine Learning) and CS 47300 (Web Information Search).
+
+3. **Data Science Track**:
+   - If you want to combine statistics and computer science for data analytics roles.
+   - Core courses include CS 24200 (Introduction to Data Science), STAT 35500 (Statistics for Data Science), and CS 37300.
+
+4. **Software Engineering Focus**:
+   - Suitable for careers in software development and project management.
+   - Courses like CS 30700 (Software Engineering I) and CS 40800 (Software Testing) would be beneficial.
+
+5. **Specialized Electives**:
+   - You may choose from electives based on your interests in areas like cybersecurity, cloud computing, or artificial intelligence.
+
+Consider how these tracks align with your personal interests and career aspirations. Discussing your options with an academic advisor can provide tailored advice based on your academic progress and goals.
+
+user: what file do I upload
+
+==============================
+current question: what file do I upload
+
+model: It seems there's not enough context in the current conversation to determine what specific file you are asking about. 
+
+To assist you further, please clarify the situation or type of file you are referring to. For example, is this in relation to an assignment, application, or a specific course? Without more information, there is a risk of providing an inaccurate response.

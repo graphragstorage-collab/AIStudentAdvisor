@@ -1,0 +1,43 @@
+
+===============================
+2025-12-07 20:28:58
+user: Hello
+
+model: I can only assist with academic advising questions.
+
+===============================
+2025-12-07 20:30:07
+user: If I want to graduate with CS, which courses should I take?
+
+model: To graduate with a Bachelor of Science in Computer Science from Purdue University, you will need to complete specific core courses and elective requirements. Here’s an overview of the courses you need to take, based on the available information:
+
+### Core Course Requirements (Total: 21 credits)
+1. **CS 18000** - Problem Solving and Object-Oriented Programming (4 credits)
+2. **CS 18200** - Foundations of Computer Science (3 credits)
+3. **CS 24000** - Programming in C (3 credits)
+4. **CS 25000** - Computer Architecture (4 credits)
+5. **CS 25100** - Data Structures and Algorithms (3 credits)
+6. **CS 25200** - Systems Programming (4 credits)
+
+### Additional Requirements
+- **Mathematics:** Complete required courses which may include calculus and statistics.
+- **Science Core Requirements:** Typically includes two lab science courses.
+  
+### Electives
+After fulfilling your core course requirements, you will select electives based on a specific track that aligns with your interests. Available tracks include:
+- **Machine Intelligence**
+- **Software Engineering**
+- **Security**
+- **Data Science**
+- **Computational Science and Engineering**
+
+### Overview of Completion
+- Complete **46-50 credits** in major coursework.
+- Ensure you achieve a grade of **C or better** in all required major courses.
+- Consult the Purdue University catalog or your academic advisor for specific elective options and detailed graduation requirements.
+
+### Recommendations
+- Regularly consult with your academic advisor to plan your course schedule in accordance with your academic goals and track requirements.
+- Keep abreast of any updates to curriculum requirements as they can change.
+
+Make sure to utilize available resources, such as Purdue's academic advising and course guides, to help navigate your degree completion successfully.
