@@ -30,3 +30,4 @@ data_cache/
 *.tmp
 
 nohup.out
+*.txt
