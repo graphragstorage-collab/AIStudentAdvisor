@@ -899,16 +899,13 @@ npm run build
     """)
 
 
-<<<<<<< HEAD
 # =================================================================
-=======
 @app.get("/", response_class=HTMLResponse)
 async def root_login_redirect():
     return RedirectResponse("/login", status_code=302)
 
 
 # =========================
->>>>>>> sql
 # REPORTING / SQL ROUTES
 # =================================================================
 
