@@ -739,6 +739,8 @@ async def create_my_conversation(request: Request, session: Optional[str] = Cook
     elif direction == "back":
         if users[username]["Convo"] > 0:
             users[username]["Convo"] -= 1
+        else:
+            users[username]["Convo"] = 1
 
    
     return {"conversation_id": conversation_id}
