@@ -5,15 +5,15 @@
   justify-content: center;
   padding: 24px;
   background:
-    radial-gradient(circle at 24% 16%, rgba(107, 229, 190, 0.18), transparent 30%),
-    linear-gradient(180deg, #151c43 0%, #0f1534 60%, #080c22 100%);
+    radial-gradient(circle at 24% 16%, rgba(207, 185, 145, 0.18), transparent 30%),
+    linear-gradient(180deg, #080808 0%, #101010 60%, #000000 100%);
   color: #f7fbff;
 }
 
 .auth-box {
   width: min(420px, 100%);
   padding: 30px;
-  border: 1px solid rgba(107, 229, 190, 0.32);
+  border: 1px solid rgba(207, 185, 145, 0.32);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.07);
   box-shadow: 0 22px 70px rgba(0, 0, 0, 0.28);
@@ -37,16 +37,16 @@
 .auth-box input {
   width: 100%;
   padding: 13px 14px;
-  border: 1px solid rgba(107, 229, 190, 0.34);
+  border: 1px solid rgba(207, 185, 145, 0.34);
   border-radius: 8px;
-  background: rgba(8, 12, 32, 0.78);
+  background: rgba(12, 12, 12, 0.78);
   color: #fff;
   outline: none;
 }
 
 .auth-box input:focus {
-  border-color: #6be5be;
-  box-shadow: 0 0 0 3px rgba(107, 229, 190, 0.13);
+  border-color: #cfb991;
+  box-shadow: 0 0 0 3px rgba(207, 185, 145, 0.13);
 }
 
 .auth-box input::placeholder {
@@ -56,15 +56,15 @@
 .auth-box button {
   width: 100%;
   padding: 14px;
-  border: 1px solid rgba(107, 229, 190, 0.58);
+  border: 1px solid rgba(207, 185, 145, 0.58);
   border-radius: 999px;
-  background: rgba(107, 229, 190, 0.24);
+  background: rgba(207, 185, 145, 0.24);
   color: #fff;
   font-weight: 900;
 }
 
 .auth-box button:hover {
-  background: rgba(107, 229, 190, 0.36);
+  background: rgba(207, 185, 145, 0.36);
 }
 
 .auth-footer {
@@ -73,7 +73,7 @@
 }
 
 .auth-footer a {
-  color: #6be5be;
+  color: #cfb991;
   font-weight: 800;
 }
 

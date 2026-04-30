@@ -189,9 +189,9 @@ const VotePage = () => {
           <button
             type="button"
             className="back-btn"
-            onClick={() => navigate('/chat')}
+            onClick={() => navigate('/planner')}
           >
-            Back to Chat
+            Course Graph
           </button>
         </div>
       </div>

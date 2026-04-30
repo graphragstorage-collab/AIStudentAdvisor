@@ -1,8 +1,8 @@
 .vote-page {
   min-height: 100vh;
   background:
-    radial-gradient(circle at 16% 10%, rgba(107, 229, 190, 0.16), transparent 30%),
-    linear-gradient(180deg, #151c43 0%, #0f1534 60%, #080c22 100%);
+    radial-gradient(circle at 16% 10%, rgba(207, 185, 145, 0.16), transparent 30%),
+    linear-gradient(180deg, #080808 0%, #101010 60%, #000000 100%);
   color: #f7fbff;
 }
 
@@ -43,16 +43,16 @@
 .back-btn,
 .new-chat-btn {
   padding: 10px 16px;
-  border: 1px solid rgba(107, 229, 190, 0.45);
+  border: 1px solid rgba(207, 185, 145, 0.45);
   border-radius: 999px;
-  background: rgba(107, 229, 190, 0.16);
+  background: rgba(207, 185, 145, 0.16);
   color: #fff;
   font-weight: 900;
 }
 
 .back-btn:hover,
 .new-chat-btn:hover {
-  background: rgba(107, 229, 190, 0.3);
+  background: rgba(207, 185, 145, 0.3);
 }
 
 .vote-toolbar {
@@ -61,29 +61,29 @@
   gap: 12px;
   margin-bottom: 18px;
   padding: 14px;
-  border: 1px solid rgba(107, 229, 190, 0.22);
+  border: 1px solid rgba(207, 185, 145, 0.22);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.06);
 }
 
 .vote-toolbar label {
   font-weight: 900;
-  color: #6be5be;
+  color: #cfb991;
 }
 
 .vote-toolbar select {
   min-width: 220px;
   padding: 10px 12px;
-  border: 1px solid rgba(107, 229, 190, 0.34);
+  border: 1px solid rgba(207, 185, 145, 0.34);
   border-radius: 8px;
-  background: rgba(8, 12, 32, 0.8);
+  background: rgba(12, 12, 12, 0.8);
   color: #fff;
 }
 
 .vote-status {
   padding: 14px 16px;
   margin-bottom: 16px;
-  border: 1px solid rgba(107, 229, 190, 0.22);
+  border: 1px solid rgba(207, 185, 145, 0.22);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.06);
 }
@@ -104,7 +104,7 @@
 .vote-card {
   position: relative;
   padding: 18px 72px 18px 18px;
-  border: 1px solid rgba(107, 229, 190, 0.22);
+  border: 1px solid rgba(207, 185, 145, 0.22);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.06);
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
@@ -118,7 +118,7 @@
 
 .turn-id {
   font-size: 12px;
-  color: #6be5be;
+  color: #cfb991;
   font-weight: 900;
 }
 

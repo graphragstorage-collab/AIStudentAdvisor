@@ -37,15 +37,7 @@ import textwrap
 import time
 import datetime
 import pytz
-
-# conversation id of currently active users 
-users = {}
-
-
-from SQL.update import *
-
-
-
+from SQL.update import get_or_create_document
 
 print("HERE")
 #nltk.download('punkt', quiet=False)
@@ -147,7 +139,58 @@ def add_document_to_graphrag(graph_rag, file_path: str):
     # Index of new node
     new_index = len(vs.documents) - 1
 
-   
+    # -------------------------------------------------------------
+    # 3. Add node to the graph
+    # -------------------------------------------------------------
+    # G = graph_rag.knowledge_graph.graph
+    # G.add_node(new_index, content=new_doc.page_content)
+
+    # # -------------------------------------------------------------
+    # # 4. Extract concepts for this document
+    # # -------------------------------------------------------------
+    # kg = graph_rag.knowledge_graph
+    # concepts = kg._extract_concepts_and_entities(new_doc.page_content, graph_rag.llm)
+    # G.nodes[new_index]["concepts"] = concepts
+
+    # # -------------------------------------------------------------
+    # # 5. Compute edges from new node to all older nodes
+    # # -------------------------------------------------------------
+    # # Embed query against existing store to get similarities
+    # # Retrieve all node embeddings from FAISS
+    # all_embeds = []
+
+    # # FAISS stores embeddings in order of add, so safe to extract
+    # xb = vs.index.reconstruct_n(0, vs.index.ntotal)
+    # all_embeds = xb
+
+    # # Cosine similarity matrix for last vector vs all others
+    # new_vec = all_embeds[new_index]
+    # sims = all_embeds @ new_vec  # inner product = cosine (normalized)
+
+    # # Add edges for nodes above threshold
+    # for other in range(new_index):
+    #     similarity_score = float(sims[other])
+    #     if similarity_score > kg.edges_threshold:
+    #         shared_concepts = set(G.nodes[new_index].get("concepts", [])) & \
+    #                           set(G.nodes[other].get("concepts", []))
+
+    #         edge_weight = kg._calculate_edge_weight(
+    #             new_index, other,
+    #             similarity_score,
+    #             shared_concepts
+    #         )
+
+    #         G.add_edge(
+    #             new_index, other,
+    #             weight=edge_weight,
+    #             similarity=similarity_score,
+    #             shared_concepts=list(shared_concepts)
+    #         )
+
+    # print(f"\n✓ Successfully added document '{file_path}'")
+    # print(f"  → New node index: {new_index}")
+    # print(f"  → Concepts extracted: {concepts}")
+    # print(f"  → Edges created: {len(list(G.neighbors(new_index)))}")
 
     get_or_create_document(new_doc.page_content)
 
@@ -1243,7 +1286,7 @@ class QueryEngine:
         """
         print("\nGenerating final answer with LLM...")
         response = self.client.responses.create(
-            model="gpt-5.4",
+            model="gpt-4o-mini",
             input=prompt,
             max_output_tokens=4000
         )
@@ -1264,46 +1307,113 @@ class QueryEngine:
 
         print("\nTraversing the knowledge graph:")
 
-       
+        # Initialize priority queue with relevant docs
         for doc in relevant_docs:
+            
             expanded_contexts.append(doc.page_content)
-   
+            # closest_nodes = self.vector_store.similarity_search_with_score(doc.page_content, k=1)
+          
+            # if not closest_nodes:
+            #     continue
+            # closest_node_doc, similarity = closest_nodes[0]
+
+            # # Find the node whose content matches closest_node_doc.page_content
+            # closest_node = next(
+            #     n for n in self.knowledge_graph.graph.nodes
+            #     if self.knowledge_graph.graph.nodes[n]['content'] == closest_node_doc.page_content
+            # )
+            # # Similarity is inner product on normalized embeddings → in [0,1]
+            # # We invert it to use as a distance-like priority (smaller is better)
+            # similarity = max(similarity, 1e-6)
+            # priority = 1.0 / similarity
+            # heapq.heappush(priority_queue, (priority, closest_node))
+            # distances[closest_node] = priority
+
+        step = 0
      
-        
+        while priority_queue:
+            if step > 0:
+                break
+
+            # answer = self._generate_final_answer(query, expanded_context)
+
+            # if "MORE CONTEXT NEEDED" not in answer:
+            #     final_answer = answer
+            #     break
+            # else:
+            #     print("\nLLM indicated more context is needed, continuing traversal...")
+
+            current_priority, current_node = heapq.heappop(priority_queue)
+
+            if current_priority > distances.get(current_node, float('inf')):
+                continue
+
+            if current_node not in traversal_path:
+                step += 1
+                traversal_path.append(current_node)
+
+                node_content = self.knowledge_graph.graph.nodes[current_node]['content']
+                node_concepts = self.knowledge_graph.graph.nodes[current_node].get('concepts', [])
+
+                filtered_content[current_node] = node_content
+                # expanded_context += ("\n" + node_content) if expanded_context else node_content
+                expanded_contexts.append(node_content)
+                
+                print(f"\nStep {step} - Node {current_node}:")
+                print(f"Content: {node_content[:70]}...")
+                # print(f"Concepts: {', '.join(node_concepts)}")
+                print("-" * 50)
+
+                node_concepts_set = {
+                    self.knowledge_graph._lemmatize_concept(c) for c in node_concepts
+                }
+
+                if not node_concepts_set.issubset(visited_concepts):
+                    visited_concepts.update(node_concepts_set)
+
+                    # Explore neighbors
+                    for neighbor in self.knowledge_graph.graph.neighbors(current_node):
+                        edge_weight = self.knowledge_graph.graph[current_node][neighbor]['weight']
+                        edge_weight = max(edge_weight, 1e-6)
+                        new_dist = current_priority + (1.0 / edge_weight)
+
+                        if new_dist < distances.get(neighbor, float('inf')):
+                            distances[neighbor] = new_dist
+                            heapq.heappush(priority_queue, (new_dist, neighbor))
+
         print("CLEANING SOURCES")
-        snippets = preview_snippet(
+        snippets = generate_snippets_threaded(
             query=query,
             expanded_contexts=expanded_contexts,
          )
 
         # OPTIONAL: Replace the contexts entirely with snippets
         expanded_contexts = snippets
-        doc_ids = get_document_ids_from_contexts(expanded_contexts)
         for num, ctx in enumerate(expanded_contexts):
             if ctx == "NO" or ctx is None:
                 continue
             expanded_context += ("\n" + ctx + f"\n================WEBPAGE: {len(ctx.strip())}=================\n") if expanded_context else f"\n================WEBPAGE: {len(ctx.strip())}=================\n" + ctx
 
-        # print("final expanded context:", expanded_context + "\n")
+        print("final expanded context:", expanded_context + "\n")
 
         if (len(expanded_context) == 0 and final == False):
             return expanded_context, traversal_path, filtered_content, ""
         final_answer = self._generate_final_answer(query, expanded_context)
        
-        return expanded_context, traversal_path, filtered_content, final_answer, doc_ids
+        return expanded_context, traversal_path, filtered_content, final_answer
 
     def query(self, query: str, orig_query: str, final=False) -> Tuple[str, List[int], Dict[int, str]]:
         print(f"\nProcessing query: {query}")
         relevant_docs = self._retrieve_relevant_documents(query, orig_query)
         
-        expanded_context, traversal_path, filtered_content, final_answer, doc_ids = \
+        expanded_context, traversal_path, filtered_content, final_answer = \
             self._expand_context(orig_query, relevant_docs, final=final)
 
         print("\nFinal Answer:")
         wrapped = textwrap.fill(final_answer, width=100)
         print(wrapped)
 
-        return final_answer, traversal_path, filtered_content, expanded_context, doc_ids
+        return final_answer, traversal_path, filtered_content, expanded_context
 
     def _retrieve_relevant_documents(self, query: str, orig_query: str) -> List[Document]:
         print("\nRetrieving relevant documents...")
@@ -1540,23 +1650,25 @@ class GraphRAG:
         route = router(query, docs=[])
         print("route")
         print(f"Routed to: {route}")
+        if route == "ADVISOR":
+            return _advisor(query)
         
-        if route == "INAPPLICABLE":
-            return "I can only assist with academic advising questions.", []
+        elif route == "INAPPLICABLE":
+            return "I can only assist with academic advising questions."
 
         else: # GRAPH_RAG
             query = rewrite_query_for_rag(query, llm_client=client)
             query += (" + " + orig_query)
             if not query or query.lower() == "please provide more details.":
-                return "The query is too vague. Please provide more details.", []
+                return "The query is too vague. Please provide more details."
             print(f"\nRewritten query for RAG: {query}")
-            response, traversal_path, filtered_content, expanded_context, doc_ids = self.query_engine.query(query, orig_query)
+            response, traversal_path, filtered_content, expanded_context = self.query_engine.query(query, orig_query)
             fails = 0
             old_query = ""
             while len(expanded_context) == 0 and fails < 5:
                 old_query = old_query + f"Attempt {fails + 1}: " + query + "\n"
                 query = rewrite_query_for_rag(orig_query, llm_client=client, rewrite=old_query, old_answer=response)
-                response, traversal_path, filtered_content, expanded_context, doc_ids = self.query_engine.query(query, orig_query, final=(fails == 4))
+                response, traversal_path, filtered_content, expanded_context = self.query_engine.query(query, orig_query, final=(fails == 4))
                 if response.strip().lower() == "sufficient":
                     break
                 fails += 1
@@ -1567,7 +1679,22 @@ class GraphRAG:
         else:
             print("No traversal path to visualize.")
 
-        return response, doc_ids
+        return response
 
 
+# -----------------------------------------------------
+# START TESTING MODEL (example)
+# -----------------------------------------------------
+#if __name__ == "__main__":
+#    raw_text = """GRAPH RAG IS USEFUL FOR PURDUE"""
+#    documents = []
 
+#    raw_doc = Document(page_content=raw_text, metadata={"source": "manual_text"})
+#    documents.append(raw_doc)
+#
+#    graph_rag = GraphRAG()
+#    graph_rag.process_documents(documents)
+
+    # Example query
+#    answer = graph_rag.query("Is GraphRag useful for Purdue?")
+#    print("Answer:", answer)
