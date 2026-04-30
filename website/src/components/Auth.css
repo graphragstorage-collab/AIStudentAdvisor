@@ -1,69 +1,88 @@
 .auth-container {
-  margin: 0;
-  background: #fdfdfd;
-  font-family: Arial, sans-serif;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 24% 16%, rgba(107, 229, 190, 0.18), transparent 30%),
+    linear-gradient(180deg, #151c43 0%, #0f1534 60%, #080c22 100%);
+  color: #f7fbff;
 }
 
 .auth-box {
-  width: 90%;
-  max-width: 400px;
+  width: min(420px, 100%);
   padding: 30px;
-  border-radius: 12px;
-  background: white;
-  border: 2px solid #DAA520;
-  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  border: 1px solid rgba(107, 229, 190, 0.32);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(14px);
 }
 
 .auth-box h2 {
-  margin-top: 0;
-  color: black;
+  margin: 0 0 20px;
+  color: #fff;
+  font-size: 34px;
+  line-height: 1;
   text-align: center;
+}
+
+.auth-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .auth-box input {
   width: 100%;
-  padding: 12px;
-  margin: 8px 0;
+  padding: 13px 14px;
+  border: 1px solid rgba(107, 229, 190, 0.34);
   border-radius: 8px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
+  background: rgba(8, 12, 32, 0.78);
+  color: #fff;
+  outline: none;
+}
+
+.auth-box input:focus {
+  border-color: #6be5be;
+  box-shadow: 0 0 0 3px rgba(107, 229, 190, 0.13);
+}
+
+.auth-box input::placeholder {
+  color: rgba(247, 251, 255, 0.52);
 }
 
 .auth-box button {
   width: 100%;
   padding: 14px;
-  background: black;
-  color: gold;
-  border-radius: 8px;
-  cursor: pointer;
-  border: none;
-  font-weight: bold;
-  margin-top: 8px;
+  border: 1px solid rgba(107, 229, 190, 0.58);
+  border-radius: 999px;
+  background: rgba(107, 229, 190, 0.24);
+  color: #fff;
+  font-weight: 900;
 }
 
 .auth-box button:hover {
-  opacity: 0.8;
+  background: rgba(107, 229, 190, 0.36);
 }
 
 .auth-footer {
-  margin-top: 15px;
+  margin-top: 16px;
   text-align: center;
 }
 
 .auth-footer a {
-  color: #C2912A;
-  text-decoration: none;
+  color: #6be5be;
+  font-weight: 800;
 }
 
 .error-message {
-  color: #d32f2f;
-  background: #ffebee;
-  padding: 10px;
-  border-radius: 4px;
   margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid rgba(255, 125, 125, 0.45);
+  border-radius: 8px;
+  background: rgba(255, 125, 125, 0.12);
+  color: #ffd6d6;
   text-align: center;
 }

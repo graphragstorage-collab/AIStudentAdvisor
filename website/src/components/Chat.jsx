@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown'; // Added import
 import './Chat.css';
 
 const welcomeMessage = {
@@ -183,6 +184,7 @@ const Chat = () => {
 
   return (
     <div className="chat-container">
+<<<<<<< HEAD
       <div className="topbar">
         <button 
           onClick={() => handleNavigate('back')} 
@@ -209,6 +211,37 @@ const Chat = () => {
         {messages.map((msg, index) => (
           <div key={index}>
             <div className={`msg-${msg.role === 'user' ? 'user' : 'bot'}`}>{msg.content}</div>
+=======
+      <header className="app-shell-nav">
+        <div className="brand-mark" aria-label="AI Student Advisor">
+          <span>AI</span>
+          <strong>Student Advisor</strong>
+        </div>
+        <nav>
+          <button type="button" className="active">CHAT</button>
+          <button type="button" onClick={() => navigate('/planner')}>COURSE GRAPH</button>
+          <button type="button" onClick={() => navigate('/vote')}>VOTING</button>
+        </nav>
+        <div className="utility-actions">
+          <button onClick={handleNewConversation} className="new-chat-btn">New Chat</button>
+          <button onClick={handleFileUpload} className="upload-btn">Upload File</button>
+          <button onClick={handleLogout} className="logout-btn">Logout</button>
+        </div>
+        <input
+          type="file"
+          ref={fileInputRef}
+          onChange={handleFileChange}
+          accept=".txt,.pdf"
+          hidden
+        />
+      </header>
+
+      <div className="chatbox" ref={chatboxRef}>
+        {messages.map((msg, index) => (
+          <div key={index} className={`msg-${msg.role === 'user' ? 'user' : 'bot'}`}>
+            {/* Render content as Markdown */}
+            <ReactMarkdown>{msg.content}</ReactMarkdown>
+>>>>>>> sql
           </div>
         ))}
       </div>
@@ -224,12 +257,19 @@ const Chat = () => {
       <div className="input-section">
         <input
           className="promptbar"
+<<<<<<< HEAD
           placeholder="Ask a question..."
+=======
+          placeholder="Ask the advisor anything about Purdue courses, schedules, requirements, or planning."
+>>>>>>> sql
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && handleSend()}
           disabled={isLoading}
         />
+        <button type="button" onClick={handleSend} disabled={isLoading || conversationId === null}>
+          Send
+        </button>
       </div>
     </div>
   );
